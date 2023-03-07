@@ -1,0 +1,3611 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass book
+\begin_preamble
+%% Font setup: please leave the LyX font settings all set to 'default'
+%% if you want to use any of these packages:
+
+%% Use Times New Roman font for text and Belleek font for math
+%% Please make sure that the 'esint' package is turned off in the
+%% 'Math options' page.
+\usepackage[varg]{txfonts}
+
+%% Use Utopia text with Fourier-GUTenberg math
+%\usepackage{fourier}
+
+%% Bitstream Charter text with Math Design math
+%\usepackage[charter]{mathdesign}
+
+%%---------------------------------------------------------------------
+
+%% Make the multiline figure/table captions indent so that the second
+%% line "hangs" right below the first one.
+%\usepackage[format=hang]{caption}
+
+%% Indent even the first paragraph in each section
+\usepackage{indentfirst}
+
+%%---------------------------------------------------------------------
+
+%% Disable page numbers in the TOC. LOF, LOT (TOC automatically
+%% adds \thispagestyle{chapter} if not overriden
+%\addtocontents{toc}{\protect\thispagestyle{empty}}
+%\addtocontents{lof}{\protect\thispagestyle{empty}}
+%\addtocontents{lot}{\protect\thispagestyle{empty}}
+
+%% Shifts the top line of the TOC (not the title) 1cm upwards 
+%% so that the whole TOC fits on 1 page. Additional page size
+%% adjustment is performed at the point where the TOC
+%% is inserted.
+%\addtocontents{toc}{\protect\vspace{-1cm}}
+
+%%---------------------------------------------------------------------
+
+% completely avoid orphans (first lines of a new paragraph on the bottom of a page)
+\clubpenalty=9500
+
+% completely avoid widows (last lines of paragraph on a new page)
+\widowpenalty=9500
+
+% disable hyphenation of acronyms
+\hyphenation{CDFA HARDI HiPPIES IKEM InterTrack MEGIDDO MIMD MPFA DICOM ASCLEPIOS MedInria}
+
+%%---------------------------------------------------------------------
+
+%% Print out all vectors in bold type instead of printing an arrow above them
+\renewcommand{\vec}[1]{\boldsymbol{#1}}
+
+% Replace standard \cite by the parenthetical variant \citep
+%\renewcommand{\cite}{\citep}
+\end_preamble
+\use_default_options false
+\begin_modules
+theorems-ams
+\end_modules
+\maintain_unincluded_children false
+\language american
+\language_package default
+\inputencoding utf8
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 0
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 3cm
+\topmargin 4cm
+\rightmargin 2cm
+\bottommargin 3cm
+\headheight 0.8cm
+\headsep 1cm
+\footskip 0.5cm
+\secnumdepth 3
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style swedish
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle headings
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+def
+\backslash
+documentdate{August 2, 2023}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+%%
+\backslash
+def
+\backslash
+documentdate{
+\backslash
+today}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align block
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagestyle{empty}
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align block
+\begin_inset Box Frameless
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "3cm"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename Images/TITLE/cvut.pdf
+	display false
+	width 3cm
+	height 3cm
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "60line%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+
+\shape smallcaps
+\size large
+Czech Technical University in Prague
+\shape default
+
+\begin_inset Newline newline
+\end_inset
+
+Faculty of Nuclear Sciences and Physical Engineering
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "3cm"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename Images/TITLE/fjfi.pdf
+	display false
+	width 3cm
+	height 3cm
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align block
+\begin_inset VSpace 3cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align block
+
+\series bold
+\size huge
+Estimating Kidney Transplantation Donor-Recipient Compatibility Using Machine
+ Learning
+\end_layout
+
+\begin_layout Standard
+\align block
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align block
+
+\series bold
+\size huge
+\lang czech
+Odhad kompatibility dárce a příjemce pro transplantaci ledvin pomocí strojového
+ učení
+\end_layout
+
+\begin_layout Standard
+\align block
+\begin_inset VSpace 2cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align block
+
+\size large
+Bachelor's Degree Project
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+ends the centered part (the required new paragraph before "}" is inserted
+ by \SpecialChar LyX
+ as "}" is on a separate line.)
+\end_layout
+
+\end_inset
+
+
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align block
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Labeling
+\paragraph_spacing single
+\labelwidthstring MMMMMMMMM
+Author: 
+\series bold
+Matěj Klouček
+\end_layout
+
+\begin_layout Labeling
+\paragraph_spacing single
+\labelwidthstring MMMMMMMMM
+Supervisor: 
+\series bold
+Ing.
+ Tomáš Kouřim
+\end_layout
+
+\begin_layout Labeling
+\paragraph_spacing single
+\labelwidthstring MMMMMMMMM
+Consultant: 
+\series bold
+Ing.
+ Pavel Strachota , Ph.D.
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring MMMMMMMMM
+Language
+\begin_inset space ~
+\end_inset
+
+advisor: 
+\series bold
+Mgr.
+ Jméno Učitelky Angličtiny
+\end_layout
+
+\begin_layout Labeling
+\paragraph_spacing single
+\labelwidthstring MMMMMMMMM
+Academic
+\begin_inset space ~
+\end_inset
+
+year: 2022/2023
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Final dummy paragraph.
+ Its function is to bear the page break flag
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset External
+	template PDFPages
+	filename Klouček Matěj.pdf
+	extra LaTeX "pages=-"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\size larger
+\emph on
+Acknowledgment:
+\end_layout
+
+\begin_layout Standard
+\noindent
+I would like to thank ............................................
+ for (his/her expert guidance) and express my gratitude to ..........................................
+ for (his/her language assistance).
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+vfill
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\size larger
+\emph on
+Author's declaration:
+\end_layout
+
+\begin_layout Standard
+\noindent
+I declare that this Bachelor's Degree Project is entirely my own work and
+ I have listed all the used sources in the bibliography.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+Prague, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+documentdate
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+Matěj Klouček
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 2cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\noindent
+
+\emph on
+\lang czech
+Název práce:
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\noindent
+
+\series bold
+\lang czech
+Odhad kompatibility dárce a příjemce pro transplantaci ledvin pomocí strojového
+ učení
+\end_layout
+
+\begin_layout Standard
+
+\lang czech
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\emph on
+\lang czech
+Autor:
+\emph default
+ Matěj Klouček
+\end_layout
+
+\begin_layout Standard
+
+\lang czech
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\emph on
+\lang czech
+Obor:
+\emph default
+ Matematické inženýrství
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\emph on
+\lang czech
+Zaměření:
+\emph default
+ Matematická informatika
+\end_layout
+
+\begin_layout Standard
+
+\lang czech
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\emph on
+\lang czech
+Druh práce:
+\emph default
+ Bakalářská práce
+\end_layout
+
+\begin_layout Standard
+
+\lang czech
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\emph on
+\lang czech
+Vedoucí práce:
+\emph default
+ Ing.
+ Tomáš Kouřim, Mild Blue, s.r.o.
+\end_layout
+
+\begin_layout Standard
+
+\lang czech
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\emph on
+\lang czech
+Konzultant:
+\emph default
+ Ing.
+ Pavel Strachota , Ph.D., Katedra matematiky FJFI ČVUT
+\end_layout
+
+\begin_layout Standard
+
+\lang czech
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\emph on
+\lang czech
+Abstrakt:
+\emph default
+ Abstrakt max.
+ na 10 řádků.
+ Abstrakt max.
+ na 10 řádků.
+ Abstrakt max.
+ na 10 řádků.
+ Abstrakt max.
+ na 10 řádků.
+ Abstrakt max.
+ na 10 řádků.
+ Abstrakt max.
+ na 10 řádků.
+ Abstrakt max.
+ na 10 řádků.
+ Abstrakt max.
+ na 10 řádků.
+ Abstrakt max.
+ na 10 řádků.
+ Abstrakt max.
+ na 10 řádků.
+ Abstrakt max.
+ na 10 řádků.
+ Abstrakt max.
+ na 10 řádků.
+ Abstrakt max.
+ na 10 řádků.
+ Abstrakt max.
+ na 10 řádků.
+ Abstrakt max.
+ na 10 řádků.
+ Abstrakt max.
+ na 10 řádků.
+ Abstrakt max.
+ na 10 řádků.
+ Abstrakt max.
+ na 10 řádků.
+ Abstrakt max.
+ na 10 řádků.
+ Abstrakt max.
+ na 10 řádků.
+ Abstrakt max.
+ na 10 řádků.
+ Abstrakt max.
+ na 10 řádků.
+ Abstrakt max.
+ na 10 řádků.
+ Abstrakt max.
+ na 10 řádků.
+ Abstrakt max.
+ na 10 řádků.
+ Abstrakt max.
+ na 10 řádků.
+ Abstrakt max.
+ na 10 řádků.
+ Abstrakt max.
+ na 10 řádků.
+ Abstrakt max.
+ na 10 řádků.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\lang czech
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\emph on
+\lang czech
+Klíčová slova:
+\emph default
+ klíčová slova (nebo výrazy) seřazená podle abecedy a oddělená čárkou
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\noindent
+
+\emph on
+Title:
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\noindent
+
+\series bold
+Estimating kidney transplantation donor-recipient compatibility using machine
+ learning
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\emph on
+Author:
+\emph default
+ Matěj Klouček
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\emph on
+Abstract:
+\emph default
+ Max.
+ 10 lines of English abstract text.
+ Max.
+ 10 lines of English abstract text.
+ Max.
+ 10 lines of English abstract text.
+ Max.
+ 10 lines of English abstract text.
+ Max.
+ 10 lines of English abstract text.
+ Max.
+ 10 lines of English abstract text.
+ Max.
+ 10 lines of English abstract text.
+ Max.
+ 10 lines of English abstract text.
+ Max.
+ 10 lines of English abstract text.
+ Max.
+ 10 lines of English abstract text.
+ Max.
+ 10 lines of English abstract text.
+ Max.
+ 10 lines of English abstract text.
+ Max.
+ 10 lines of English abstract text.
+ Max.
+ 10 lines of English abstract text.
+ Max.
+ 10 lines of English abstract text.
+ Max.
+ 10 lines of English abstract text.
+ Max.
+ 10 lines of English abstract text.
+ Max.
+ 10 lines of English abstract text.
+ Max.
+ 10 lines of English abstract text.
+ Max.
+ 10 lines of English abstract text.
+ Max.
+ 10 lines of English abstract text.
+ Max.
+ 10 lines of English abstract text.
+ Max.
+ 10 lines of English abstract text.
+ Max.
+ 10 lines of English abstract text.
+ Max.
+ 10 lines of English abstract text.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\emph on
+Key words:
+\emph default
+ keywords in alphabetical order separated by commas
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagestyle{plain}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter*
+Introduction
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{chapter}{Introduction}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The use of machine learning in the field of medicine has been gaining traction
+ in recent years, and one area where it has the potential to make a significant
+ impact is in the field of organ transplantations, specifically in helping
+ to find compatible donor-recipient pairs.
+ The goal of this thesis is to explore the use of machine learning methods
+ to predict compatibility of donors and recipients, with the ultimate goal
+ of improving the success rate of kidney transplants and thus potentially
+ saving lives and consequently reducing the burden on the healthcare system.
+ The process of finding a compatible donor for a transplant patient is a
+ complex and time-consuming task, involving a variety of factors including
+ among others blood type, HLA typing and medical history of both the donor
+ and the recipient.
+ Despite advances in medical technology, the process of finding a compatible
+ donor is still challenging, with many patients waiting years for a suitable
+ match.
+ This is where machine learning can play a crucial role, by analyzing large
+ amounts of data and identifying patterns that can help find compatible
+ pairs or conversely detect incompatible pairings that would otherwise undergo
+ transplantation.
+\end_layout
+
+\begin_layout Standard
+The research will involve collecting and analyzing data on past transplantations
+ from the US-based 
+\emph on
+United Network for Organ Sharing (UNOS)
+\emph default
+ dataset, including information on both living and deceased donors, recipients
+ and their post-transplant outcome.
+ This data will be used to train and test machine learning models that can
+ predict compatibility between donors and recipients.
+ The models will be evaluated using various metrics such as accuracy, precision,
+ recall, and F1-score.
+ Additionally, the research will also examine the performance of the developed
+ models on different population samples, namely on the dataset provided
+ by the Czech 
+\emph on
+Institute for Clinical and Experimental Medicine (IKEM)
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+The results of this thesis will hopefully provide valuable insights into
+ application of machine learning in the field of transplantation medicine.
+ If the models developed in this research are found to be effective in predictin
+g compatibility, it could lead to a better and more efficient matching of
+ donors and recipients, resulting in risk reduction for the transplant patients
+ as complications such as graft rejection would be less probable.
+ Furthermore, this research will also provide a valuable contribution to
+ the broader field of medical research, by demonstrating the potential of
+ machine learning in improving the success rate of medical treatments and
+ reducing the burden on the healthcare system.
+\end_layout
+
+\begin_layout Chapter
+Machine Learning
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagestyle{headings}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+General Overview of Machine Learning
+\end_layout
+
+\begin_layout Standard
+Machine learning is a rapidly growing field within the larger discipline
+ of artificial intelligence, which is concerned with the development of
+ algorithms and statistical models that enable computers to autonomously
+ improve their performance on a given task.
+ The key idea behind machine learning is to develop algorithms that can
+ identify patterns and relationships in large amounts of data, and then
+ use these algorithms to make predictions or decisions based on newly introduced
+ data.
+\end_layout
+
+\begin_layout Standard
+In general, machine learning is a great tool when solving problems that
+ would conventionally require an insurmountable amount of programming or
+ when working with large amounts of data from which one could not easily
+ extract information or identify meaningful patterns.
+\end_layout
+
+\begin_layout Subsection
+Classification of Machine Learning Models
+\end_layout
+
+\begin_layout Standard
+Machine learning models can be classified based on several parameters including
+ the type of data used in training the models and the way they handle new
+ data.
+\end_layout
+
+\begin_layout Subsubsection
+Classification by Data Type
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Supervised Learning
+\emph default
+ is a type of Machine Learning where models require a labeled dataset for
+ their learning, which means that along with the data, the desired output
+ needs to provided to the computer as well.
+ Supervised learning can be further subdivided into Regression and Classificatio
+n, based on whether the desired output is a continuous numerical value or
+ a discrete one respectively.
+ The examples of Supervised Learning models include: 
+\emph on
+Linear
+\emph default
+ and 
+\emph on
+Logistic Regression
+\emph default
+, 
+\emph on
+Random Forests
+\emph default
+, 
+\emph on
+Decision Trees
+\emph default
+, 
+\emph on
+Supporting Vector Machines
+\emph default
+ and 
+\emph on
+Neural Networks
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+The opposite of Supervised Learning is 
+\emph on
+Unsupervised Learning
+\emph default
+, where models are trained on an unlabeled dataset with the aim of finding
+ patterns in the given data or grouping data with similar characteristics.
+ An example of Unsupervised Learning is 
+\emph on
+Clustering
+\emph default
+ which is used to find groups with shared characteristics, Association which
+ is used to find relation between the input variables (also called predictors)
+ in a given dataset, or 
+\emph on
+Dimensional reduction
+\emph default
+ which is used to simplify data in order to more easily extract information
+ from it.
+ 
+\end_layout
+
+\begin_layout Standard
+A combination of these, called 
+\emph on
+Semi-supervised Learning
+\emph default
+, uses a combination of both labeled and unlabeled data and first uses an
+ Unsupervised Machine Learning model to first cluster the data in order
+ to classify the unlabeled data and then uses a Supervised machine Learning
+ model on this newly labeled data.
+ This is advantageous to using a simple Supervised Machine Learning model
+ as it allows working with larger amounts of data that would otherwise be
+ unusable because of the lack of labeling, thus potentially resulting in
+ higher accuracy of the model.
+\end_layout
+
+\begin_layout Standard
+Finally, 
+\emph on
+Reinforcement Learning
+\emph default
+ is a type of machine model, where the model is trained using feedback from
+ the environment and is often used in cases where no labeled data exists
+ or when the labeled dataset does not provide the best course of action.
+ The learning system (called 
+\emph on
+agent
+\emph default
+ in this case) learns by performing actions from which it receives either
+ rewards or penalties from the environment and based on these has to develop
+ a strategy to maximize rewards (called 
+\emph on
+policy
+\emph default
+) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "100-page ML"
+literal "false"
+
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Hands-On ML"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Instance-based vs.
+ Model-based
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Instance-based
+\emph default
+ learning algorithms work by comparing the similarity of new input data
+ to the training data, an example of this is the 
+\emph on
+k-Nearest Neighbors
+\emph default
+ algorithm, which finds 
+\begin_inset Formula $k$
+\end_inset
+
+ examples from the training data that have the most similar features to
+ the given input and outputs either the most frequent or the average label
+ value in this cohort.
+ 
+\end_layout
+
+\begin_layout Standard
+On the other hand 
+\emph on
+Model-based learning
+\emph default
+ algorithms develop a mathematical function whose parameters are learned
+ from the training data and predictions about new data are then accomplished
+ by providing the newly introduced data as an input to the function.
+ Model-based learning algorithms are for example 
+\emph on
+Linear Regression
+\emph default
+ and 
+\emph on
+Neural Networks
+\emph default
+.
+\end_layout
+
+\begin_layout Section
+Training and Evaluating a Machine Learning Model
+\end_layout
+
+\begin_layout Subsection
+Training, Validation and Test sets
+\end_layout
+
+\begin_layout Standard
+The goal of machine learning is to create models that are able to make predictio
+ns when faced with new data that the model hasn't seen during the training
+ process.
+ To achieve this, it is neccessary to split the data into 3 parts: 
+\emph on
+Training set
+\emph default
+, Validation
+\emph on
+ set 
+\emph default
+and
+\emph on
+ Test set.
+ 
+\emph default
+If a model is trained using all available data, it may perform well on said
+ data, but may be unable to generalise for new instances thus making it
+ useless in practice, that's why it's important to keep some of the data
+ aside for validation and testing, these two together are called 
+\emph on
+hold-out 
+\emph default
+sets 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "100-page ML"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+It is desirable to keep the majority of the data for testing with the usual
+ distribution being 70% for training and 15% for training and validation
+ each, though with larger datasets, it is possible to allocate even higher
+ percentage of the data to training.
+\end_layout
+
+\begin_layout Standard
+Once the training of the model has been done using the training set, the
+ performance of the model is tested using the test set, i.e.
+ data that it hasn't seen before.
+ A good metric for measuring the quality of the model is the 
+\emph on
+generalization error, 
+\emph default
+given by the error rate of the model on new cases.
+\end_layout
+
+\begin_layout Standard
+Better performace of the model can be achieved using a validation set, which
+ gives the option to select the best values for the model's hyperparameters
+ (specifics of a given machine learning model that are set before the training
+ process begins).
+ This is done by training the model multiple times on the training set with
+ different hyperparametrs and then comparing their perfomance on the validation
+ set.
+ Once the best model has been selected, it is then trained using both the
+ training and the validation set and its performance is then measured using
+ the test set 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Hands-On ML"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Overfitting and Underfitting
+\end_layout
+
+\begin_layout Standard
+If the generalization error of the model is low on the training set, but
+ high on the test set, it means that the model has learned unnecessary details
+ from the training set which then hampers its ability to generalise for
+ new instances.
+ This phenomena is called 
+\emph on
+overfitting 
+\emph default
+and is a common problem that arrises during the process of developing a
+ machine learning model.
+ Overfitting usually caused either by the data being too noisy (errors in
+ the data, many outliers), the dataset being too small or by having too
+ many irrelevant features.
+ One way to overcome this is too adressed the above mentioned problems by
+ gathering more data, removing outliers and inputing errors in the data
+ or by simplifying the model by choosing fewer features.
+ Another way of solving the issue of overfitting is constraining how much
+ the model can change the values of its parameters, thus making the model
+ simpler and less prone to overfitting.
+ This is called 
+\emph on
+regularization 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Hands-On ML"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Machine learning models can also face an opposite problem, i.e.
+ not being able learn the underlying patterns in the data and thus being
+ inaccurate on both the test and training data.
+ This is called 
+\emph on
+underfitting 
+\emph default
+and can be solved by using a more appropriate (more complex) model for the
+ given task, better selecting features to train the model on or reducing
+ any constraints that might have set to simplify the model in order to prevent
+ overfitting 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Hands-On ML"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Decision Trees and Random Forests
+\end_layout
+
+\begin_layout Subsection
+Decision Trees
+\end_layout
+
+\begin_layout Standard
+Decision Trees are a supervised, model-based machine learning method used
+ for both regression and classification, whose main benefits are that it
+ can handle complex and nonlinear relations in data.
+ There are two types of decision trees based on the type of target variable:
+ 
+\emph on
+Classification trees 
+\emph default
+and 
+\emph on
+Regression trees.
+ 
+\end_layout
+
+\begin_layout Standard
+Decision trees are in practice mostly binary trees where in each parent
+ node (also called a 
+\emph on
+decision node
+\emph default
+), a specific attribute of the feature vector 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Decide on terminology: feature vector / predictor vector
+\end_layout
+
+\end_inset
+
+ is examined and a split is made based on a given criteria whose specifics
+ are learned during the training process.
+ For example if a value of the given attribute is below a specific threshold,
+ the left branch is followed, otherwise the right branch is followed, with
+ the threshold being set to maximize a certain performance metric of the
+ model.
+ Once the leaf node is reached, the example is assigned a probability of
+ belonging to a given categorical value in case of a classification tree
+ or assigned a real target value in case of a regression tree.
+ 
+\end_layout
+
+\begin_layout Standard
+Different decision tree algorithms use different split rules also known
+ as 
+\emph on
+criterions.
+
+\emph default
+ For example, one of the most common algorithms used for generating a classifica
+tion tree is called ID3, which selects what attributes from the feature
+ vector to split upon based on 
+\emph on
+Entropy
+\emph default
+ or 
+\emph on
+Information gain
+\emph default
+ of the subsets created by the split made on each feature.
+ In the case of Regression Trees, the criterion used is often based on the
+ reduction of 
+\emph on
+variance
+\emph default
+ or 
+\emph on
+standard deviation
+\emph default
+ between labels and their mean values.
+ Another type of criterion is used by the decision trees in Random Survival
+ Forests, described in more detail later, which use a log-rank test statistic
+ in order to maximize the difference between the predicted survival time
+ in each leaf node.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+https://www.kdnuggets.com/2020/01/decision-tree-algorithm-explained.html
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Building a Classification Tree
+\end_layout
+
+\begin_layout Standard
+A classification tree using the ID3 algorithm is built as follows 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "100-page ML"
+literal "false"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $C$
+\end_inset
+
+=
+\begin_inset Formula $\left\{ 1,2,\ldots,p\right\} $
+\end_inset
+
+ be the set of possible categorical values, 
+\begin_inset Formula $\left\{ \left(x^{(i)},y^{(i)}\right)\right\} _{i=1}^{N}$
+\end_inset
+
+is a collection of labeled examples with numerical predictors, where 
+\begin_inset Formula $N$
+\end_inset
+
+ is the size of the collection, 
+\begin_inset Formula $\mathbf{x}^{(i)}=(x_{1}^{(i)},\ldots,x_{k}^{(i)})$
+\end_inset
+
+ is a 
+\begin_inset Formula $k$
+\end_inset
+
+-dimensional feature vector of the example 
+\begin_inset Formula $i\in\hat{N}$
+\end_inset
+
+ and 
+\begin_inset Formula $y^{(i)}\in C$
+\end_inset
+
+ is its label.
+ The decision tree model is denoted by
+\begin_inset Formula $f(\mathbf{x})$
+\end_inset
+
+ which is a function that estimates the probability of a given example to
+ be of class 
+\begin_inset Formula $a\in C$
+\end_inset
+
+ i.e.
+ it is defined as follows:
+\begin_inset Formula 
+\[
+f(\mathbf{x},a)\stackrel{\mathrm{def}}{=}\Pr\left(y=a\mid\mathbf{x}\right)
+\]
+
+\end_inset
+
+a where 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ is a 
+\begin_inset Formula $k$
+\end_inset
+
+-dimensional feature vector and 
+\begin_inset Formula $y$
+\end_inset
+
+ is a random variable describing the class of a given example.
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $S_{i}$
+\end_inset
+
+ denote the set of labeled examples included in a given node 
+\begin_inset Formula $i$
+\end_inset
+
+ , 
+\begin_inset Formula $p^{S_{i}}(a)$
+\end_inset
+
+ denote the proportion of the examples in 
+\begin_inset Formula $S_{i}$
+\end_inset
+
+ that belong to class 
+\begin_inset Formula $a$
+\end_inset
+
+ and let 
+\begin_inset Formula $F_{i}$
+\end_inset
+
+ denote the set of all possible features in a given node 
+\begin_inset Formula $i$
+\end_inset
+
+.
+ In the first step of the algorithm, the decision tree is consists of only
+ its root node that contains all of the labeled examples i.e.
+ 
+\begin_inset Formula $S_{0}=$
+\end_inset
+
+ 
+\begin_inset Formula $\left\{ \left(x^{(i)},y^{(i)}\right)\right\} _{i=1}^{N}$
+\end_inset
+
+, all features are available i.e.
+ 
+\begin_inset Formula $F_{0}=\hat{k}$
+\end_inset
+
+ and the proportion is given by:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+p^{S_{0}}\left(a\right)=\frac{|\left\{ \left(\mathbf{x}^{(i)},y^{(i)}\right)\mid y^{(i)}=a,\left(\mathbf{x}^{(i)},y^{(i)}\right)\in S_{0}\right\} |}{|S_{0}|}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Next step of the algorithm is to iterate over all possible features 
+\begin_inset Formula $j\in F_{0}$
+\end_inset
+
+ and all possible threshold values 
+\begin_inset Formula $t$
+\end_inset
+
+ (the possible threshold values can be chosen, for example, as midpoints
+ between values of the predictors e.g.
+ if the predictor 
+\begin_inset Formula $j$
+\end_inset
+
+ takes on the values 
+\begin_inset Formula $\left[1,2,3\right]$
+\end_inset
+
+ then we may choose the possible threshold values as 
+\begin_inset Formula $\left[1.5,2.5\right]$
+\end_inset
+
+) and split 
+\begin_inset Formula $S_{0}$
+\end_inset
+
+ into two subsets defined as:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S_{0-}\stackrel{\mathrm{def}}{=}\left\{ \left(\mathbf{x},y\right)\mid\left(\mathbf{x},y\right)\in S_{0},x_{j}<t\right\} \quad\mathrm{and}\quad S_{0+}\stackrel{\mathrm{def}}{=}\left\{ \left(\mathbf{x},y\right)\mid\left(\mathbf{x},y\right)\in S_{0},x_{j}\geq t\right\} 
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For each iteration (ordered pair 
+\begin_inset Formula $\left(j,t\right)$
+\end_inset
+
+), the quality of the split is calculated by using the algorithm's criterion.
+ In the case of the ID3 algorithm, the criterion is the entropy of a given
+ set of examples which is given by:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H(S)=-\sum_{a\in S}p^{S}\left(a\right)\log_{2}p^{S}\left(a\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The quality of the given split is then determined by the weighted sum of
+ the entropies of the two subsets created by the split i.e.:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+H(S_{-},S_{+})=\frac{|S_{-}|}{|S|}H(S_{-})+\frac{|S_{+}|}{|S|}H(S_{+})
+\]
+
+\end_inset
+
+where the goal is to minimize 
+\begin_inset Formula $H(S_{-},S_{+})$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Once the best split has been found, each of the created subsets serves as
+ a new decision node, i.e.
+ 
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset Formula $S_{1}\coloneqq S_{0-}$
+\end_inset
+
+, 
+\begin_inset Formula $S_{2}:=$
+\end_inset
+
+
+\begin_inset Formula $S_{0+}$
+\end_inset
+
+ and the branching continues considering only the attributes that were not
+ previously used, i.e.
+ given that 
+\begin_inset Formula $j_{0}\in F_{0}$
+\end_inset
+
+ was chosen as the optimal predictor to split upon, then 
+\begin_inset Formula $F_{1}=F_{2}=F_{0}\setminus\left\{ j_{0}\right\} $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The algorithm stops if either there are no further attributes to split upon,
+ all possible decisions would reduce entropy less then some set amount or
+ the tree reaches a set maximum depth (the minimum number of edges connecting
+ the root to a leaf node).
+\end_layout
+
+\begin_layout Standard
+When a new input 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ is introduced, where 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ is a 
+\begin_inset Formula $k-$
+\end_inset
+
+dimensional vector whose attributes are of the same data type as in the
+ feature vectors 
+\begin_inset Formula $\mathbf{x}^{(i)}$
+\end_inset
+
+, the decision tree is followed from the root down, evaluating the attributes
+ of 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ in each decision node until a leaf node is reached.
+ Let 
+\begin_inset Formula $S_{n}$
+\end_inset
+
+ denote such leaf node, then for 
+\begin_inset Formula $\forall a\in C$
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+f(\mathbf{x},a)=p^{S_{n}}\left(a\right)=\frac{|\left\{ \left(\mathbf{x}^{(i)},y^{(i)}\right)\in S_{n}\mid y^{(i)}=a\right\} |}{|S_{n}|}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Building a Regression Tree
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+https://www.saedsayad.com/decision_tree_reg.htm#:~:text=The%20ID3%20algorithm%20can
+%20be,Gain%20with%20Standard%20Deviation%20Reduction.&text=A%20decision%20tree%20
+is%20built,with%20similar%20values%20(homogenous).
+\end_layout
+
+\begin_layout Plain Layout
+https://www.datascienceprophet.com/understanding-the-mathematics-behind-decision-t
+ree-algorithm-part-ii/
+\end_layout
+
+\begin_layout Plain Layout
+https://medium.com/machine-learning-researcher/decision-tree-algorithm-in-machine
+-learning-248fb7de819e
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This time suppose the opposite case i.e.
+ that the dataset consists of examples with categorical valued predictors
+ and labels with continuous numerical values.
+ As a result, the Standard Deviation Reduction algorithm would be good choice
+ to build the regression tree.
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $X_{j}$
+\end_inset
+
+ be the set of all possible categorical values for the feature 
+\begin_inset Formula $j\in\hat{k},$
+\end_inset
+
+where 
+\begin_inset Formula $k$
+\end_inset
+
+ is the total number of features in the dataset.
+ Again let 
+\begin_inset Formula $\left\{ \left(x^{(i)},y^{(i)}\right)\right\} _{i=1}^{N}$
+\end_inset
+
+ denote a collection of labeled examples, where 
+\begin_inset Formula $N$
+\end_inset
+
+ is the size of the collection, 
+\begin_inset Formula $\mathbf{x}^{(i)}=(x_{1}^{(i)},\ldots,x_{k}^{(i)})$
+\end_inset
+
+ is a 
+\begin_inset Formula $k$
+\end_inset
+
+-dimensional feature vector of the example 
+\begin_inset Formula $i\in\hat{N}$
+\end_inset
+
+, where 
+\begin_inset Formula $x_{j}^{(i)}\in X_{j}$
+\end_inset
+
+ for 
+\begin_inset Formula $\forall j\in\hat{k}$
+\end_inset
+
+ and 
+\begin_inset Formula $y^{(i)}\in\mathbb{R}^{+}$
+\end_inset
+
+ is the target value.
+ The decision tree model will this time be a function that takes a 
+\begin_inset Formula $k$
+\end_inset
+
+-dimensional feature vector with the same type of attributes as 
+\begin_inset Formula $\mathbf{x}^{(i)}$
+\end_inset
+
+, 
+\begin_inset Formula $i\in\hat{k}$
+\end_inset
+
+ as input, i.e.
+ if 
+\begin_inset Formula $\mathbf{x=}(x_{1},\ldots,x_{k})$
+\end_inset
+
+ then 
+\begin_inset Formula $x_{j}\in X_{j}$
+\end_inset
+
+ for 
+\begin_inset Formula $\forall j\in\hat{k}$
+\end_inset
+
+ and outputs a real valued estimation, i.e.
+ 
+\begin_inset Formula $f(\mathbf{x})\in\mathbb{R}^{+}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $S_{i}$
+\end_inset
+
+ denote the set of labeled examples included in a given node 
+\begin_inset Formula $i$
+\end_inset
+
+, 
+\begin_inset Formula $F_{i}$
+\end_inset
+
+ is the set of all possible features in the node 
+\begin_inset Formula $S_{i}$
+\end_inset
+
+, 
+\begin_inset Formula $\sigma(S_{i})$
+\end_inset
+
+ is the standard deviation for labels in 
+\begin_inset Formula $S_{i}$
+\end_inset
+
+, while 
+\begin_inset Formula $\sigma\left(S_{i},j\right)$
+\end_inset
+
+ is standard deviation in 
+\begin_inset Formula $S_{i}$
+\end_inset
+
+ for feature 
+\begin_inset Formula $j\in F_{i}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+In the first step of the algorithm, again the decision tree consists of
+ only its root node that contains all labeled example i.e.
+ 
+\begin_inset Formula $S_{0}=$
+\end_inset
+
+ 
+\begin_inset Formula $\left\{ \left(x^{(i)},y^{(i)}\right)\right\} _{i=1}^{N}$
+\end_inset
+
+, 
+\begin_inset Formula $F_{0}=\hat{k}$
+\end_inset
+
+.
+ The standard deviation of all labels in 
+\begin_inset Formula $S_{0}$
+\end_inset
+
+ given by:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sigma\left(S_{0}\right)=\sqrt{\frac{1}{N}\sum_{i=1}^{N}\left(y^{(i)}-\overline{y}\right)^{2}}
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $N$
+\end_inset
+
+ is the number of examples in 
+\begin_inset Formula $S_{0}$
+\end_inset
+
+ and 
+\begin_inset Formula $\overline{y}$
+\end_inset
+
+ is the mean value of labels in 
+\begin_inset Formula $S_{0}.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For 
+\begin_inset Formula $\forall j\in F_{0}$
+\end_inset
+
+, the standard deviation for the feature 
+\begin_inset Formula $j$
+\end_inset
+
+ is then calculated by:
+\begin_inset Formula 
+\[
+\sigma\left(S_{0},j\right)=\sum_{c\in X_{j}}p\left(c\right)\sigma\left(c\right)
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $p\left(c\right)$
+\end_inset
+
+ is the proportion of examples in 
+\begin_inset Formula $S_{0}$
+\end_inset
+
+ whose feature 
+\begin_inset Formula $j$
+\end_inset
+
+ belongs to the class 
+\begin_inset Formula $c$
+\end_inset
+
+.
+ Let 
+\begin_inset Formula $N_{c}$
+\end_inset
+
+ denote the number of examples in 
+\begin_inset Formula $S_{0}$
+\end_inset
+
+ whose feature 
+\begin_inset Formula $j$
+\end_inset
+
+ belongs to the class 
+\begin_inset Formula $c$
+\end_inset
+
+ i.e: 
+\begin_inset Formula $N_{c}=|\left\{ \left(\mathbf{x}^{(i)},y^{(i)}\right)\in S_{0}\mid x_{j}^{(i)}=c\right\} |$
+\end_inset
+
+, then 
+\begin_inset Formula $p\left(c\right)$
+\end_inset
+
+ is given by:
+\begin_inset Formula 
+\[
+p\left(c\right)=\frac{N_{c}}{|S_{0}|}
+\]
+
+\end_inset
+
+And 
+\begin_inset Formula $\sigma\left(c\right)$
+\end_inset
+
+ is the standard deviation of labels in 
+\begin_inset Formula $S_{0}$
+\end_inset
+
+ whose feature 
+\begin_inset Formula $j$
+\end_inset
+
+ belongs to the class c, i.e.:
+\begin_inset Formula 
+\[
+\sigma\left(c\right)=\sqrt{\frac{1}{N_{c}}\sum_{i=1}^{N_{c}}\left(y_{c}^{(i)}-\overline{y_{c}}\right)^{2}}
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $y_{c}^{(i)}$
+\end_inset
+
+ are the labels of examples whose feature 
+\begin_inset Formula $j$
+\end_inset
+
+ belongs to the class 
+\begin_inset Formula $c$
+\end_inset
+
+ and 
+\begin_inset Formula $\overline{y_{c}}$
+\end_inset
+
+ is their mean value.
+\end_layout
+
+\begin_layout Standard
+The best split is then chosen as the one with the highest 
+\emph on
+standard deviation reduction
+\emph default
+ given by:
+\begin_inset Formula 
+\[
+\varDelta\sigma\left(S_{0},j\right)=\sigma\left(S_{0}\right)-\sigma\left(S_{0},j\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $S_{0}$
+\end_inset
+
+ is then split into subsets based on the chosen feature 
+\begin_inset Formula $j$
+\end_inset
+
+ (the split is not necessarily binary), i.e:
+\begin_inset Formula 
+\[
+S_{c}=\left\{ \left(x^{(i)},y^{(i)}\right)\in S_{0}\mid x_{j}^{(i)}=c\right\} \qquad\forall c\in X_{j}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where each 
+\begin_inset Formula $S_{c}$
+\end_inset
+
+ then serves as a new decision node and the process repeats.
+\end_layout
+
+\begin_layout Standard
+The algorithm is stopped if either the selected reduction in variation is
+ below a set threshold, there are no more features to split upon or if the
+ tree reaches set maximum depth.
+ 
+\end_layout
+
+\begin_layout Standard
+When the model is presented with a new input 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+, it follows the tree from the root down until a leaf node is reached.
+ Let 
+\begin_inset Formula $S_{n}$
+\end_inset
+
+ denote such a leaf node , then output values is given by the average value
+ of the labels in 
+\begin_inset Formula $S_{n}$
+\end_inset
+
+, i.e.
+\begin_inset Formula 
+\[
+f\left(\mathbf{x}\right)=\frac{1}{|S_{n}|}\sum_{(\mathbf{x}^{(i)},y^{(i)})\in S_{n}}y^{(i)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Ensemble Learning and Random Forests
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Ensemble learning 
+\emph default
+is machine learning technique that combines the predictions of multiple
+ models in order to boost the overall performance of a model on a given
+ task.
+ An example of an ensemble learning method are 
+\emph on
+random forests
+\emph default
+, which build on the foundation of decision trees by aggregating the predictions
+ made by a set amount of decision trees, allowing the model to make more
+ accurate predictions than any single decision tree could make by itself.
+ The key idea behind random forests is that every decision tree is trained
+ using a different sample of input features, which helps reduce overfitting
+ and improves the generalization performance of the model.
+\end_layout
+
+\begin_layout Standard
+An example of a random forests model is training a group of classification
+ trees on different random subsets of the training data and when faced with
+ new input, predicting the class of the given input by choosing the class
+ that got the most 
+\begin_inset Quotes sld
+\end_inset
+
+votes
+\begin_inset Quotes srd
+\end_inset
+
+ by the classification trees 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Hands-On ML"
+literal "false"
+
+\end_inset
+
+ (a class 
+\begin_inset Formula $c$
+\end_inset
+
+ gets a 
+\begin_inset Quotes sld
+\end_inset
+
+vote
+\begin_inset Quotes srd
+\end_inset
+
+ by the decision tree when the input 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ is assigned the highest probability of belonging to 
+\begin_inset Formula $c$
+\end_inset
+
+, i.e.
+ class 
+\begin_inset Formula $c\in C$
+\end_inset
+
+ gets the vote 
+\begin_inset Formula $\Longleftrightarrow c=\underset{a\in C}{\arg\max}$
+\end_inset
+
+
+\begin_inset Formula $\Pr\left(y=a\mid\mathbf{x}\right)$
+\end_inset
+
+ , where 
+\begin_inset Formula $C$
+\end_inset
+
+ is the set of all possible classes).
+\end_layout
+
+\begin_layout Subsubsection
+Building a Random Forest
+\end_layout
+
+\begin_layout Standard
+The process of building a random forest model can divided into four steps
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "100-page ML"
+literal "false"
+
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Hands-On ML"
+literal "false"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Enumerate
+
+\emph on
+Sampling the data: 
+\emph default
+In order to boost the performance of a random forests model (and other ensemble
+ learning methods), it is vital to train the decision trees (or other predictors
+) 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Clash in terminology: here predictors refers to the models themselves while
+ before it referred to the attributes/ features of the data.
+\end_layout
+
+\end_inset
+
+ on different samples of the data in order to minimize risk of the predictors
+ making the same kind of error.
+ Samples are taken randomly from the dataset in order to create multiple
+ different subsets of the data.
+ This process can be divided based on whether the samples are taken 
+\begin_inset Quotes sld
+\end_inset
+
+with replacement
+\begin_inset Quotes srd
+\end_inset
+
+ or not i.e.
+ whether instances of the data can be used in training of multiple predictors
+ or just once, this is called 
+\emph on
+bagging 
+\emph default
+(abbreviation of 
+\emph on
+bootstrap aggregating
+\emph default
+) and
+\emph on
+ pasting 
+\emph default
+respectively, with bagging being the generally more often used case for
+ random forests.
+\end_layout
+
+\begin_layout Enumerate
+
+\emph on
+Feature sampling: 
+\emph default
+In order to even more differentiate the individual decision trees, only
+ a random subset of the input features are considered when building a particular
+ decision tree.
+ The model will perform best when the input feature are independent of each
+ other.
+ 
+\end_layout
+
+\begin_layout Enumerate
+
+\emph on
+Building the decision trees
+\emph default
+: For each sample of the data and input features, a decision tree is built
+ using a given split criterion.
+ For even more randomized trees it is possible to randomly select the threshold
+ values for each split in the decision trees, instead of searching for the
+ best possible threshold.
+ These are called 
+\emph on
+Extremely Randomized Trees.
+\end_layout
+
+\begin_layout Enumerate
+
+\emph on
+Aggregating Predictions
+\emph default
+: Random forests make predictions by aggregating the predictions made by
+ the indivudual decision trees, for example in the case of classification
+ task, the class with the biggest amount of votes is selected while in the
+ case of a regression task, the predicted value is calculated by averaging
+ the values predicted by the individual decision trees.
+\end_layout
+
+\begin_layout Standard
+The most important hyperparameters to be set before the beginning of the
+ training process are the number of trees in the forest, the size of the
+ bootstrap sample, the size of the feature sample, and the split criterion
+ used to build the decision trees.
+\end_layout
+
+\begin_layout Chapter
+Renal transplantation
+\end_layout
+
+\begin_layout Section
+Pre-Transplant Procedures, HLA Typing and other important factors
+\end_layout
+
+\begin_layout Itemize
+Discuss why even kidney transplantation happen and how are they usually
+ performed (pre-tranplsant procedures etc.)
+\end_layout
+
+\begin_layout Itemize
+Explain HLA typing
+\end_layout
+
+\begin_layout Itemize
+Maybe give some data about how hard it is to find a suitable match for a
+ patient
+\end_layout
+
+\begin_layout Section
+Survival analysis
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+https://www2.karlin.mff.cuni.cz/~pesta/NMFM404/survival.html#References
+\end_layout
+
+\begin_layout Plain Layout
+https://www2.karlin.mff.cuni.cz/~pesta/NMFM404/ph.html
+\end_layout
+
+\begin_layout Plain Layout
+https://www2.karlin.mff.cuni.cz/~pesta/NMFM404-2021.html
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Survival analysis is a statistical method used to analyze and model time-to-even
+t data, where the event of interest is the occurrence of a specific event,
+ such as death, failure, or disease.
+ In survival analysis, we are interested in estimating the probability of
+ an event occurring over time and identifying factors that affect the timing
+ of the event.
+\end_layout
+
+\begin_layout Standard
+The data used in survival analysis typically include information on the
+ time of occurrence of the event of interest and the status of the event
+ at a particular time point.
+ For example, in a clinical trial, the data may include the time from treatment
+ initiation to relapse of a disease, and whether the patient is still alive
+ or has died at a specific follow-up time.
+\end_layout
+
+\begin_layout Standard
+Survival analysis involves several statistical techniques, including the
+ Kaplan-Meier estimator, Cox proportional hazards model, and accelerated
+ failure time models.
+ The Kaplan-Meier estimator is used to estimate the survival function, which
+ describes the probability of survival over time.
+ The Cox proportional hazards model is used to model the hazard function,
+ which describes the instantaneous risk of an event occurring at a particular
+ time, as a function of covariates.
+ The accelerated failure time models are used to model the log-transformed
+ time-to-event data as a linear function of covariates.
+\end_layout
+
+\begin_layout Standard
+Survival analysis is widely used in medical research, engineering, and social
+ sciences to analyze time-to-event data and make predictions about future
+ events.
+ It is also used in business and economics to model customer retention,
+ product failure, and other time-to-event phenomena.
+\end_layout
+
+\begin_layout Subsection
+Cox Regression
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Cox regression
+\emph default
+, also known as the 
+\emph on
+Proportional hazards model
+\emph default
+ or 
+\emph on
+Cox proportional hazards model
+\emph default
+, is a type of survival model that is used to analyze the relationship between
+ the time before some event happens and one or more predictor variables.
+ It is commonly used in medical research to investigate the factors that
+ influence the time to an event, such as graft failure.
+\end_layout
+
+\begin_layout Standard
+The Cox regression model assumes that the 
+\emph on
+hazard rate
+\emph default
+ (the risk of the event occurring at any given time) is proportional across
+ different levels of the predictor variables.
+ In other words, the effect of the predictor variables on the hazard rate
+ remains constant over time.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+The Cox regression model estimates the hazard ratio, which is the ratio
+ of the hazard rate of one group compared to another group, while controlling
+ for other factors.
+ This allows researchers to examine the impact of different factors on the
+ hazard rate while adjusting for potential confounding variables.
+\end_layout
+
+\begin_layout Plain Layout
+Overall, Cox regression is a useful statistical technique that allows researcher
+s to investigate the relationship between predictor variables and survival
+ time, while taking into account the complex interplay between different
+ factors.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Cox regression can be used to identify compatible pairs of donors and recipients
+ for kidney transplantations by analyzing the survival time of transplanted
+ kidneys and identifying factors that impact the likelihood of graft failure.
+\end_layout
+
+\begin_layout Standard
+One important predictor variable in this context is the degree of human
+ leukocyte antigen (HLA) matching between the donor and recipient.
+ HLA is a group of genes that play a critical role in the immune system's
+ ability to recognize and respond to foreign tissue, and HLA mismatches
+ between donor and recipient can increase the risk of graft failure.
+\end_layout
+
+\begin_layout Standard
+Using Cox regression allows analyzing the survival time of transplanted
+ kidneys while controlling for other factors that may influence graft survival,
+ such as age, sex, and underlying medical conditions and using the results
+ to estimate the hazard ratio for HLA mismatch, which represents the relative
+ risk of graft failure for each additional HLA mismatch.
+ This information can then be used to identify compatible pairs of donors
+ and recipients by selecting those with the lowest risk of graft failure
+ based on their HLA compatibility and other relevant factors.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Overall, Cox regression is a powerful tool for predicting graft survival
+ and improving the success of kidney transplantations by helping to identify
+ compatible donor-recipient pairs.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Analysis of Survival Data"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Cox regression models the relationship between survival time and predictor
+ variables using hazard functions, which according to the model can can
+ be modeled as product of a baseline hazard function and an exponential
+ function of the predictor variables.
+\end_layout
+
+\begin_layout Standard
+The hazard function describes the probability of an event occurring (such
+ as death or failure of a transplanted kidney) at a specific point in time,
+ given that the event has not already occurred.
+ It is denoted by 
+\begin_inset Formula $\lambda\left(t\right)$
+\end_inset
+
+ and can be defined as:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lambda\left(t\right)=\lim_{\Delta t\to0}\frac{P\left(t\leq T<t+\Delta t\mid T\geq t\right)}{\Delta t}
+\]
+
+\end_inset
+
+where T is a random variable representing the time until the event occurs,
+ and 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $P\left(t\leq T<t+\Delta t\mid T\geq t\right)$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ represents the probability of the event occurring between time 
+\begin_inset Formula $t$
+\end_inset
+
+ and time 
+\begin_inset Formula $t+\Delta t$
+\end_inset
+
+, given that the event has not already occurred by time 
+\begin_inset Formula $t$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The Cox proportional hazards model assumes that the hazard function can
+ be modeled as follows:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\lambda\left(t\mid\mathbf{X}\right)=\lambda_{0}\left(t\right)\exp\left(\beta_{1}X_{1}+\beta_{2}X_{2}+\ldots+\beta_{k}X_{k}\right)
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\lambda_{0}\left(t\right)$
+\end_inset
+
+ represents the baseline hazard function that is not dependent on the predictor
+ variables, k is the number of predictor variables, 
+\begin_inset Formula $\mathbf{X}=$
+\end_inset
+
+
+\begin_inset Formula $\left(X_{1},X_{2},\ldots,X_{k}\right)$
+\end_inset
+
+ is a vector of predictor variables and 
+\begin_inset Formula $\beta_{1},\beta_{2},\ldots,\beta_{k}$
+\end_inset
+
+ represent the coefficients associated with each predictor variable.
+ The exponential function of the predictor variables represents the proportional
+ change in the hazard function associated with a unit change in the correspondin
+g predictor variable, holding all other predictor variables constant.
+\end_layout
+
+\begin_layout Standard
+The hazard ratio (
+\begin_inset Formula $HR$
+\end_inset
+
+) is defined as the ratio of the hazard functions for two groups with different
+ values of a predictor variable, while holding all other predictor variables
+ constant.
+ For example, let 
+\begin_inset Formula $\bar{\mathbf{X}}=\left(X_{1},\ldots,X_{i}+1,\ldots,X_{k}\right)$
+\end_inset
+
+ then:
+\begin_inset Formula 
+\[
+\frac{\lambda\left(t\mid\bar{\mathbf{X}}\right)}{\lambda\left(t\mid\mathbf{X}\right)}=\frac{\lambda_{0}\left(t\right)\exp\left(\beta_{1}X_{1}+\ldots+\beta_{i}\left(X_{i}+1\right)+\ldots+\beta_{k}X_{k}\right)}{\lambda_{0}\left(t\right)\exp\left(\beta_{1}X_{1}+\ldots+\beta_{i}X_{i}+\ldots+\beta_{k}X_{k}\right)}=\frac{\exp\left(\beta_{i}\right)\stackrel[j=1]{k}{\prod}\exp\left(\beta_{j}X_{j}\right)}{\stackrel[j=1]{k}{\prod}\exp\left(\beta_{j}X_{j}\right)}=\exp\left(\beta_{i}\right)
+\]
+
+\end_inset
+
+Meaning then the hazard ratio for a given predictor associated with a one-unit
+ increase in that variable is given by:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+HR_{i}=\exp\left(\beta_{i}\right),\quad i\in\hat{k}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+More broadly, the hazard ratio for two groups with varying predictor values
+ 
+\begin_inset Formula $X_{i}^{(1)}$
+\end_inset
+
+and 
+\begin_inset Formula $X_{i}^{(2)}$
+\end_inset
+
+ respectively can be written as:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+HR_{i}=\exp\left(\beta_{i}\left(X_{i}^{(1)}-X_{i}^{(2)}\right)\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As 
+\begin_inset Formula $\lambda_{0}\left(t\right)$
+\end_inset
+
+ cancels out, the hazard ratio stays constant over time, in another words
+ the hazards are 
+\emph on
+proportional.
+\end_layout
+
+\begin_layout Standard
+The Cox regression model estimates the coefficients 
+\begin_inset Formula $\beta_{i},$
+\end_inset
+
+
+\begin_inset Formula $\forall i\in\hat{k}$
+\end_inset
+
+ and the baseline hazard function 
+\begin_inset Formula $\lambda_{0}\left(t\right)$
+\end_inset
+
+ using 
+\emph on
+maximum likelihood estimation
+\emph default
+.
+ The model can be used to predict the hazard function for different combinations
+ of predictor variables, which can be used to estimate the probability of
+ an event occurring at different points in time, given the values of the
+ predictor variables.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\emph on
+maximum likelihood estimation
+\emph default
+ = Metoda maximální věrohodnosti -> využít něco z PRST??
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The Cox regression model can also be used to estimate the survival function,
+ which represents the probability of surviving beyond a given time 
+\begin_inset Formula $t$
+\end_inset
+
+, given the values of the predictor variables.
+ The survival function is defined as:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+S\left(t\mid\mathbf{X}\right)=\exp\left(-\stackrel[0]{t}{\int}\lambda\left(u\mid\mathbf{X}\right)\mathrm{d}u\right)
+\]
+
+\end_inset
+
+where 
+\begin_inset Formula $\lambda\left(u\mid\mathbf{X}\right)$
+\end_inset
+
+ represents the hazard function at time u, given the values of the predictor
+ variables.
+\end_layout
+
+\begin_layout Standard
+Overall, Cox regression provides a powerful tool for analyzing survival
+ data and identifying the factors that influence the likelihood of an event
+ occurring over time.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Explain score test - logrank test
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Random Survival Forests
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Random Survival Forests
+\emph default
+ (RSF) is a statistical learning method used in survival analysis, which
+ combines the concepts of 
+\emph on
+survival analysis
+\emph default
+ and 
+\emph on
+random forests
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+In Random Survival Forests, the survival time is treated as a continuous
+ variable, and the data is partitioned recursively into subsets.
+ This is done by randomly selecting a subset of variables and finding the
+ optimal split in each node based on the log-rank test, which measures the
+ difference in survival times between the two subsets created by the split.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Explain log-rank test
+\end_layout
+
+\end_inset
+
+This process is repeated multiple times to create a forest of decision trees.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+One key difference between the decision tree used in RSF and other tree-based
+ algorithms is that the splitting criterion is based on survival outcomes,
+ rather than just predicting a binary outcome.
+ This is done by evaluating the quality of each split in terms of the log-rank
+ test statistic, which measures the difference in survival between the two
+ subsets.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In each tree of the forest, a prediction is made for the survival time of
+ an individual based on the terminal node in which the individual falls.
+ The forest's overall prediction is then computed as the average of the
+ individual tree predictions.
+\end_layout
+
+\begin_layout Standard
+One of the advantages of using RSF over traditional survival analysis methods
+ is that it can handle complex, high-dimensional data and interactions between
+ variables, which may not be possible with traditional methods.
+ Additionally, RSF can handle missing data, which is a common issue in survival
+ analysis.
+\end_layout
+
+\begin_layout Standard
+Random Survival Forests have been used in a wide range of applications,
+ including medicine, engineering, and social sciences, to model survival
+ outcomes and identify important prognostic factors.
+\end_layout
+
+\begin_layout Subsection
+Building a Random Survival Forests model
+\end_layout
+
+\begin_layout Itemize
+describe the process of building a random survival forests model ( most
+ importantly the trees)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+https://bmcmedresmethodol.biomedcentral.com/articles/10.1186/s12874-021-01375-x
+\end_layout
+
+\begin_layout Plain Layout
+Random survival forests Random Survival Forests is an ensemble tree-based
+ method for the analysis of right-censored survival data and is an extension
+ of the random forest method [18, 26].
+ Survival trees are built by recursively partitioning the covariate space
+ using binary splits to form groups of subjects who are similar according
+ to the survival outcome [27].
+ The RSF predictor ensemble is formed by aggregating the results of many
+ survival trees.
+ Here, we present the RSF algorithm for creating a tree ensemble for predicting
+ survival for a given set of covariates, as described in [28].
+\end_layout
+
+\begin_layout Plain Layout
+1 Draw B (ntree) subsamples of a specified sample size from the original
+ dataset (with or without replacement).
+\end_layout
+
+\begin_layout Plain Layout
+2 Grow a survival tree for each subsample b=1,...,B.
+\end_layout
+
+\begin_layout Plain Layout
+(a) At each tree node select a subset of the predictor variables available
+ to try as candidates for splitting (mtry).
+\end_layout
+
+\begin_layout Plain Layout
+(b) Select the node split from the candidate variables that maximizes the
+ survival difference between the daughter nodes based on selected split
+ criterion (splitrule) up to the number of predefined split points (nsplit).
+\end_layout
+
+\begin_layout Plain Layout
+(c) Repeat (a)-(b) recursively on each daughter node until stopping criterion
+ is met, often the number of unique cases in each terminal node (nodesize).
+\end_layout
+
+\begin_layout Plain Layout
+3 Calculate the cumulative hazard function for each tree using the terminal
+ nodes.
+ Aggregate information from the B survival trees to obtain a risk prediction
+ ensemble.
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+https://www.randomforestsrc.org/articles/survival.html
+\end_layout
+
+\begin_layout Plain Layout
+The true event time being subject to censoring must be dealt with when growing
+ a RSF tree.
+ In particular, the splitting rule for growing the tree must specifically
+ account for censoring.
+ Thus, the goal is to split the tree node into left and right daughters
+ with dissimilar event history (survival) behavior.
+\end_layout
+
+\begin_layout Plain Layout
+Log-rank splitting The default splitting rule used by the package is the
+ log-rank test statistic and is specified by splitrule="logrank".
+ The log-rank test has traditionally been used for two-sample testing with
+ survival data, but it can be used for survival splitting as a means for
+ maximizing between-node survival differences [2–6].
+\end_layout
+
+\begin_layout Plain Layout
+To explain log-rank splitting, consider a specific tree node to be split.
+ Without loss of generality let us assume this is the root node (top of
+ the tree).
+ For simplicity assume the data is not bootstrapped, thus the root node
+ data is (𝑇1,𝐗1,𝛿1),…,(𝑇𝑛,𝐗𝑛,𝛿𝑛) .
+ Let 𝑋 denote a specific variable (i.e., one of the coordinates of the feature
+ vector).
+ A proposed split using 𝑋 is of the form 𝑋≤𝑐 and 𝑋>𝑐 (for simplicity we
+ assume 𝑋 is nominal) and splits the node into left and right daughters,
+ 𝐿={𝑋𝑖≤𝑐} and 𝑅={𝑋𝑖>𝑐} , respectively.
+ Let 𝑡1<𝑡2<⋯<𝑡𝑚 be the distinct death times and let 𝑑𝑗,𝐿,𝑑𝑗,𝑅 and 𝑌𝑗,𝐿,𝑌𝑗,𝑅
+ equal the number of deaths and individuals at risk at time 𝑡𝑗 in daughter
+ nodes 𝐿,𝑅 .
+ At risk means the number of individuals in a daughter who are alive at
+ time 𝑡𝑗 , or who have an event (death) at time 𝑡𝑗 : 𝑌𝑗,𝐿=#{𝑇𝑖≥𝑡𝑗,𝑋𝑖≤𝑐},𝑌𝑗,𝑅=#{𝑇
+𝑖≥𝑡𝑗,𝑋𝑖>𝑐}.
+ Define 𝑌𝑗=𝑌𝑗,𝐿+𝑌𝑗,𝑅,𝑑𝑗=𝑑𝑗,𝐿+𝑑𝑗,𝑅.
+ The log-rank split-statistic value for the split is 𝐿(𝑋,𝑐)=∑𝑗=1𝑚(𝑑𝑗,𝐿−𝑌𝑗,𝐿𝑑𝑗𝑌𝑗)
+∑𝑗=1𝑚𝑌𝑗,𝐿𝑌𝑗(1−𝑌𝑗,𝐿𝑌𝑗)(𝑌𝑗−𝑑𝑗𝑌𝑗−1)𝑑𝑗‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾⎷.
+ The value |𝐿(𝑋,𝑐)| is a measure of node separation.
+ The larger the value, the greater the survival difference between 𝐿 and
+ 𝑅 , and the better the split is.
+ The best split is determined by finding the feature 𝑋∗ and split-value
+ 𝑐∗ such that |𝐿(𝑋∗,𝑐∗)|≥|𝐿(𝑋,𝑐)| for all 𝑋 and 𝑐 .
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Findings of Similar Papers and Potential Improvements
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0209068#sec008
+\end_layout
+
+\begin_layout Plain Layout
+Harrell’s concordance index - used to measure performance in this and some
+ other papers regarding post transplant survival, - Harrell’s concordance
+ index (C-index) [8], which is the percentage of patient pairs correctly
+ “ranked” by the model based on their post-transplant survival duration
+ in a given timeframe combines predictions from random survival forests
+ with a Cox proportional hazards model The Cox proportional hazards model
+ is the most widely used model for kidney transplant survival estimation
+ the data was provided by UNOS which should be the same dataset we are using
+ transplantations performed before and after 2002 have a big difference
+ in survival curves so only the transplantations performed from 2002-2012
+ were taken into account in this paper (it was published in 2017 and they
+ required a 5 year or longer time window) 487 variables, removed the ones
+ that were not present in more than 95% of entries unless they were labelled
+ as important by previous papers -> resulting dataset had 73 variables for
+ variable selection, Breiman-Cutler permutation importance measure for random
+ survival forests was used to rank the variables by importance recipient
+ age came out as most important so the data was split into age based cohorts
+ the split age was calculated to be 50 these are the most important factors
+ for each cohort:
+\end_layout
+
+\begin_layout Plain Layout
+methodology: 
+\end_layout
+
+\begin_layout Plain Layout
+Identify important predictive variables by performing variable selection
+ techniques such as Lasso or permutation importance.
+ Test the performance of multiple predictive models on the data using the
+ variables identified in step 1.
+ Use cross-validation and metrics such as the concordance index to evaluate
+ the performance.
+ Determine the best binary split in the data using methods such as decision
+ trees.
+ Repeat steps 1–3 for both subsets of the data a specified number of times.
+ The final model consists of combining the predictions from the models that
+ perform best on the different subsets of the data.
+ 
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+https://www.sciencedirect.com/science/article/pii/S1386505619302977?casa_token=IzO
+XSEZAHvYAAAAA:qk8ffTkNWAkLvE7vXCExvvOkgy-j0s91ktcFHZZF_Z1AKV9Xf9Bjoz6t7IsrcSDW37
+7-Dpbh0vE#bibl0005 is a review of previously used machine learning models
+ predicting kidney transplant survival most frequently used methods were
+ artificial neural networks, decision trees and Bayesian belief networks
+ most had binary outputs (fail or not fail), only one did survival time
+ currently used predictive models are bassed on regression methods - logistic
+ and cox regression they divided studies into the ones that used only pre-transp
+lant data, post-transplant data, and all-data ( I will be interested only
+ in pre-transplant data) a good introduction: “Increasing prevalence of
+ Chronic Kidney Disease (CKD) and end stage of kidney disease over recent
+ years has resulted in increased demand for kidney replacement therapy (KRT)
+ [1,2].
+ Among the available KRT modalities, kidney transplantation has demonstrated
+ superior quality of life and survival rates [3].
+ However, health systems around the world have not been able to meet the
+ growing demand for kidney grafts” , “Machine learning (ML) is a suite of
+ methods whose theoretical construct may lead to improved predictive performance
+ over conventional statistical modelling [13](Supplementary File 1) ML is
+ an efficient way of analysing large quantities of data and identifying
+ hidden associations in complex data sets [14,15].
+ ML has evolved dramatically over recent decades and is already commonly
+ used in medical diagnostics [16,17].
+ Its use in building predictive models to diagnose different disease conditions
+ continues to expand” “Prediction models developed using Cox regression
+ were compared to ML models developed using artificial neural network by
+ Akl et al.
+ (2008) [22] and Lin et al.
+ (2008) [24].
+ According to Akl et al.
+ (2008) [22], the prediction accuracy (artificial neural network 95% vs
+ Cox 90%) and AUC (artificial neural network 0.88 vs Cox 0.72) of artificial
+ neural network were 5% and 0.16 higher compared to the Cox regression model.”
+ The developed ML models although often more accurate in predicting compatibilit
+y showed bigger inconsistencies than traditional predictive methods like
+ the logistic and cox regression “It was interesting to note that models
+ developed using a small number of cases reported similar prediction accuracy
+ compared with models developed using larger numbers of cases.
+ For example, the prediction model developed by Lofaro et al.
+ (2010) [32] using 80 records performed similar to the model developed by
+ Krikov et al.
+ (2007) [29], which was built on a national database of 92,844 patient records.”
+ Using machine learning models could help circumvent human bias though it’s
+ debatable whether that’s always desirable “The current consensus is that
+ there is no one method that fits all data sets, with the complexity of
+ the data pivotal [49].
+ To get around this uncertainty investigators use multiple machine learning
+ methods on single data sets and the best is chosen based on validation
+ parameters.“ “Validation parameters have not yet been standardised in the
+ literature.
+ The studies included in the review have used different validation parameters
+ such as sensitivity, area under the curve and accuracy.
+ Standardisation of validation parameters will facilitate comparisons between
+ different models” “Conventional models such as Cox models and logistic
+ regression assume that the predictors are independent of each other “ thus
+ they not optimal for handling non-linear relationships between “predictors”
+ (find definition) and outcomes “Most of the machine learning based predictive
+ models predicted graft failure with high sensitivity and specificity” ---
+ what does sensitivity and specificity mean
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0252069 The
+ aim of this one is predicting the waiting time on a kidney transplant waiting
+ list Cox regression models was used, sensitivity analysis was performed
+ using different Cox models “The major characteristics associated with changes
+ in the likelihood of transplantation were age, subregion, cPRA, and frequency
+ of HLA-DR, -B and -A.” “Although approximately 5,000 deceased donor kidney
+ transplants take place yearly in the country, the supply of organs does
+ not meet demand, and the gap is growing [2, 3].
+ As a result, recurrent tests and procedures are necessary every 2–3 years
+ to maintain patients on active transplant list [4].
+ Since this poses a significant economic burden to the healthcare system,
+ predicting a patient’s waiting time can help planning for pre-transplant
+ evaluation, and thus promote a more efficient use of resources “ “estimating
+ waiting time on the transplant list can help identifying the underprivileged,
+ and thus impact allocation score, bringing more equity to transplantation
+ programs” a good sentence: “this study aimed at identifying the relevant
+ predictors and combine them into a predictor model to estimate time on
+ a kidney transplant waiting list using machine learning.” “Allocation was
+ performed as established by the National Transplantation System of the
+ Brazilian Ministry of Health [12, 13].
+ For deceased donor transplants, allocation criteria are based on HLA matching
+ (highest number of points for HLA DR, followed by HLA B and HLA A), recipient’s
+ age (<18 years), date of registration on the waiting list, and panel reactive
+ antibody (PRA).
+ A point score system based on blood group and HLA match is used as follows:
+ DR: 0 MM = 10 points; 1 MM = 5 points; 2 MM = 0 point; B: 0 MM = 4 points;
+ 1 MM = 2 points; 2 MM = 0 point; A: 0 MM = 1 point; 1 MM = 0.5 point; 2
+ MM = 0 point.
+ “The following variables were evaluated as predictors: age, sex, race,
+ comorbidities, time on dialysis, blood group, calculated panel class I
+ (cPRA), HLA-A, HLA-B, HLA-DR, number of blood transfusions, pregnancies,
+ previous kidney transplants, and pre-transplant serology for Hepatitis
+ B and C.” “During the study period, 28.4% of the patients were transplanted
+ with a deceased donor (Fig 1).
+ The median waiting time for transplantation was 26.3 months.”
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+https://journals.lww.com/asaiojournal/Fulltext/2007/09000/Predicting_Kidney_Transp
+lant_Survival_Using.11.aspx “The goal of this project was to develop the models
+ predicting probability of kidney allograft survival at 1, 3, 5, 7, and
+ 10 years” ( allograft = The transplant of an organ, tissue, or cells from
+ one individual to another individual, aloštěp) Tree-based forests were
+ used “We generated five separate logistic regression models predicting
+ the graft survival as a binary variable at 1, 3, 5, 7, and 10 years of
+ the follow-up.
+ We used a conservative approach to variable selection.
+ Only variables that had significant association (p < 0.05) with the outcome
+ in all of 5 models were included in the final tree-based analysis.
+ In other words, variables that were not significant in at least one model
+ were excluded.” “Using the set of variables selected by these methods, we
+ tested the tree-based model for convergence and demonstrated poor performance,
+ which were thought to be due to potential collinearity in the data.
+ To make the model more practical and parsimonious, we evaluated the performance
+ of the model with the shorter list of variables, excluding the variables
+ that were considered nonessential.
+ Heartbeating donor variable was found to have significant missing information,
+ whereas nonmissing data were collinear with donor type (living versus deceased).
+ Variables describing cardiovascular disease history were collinear with
+ the variable describing peripheral vascular disease history and therefore
+ the latter was removed.
+ The variable describing the use of antihypertensive medications by the
+ donor was largely homogenous and was also removed.
+ RRT modality immediately before transplant was not used, and instead predominan
+t RRT modality during ESRD course was included in the model.
+ We also excluded the variable describing dialysis network because the model
+ did not converge in its presence.
+ Based on R2 statistics, the model based on the shorter list of variables
+ (below) performed not worse than the one less parsimonious based on the
+ longer list of predictors.” “The final list included the following recipient
+ variables: recipient race, gender, age, height, weight, recipient having
+ a transplant before the current one (yes/no), total number of transplants
+ (including the current one), the time recipient has been on the list before
+ transplant, predominant renal replacement therapy modality, percent time
+ on peritoneal dialysis before transplant, number of renal replacement therapy
+ modalities used before transplant, specific combination of renal replacement
+ therapy modalities, recipient comorbidity score, history of cardiovascular
+ disease, history of unstable angina, history of diabetes, history of hypertensi
+on, presence of hepatitis B core antibodies, presence of hepatitis C antibodies,
+ peak and most recent level of panel reactive antibodies, and primary source
+ of pay for medical services.
+ In addition, the following donor variables were used in the final model:
+ donor race, gender, age, height, weight, donor type (living or deceased).”
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Model training
+\end_layout
+
+\begin_layout Section
+Data Selection
+\end_layout
+
+\begin_layout Itemize
+How did we obtain the data?
+\end_layout
+
+\begin_layout Itemize
+The work we did pre-analysis: importing from MongoDB, creating .csv files,
+ using Helios cluster
+\end_layout
+
+\begin_layout Itemize
+Trimming the dataset, scripts to exclude obviously irrelevant data
+\end_layout
+
+\begin_layout Itemize
+Data inputation: scripts to handle missing data
+\end_layout
+
+\begin_layout Itemize
+Discuss right-censored data (Patients with still working grafts)
+\end_layout
+
+\begin_layout Section
+Programming
+\end_layout
+
+\begin_layout Itemize
+packages: scikit-survival
+\end_layout
+
+\begin_layout Section
+Traing the model
+\end_layout
+
+\begin_layout Standard
+Here I will possible include some code but mostly graphs.
+\end_layout
+
+\begin_layout Section
+Optimization
+\end_layout
+
+\begin_layout Standard
+Trying different things to get better results.
+\end_layout
+
+\begin_layout Chapter
+Model evaluation
+\end_layout
+
+\begin_layout Section
+General evaluation
+\end_layout
+
+\begin_layout Standard
+Discussion about the results.
+\end_layout
+
+\begin_layout Section
+Performance on different population samples
+\end_layout
+
+\begin_layout Standard
+Try to locally differentate ethnic groups within the UNOS database, possibly
+ try to fit the model onto the IKEM dataset.
+\end_layout
+
+\begin_layout Section
+Comparison to previously developed models
+\end_layout
+
+\begin_layout Standard
+Discussion about how this work compared to the previous ones.
+\end_layout
+
+\begin_layout Chapter*
+Conclusion
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagestyle{plain}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{chapter}{Conclusion}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Text of the conclusion\SpecialChar ldots
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Possible sources:
+\end_layout
+
+\begin_layout Plain Layout
+Cox Regression:
+\end_layout
+
+\begin_layout Itemize
+Cox, D.
+ R.
+ (1972).
+ Regression models and life tables (with discussion).
+ Journal of the Royal Statistical Society, Series B, 34, 187-220.
+ 
+\end_layout
+
+\begin_layout Itemize
+Kleinbaum, D.
+ G., & Klein, M.
+ (2012).
+ Survival analysis: A self-learning text (3rd ed.).
+ (Mentioned multiple times)
+\end_layout
+
+\begin_layout Itemize
+Springer.
+ Allison, P.
+ D.
+ (2010).
+ Survival analysis using SAS: A practical guide (2nd ed.).
+ SAS Institute.
+ 
+\end_layout
+
+\begin_layout Itemize
+Collett, D.
+ (2003).
+ Modelling survival data in medical research (2nd ed.).
+ Chapman & Hall/CRC.
+ 
+\end_layout
+
+\begin_layout Itemize
+Singer, J.
+ D., & Willett, J.
+ B.
+ (1993).
+ It's about time: Using discrete-time survival analysis to study duration
+ and the timing of events.
+ Journal of Educational Statistics, 18(2), 155-195.
+\end_layout
+
+\begin_layout Plain Layout
+Other:
+\end_layout
+
+\begin_layout Itemize
+Therneau, T., & Grambsch, P.
+ (2000).
+ Modeling survival data: extending the Cox model.
+ Springer Science & Business Media.
+\end_layout
+
+\begin_layout Itemize
+Breiman, L.
+ (2001).
+ Random forests.
+ Machine learning, 45(1), 5-32
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "100-page ML"
+literal "true"
+
+\end_inset
+
+A.
+ Burkov: 
+\emph on
+The Hundred-Page Machine Learning Book
+\emph default
+.
+ Andriy Burkov, 2019.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "Hands-On ML"
+literal "true"
+
+\end_inset
+
+A.
+ Géron: 
+\emph on
+Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow 2nd Edition
+\emph default
+.
+ O'Reilly Media, 2019
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "Foundations of ML"
+literal "true"
+
+\end_inset
+
+M.
+ Mohri, A.
+ Rostamizadeh, A.
+ Talwalkar: 
+\emph on
+Foundations of Machine Learning
+\emph default
+.
+ MIT Press, 2018.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "Analysis of Survival Data"
+literal "false"
+
+\end_inset
+
+D.
+ R.
+ Cox, D.
+ Oakes: 
+\emph on
+Analysis of Survival Data.
+ 
+\emph default
+Chapman & Hall, 1984.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "Random Survival Forests"
+literal "false"
+
+\end_inset
+
+H, Ishwaran, U.
+ B.
+ Kogalur, E.
+ H.
+ Blackstone.
+ M.
+ S.
+ Lauer: 
+\emph on
+Random survival forests.
+ 
+\emph default
+Ann.
+ Appl.
+ Stat.
+ 2 (3) 841 - 860, September 2008
+\end_layout
+
+\end_body
+\end_document
