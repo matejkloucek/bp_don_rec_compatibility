@@ -90,7 +90,18 @@ theorems-ams
 \index_command default
 \paperfontsize 11
 \spacing single
-\use_hyperref false
+\use_hyperref true
+\pdf_title "Compatibility"
+\pdf_author "Matěj Klouček"
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder true
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
 \papersize a4paper
 \use_geometry true
 \use_package amsmath 2
@@ -429,18 +440,6 @@ Consultant:
 \series bold
 Ing.
  Pavel Strachota , Ph.D.
-\end_layout
-
-\begin_layout Labeling
-\labelwidthstring MMMMMMMMM
-Language
-\begin_inset space ~
-\end_inset
-
-advisor: 
-\series bold
-Mgr.
- Jméno Učitelky Angličtiny
 \end_layout
 
 \begin_layout Labeling
@@ -1431,6 +1430,13 @@ Decision Trees and Random Forests
 
 \begin_layout Subsection
 Decision Trees
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Decision-Trees"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1450,7 +1456,7 @@ Regression trees.
 
 \begin_layout Standard
 Decision trees are in practice mostly binary trees where in each parent
- node (also called a 
+ node (also called 
 \emph on
 decision node
 \emph default
@@ -1470,9 +1476,13 @@ Decide on terminology: feature vector / predictor vector
  the left branch is followed, otherwise the right branch is followed, with
  the threshold being set to maximize a certain performance metric of the
  model.
- Once the leaf node is reached, the example is assigned a probability of
- belonging to a given categorical value in case of a classification tree
- or assigned a real target value in case of a regression tree.
+ Once the leaf node (also called 
+\emph on
+terminal node
+\emph default
+) is reached, the example is assigned a probability of belonging to a given
+ categorical value in case of a classification tree or assigned a real target
+ value in case of a regression tree.
  
 \end_layout
 
@@ -1583,9 +1593,9 @@ is a collection of labeled examples with numerical predictors, where
  i.e.
  it is defined as follows:
 \begin_inset Formula 
-\[
-f(\mathbf{x},a)\stackrel{\mathrm{def}}{=}\Pr\left(y=a\mid\mathbf{x}\right)
-\]
+\begin{equation}
+f(\mathbf{x},a)\stackrel{\mathrm{def}}{=}\Pr\left(y=a\mid\mathbf{x}\right)\label{eq:class tree def}
+\end{equation}
 
 \end_inset
 
@@ -1654,9 +1664,9 @@ Let
 
 \begin_layout Standard
 \begin_inset Formula 
-\[
-p^{S_{0}}\left(a\right)=\frac{|\left\{ \left(\mathbf{x}^{(i)},y^{(i)}\right)\mid y^{(i)}=a,\left(\mathbf{x}^{(i)},y^{(i)}\right)\in S_{0}\right\} |}{|S_{0}|}
-\]
+\begin{equation}
+p^{S_{0}}\left(a\right)=\frac{|\left\{ \left(\mathbf{x}^{(i)},y^{(i)}\right)\mid y^{(i)}=a,\left(\mathbf{x}^{(i)},y^{(i)}\right)\in S_{0}\right\} |}{|S_{0}|}\label{eq:class tree proportion}
+\end{equation}
 
 \end_inset
 
@@ -1695,9 +1705,9 @@ Next step of the algorithm is to iterate over all possible features
 
 \begin_layout Standard
 \begin_inset Formula 
-\[
-S_{0-}\stackrel{\mathrm{def}}{=}\left\{ \left(\mathbf{x},y\right)\mid\left(\mathbf{x},y\right)\in S_{0},x_{j}<t\right\} \quad\mathrm{and}\quad S_{0+}\stackrel{\mathrm{def}}{=}\left\{ \left(\mathbf{x},y\right)\mid\left(\mathbf{x},y\right)\in S_{0},x_{j}\geq t\right\} 
-\]
+\begin{equation}
+S_{0-}\stackrel{\mathrm{def}}{=}\left\{ \left(\mathbf{x},y\right)\mid\left(\mathbf{x},y\right)\in S_{0},x_{j}<t\right\} \quad\mathrm{and}\quad S_{0+}\stackrel{\mathrm{def}}{=}\left\{ \left(\mathbf{x},y\right)\mid\left(\mathbf{x},y\right)\in S_{0},x_{j}\geq t\right\} \label{eq:class tree split}
+\end{equation}
 
 \end_inset
 
@@ -1716,9 +1726,9 @@ For each iteration (ordered pair
 
 \begin_layout Standard
 \begin_inset Formula 
-\[
-H(S)=-\sum_{a\in S}p^{S}\left(a\right)\log_{2}p^{S}\left(a\right)
-\]
+\begin{equation}
+H(S)=-\sum_{a\in S}p^{S}\left(a\right)\log_{2}p^{S}\left(a\right)\label{eq:entropy}
+\end{equation}
 
 \end_inset
 
@@ -1732,9 +1742,9 @@ The quality of the given split is then determined by the weighted sum of
 
 \begin_layout Standard
 \begin_inset Formula 
-\[
-H(S_{-},S_{+})=\frac{|S_{-}|}{|S|}H(S_{-})+\frac{|S_{+}|}{|S|}H(S_{+})
-\]
+\begin{equation}
+H(S_{-},S_{+})=\frac{|S_{-}|}{|S|}H(S_{-})+\frac{|S_{+}|}{|S|}H(S_{+})\label{eq:class tree entropy}
+\end{equation}
 
 \end_inset
 
@@ -1818,9 +1828,9 @@ dimensional vector whose attributes are of the same data type as in the
 
 :
 \begin_inset Formula 
-\[
-f(\mathbf{x},a)=p^{S_{n}}\left(a\right)=\frac{|\left\{ \left(\mathbf{x}^{(i)},y^{(i)}\right)\in S_{n}\mid y^{(i)}=a\right\} |}{|S_{n}|}
-\]
+\begin{equation}
+f(\mathbf{x},a)=p^{S_{n}}\left(a\right)=\frac{|\left\{ \left(\mathbf{x}^{(i)},y^{(i)}\right)\in S_{n}\mid y^{(i)}=a\right\} |}{|S_{n}|}\label{eq:class tree final}
+\end{equation}
 
 \end_inset
 
@@ -2009,9 +2019,9 @@ In the first step of the algorithm, again the decision tree consists of
 
 \begin_layout Standard
 \begin_inset Formula 
-\[
+\begin{equation}
 \sigma\left(S_{0}\right)=\sqrt{\frac{1}{N}\sum_{i=1}^{N}\left(y^{(i)}-\overline{y}\right)^{2}}
-\]
+\end{equation}
 
 \end_inset
 
@@ -2045,9 +2055,9 @@ For
 
  is then calculated by:
 \begin_inset Formula 
-\[
+\begin{equation}
 \sigma\left(S_{0},j\right)=\sum_{c\in X_{j}}p\left(c\right)\sigma\left(c\right)
-\]
+\end{equation}
 
 \end_inset
 
@@ -2094,9 +2104,9 @@ where
 
  is given by:
 \begin_inset Formula 
-\[
+\begin{equation}
 p\left(c\right)=\frac{N_{c}}{|S_{0}|}
-\]
+\end{equation}
 
 \end_inset
 
@@ -2114,9 +2124,9 @@ And
 
  belongs to the class c, i.e.:
 \begin_inset Formula 
-\[
+\begin{equation}
 \sigma\left(c\right)=\sqrt{\frac{1}{N_{c}}\sum_{i=1}^{N_{c}}\left(y_{c}^{(i)}-\overline{y_{c}}\right)^{2}}
-\]
+\end{equation}
 
 \end_inset
 
@@ -2146,9 +2156,9 @@ standard deviation reduction
 \emph default
  given by:
 \begin_inset Formula 
-\[
+\begin{equation}
 \varDelta\sigma\left(S_{0},j\right)=\sigma\left(S_{0}\right)-\sigma\left(S_{0},j\right)
-\]
+\end{equation}
 
 \end_inset
 
@@ -2165,9 +2175,9 @@ standard deviation reduction
 
  (the split is not necessarily binary), i.e:
 \begin_inset Formula 
-\[
+\begin{equation}
 S_{c}=\left\{ \left(x^{(i)},y^{(i)}\right)\in S_{0}\mid x_{j}^{(i)}=c\right\} \qquad\forall c\in X_{j}
-\]
+\end{equation}
 
 \end_inset
 
@@ -2206,9 +2216,9 @@ When the model is presented with a new input
 
 , i.e.
 \begin_inset Formula 
-\[
+\begin{equation}
 f\left(\mathbf{x}\right)=\frac{1}{|S_{n}|}\sum_{(\mathbf{x}^{(i)},y^{(i)})\in S_{n}}y^{(i)}
-\]
+\end{equation}
 
 \end_inset
 
@@ -2644,9 +2654,9 @@ The hazard function describes the probability of an event occurring (such
 
 \begin_layout Standard
 \begin_inset Formula 
-\[
-\lambda\left(t\right)=\lim_{\Delta t\to0}\frac{P\left(t\leq T<t+\Delta t\mid T\geq t\right)}{\Delta t}
-\]
+\begin{equation}
+\lambda\left(t\right)=\lim_{\Delta t\to0}\frac{P\left(t\leq T<t+\Delta t\mid T\geq t\right)}{\Delta t}\label{eq:hazard function def}
+\end{equation}
 
 \end_inset
 
@@ -2703,9 +2713,9 @@ The Cox proportional hazards model assumes that the hazard function can
 
 \begin_layout Standard
 \begin_inset Formula 
-\[
+\begin{equation}
 \lambda\left(t\mid\mathbf{X}\right)=\lambda_{0}\left(t\right)\exp\left(\beta_{1}X_{1}+\beta_{2}X_{2}+\ldots+\beta_{k}X_{k}\right)
-\]
+\end{equation}
 
 \end_inset
 
@@ -2733,6 +2743,40 @@ g predictor variable, holding all other predictor variables constant.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+The hazard ratio (HR) can be calculated for each predictor variable by taking
+ the exponential of the coefficient associated with that variable, which
+ gives the relative change in the hazard function associated with a one-unit
+ increase in that variable, while holding all other variables constant:
+\end_layout
+
+\begin_layout Plain Layout
+OR
+\end_layout
+
+\begin_layout Plain Layout
+The hazard ratio (HR) is defined as the ratio of the hazard functions for
+ two groups with different values of a predictor variable, while holding
+ all other predictor variables constant.
+ For example, let :
+\end_layout
+
+\begin_layout Plain Layout
+HR = λ(t | X1) / λ(t | X2) = exp(β(X1 - X2))
+\end_layout
+
+\begin_layout Plain Layout
+where X1 and X2 are two different values of the predictor variable, and
+ β is the coefficient associated with the predictor variable.
+ The hazard ratio represents the proportional change in the hazard function
+ associated with a unit change in the predictor variable.
+\end_layout
+
+\end_inset
+
 The hazard ratio (
 \begin_inset Formula $HR$
 \end_inset
@@ -2758,9 +2802,9 @@ Meaning then the hazard ratio for a given predictor associated with a one-unit
 
 \begin_layout Standard
 \begin_inset Formula 
-\[
+\begin{equation}
 HR_{i}=\exp\left(\beta_{i}\right),\quad i\in\hat{k}
-\]
+\end{equation}
 
 \end_inset
 
@@ -2782,9 +2826,9 @@ and
 
 \begin_layout Standard
 \begin_inset Formula 
-\[
+\begin{equation}
 HR_{i}=\exp\left(\beta_{i}\left(X_{i}^{(1)}-X_{i}^{(2)}\right)\right)
-\]
+\end{equation}
 
 \end_inset
 
@@ -2856,9 +2900,9 @@ The Cox regression model can also be used to estimate the survival function,
 
 \begin_layout Standard
 \begin_inset Formula 
-\[
+\begin{equation}
 S\left(t\mid\mathbf{X}\right)=\exp\left(-\stackrel[0]{t}{\int}\lambda\left(u\mid\mathbf{X}\right)\mathrm{d}u\right)
-\]
+\end{equation}
 
 \end_inset
 
@@ -2898,66 +2942,72 @@ Random Survival Forests
 \emph on
 Random Survival Forests
 \emph default
- (RSF) is a statistical learning method used in survival analysis, which
- combines the concepts of 
+ (RSF) is an ensemble machine learning method used for analyzing right-censored
+ survival data.
+ RSF combine the concepts of 
 \emph on
 survival analysis
 \emph default
  and 
 \emph on
-random forests
+random forests, 
 \emph default
+which allows it to handle issues commonly associated with traditional survival
+ analysis methods, such as restrictive assumptions about the model's parameters
+ (e.g.
+ proportionality in the Cox Regression model), the inability to handle nonlinear
+ relations in the data and issues with missing data, as well as issues associate
+d with regular random forest models, such as being restricted to regression
+ and classification tasks and the inability to handle right-censored survival
+ data 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Random Survival Forests"
+literal "false"
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Explain right-censored data
+\end_layout
+
+\end_inset
+
 .
 \end_layout
 
 \begin_layout Standard
-In Random Survival Forests, the survival time is treated as a continuous
- variable, and the data is partitioned recursively into subsets.
- This is done by randomly selecting a subset of variables and finding the
- optimal split in each node based on the log-rank test, which measures the
- difference in survival times between the two subsets created by the split.
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Explain log-rank test
-\end_layout
-
+Each tree of the forests ouputs a cummulative hazard function 
+\begin_inset Formula $H(t\mid\mathbf{x})$
 \end_inset
 
-This process is repeated multiple times to create a forest of decision trees.
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-One key difference between the decision tree used in RSF and other tree-based
- algorithms is that the splitting criterion is based on survival outcomes,
- rather than just predicting a binary outcome.
- This is done by evaluating the quality of each split in terms of the log-rank
- test statistic, which measures the difference in survival between the two
- subsets.
-\end_layout
-
+, which takes an input vector 
+\begin_inset Formula $\mathbf{x}$
 \end_inset
 
+ and a set time 
+\begin_inset Formula $t$
+\end_inset
 
-\end_layout
+ and assigns a probability of an event occuring at time 
+\begin_inset Formula $t$
+\end_inset
 
-\begin_layout Standard
-In each tree of the forest, a prediction is made for the survival time of
- an individual based on the terminal node in which the individual falls.
- The forest's overall prediction is then computed as the average of the
- individual tree predictions.
-\end_layout
+ to the individual 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
 
-\begin_layout Standard
-One of the advantages of using RSF over traditional survival analysis methods
- is that it can handle complex, high-dimensional data and interactions between
- variables, which may not be possible with traditional methods.
- Additionally, RSF can handle missing data, which is a common issue in survival
- analysis.
+.
+ The forest's overall prediction ,i.e.
+ 
+\emph on
+the ensemble commulative hazard,
+\emph default
+ is then computed as the average of the individual tree predictions.
 \end_layout
 
 \begin_layout Standard
@@ -2970,9 +3020,392 @@ Random Survival Forests have been used in a wide range of applications,
 Building a Random Survival Forests model
 \end_layout
 
-\begin_layout Itemize
-describe the process of building a random survival forests model ( most
- importantly the trees)
+\begin_layout Standard
+The algorithm for building a RSF model works as follows 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Random Survival Forests"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+A set number of subsets is taken from the data using the bootstrap sampling
+ method, with each sample excluding on average 37% of the original data.
+ The excluded data are referred to as 
+\emph on
+out-of-bag data 
+\emph default
+(OOB) and they are used for computing the ensemble commulative hazard.
+\end_layout
+
+\begin_layout Enumerate
+A 
+\emph on
+binary survival tree 
+\emph default
+(BST) is built for each of the bootstrap samples.
+ The algorithm for growing a BST generally follows the same principles as
+ described in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Decision-Trees"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ , i.e.
+ at each node the algorithm iterates over all possible features and values
+ and decides on the best split, with the metric used for deciding the split
+ being the difference between survival times predicted by the given child
+ nodes (the split rule is explained in detail in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Split-rules"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Explain the specifics of this metric - logrank test and its variations
+\end_layout
+
+\end_inset
+
+ The goal in this case is to maximize the survival difference in order to
+ separate dissimilar cases.
+ Another difference between a BST and a regular decision tree is that each
+ node contains not only information about the survival time denoted by 
+\begin_inset Formula $T$
+\end_inset
+
+, but also binary information about the censoring status denoted by 
+\begin_inset Formula $\delta$
+\end_inset
+
+.
+ The algorithm is restricted by a criterion that each node should contain
+ at least 1 unique death, which leads to a point where no new splits can
+ be made meaning the tree has been fully grown.
+ Once this point is reached, each terminal node outputs a 
+\emph on
+cumulative hazard function 
+\emph default
+(CHF) denoted by 
+\begin_inset Formula $\hat{H}(t)$
+\end_inset
+
+ which is calculated as follows:
+\begin_inset Newline newline
+\end_inset
+
+Let 
+\begin_inset Formula $A$
+\end_inset
+
+ denote the set of all terminal nodes, then each node 
+\begin_inset Formula $j\in A$
+\end_inset
+
+ contains a set of cases (individuals) 
+\begin_inset Formula $\left(T_{1,j},\delta_{1,j}\right),\ldots,\left(T_{n(j),j},\delta_{n(j),j}\right)$
+\end_inset
+
+, where 
+\begin_inset Formula $n(j)$
+\end_inset
+
+ is the number of cases belonging to the node 
+\begin_inset Formula $j$
+\end_inset
+
+, 
+\begin_inset Formula $T_{i,j}$
+\end_inset
+
+ is the survival time of the 
+\begin_inset Formula $i$
+\end_inset
+
+-th case belonging to the node 
+\begin_inset Formula $j$
+\end_inset
+
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+define survival time
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Formula $\delta_{i,j}\in\left\{ 0,1\right\} $
+\end_inset
+
+ is the censoring status of the 
+\begin_inset Formula $i$
+\end_inset
+
+-th case at time 
+\begin_inset Formula $T_{i,j}$
+\end_inset
+
+ , with 
+\begin_inset Formula $\delta_{i,j}=0$
+\end_inset
+
+ if the individual is right-censored (e.g.
+ has a functioning graft) and 
+\begin_inset Formula $\delta_{i,j}=1$
+\end_inset
+
+ if an event has been observered at a given at time 
+\begin_inset Formula $T_{i,j}$
+\end_inset
+
+ (e.g.
+ graft failure).
+ Then let 
+\begin_inset Formula $t_{1,j}<t_{2,j}<\ldots<t_{N(j),j}$
+\end_inset
+
+ denote the time of the different events observed in node 
+\begin_inset Formula $j$
+\end_inset
+
+, where 
+\begin_inset Formula $N(j)=\sum_{i=1}^{n(j)}\delta_{i,j}$
+\end_inset
+
+ is the total number of observed events.
+ The CHF for the given node is then given by the Nelson-Maier estimator
+\begin_inset Formula 
+\begin{equation}
+\hat{H}_{j}(t)=\sum_{t_{k,j}\leq t}\frac{d_{k,j}}{Y_{k,j}}\label{eq:node CHF}
+\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $d_{k,j}$
+\end_inset
+
+ is the number of events observed at time 
+\begin_inset Formula $t_{k,j}$
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Unclear: should this by 
+\begin_inset Quotes sld
+\end_inset
+
+at time
+\begin_inset Quotes srd
+\end_inset
+
+ or 
+\begin_inset Quotes sld
+\end_inset
+
+by time
+\begin_inset Quotes srd
+\end_inset
+
+ coz if it's just 
+\begin_inset Quotes sld
+\end_inset
+
+at time
+\begin_inset Quotes srd
+\end_inset
+
+ then the sum wouldn't make sense.
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Formula $Y_{k,j}$
+\end_inset
+
+ is the number of people at risk at time 
+\begin_inset Formula $t_{k,j}$
+\end_inset
+
+ i.e.
+ the number of individuals that are yet to experience an event.
+\begin_inset Newline newline
+\end_inset
+
+When a new input vector 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ is introduced to the model, the tree is followed from the top down until
+ a terminal node 
+\begin_inset Formula $j\in A$
+\end_inset
+
+ is reached.
+ The CHF of the whole tree is then given by
+\begin_inset Formula 
+\begin{equation}
+H(t\mid\mathbf{x})=\hat{H}_{j}(t)\label{eq:tree CHF}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Next, two ensemble commulative hazards functions are calculated.
+ The first, called the 
+\emph on
+bootstrap ensemble CHF
+\emph default
+ (denoted by 
+\begin_inset Formula $H_{e}^{*}),$
+\end_inset
+
+simply averages over all grown survival trees.
+ The second, called the 
+\emph on
+OOB ensemble CHF
+\emph default
+ (denoted by 
+\begin_inset Formula $H_{e}^{**}$
+\end_inset
+
+), averages over trees where a given input was not used in the training
+ of the given tree i.e.
+ is a case of the OOB data.
+ Suppose an example 
+\begin_inset Formula $\mathbf{x}_{i}$
+\end_inset
+
+ is taken from the training dataset, let 
+\begin_inset Formula $B$
+\end_inset
+
+ denote the total number of bootstrap samples, and let 
+\begin_inset Formula $H_{b}^{*}(t|\mathbf{x})$
+\end_inset
+
+ denote the CHF predicted by the tree grown from the 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+bootstrap sample 
+\begin_inset Formula $b\in\hat{B}$
+\end_inset
+
+ and let
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+
+\begin_inset Formula 
+\[
+I_{i,b}=\begin{cases}
+1 & \textrm{if \ensuremath{\mathbf{x}_{i}} belongs to the OOB subset of the dataset for bootstrap sample \ensuremath{b}}\\
+0 & \textrm{else, i.e. \ensuremath{\mathbf{x}_{i}} was used in the training of a tree grown from the bootstrap sample \ensuremath{b} }
+\end{cases}
+\]
+
+\end_inset
+
+The bootstrap ensemble CHF is then defined as
+\begin_inset Formula 
+\begin{equation}
+H_{e}^{*}(t\mid\mathbf{x}_{i})=\frac{1}{B}\sum_{b=1}^{B}H_{b}(t\mid\mathbf{x}_{i})
+\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $H_{b}(t\mid\mathbf{x}_{i})$
+\end_inset
+
+ is the CHF of a tree grown from the bootstrap sample 
+\begin_inset Formula $b$
+\end_inset
+
+, defined in (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:tree CHF"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+\begin_inset Newline newline
+\end_inset
+
+In contrast, the OOB ensemble CHF is defined as 
+\begin_inset Formula 
+\begin{equation}
+H_{e}^{**}(t\mid\mathbf{x}_{i})=\frac{\sum_{b=1}^{B}I_{i,b}H_{b}(t\mid\mathbf{x}_{i})}{\sum_{b=1}^{B}I_{i,b}}\label{eq:OOB ensemble CHF}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Split rules
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Split-rules"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+TODO: Explain the log-rank statistic.
 \end_layout
 
 \begin_layout Standard
@@ -2980,57 +3413,48 @@ describe the process of building a random survival forests model ( most
 status open
 
 \begin_layout Plain Layout
-https://bmcmedresmethodol.biomedcentral.com/articles/10.1186/s12874-021-01375-x
+Copied from [5]:
 \end_layout
 
 \begin_layout Plain Layout
-Random survival forests Random Survival Forests is an ensemble tree-based
- method for the analysis of right-censored survival data and is an extension
- of the random forest method [18, 26].
- Survival trees are built by recursively partitioning the covariate space
- using binary splits to form groups of subjects who are similar according
- to the survival outcome [27].
- The RSF predictor ensemble is formed by aggregating the results of many
- survival trees.
- Here, we present the RSF algorithm for creating a tree ensemble for predicting
- survival for a given set of covariates, as described in [28].
+Computations were implemented using randomSurvivalForest software under
+ its default settings [Ishwaran and Kogalur (2007, 2008)].
+ In each instance 1000 trees were grown.
+ Each of the four splitting rules available in the software package were
+ used.
+ These were as follows [for more details see Ishwaran and Kogalur (2008)]:
 \end_layout
 
-\begin_layout Plain Layout
-1 Draw B (ntree) subsamples of a specified sample size from the original
- dataset (with or without replacement).
+\begin_layout Enumerate
+A log-rank splitting rule (logrank) that splits nodes by maximization of
+ the log- rank test statistic [Segal (1988), LeBlanc and Crowley (1993)].
 \end_layout
 
-\begin_layout Plain Layout
-2 Grow a survival tree for each subsample b=1,...,B.
+\begin_layout Enumerate
+A conservation-of-events splitting rule (conserve) that splits nodes by
+ finding daughters closest to the conservation-of-events principle.
 \end_layout
 
-\begin_layout Plain Layout
-(a) At each tree node select a subset of the predictor variables available
- to try as candidates for splitting (mtry).
+\begin_layout Enumerate
+3.
+ A log-rank score rule (logrankscore) that splits nodes using a standardized
+ log- rank statistic [Hothorn and Lausen (2003)].
 \end_layout
 
-\begin_layout Plain Layout
-(b) Select the node split from the candidate variables that maximizes the
- survival difference between the daughter nodes based on selected split
- criterion (splitrule) up to the number of predefined split points (nsplit).
-\end_layout
-
-\begin_layout Plain Layout
-(c) Repeat (a)-(b) recursively on each daughter node until stopping criterion
- is met, often the number of unique cases in each terminal node (nodesize).
-\end_layout
-
-\begin_layout Plain Layout
-3 Calculate the cumulative hazard function for each tree using the terminal
- nodes.
- Aggregate information from the B survival trees to obtain a risk prediction
- ensemble.
+\begin_layout Enumerate
+4.
+ A random log-rank splitting rule (logrankrandom).
+ A random split is selected for each of the p candidate variables in a node,
+ and the variable with maximum log-rank statistic (at its random split point)
+ is used to split the node.
 \end_layout
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Note Note
 status open
 
@@ -3085,6 +3509,501 @@ To explain log-rank splitting, consider a specific tree node to be split.
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Let's consider a dataset with 
+\begin_inset Formula $n$
+\end_inset
+
+ individuals, where each individual is described by a 
+\begin_inset Formula $k$
+\end_inset
+
+-dimensional vector of predictor variables 
+\begin_inset Formula $\mathbf{x}=\left(x_{1},\ldots,x_{k}\right)$
+\end_inset
+
+, and has an associated survival time 
+\begin_inset Formula $t$
+\end_inset
+
+ and censoring status 
+\begin_inset Formula $c$
+\end_inset
+
+.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+What is censoring status?
+\end_layout
+
+\end_inset
+
+ The censoring status indicates whether the survival time is observed or
+ right-censored (i.e., the event has not occurred by the end of the study).
+ The survival function 
+\begin_inset Formula $S\left(t\mid x\right)$
+\end_inset
+
+ is defined as the probability of surviving beyond time 
+\begin_inset Formula $t$
+\end_inset
+
+, given the predictor variables 
+\begin_inset Formula $x$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+The RSF algorithm can be summarized as follows:
+\end_layout
+
+\begin_layout Plain Layout
+1.Generate B bootstrap samples of the data: For each bootstrap sample, grow
+ a decision tree as follows:
+\end_layout
+
+\begin_layout Itemize
+a.
+ Select a random subset of predictor variables of size m (where m << p).
+\end_layout
+
+\begin_layout Itemize
+b.
+ For each node of the tree, select the best split point based on the log-rank
+ test statistic, which measures the difference in survival times between
+ the two subsets created by the split.
+\end_layout
+
+\begin_layout Itemize
+c.
+ Repeat steps a and b until the tree is fully grown.
+\end_layout
+
+\begin_layout Plain Layout
+2.
+ Aggregate the B trees to make predictions for a new individual:
+\end_layout
+
+\begin_layout Itemize
+a.
+ For each tree, find the terminal node to which the new individual belongs.
+\end_layout
+
+\begin_layout Itemize
+b.
+ Compute the survival probability for the new individual as the Kaplan-Meier
+ estimate of the survival function for the individuals in the terminal node.
+\end_layout
+
+\begin_layout Itemize
+Compute the final prediction for the new individual as the average of the
+ survival probabilities computed in step 3.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Calculating Prediction Error
+\end_layout
+
+\begin_layout Standard
+The prediction error of random survival forest models is calculated using
+ the 
+\emph on
+Harell's concordance index 
+\emph default
+(also known as 
+\emph on
+C-index
+\emph default
+) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Random Survival Forests"
+literal "false"
+
+\end_inset
+
+, which is a metric commonly used in medical research as well as machine
+ learning to evaluate the performance of predictive models.
+ The C-index is equal to the are under the 
+\emph on
+ROC curve
+\emph default
+ (short for Receiver Operating Characteristics curve), which is a graphical
+ plot that illustrates the performance of a binary classification model
+ at different classification thresholds 
+\begin_inset CommandInset citation
+LatexCommand cite
+after "Classification - ROC Curve and AUC"
+key "ML Crash Course"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+https://developers.google.com/machine-learning/crash-course/classification/roc-and
+-auc#:~:text=An%20ROC%20curve%20(receiver%20operating,False%20Positive%20Rate
+\end_layout
+
+\end_inset
+
+Specifically, it plots the 
+\emph on
+true positive rate 
+\emph default
+(TPR)
+\emph on
+ 
+\emph default
+defined as
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+TPR=\frac{TP}{TP+FN}
+\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $TP$
+\end_inset
+
+ is the number of 
+\emph on
+true positives
+\emph default
+ (i.e.
+ positive cases correctly classified
+\emph on
+ 
+\emph default
+by the model
+\emph on
+) 
+\emph default
+and 
+\begin_inset Formula $FN$
+\end_inset
+
+ is the number 
+\emph on
+false negatives
+\emph default
+ (i.e.
+ positive cases incorrectly classified as negative), against the 
+\emph on
+faalse positive rate 
+\emph default
+(FPR) defined as
+\begin_inset Formula 
+\begin{equation}
+FPR=\frac{FP}{FP+TN}
+\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $FP$
+\end_inset
+
+ is the number of 
+\emph on
+false positives (i.e.
+ 
+\emph default
+negative cases incorrectely classified as positive) and 
+\begin_inset Formula $TN$
+\end_inset
+
+ is the number of 
+\emph on
+true negatives 
+\emph default
+(i.e.
+ negative cases correctly classified as negative).
+\end_layout
+
+\begin_layout Standard
+Lowering the classification threshold results in more cases being classified
+ as positive, thus generally increasing both the true positive and the false
+ negative rate.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Roc_curve.svg/1024px-Roc_
+curve.svg.png
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The area under the ROC curve can be interpreted as the probability that
+ a given model will rank a random positive example more highly (e.g.
+ it will assign a more favourable hazard function) than a random negative
+ example.
+ The C-index can attain values from 0 to 1 with 1 meaning a perfect model
+ whose predictions are always correct and 0 meaning it's always wrong.
+ A random classifier that assigns the predicted value with a uniform distributio
+n, will have a C-index of 0.5.
+ Generally, models with a C-index above 0.7 are considered to be good predictors.
+\end_layout
+
+\begin_layout Standard
+In the case of RSF, it isn't neccessary to know the function of the ROC
+ curve explicitly, rather the C-index is calculated as follows 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Random Survival Forests"
+literal "false"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Enumerate
+Find all possible pairs of cases across the dataset while excluding the
+ following cases: 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+pairs 
+\begin_inset Formula $\left((T_{i},\delta_{i}),(T_{j},\delta_{j})\right)$
+\end_inset
+
+ where the case with the shorter survival time is right-censored
+\begin_inset Newline newline
+\end_inset
+
+ i.e.
+ 
+\begin_inset Formula $T_{i}<T_{j}\:\land\:\delta_{i}=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+pairs 
+\begin_inset Formula $\left((T_{i},\delta_{i}),(T_{j},\delta_{j})\right)$
+\end_inset
+
+ with equal survival times where both cases are also right-censored
+\begin_inset Newline newline
+\end_inset
+
+i.e.
+ 
+\begin_inset Formula $T_{i}=T_{j}\:\land\:\delta_{i}=\delta_{j}=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The cases that are left are called 
+\emph on
+permissable
+\emph default
+ and we denote their set by 
+\begin_inset Formula $P.$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+For each permissable pair 
+\begin_inset Formula $\left((T_{i},\delta_{i}),(T_{j},\delta_{j})\right)$
+\end_inset
+
+ a value for 
+\begin_inset Formula $c_{i,j}$
+\end_inset
+
+ is assigned as follows:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+if 
+\begin_inset Formula $T_{i}\neq T_{j}$
+\end_inset
+
+ then
+\begin_inset Formula 
+\[
+c_{i,j}=\begin{cases}
+1 & \textrm{if \ensuremath{T_{i}<T_{j}\Longrightarrow i} has worse predicted outcome than \ensuremath{j} (\ref{eq:worse outcome def})}\\
+0.5 & \textrm{if }\ensuremath{T_{i}<T_{j}\Longrightarrow}\textrm{predicted outcomes of \ensuremath{i} and \ensuremath{j} are tied}\\
+0 & \textrm{else}
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+if 
+\begin_inset Formula $T_{i}=T_{j}$
+\end_inset
+
+
+\begin_inset Formula $\:\land\:\delta_{i}=\delta_{j}=1$
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+c_{i,j}=\begin{cases}
+1 & \textrm{if predicted outcomes of \ensuremath{i} and \ensuremath{j} are tied}\\
+0.5 & \textrm{else}
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+if 
+\begin_inset Formula $T_{i}=T_{j}$
+\end_inset
+
+
+\begin_inset Formula $\:\land\:\delta_{i}\neq\delta_{j}$
+\end_inset
+
+ 
+\begin_inset Formula 
+\[
+c_{i,j}=\begin{cases}
+1 & \textrm{if }\delta_{i}=1\Longrightarrow\textrm{\ensuremath{i} has worse predicted outcome than \ensuremath{j} }\\
+0.5 & \textrm{else}
+\end{cases}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+The C-index is then given by
+\begin_inset Formula 
+\begin{equation}
+C=\frac{1}{|P|}\sum_{i,j\in P,i\neq j}c_{i,j}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Whether a given case has a better or a worse predicted outcome is decided
+ as follows.
+ Let 
+\begin_inset Formula $t_{1},\ldots t_{n}$
+\end_inset
+
+ be a set of pre-chosen time points, then case 
+\begin_inset Formula $i$
+\end_inset
+
+ has a worse predicted outcome than case 
+\begin_inset Formula $j$
+\end_inset
+
+ if
+\begin_inset Formula 
+\begin{equation}
+\sum_{k=1}^{n}H_{e}^{**}(t_{k}\mid\mathbf{x}_{i})<\sum_{k=1}^{n}H_{e}^{**}(t_{k}\mid\mathbf{x}_{j})\label{eq:worse outcome def}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $\mathbf{x}_{l}$
+\end_inset
+
+ is a feature vector of the case 
+\begin_inset Formula $l,$
+\end_inset
+
+and 
+\begin_inset Formula $H_{e}^{**}$
+\end_inset
+
+ is the OOB ensemble CHF defined in (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:OOB ensemble CHF"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+The prediction 
+\emph on
+error
+\emph default
+ (
+\begin_inset Formula $PE$
+\end_inset
+
+) is then simply given by 
+\begin_inset Formula $PE=1-C$
+\end_inset
+
+.
+ 
 \end_layout
 
 \begin_layout Section
@@ -3507,6 +4426,27 @@ Breiman, L.
 \end_inset
 
 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Nice sentences:
+\end_layout
+
+\begin_layout Itemize
+The process is repeated in a recursive fashion for each subsequent node.
+\end_layout
+
+\begin_layout Itemize
+By max- imizing survival difference, the tree pushes dissimilar cases apart.
+ Eventually, as the number of nodes increase, and dissimilar cases become
+ separated, each node in the tree becomes homogeneous and is populated by
+ cases with similar survival.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Bibliography
@@ -3589,7 +4529,8 @@ literal "false"
 
 \end_inset
 
-H, Ishwaran, U.
+H.
+ Ishwaran, U.
  B.
  Kogalur, E.
  H.
@@ -3604,7 +4545,31 @@ Random survival forests.
 Ann.
  Appl.
  Stat.
- 2 (3) 841 - 860, September 2008
+ 2 (3) 841 - 860, September 200
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "ML Crash Course"
+literal "false"
+
+\end_inset
+
+Google Developers, 
+\emph on
+Machine Learning Crash Course, 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://developers.google.com/machine-learning/crash-course
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body
