@@ -487,7 +487,7 @@ Final dummy paragraph.
 \align center
 \begin_inset External
 	template PDFPages
-	filename Klouček Matěj.pdf
+	filename zadani.pdf
 	extra LaTeX "pages=-"
 
 \end_inset
@@ -3516,6 +3516,59 @@ To explain log-rank splitting, consider a specific tree node to be split.
 status open
 
 \begin_layout Plain Layout
+The math behind RSF can be broken down into the following steps:
+\end_layout
+
+\begin_layout Enumerate
+At each node in the decision tree, a subset of p variables is randomly selected
+ from the total set of predictors.
+ The best variable is selected as the one that maximizes the difference
+ in survival times between the two subsets of data created by the split.
+ The log-rank test is commonly used as the criterion for measuring the differenc
+e in survival times between the two groups.
+ The log-rank test statistic is defined as:
+\begin_inset Graphics
+	filename pasted1.png
+
+\end_inset
+
+where I(s) and I(t) are the indices of the individuals in the two subsets
+ created by the split, Y_i is the survival time of individual i, and delta_i
+ is an indicator variable that takes the value 1 if individual i experiences
+ an event (i.e., death) and 0 otherwise.
+\end_layout
+
+\begin_layout Enumerate
+Once the best variable has been selected, the data is split into two subsets
+ based on a threshold value.
+ The threshold value is chosen such that the difference in survival times
+ between the two groups is maximized.
+\end_layout
+
+\begin_layout Enumerate
+The process is repeated recursively for each subset of data until a stopping
+ criterion is met.
+ This typically occurs when a node contains a minimum number of individuals
+ or when the maximum tree depth is reached.
+\end_layout
+
+\begin_layout Enumerate
+4: Once all the decision trees have been constructed, they are aggregated
+ to create the random survival forest.
+ The forest's overall prediction for the survival time of an individual
+ is computed as the average of the individual tree predictions.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 Let's consider a dataset with 
 \begin_inset Formula $n$
 \end_inset
@@ -3756,6 +3809,16 @@ Lowering the classification threshold results in more cases being classified
 \begin_layout Standard
 \begin_inset Note Note
 status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename Roc_curve.svg.png
+	lyxscale 50
+
+\end_inset
+
+
+\end_layout
 
 \begin_layout Plain Layout
 https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Roc_curve.svg/1024px-Roc_
