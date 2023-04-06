@@ -508,7 +508,7 @@ Acknowledgment:
 \begin_layout Standard
 \noindent
 I would like to thank ............................................
- for (his/her expert guidance) and express my gratitude to ..........................................
+ for (his/her expert guidance) and expres´s my gratitude to ..........................................
  for (his/her language assistance).
 \end_layout
 
@@ -818,7 +818,8 @@ Abstrakt:
 \lang czech
 Klíčová slova:
 \emph default
- klíčová slova (nebo výrazy) seřazená podle abecedy a oddělená čárkou
+ analýza přežívání, random survival forests, strojové učení, transplantace
+ ledvin
 \end_layout
 
 \begin_layout Standard
@@ -943,7 +944,8 @@ Abstract:
 \emph on
 Key words:
 \emph default
- keywords in alphabetical order separated by commas
+ Machine learning, Random survival forests, Renal transplantation, Survival
+ analysis
 \end_layout
 
 \begin_layout Standard
@@ -2444,24 +2446,188 @@ Maybe give some data about how hard it is to find a suitable match for a
 \end_layout
 
 \begin_layout Section
-Survival analysis
+Survival Analysis
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
+Survival analysis is a collection of statistical procedures for data analysis
+ for which the outcome variable of interest is time until an event occurs,
+ usually referred to as 
+\emph on
+time-to-event 
+\emph default
+or 
+\emph on
+survival time.
 
-\begin_layout Plain Layout
-https://www2.karlin.mff.cuni.cz/~pesta/NMFM404/survival.html#References
+\emph default
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Survival Analysis self-learn"
+literal "false"
+
+\end_inset
+
+.
+ More specifically, time-to-event refers to the time from the beginning
+ of a follow-up i.e.
+ the period during which the subject of a study is observed, usually from
+ the date of diagnosis, the start of a treatment or transplantation, until
+ the occurrence of an event of interest, usually meaning the death of a
+ patient, disease incidence, relapse from remission, recovery or in the
+ case of kidney transplantation: 
+\emph on
+graft failure
+\emph default
+.
+ Survival analysis involves several statistical techniques that are used
+ during the pre-transplant procedure as a part of the process of finding
+ compatible donor-recipient pairing, namely the 
+\emph on
+Kaplan-Meier estimator
+\emph default
+, the 
+\emph on
+Log-Rank test 
+\emph default
+and the 
+\emph on
+Cox proportional hazards model
+\emph default
+ just to name a few.
+ These will be explained in detail further in this chapter.
 \end_layout
 
-\begin_layout Plain Layout
-https://www2.karlin.mff.cuni.cz/~pesta/NMFM404/ph.html
+\begin_layout Subsection
+Data Censoring
 \end_layout
 
-\begin_layout Plain Layout
-https://www2.karlin.mff.cuni.cz/~pesta/NMFM404-2021.html
+\begin_layout Standard
+A crucial challenge that all survival analysis methods have to tackle is
+ 
+\emph on
+data censoring
+\emph default
+, which refers to the lack of data about the exact survival time of an individua
+l, which happens, for example, as a result of a study ending before the
+ said individual experiences an event or if the individual withdraws from
+ the study.
+ This kind of censoring is called 
+\emph on
+right censoring, 
+\emph default
+meaning that if the survival time were to be plotted along a horizontal
+ axis, the event would happen to the right side of the cut-off point of
+ the study, but it is unkown by how much.
+ 
 \end_layout
+
+\begin_layout Standard
+
+\emph on
+Left censored 
+\emph default
+data are also possible, but they are uncommon in the case of post-tranplantation
+ data as the the date of tranplantation is naturally almost always known.
+ Left censoring can happen, for example, in the case of predicting the survival
+ time after exposure to a virus, as the exact date of this occurence is
+ often unkown.
+\end_layout
+
+\begin_layout Subsection
+Survival and Hazard Functions
+\end_layout
+
+\begin_layout Standard
+The two fundamental functions of survival analysis are the 
+\emph on
+survival function 
+\emph default
+denoted by 
+\begin_inset Formula $S(t)$
+\end_inset
+
+ and the 
+\emph on
+hazard function, 
+\emph default
+also called the 
+\emph on
+instantaneous failure rate 
+\emph default
+denoted by 
+\emph on
+
+\begin_inset Formula $h(t)$
+\end_inset
+
+.
+ 
+\emph default
+The survival function describes the probability of an individual 
+\emph on
+surviving
+\emph default
+ (i.e.
+ not experiencing an event) longer, than a specified point in time 
+\begin_inset Formula $t$
+\end_inset
+
+.
+ In another words, it is definded as
+\begin_inset Formula 
+\begin{equation}
+S(t)=P(T>t)
+\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $T$
+\end_inset
+
+ is the random variable the survival time of an individual.
+ 
+\end_layout
+
+\begin_layout Standard
+In contrast, the hazard function, as hinted by its alternative name, gives
+ the the instantaneous potential per unit time for the event to occur, given
+ that the individual has survived up to time t, that is the hazard function
+ is focused 
+\emph on
+failing
+\emph default
+ (i.e.
+ event occuring) compared to the survival function which is focused on 
+\emph on
+not failing 
+\emph default
+(i.e.
+ surviving) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Survival Analysis self-learn"
+literal "false"
+
+\end_inset
+
+.
+ What is meant by the word 
+\emph on
+potential
+\emph default
+, is the probability of an event happening within a given time frame and
+ as this this potential is 
+\emph on
+instantenous
+\emph default
+, it is given by the following limit
+\begin_inset Formula 
+\begin{equation}
+h(t)=\lim_{\Delta t\to0}\frac{P\left(t\leq T<t+\Delta t\mid T\geq t\right)}{\Delta t}.
+\end{equation}
 
 \end_inset
 
@@ -2469,46 +2635,143 @@ https://www2.karlin.mff.cuni.cz/~pesta/NMFM404-2021.html
 \end_layout
 
 \begin_layout Standard
-Survival analysis is a statistical method used to analyze and model time-to-even
-t data, where the event of interest is the occurrence of a specific event,
- such as death, failure, or disease.
- In survival analysis, we are interested in estimating the probability of
- an event occurring over time and identifying factors that affect the timing
- of the event.
+While the survival functions may seem to be obvious option for describing
+ models aimed at predicting survival time, it is usually the hazard function,
+ with which the survival models are described by, since it provides a more
+ direct measure of risk over time.
+ Importantly, either of the function can be derived from the other one using
+ the following formulae´
+\begin_inset Formula 
+\begin{equation}
+S(t)=\exp\left[-\intop_{0}^{t}h(u)du\right]
+\end{equation}
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{equation}
+h(t)=-\left(\frac{\frac{dS(t)}{dt}}{S(t)}\right)
+\end{equation}
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-The data used in survival analysis typically include information on the
- time of occurrence of the event of interest and the status of the event
- at a particular time point.
- For example, in a clinical trial, the data may include the time from treatment
- initiation to relapse of a disease, and whether the patient is still alive
- or has died at a specific follow-up time.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Maybe write a paragraph about 
+\emph on
+interaction 
+\emph default
+and 
+\emph on
+confounding
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Hazard Ratio
 \end_layout
 
 \begin_layout Standard
-Survival analysis involves several statistical techniques, including the
- Kaplan-Meier estimator, Cox proportional hazards model, and accelerated
- failure time models.
- The Kaplan-Meier estimator is used to estimate the survival function, which
- describes the probability of survival over time.
- The Cox proportional hazards model is used to model the hazard function,
- which describes the instantaneous risk of an event occurring at a particular
- time, as a function of covariates.
- The accelerated failure time models are used to model the log-transformed
- time-to-event data as a linear function of covariates.
+One of the most common goals of survival analysis is to describe a correlation
+ between a given 
+\emph on
+exposure variable
+\emph default
+ ( i.e.
+ a feature of an instance in the data) and the 
+\emph on
+outcome variable
+\emph default
+ (e.g.
+ survival time).
+ This relationship is described using the 
+\emph on
+hazard ratio
+\emph default
+ (HR), which describes the relative risk of an event occurring in one group
+ compared to another , i.e.
+ it is calculated as the ratio of the hazard functions of the two groups
+\begin_inset Formula 
+\begin{equation}
+\mathrm{HR}(t)=\frac{h_{1}(t)}{h_{2}(t)}
+\end{equation}
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Survival analysis is widely used in medical research, engineering, and social
- sciences to analyze time-to-event data and make predictions about future
- events.
- It is also used in business and economics to model customer retention,
- product failure, and other time-to-event phenomena.
+A hazard ratio of 1, means that the probability of an event occuring at
+ a given time is the same in both groups.
+ If, for example, said groups are sorted by the value of a certain exposure
+ variable and their hazard ratio is 1, this means that there is no relationship
+ between said exposure variable and the outcome variable.
+\end_layout
+
+\begin_layout Standard
+Analogously, a hazard ratio of 5 would mean that the first group has a five
+ times larger hazard than the second group 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Survival Analysis self-learn"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Kaplan-Meier Estimator
+\end_layout
+
+\begin_layout Standard
+TODO: Explain Kaplan-Meier Estimator
+\end_layout
+
+\begin_layout Subsection
+Log-rank Test
+\end_layout
+
+\begin_layout Standard
+TODO: Explain Log-rank test
 \end_layout
 
 \begin_layout Subsection
 Cox Regression
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Refine this section using 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Survival Analysis self-learn"
+literal "false"
+
+\end_inset
+
+ and add citatio
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2944,7 +3207,7 @@ survival analysis
 \emph on
 random forests, 
 \emph default
-which allows it to handle issues commonly associated with traditional survival
+which allows it to handle issues commonly associated with conventional survival
  analysis methods, such as restrictive assumptions about the model's parameters
  (e.g.
  proportionality in the Cox Regression model), the inability to handle nonlinear
@@ -2956,16 +3219,6 @@ d with regular random forest models, such as being restricted to regression
 LatexCommand cite
 key "Random Survival Forests"
 literal "false"
-
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Explain right-censored data
-\end_layout
 
 \end_inset
 
@@ -3135,17 +3388,7 @@ Let
 \begin_inset Formula $j$
 \end_inset
 
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-define survival time
-\end_layout
-
-\end_inset
-
-, 
+ , 
 \begin_inset Formula $\delta_{i,j}\in\left\{ 0,1\right\} $
 \end_inset
 
@@ -3185,7 +3428,19 @@ define survival time
 \end_inset
 
  is the total number of observed events.
- The CHF for the given node is then given by the Nelson-Maier estimator
+ The CHF for the given node is then given by the Nelson-Maier
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Nelson-Maier is not a thing according to google search...
+ possible referring to either the Kaplan-Meier estimator or the Nelson-Aalen
+ estimator.
+\end_layout
+
+\end_inset
+
+ estimator
 \begin_inset Formula 
 \begin{equation}
 \hat{H}_{j}(t)=\sum_{t_{k,j}\leq t}\frac{d_{k,j}}{Y_{k,j}}\label{eq:node CHF}
@@ -3761,7 +4016,7 @@ false negatives
  (i.e.
  positive cases incorrectly classified as negative), against the 
 \emph on
-faalse positive rate 
+false positive rate 
 \emph default
 (FPR) defined as
 \begin_inset Formula 
@@ -3780,7 +4035,7 @@ where
 false positives (i.e.
  
 \emph default
-negative cases incorrectely classified as positive) and 
+negative cases incorrectly classified as positive) and 
 \begin_inset Formula $TN$
 \end_inset
 
@@ -3815,7 +4070,7 @@ curve.svg.png
 \begin_layout Standard
 The area under the ROC curve can be interpreted as the probability that
  a given model will rank a random positive example more highly (e.g.
- it will assign a more favourable hazard function) than a random negative
+ it will assign a more favorable hazard function) than a random negative
  example.
  The C-index can attain values from 0 to 1 with 1 meaning a perfect model
  whose predictions are always correct and 0 meaning it's always wrong.
@@ -3825,8 +4080,8 @@ n, will have a C-index of 0.5.
 \end_layout
 
 \begin_layout Standard
-In the case of RSF, it isn't neccessary to know the function of the ROC
- curve explicitly, rather the C-index is calculated as follows 
+In the case of RSF, it isn't necessary to know the function of the ROC curve
+ explicitly, rather the C-index is calculated as follows 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Random Survival Forests"
@@ -3880,7 +4135,7 @@ i.e.
 \begin_layout Standard
 The cases that are left are called 
 \emph on
-permissable
+permissible
 \emph default
  and we denote their set by 
 \begin_inset Formula $P.$
@@ -3891,7 +4146,7 @@ permissable
 
 \end_deeper
 \begin_layout Enumerate
-For each permissable pair 
+For each permissible pair 
 \begin_inset Formula $\left((T_{i},\delta_{i}),(T_{j},\delta_{j})\right)$
 \end_inset
 
@@ -4301,7 +4556,7 @@ Data inputation: scripts to handle missing data
 \end_layout
 
 \begin_layout Itemize
-Discuss right-censored data (Patients with still working grafts)
+Discuss right-censored data
 \end_layout
 
 \begin_layout Section
@@ -4350,11 +4605,11 @@ Try to locally differentate ethnic groups within the UNOS database, possibly
 \end_layout
 
 \begin_layout Section
-Comparison to previously developed models
+Comparison to conventional models
 \end_layout
 
 \begin_layout Standard
-Discussion about how this work compared to the previous ones.
+Is this even an improvement?
 \end_layout
 
 \begin_layout Chapter*
@@ -4448,6 +4703,22 @@ Singer, J.
  It's about time: Using discrete-time survival analysis to study duration
  and the timing of events.
  Journal of Educational Statistics, 18(2), 155-195.
+\end_layout
+
+\begin_layout Plain Layout
+Survival analysis:
+\end_layout
+
+\begin_layout Itemize
+https://www2.karlin.mff.cuni.cz/~pesta/NMFM404/survival.html#References
+\end_layout
+
+\begin_layout Itemize
+https://www2.karlin.mff.cuni.cz/~pesta/NMFM404/ph.html
+\end_layout
+
+\begin_layout Itemize
+https://www2.karlin.mff.cuni.cz/~pesta/NMFM404-2021.html
 \end_layout
 
 \begin_layout Plain Layout
