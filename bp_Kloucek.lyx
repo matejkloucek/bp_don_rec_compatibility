@@ -2738,15 +2738,294 @@ Kaplan-Meier Estimator
 \end_layout
 
 \begin_layout Standard
-TODO: Explain Kaplan-Meier Estimator
+One of the most widely used methods to estimate the survival function is
+ the 
+\emph on
+Kaplan-Meier estimator 
+\emph default
+that works as follows.
+ Let there be a dataset containing 
+\begin_inset Formula $n$
+\end_inset
+
+ entries with each entry 
+\begin_inset Formula $i$
+\end_inset
+
+ containing information about the individual's survival time 
+\begin_inset Formula $T_{i}$
+\end_inset
+
+ and censoring status 
+\begin_inset Formula $\delta_{i}$
+\end_inset
+
+, where 
+\begin_inset Formula $\delta_{i}=1$
+\end_inset
+
+ if an event has been observed at time 
+\begin_inset Formula $T_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $\delta_{i}=0$
+\end_inset
+
+ if the entry is right censored.
+ Let 
+\begin_inset Formula $\tau$
+\end_inset
+
+ denote the set of all unique event times, i.e 
+\begin_inset Formula $\tau\coloneqq\left\{ T_{i}\mid\delta_{i}=1,\:i=0,\ldots,n\right\} ,$
+\end_inset
+
+ let 
+\begin_inset Formula $f_{j}$
+\end_inset
+
+ denote the denote the number of individuals who fail at time 
+\begin_inset Formula $t_{j}$
+\end_inset
+
+ and let 
+\begin_inset Formula $r_{j}$
+\end_inset
+
+ denote the number of individuas at risk at time 
+\begin_inset Formula $t_{j}$
+\end_inset
+
+ (i.e.
+ have yet to experience an event or are yet to be censored), then 
+\begin_inset Formula $\forall t_{j}\in\tau$
+\end_inset
+
+ the probability of an individual surving past 
+\begin_inset Formula $t_{j}$
+\end_inset
+
+ for 
+\begin_inset Formula $j=1,\ldots,|\tau|$
+\end_inset
+
+ given that they have already survived until at least 
+\begin_inset Formula $t_{j}$
+\end_inset
+
+ is given by the conditional probability 
+\begin_inset Formula $\Pr(T>t_{j}\mid T\geq t_{j})$
+\end_inset
+
+ that is deductible from the dataset as follows
+\begin_inset Formula 
+\begin{equation}
+\Pr(T>t_{j}\mid T\geq t_{j})=1-\frac{f_{j}}{r_{j}}.
+\end{equation}
+
+\end_inset
+
+Note that the number of individuals at risk does not take in account the
+ individuals that were previously censored, that is 
+\begin_inset Formula $r_{j}=r_{j-1}-f_{j-1}-c_{j-1}$
+\end_inset
+
+, where 
+\begin_inset Formula $c_{j-1}$
+\end_inset
+
+is the number of individuals that were censored during 
+\begin_inset Formula $[t_{j-1},t_{j})$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+The survival function is a function that outputs the probability of surviving
+ past a given time 
+\begin_inset Formula $t$
+\end_inset
+
+, therefore, thanks to the 
+\emph on
+chain rule
+\emph default
+ of probability, the 
+\emph on
+Kaplan-Meier curve
+\emph default
+ 
+\begin_inset Formula $\hat{S}$
+\end_inset
+
+ estimates the survival function at times 
+\begin_inset Formula $t_{1},\ldots,t_{|\tau|}$
+\end_inset
+
+ as follows 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Survival Analysis self-learn"
+literal "false"
+
+\end_inset
+
+
+\begin_inset Formula 
+\begin{equation}
+\hat{S}(t_{j})=\Pr(T>t_{j})=\prod_{k=1}^{j}\Pr(T>t_{k}\mid T\geq t_{k}).
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Thanks to this notation, the Kaplan-Meier formula is often referred to as
+ the 
+\emph on
+product-limit formula 
+\emph default
+as it is a product of probabilities that is limited by the time point being
+ observed.
+ The Kaplan-Meier curve itself assumes that 
+\begin_inset Formula $\hat{S}(t)$
+\end_inset
+
+ remains constant over 
+\begin_inset Formula $t_{j}\leq t<t_{j+1}$
+\end_inset
+
+, therefore the curve has a 
+\begin_inset Quotes sld
+\end_inset
+
+stair-like
+\begin_inset Quotes srd
+\end_inset
+
+ shape.
 \end_layout
 
 \begin_layout Subsection
 Log-rank Test
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Log-rank-Test"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-TODO: Explain Log-rank test
+The log-rank test is statistical test used to compare the survival distribution
+ of two or more groups and decide whether their survival curves are statisticall
+y equivalent or not 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Survival Analysis self-learn"
+literal "false"
+
+\end_inset
+
+.
+ The log-rank statistic is also used as a split-rule criterion for building
+ survival trees that are explained in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Random-Survival-Forests"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, where it is used to compare the difference in survival times observed
+ between the two groups that are created by a possible split in a given
+ node of a survival tree.
+ Therefore, the following explanation of the log-rank statistic is only
+ concerned with comparing two groups.
+\end_layout
+
+\begin_layout Standard
+Assuming that a dataset contains information about two groups of individuals
+ along with their survival time and cesnoring status, let 
+\begin_inset Formula $\tau$
+\end_inset
+
+ again denote the set of all unique event times regardless of group.
+ Then 
+\begin_inset Formula $\forall t_{j}\in\tau$
+\end_inset
+
+ an expected count of failures 
+\begin_inset Formula $e_{j}^{(i)}$
+\end_inset
+
+ is computed for each group
+\begin_inset Formula 
+\begin{equation}
+e_{j}^{(1)}=\frac{r_{j}^{(1)}}{r_{j}^{(1)}+r_{j}^{(2)}}\cdot(f_{j}^{(1)}+f_{j}^{(2)}),\qquad e_{j}^{(2)}=\frac{r_{j}^{(2)}}{r_{j}^{(1)}+r_{j}^{(2)}}\cdot(f_{j}^{(1)}+f_{j}^{(2)})
+\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $r_{j}^{(i)}$
+\end_inset
+
+ is the number of individuals from group 
+\begin_inset Formula $i$
+\end_inset
+
+ at risk at time 
+\begin_inset Formula $t_{j}$
+\end_inset
+
+ and 
+\begin_inset Formula $f_{j}^{(i)}$
+\end_inset
+
+ is the number of failures in group 
+\begin_inset Formula $i$
+\end_inset
+
+ at time 
+\begin_inset Formula $t_{j}.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Let 
+\begin_inset Formula $O_{i}-E_{i}=\sum_{t_{j}\in\tau}f_{j}^{(i)}-e_{j}^{(i)}$
+\end_inset
+
+ represent the sum of the differences between the observed and the expected
+ counts of failures over all of the unique event times for group 
+\begin_inset Formula $i$
+\end_inset
+
+.
+ Then the log-rank statistic for the group 
+\begin_inset Formula $i$
+\end_inset
+
+ is given by 
+\begin_inset Formula 
+\begin{equation}
+L^{(i)}=\frac{(O_{i}-E_{i})^{2}}{\mathrm{Var}(O_{i}-E_{i})}
+\end{equation}
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -3190,6 +3469,13 @@ Explain score test - logrank test
 
 \begin_layout Section
 Random Survival Forests
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Random-Survival-Forests"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3308,10 +3594,12 @@ noprefix "false"
  at each node the algorithm iterates over all possible features and values
  and decides on the best split, with the metric used for deciding the split
  being the difference between survival times predicted by the given child
- nodes (the split rule is explained in detail in 
+ nodes.
+ This is done by maximazing the log-rank statistic described in detail in
+ (the split rule is explained in detail in 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "subsec:Split-rules"
+reference "subsec:Log-rank-Test"
 plural "false"
 caps "false"
 noprefix "false"
@@ -3319,18 +3607,6 @@ noprefix "false"
 \end_inset
 
 ).
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Explain the specifics of this metric - logrank test and its variations
-\end_layout
-
-\end_inset
-
- The goal in this case is to maximize the survival difference in order to
- separate dissimilar cases.
  Another difference between a BST and a regular decision tree is that each
  node contains not only information about the survival time denoted by 
 \begin_inset Formula $T$
@@ -4905,6 +5181,26 @@ Survival Analysis: A Self-Learning Text 3rd Edition.
  
 \emph default
 Springer, 2012
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "scikit-survival"
+literal "false"
+
+\end_inset
+
+S.
+ Pölsterl, scikit-survival: 
+\emph on
+A Library for Time-to-Event Analysis Built on Top of scikit-learn
+\emph default
+.
+ Journal of Machine Learning Research, vol.
+ 21, no.
+ 212, pp.
+ 1–6, 2020.
 \end_layout
 
 \end_body
