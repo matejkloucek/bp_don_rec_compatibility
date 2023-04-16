@@ -3618,7 +3618,7 @@ noprefix "false"
 
 .
  The algorithm is restricted by a criterion that each node should contain
- at least 1 unique death, which leads to a point where no new splits can
+ at least 1 unique death, which leads to a point where no new splithts can
  be made meaning the tree has been fully grown.
  Once this point is reached, each terminal node outputs a 
 \emph on
