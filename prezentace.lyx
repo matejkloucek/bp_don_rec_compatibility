@@ -272,15 +272,12 @@ Motivation
 
 \begin_deeper
 \begin_layout Itemize
-Patients wait months or even years on the waiting list
-\end_layout
-
-\begin_layout Itemize
 Currently used methods have limited scope - HLA typing
 \end_layout
 
 \begin_layout Itemize
-Machine learning methods could help uncover previously unknown correlations
+Machine learning methods can analyze larger datasets and thus can consider
+ more variables when computing compatibility between patients and donors
 \end_layout
 
 \end_deeper
@@ -395,12 +392,8 @@ Hazard function
 \begin_inset Formula $h(t)$
 \end_inset
 
- gives the instantaneous potential per unit time for an avent to occur at
- time 
-\begin_inset Formula $t$
-\end_inset
-
-, i.e.
+ describes the rate at which events occur over time, given that the individual
+ has survived up to that point, i.e.
  
 \begin_inset Formula $h(t)=\lim_{\Delta t\to0}\frac{P\left(t\leq T<t+\Delta t\mid T\geq t\right)}{\Delta t}$
 \end_inset
@@ -945,7 +938,7 @@ hline
 
 \begin_layout Plain Layout
 
-	T &  Events &  Censored &  At risk &      S 
+	t &  Events &  Censored &  At risk &      S 
 \backslash
 
 \backslash
@@ -1251,11 +1244,11 @@ Let
 \end_inset
 
  is for each group given by 
-\begin_inset Formula $e_{j}^{(1)}=\frac{r_{j}^{(1)}}{r_{j}^{(1)}+r_{j}^{(2)}}\cdot(f_{j}^{(1)}+f_{j}^{(2)})$
+\begin_inset Formula $e_{t}^{(1)}=\frac{r_{t}^{(1)}}{r_{t}^{(1)}+r_{t}^{(2)}}\cdot(f_{t}^{(1)}+f_{t}^{(2)})$
 \end_inset
 
  , 
-\begin_inset Formula $e_{j}^{(2)}=\frac{r_{j}^{(2)}}{r_{j}^{(1)}+r_{j}^{(2)}}\cdot(f_{j}^{(1)}+f_{j}^{(2)})$
+\begin_inset Formula $e_{t}^{(2)}=\frac{r_{t}^{(2)}}{r_{t}^{(1)}+r_{t}^{(2)}}\cdot(f_{t}^{(1)}+f_{t}^{(2)})$
 \end_inset
 
 .
@@ -1476,7 +1469,79 @@ status open
 
 
 \backslash
-begin{frame}{Results so Far}
+begin{frame}{Results So Far}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Test data split into cohorts by age, 1000 individuals sampled randomly from
+ each cohort
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{columns}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+begin{column}{.5
+\backslash
+textwidth}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Images/averageSurvivalByAgePlot1000.eps
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{column}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{column}{.5
+\backslash
+textwidth}
 \end_layout
 
 \begin_layout Plain Layout
@@ -1493,7 +1558,70 @@ centering
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename Images/averageSurvivalByAgePlot.eps
+	filename Images/kaplanMeierSample1000.eps
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{column}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{columns}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{frame}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{frame}{Results So Far}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename Images/overlayedPlots.eps
 	scale 70
 
 \end_inset
@@ -1525,7 +1653,7 @@ status open
 
 
 \backslash
-begin{frame}{Variable Importance}
+begin{frame}{What's Next}
 \end_layout
 
 \end_inset
@@ -1533,8 +1661,17 @@ begin{frame}{Variable Importance}
 
 \end_layout
 
-\begin_layout Standard
-TODO: try evaluating variable importance
+\begin_layout Itemize
+Avoiding discrimination against older people
+\end_layout
+
+\begin_layout Itemize
+Computing variable importance in order to improve the models performance.
+\end_layout
+
+\begin_layout Itemize
+Trying to make the model useable in real world - fitting the model onto
+ a dataset provided by IKEM
 \end_layout
 
 \begin_layout Standard
@@ -1547,15 +1684,6 @@ status open
 \backslash
 end{frame}
 \end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
 
 \begin_layout Plain Layout
 
