@@ -1018,21 +1018,75 @@ addcontentsline{toc}{chapter}{Introduction}
 \end_layout
 
 \begin_layout Standard
-The use of machine learning in the field of medicine has been gaining traction
- in recent years, and one area where it has the potential to make a significant
- impact is in the field of organ transplantations, specifically in helping
- to find compatible donor-recipient pairs.
- The goal of this thesis is to explore the use of machine learning methods
- to predict compatibility of donors and recipients, with the ultimate goal
- of improving the success rate of kidney transplants and thus potentially
- saving lives and consequently reducing the burden on the healthcare system.
- The process of finding a compatible donor for a transplant patient is a
- complex and time-consuming task, involving a variety of factors including
- among others blood type, HLA typing and medical history of both the donor
- and the recipient.
- Despite advances in medical technology, the process of finding a compatible
- donor is still challenging, with many patients waiting years for a suitable
- match.
+Kidney transplantation is the single best treatment for patients with end-stage
+ kidney disease as it has demonstrated the best quality of life improvement
+ and the best survival rate amongst other possible treatments 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Chronic kidney allograft loss,Systematic review"
+literal "false"
+
+\end_inset
+
+.
+ However, demand for allografts greatly exceeds supply 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Systematic review"
+literal "false"
+
+\end_inset
+
+ and finding a compatible donor-recipient pair is often a highly time-consuming
+ task, which results in patients spending a prolonged time on the waiting
+ list for potential transplantation.
+ While on the waiting list, patients have to undergo dialysis multiple times
+ a week for several hours, which supplements the functions of their failing
+ kidneys.
+ This is problematic not only because it greatly reduces the quality of
+ the patient's life and puts an additional burden on the the healthcare
+ system, but because time spent on dialysis also reduces the expected survival
+ time after a potential tranplantation 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Dialysis"
+literal "false"
+
+\end_inset
+
+.
+ It is therefore crucial to minimize the time patients spend on the waiting
+ list.
+\end_layout
+
+\begin_layout Standard
+Even more important than the swiftness of the donor-recipient match making,
+ is the quality of the given match.
+ Currently, only a handful of factors are taken into consideration when
+ looking for suitable donor-recipient pair, such as whether they are immunologic
+ally compatible, their medical histories and their blood type.
+ In recents years, imporovements in these techniques have succesfuly minimised
+ the risk of an acute transplantation rejection, which happens the recipient's
+ immune system percieves the graft as a foreign, withnin the first year
+ of the tranplantation below 
+\begin_inset Formula $15\%$
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Chronic kidney allograft loss"
+literal "false"
+
+\end_inset
+
+.
+ However, there may be other factors that influence the graft's long term
+ performance that are currently not accounted for.
+ Therefore, in order to reduce the ﬂow of people returning to the waiting
+ list because of failed grafts, it is necessary to uncover these patterns
+ and take them into account when computing compatibility between potential
+ donors and recipients.
  This is where machine learning can play a crucial role, by analyzing large
  amounts of data and identifying patterns that can help find compatible
  pairs or conversely detect incompatible pairings that would otherwise undergo
@@ -1040,17 +1094,28 @@ The use of machine learning in the field of medicine has been gaining traction
 \end_layout
 
 \begin_layout Standard
-The research will involve collecting and analyzing data on past transplantations
- from the US-based 
+The research will involve analyzing data on past transplantations from the
+ US-based 
 \emph on
 United Network for Organ Sharing (UNOS)
 \emph default
  dataset, including information on both living and deceased donors, recipients
  and their post-transplant outcome.
  This data will be used to train and test machine learning models that can
- predict compatibility between donors and recipients.
- The models will be evaluated using various metrics such as accuracy, precision,
- recall, and F1-score.
+ predict the patient's chances of surviving over time, given that he recieves
+ a graft from a particular donor.
+ These can then be compared in order to decide which donor-recipient pairing
+ are the most compatible.
+ This paper will focus particularyon the Random Survival Forests model which
+ has demonstrated a promising performance in related scientific papers 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Using ML methods to predict kidney transplant survival"
+literal "false"
+
+\end_inset
+
+ .
  Additionally, the research will also examine the performance of the developed
  models on different population samples, namely on the dataset provided
  by the Czech 
@@ -1226,15 +1291,7 @@ policy
 ) 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "100-page ML"
-literal "false"
-
-\end_inset
-
-
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Hands-On ML"
+key "100-page ML,Hands-On ML"
 literal "false"
 
 \end_inset
@@ -2424,29 +2481,156 @@ The most important hyperparameters to be set before the beginning of the
 \end_layout
 
 \begin_layout Chapter
-Renal transplantation
+Renal Transplantation
 \end_layout
 
 \begin_layout Section
-Pre-Transplant Procedures, HLA Typing and other important factors
+Chronic Kidney Disease
 \end_layout
 
-\begin_layout Itemize
-Discuss why even kidney transplantation happen and how are they usually
- performed (pre-tranplsant procedures etc.)
+\begin_layout Standard
+The 
+\emph on
+chronic kidney disease 
+\emph default
+(CKD)
+\emph on
+ 
+\emph default
+is a medical condition in which the kidneys gradually lose their ability
+ to filter waste products and excess fluids from the blood system.
+ The prevalence of CKD is estimated to be between 8% and 16% worldwide 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "CKD: Global Dimensions and Perspectives"
+literal "false"
+
+\end_inset
+
+ and is observed to be on the rise, as in 2015, CKD caused roughly 
+\begin_inset Formula $1.2$
+\end_inset
+
+ million deaths compared to 
+\begin_inset Formula $409,000$
+\end_inset
+
+ in 1990.
+ Symptoms of CKD include fatique, nausea, loss of apetite, leg swelling
+ and itching.
+ As the disease progresses, it may result in health complications such as
+ anemia, cardiovascular disease, bone disease and nerve demage.
+ In the final stages when the kidneys fail altogether, the affected person
+ needs to regularly undergo dialysis, which supplements the kidney's functions.
+ However this needs to be done several times a week and each session lasts
+ between 3 to 5 hours, which leads in a significant decrease in quality
+ of the patients life.
+ Thus when possible, transplantation is a much preferred treatment for CKD.
 \end_layout
 
-\begin_layout Itemize
-Explain HLA typing
-\end_layout
-
-\begin_layout Itemize
-Maybe give some data about how hard it is to find a suitable match for a
- patient
+\begin_layout Standard
+CKD is the main cause for renal transplnatation worldwide as roughly 90%
+ of all renal tranplantation are performed to treat the 
+\emph on
+end-stage renal disease
+\emph default
+, which is the final stage of CKD.
 \end_layout
 
 \begin_layout Section
+Pre-Transplant Procedures
+\end_layout
+
+\begin_layout Standard
+There are number of procedures that patients has to undergo before he is
+ admitted onto the kindey transplantation wainting list.
+\end_layout
+
+\begin_layout Standard
+Firstly, their overall health is checked in order evaluate whether they
+ are suitable candidate for the procedure.
+ This includes blood tests, imaging studies, and other diagnostic tests
+ to check for any underlying health conditions that could affect the success
+ of the transplant.
+\end_layout
+
+\begin_layout Standard
+Secondly, a process called 
+\emph on
+HLA typing 
+\emph default
+is performed both on the patient and the recipient.
+ The process involves testing the person's blood and tissue to determine
+ their human leukocyte antigen (HLA) type, which is a protein that plays
+ a key role in the body's immune response ( explained in more detail in
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:HLA-Typing"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+ Uncompatible pairs are discarded while potentionally compatible pairs have
+ their blood tested against each other in a laboratory using a process called
+ 
+\emph on
+cross-matching.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Cross-matching
+\emph default
+ involves testing the blood of the potential donor against the blood of
+ the recipient to ensure that there are no antibodies that could cause a
+ reaction.
+ If the recipient's serum contains antibodies that react with the donor's
+ cells, the complement will be activated and will cause the cells to burst,
+ or lyse.
+ This reaction can be seen under a microscope, and the degree of lysis can
+ be graded to determine the strength of the reaction.
+ When no reaction occurs, the cross-match is called 
+\emph on
+negative
+\emph default
+, whereas if a reaction occurs, the crossmatch is called 
+\emph on
+positive.
+ 
+\emph default
+A positive crossmatch doesn not automatically mean that the tranplantation
+ cannot proceed though, as a succesful tranplantation may still be possible,
+ given additional treatment, the pateint's health and if the reaction is
+ not too severe.
+ This is often the case when other donors are not easily available.
+\end_layout
+
+\begin_layout Subsection
+HLA Typing 
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:HLA-Typing"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+TODO: Explain HLA typing
+\end_layout
+
+\begin_layout Chapter
 Survival Analysis
+\end_layout
+
+\begin_layout Section
+Introduction to Survival Analysis
 \end_layout
 
 \begin_layout Standard
@@ -2731,6 +2915,10 @@ literal "false"
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Section
+Survival Analysis Methods
 \end_layout
 
 \begin_layout Subsection
@@ -4583,7 +4771,11 @@ error
 \end_layout
 
 \begin_layout Section
-Findings of Similar Papers and Potential Improvements
+Other Methods
+\end_layout
+
+\begin_layout Standard
+TODO: Mention some of the other methods referrenced in the related papers
 \end_layout
 
 \begin_layout Standard
@@ -4814,33 +5006,95 @@ Model training
 Data Selection
 \end_layout
 
-\begin_layout Itemize
-How did we obtain the data?
+\begin_layout Standard
+The data used for training was obtained from the United Network for Organ
+ Sharing (UNOS) which is a non-profit organisation that manages the organ
+ tranplsant system in the United States.
+ The organisation oversees transplantation procedures (matching donors,
+ ensuring fair graft allocation) for multiple organs such as kidneys, heart,
+ lungs, liver, pancreas and intestines.
+ As a result, UNOS maintains a large database of organ transplantations
+ carried between 1984 and today.
+ Specifically, there are more than a million entries regarding kidney tranplanta
+tions, an amount sufficient for training a machine learning model.
 \end_layout
 
-\begin_layout Itemize
-The work we did pre-analysis: importing from MongoDB, creating .csv files,
- using Helios cluster
+\begin_layout Standard
+The data can be obtained free of charge via <email-address> upon signing
+ relevant documents regarding the use of the data.
+ 
 \end_layout
 
-\begin_layout Itemize
-Trimming the dataset, scripts to exclude obviously irrelevant data
-\end_layout
-
-\begin_layout Itemize
-Data inputation: scripts to handle missing data
-\end_layout
-
-\begin_layout Itemize
-Discuss right-censored data
+\begin_layout Standard
+Alongside the data from the UNOS database, another dataset was provided
+ by the Czech Institue for Clinical and Experimental Medicine (IKEM), however
+ the dataset did not caontain enough data for training a machine learning
+ model.
 \end_layout
 
 \begin_layout Section
-Programming
+Tech Stack
 \end_layout
 
-\begin_layout Itemize
-packages: scikit-survival
+\begin_layout Standard
+A number of software tools and libraries were used for building the survival
+ analysis machine learning model, with the backbone of the application being
+ the Python based 
+\emph on
+Scikit-survival 
+\emph default
+package, which is itself built upon the 
+\emph on
+Scikit-learn
+\emph default
+ package.
+ Additionaly, the 
+\emph on
+pandas
+\emph default
+ and 
+\emph on
+numpy
+\emph default
+ libraries were used for both preprocessing of the data and evaluating the
+ models performance and finally, the 
+\emph on
+matplotlib
+\emph default
+ library was used to provide graphical output in order visually validate
+ models performance.
+\end_layout
+
+\begin_layout Subsection
+Python
+\end_layout
+
+\begin_layout Standard
+TODO: Write about python, and the jupyter notebooks
+\end_layout
+
+\begin_layout Subsection
+Scikit-learn and Scikit-survival
+\end_layout
+
+\begin_layout Standard
+TODO: Write about the two libraries
+\end_layout
+
+\begin_layout Subsection
+Other libraries
+\end_layout
+
+\begin_layout Standard
+TODO: Write about the other packages
+\end_layout
+
+\begin_layout Subsection
+Cluster Computing
+\end_layout
+
+\begin_layout Standard
+TODO: Write about the Helios cluster
 \end_layout
 
 \begin_layout Section
@@ -5044,6 +5298,91 @@ By max- imizing survival difference, the tree pushes dissimilar cases apart.
 \begin_layout Bibliography
 \begin_inset CommandInset bibitem
 LatexCommand bibitem
+key "Chronic kidney allograft loss"
+literal "false"
+
+\end_inset
+
+B.
+ J.
+ Nankivell, D.
+ R.
+ Kuypers.
+ 
+\emph on
+Diagnosis and prevention of chronic kidney allograft loss, 
+\emph default
+The Lancet, Vol.
+ 378, Issue 9800, 2011, 1428-1437
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "Systematic review"
+literal "false"
+
+\end_inset
+
+S.
+ Senanayake, N.
+ White, N.
+ Graves, H.
+ Healy, K.
+ Baboolal, S.
+ Kularatna.
+ 
+\emph on
+Machine learning in predicting graft failure following kidney transplantation:
+ A systematic review of published predictive models
+\emph default
+, International Journal of Medical Informatics, Volume 130, 2019, 103957
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "Dialysis"
+literal "false"
+
+\end_inset
+
+D.D.
+ Aufhauser Jr., et al.
+ 
+\emph on
+Impact of prolonged dialysis prior to renal transplantation.
+
+\emph default
+ Clin Transplant, 2018 Jun, 32(6):e13260
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "Using ML methods to predict kidney transplant survival"
+literal "false"
+
+\end_inset
+
+E.
+ Mark, D.
+ Goldsman, B.
+ Gurbaxani, P.
+ Keskinocak, J.
+ Sokol.
+ 
+\emph on
+Using machine learning and an ensemble of methods to predict kidney transplant
+ survival
+\emph default
+.
+ PLoS ONE 14(1), 2019, e0209068.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
 key "100-page ML"
 literal "true"
 
@@ -5092,6 +5431,17 @@ Foundations of Machine Learning
 \emph default
 .
  MIT Press, 2018.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "CKD: Global Dimensions and Perspectives"
+literal "false"
+
+\end_inset
+
+Chronic kidney disease: global dimension and perspectives
 \end_layout
 
 \begin_layout Bibliography
