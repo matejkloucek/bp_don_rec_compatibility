@@ -1725,7 +1725,7 @@ Let
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-p^{S_{0}}\left(a\right)=\frac{|\left\{ \left(\mathbf{x}^{(i)},y^{(i)}\right)\mid y^{(i)}=a,\left(\mathbf{x}^{(i)},y^{(i)}\right)\in S_{0}\right\} |}{|S_{0}|}.\label{eq:class tree proportion}
+p^{S_{0}}\left(a\right)=\frac{\left|\left\{ \left(\mathbf{x}^{(i)},y^{(i)}\right)\mid y^{(i)}=a,\left(\mathbf{x}^{(i)},y^{(i)}\right)\in S_{0}\right\} \right|}{\left|S_{0}\right|}.\label{eq:class tree proportion}
 \end{equation}
 
 \end_inset
@@ -1804,7 +1804,7 @@ The quality of the given split is then determined by the weighted sum of
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-H(S_{-},S_{+})=\frac{|S_{-}|}{|S|}H(S_{-})+\frac{|S_{+}|}{|S|}H(S_{+}),\label{eq:class tree entropy}
+H(S_{-},S_{+})=\frac{\left|S_{-}\right|}{\left|S\right|}H(S_{-})+\frac{\left|S_{+}\right|}{\left|S\right|}H(S_{+}),\label{eq:class tree entropy}
 \end{equation}
 
 \end_inset
@@ -1886,7 +1886,7 @@ dimensional vector whose attributes are of the same data type as in the
 
 \begin_inset Formula 
 \begin{equation}
-f(\mathbf{x},a)=p^{S_{n}}\left(a\right)=\frac{|\left\{ \left(\mathbf{x}^{(i)},y^{(i)}\right)\in S_{n}\mid y^{(i)}=a\right\} |}{|S_{n}|}.\label{eq:class tree final}
+f(\mathbf{x},a)=p^{S_{n}}\left(a\right)=\frac{\left|\left\{ \left(\mathbf{x}^{(i)},y^{(i)}\right)\in S_{n}\mid y^{(i)}=a\right\} \right|}{\left|S_{n}\right|}.\label{eq:class tree final}
 \end{equation}
 
 \end_inset
@@ -2163,7 +2163,7 @@ where
  is given by
 \begin_inset Formula 
 \begin{equation}
-p\left(c\right)=\frac{N_{c}}{|S_{0}|}
+p\left(c\right)=\frac{N_{c}}{\left|S_{0}\right|}
 \end{equation}
 
 \end_inset
@@ -2275,7 +2275,7 @@ When the model is presented with a new input
 , i.e.
 \begin_inset Formula 
 \begin{equation}
-f\left(\mathbf{x}\right)=\frac{1}{|S_{n}|}\sum_{(\mathbf{x}^{(i)},y^{(i)})\in S_{n}}y^{(i)}.
+f\left(\mathbf{x}\right)=\frac{1}{\left|S_{n}\right|}\sum_{(\mathbf{x}^{(i)},y^{(i)})\in S_{n}}y^{(i)}.
 \end{equation}
 
 \end_inset
@@ -2922,7 +2922,14 @@ Survival Analysis Methods
 \end_layout
 
 \begin_layout Subsection
-Kaplan-Meier Estimator
+Kaplan-Meier Estimator 
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Kaplan-Meier-Estimator"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3217,7 +3224,14 @@ L^{(i)}=\frac{(O_{i}-E_{i})^{2}}{\mathrm{Var}(O_{i}-E_{i})}
 \end_layout
 
 \begin_layout Subsection
-Cox Regression
+Cox Regression 
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Cox-Regression"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -4693,7 +4707,7 @@ c_{i,j}=\begin{cases}
 The C-index is then given by
 \begin_inset Formula 
 \begin{equation}
-C=\frac{1}{|P|}\sum_{i,j\in P,i\neq j}c_{i,j}.
+C=\frac{1}{\left|P\right|}\sum_{i,j\in P,i\neq j}c_{i,j}.
 \end{equation}
 
 \end_inset
@@ -5003,37 +5017,46 @@ Model training
 \end_layout
 
 \begin_layout Section
-Data Selection
+Data Acquisition
 \end_layout
 
 \begin_layout Standard
 The data used for training was obtained from the United Network for Organ
- Sharing (UNOS) which is a non-profit organisation that manages the organ
- tranplsant system in the United States.
- The organisation oversees transplantation procedures (matching donors,
+ Sharing (UNOS) which is a nonprofit organization that manages the organ
+ transplant system in the United States.
+ The organization oversees transplantation procedures (matching donors,
  ensuring fair graft allocation) for multiple organs such as kidneys, heart,
  lungs, liver, pancreas and intestines.
  As a result, UNOS maintains a large database of organ transplantations
  carried between 1984 and today.
- Specifically, there are more than a million entries regarding kidney tranplanta
-tions, an amount sufficient for training a machine learning model.
+ Specifically, there are more than a million entries regarding kidney transplant
+ations, an amount sufficient for training a machine learning model.
 \end_layout
 
 \begin_layout Standard
-The data can be obtained free of charge via <email-address> upon signing
- relevant documents regarding the use of the data.
+The data can be obtained free of charge via 
+\emph on
+https://unos.org
+\emph default
+ (a VPN may be needed for access from outside the US) upon filling out the
+ request form on the website and signing relevant documents regarding the
+ use of the data that will be sent via a provided email.
+ The data was obtained in the form of a tab-delimited file that was transformed
+ into a MongoDB database.
+ The database tables were then converted into a JSON format using the Database
+ tools plugin in IntelliJ IDEA Ultimate.
  
 \end_layout
 
 \begin_layout Standard
 Alongside the data from the UNOS database, another dataset was provided
- by the Czech Institue for Clinical and Experimental Medicine (IKEM), however
- the dataset did not caontain enough data for training a machine learning
- model.
+ by the Czech Institute for Clinical and Experimental Medicine (IKEM), however
+ the dataset was limited in size and thus was not suitable for training
+ a machine learning model.
 \end_layout
 
 \begin_layout Section
-Tech Stack
+Software Architecture
 \end_layout
 
 \begin_layout Standard
@@ -5048,7 +5071,7 @@ package, which is itself built upon the
 Scikit-learn
 \emph default
  package.
- Additionaly, the 
+ Additionally, the 
 \emph on
 pandas
 \emph default
@@ -5070,19 +5093,182 @@ Python
 \end_layout
 
 \begin_layout Standard
-TODO: Write about python, and the jupyter notebooks
+
+\emph on
+Python
+\emph default
+ is an interpreted, general-purpose, high-level, object-oriented programming
+ language that consistently ranks among the most used programming languages
+ in the world 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Octoverse"
+literal "false"
+
+\end_inset
+
+.
+ The reasons for its popularity include relatively easy human readability,
+ built-in data structures such as lists and dictionaries, wide range of
+ libraries that provide additional functionality, automatic memory management
+ and the fact that Python is cross platform, meaning that code written on
+ one machine can easily be run on different machines, regardless of their
+ operating system.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Python docs,Python wiki"
+literal "false"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
-Scikit-learn and Scikit-survival
+Jupyter Notebook
 \end_layout
 
 \begin_layout Standard
-TODO: Write about the two libraries
+
+\emph on
+Jupyter Notebook 
+\emph default
+is a notebook authoring web application that provides tools for interactive
+ computing with 
+\emph on
+computational notebooks 
+\emph default
+(also knows as 
+\emph on
+notebook interface
+\emph default
+).
+ Computational notebooks are documents that enable users to integrate executable
+ computer code, plain text, visualization and other interactive tools in
+ a structured manner.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Jupyter Notebook"
+literal "false"
+
+\end_inset
+
+ One of the fundamental advantages of computational notebooks is the ability
+ to partition code into smaller self-contained units with each unit having
+ the result of their execution attached to them.
+ This facilitates easier analysis of results and makes information extraction
+ more efficient.
+ This proves to be beneficial especially in the fields of data analysis
+ and machine learning where extracting information from data is of utmost
+ importance.
+ Jupyter Notebooks are primarily used for executing Python code.
+ Nonetheless, as indicated by its name, Jupyter Notebooks also provide support
+ for the Julia and R languages.
 \end_layout
 
 \begin_layout Subsection
-Other libraries
+scikit-learn and scikit-survival
+\end_layout
+
+\begin_layout Subsubsection*
+scikit-learn
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+scikit-learn
+\emph default
+ is an open-source machine learning Python module.
+ It is written in Python and C and it is the most frequently used library
+ for machine learning 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "100-page ML"
+literal "false"
+
+\end_inset
+
+.
+ scikit-learn provides tools for every part of the process of building a
+ machine learning model, namely data preprocessing, model selection, fitting,
+ and evaluation, among others 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "scikit-learn"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+scikit-survival
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+scikit-survival 
+\emph default
+is a Python module built on top of scikit-learn.
+ It utilizes the functionalities of scikit-learn for machine learning, while
+ allowing the user to implement survival analysis methods in their models
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "scikit-survival"
+literal "false"
+
+\end_inset
+
+.
+ Included in the library are many of the standard data analysis methods
+ including the Kaplan-Meier estimator 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Kaplan-Meier-Estimator"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ and Cox Regression 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Cox-Regression"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ as well as methods combining survival analysis with machine learning methods
+ such as the Random Survival Forests 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Random-Survival-Forests"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, 
+\emph on
+Survival Support Vector Machine 
+\emph default
+and 
+\emph on
+Gradient Boosted Models .
+\end_layout
+
+\begin_layout Subsection
+Other libraries 
 \end_layout
 
 \begin_layout Standard
@@ -5094,7 +5280,31 @@ Cluster Computing
 \end_layout
 
 \begin_layout Standard
-TODO: Write about the Helios cluster
+Due to the large size of the tables extracted from the UNOS dataset, reaching
+ up to 40GB in the JSON format, conducting any meaningful operations locally
+ became infeasible since in order to do any sort of processing, the data
+ needed to be first loaded into main memory, which, in my case, had a capacity
+ of only 12GB.
+ As a result, all computing was conducted remotely on the HELIOS high-performanc
+e computing cluster hosted at the Department of Mathematics, Faculty of
+ Nuclear Sciences and Physical Engineering, Czech Technical University in
+ Prague.
+ The cluster can provide up to 384GB of main memory on a single node, which
+ was more than enough for the needs of this project.
+ The connection to the cluster was established using SSH in the Linux shell.
+ To enhance practicality, I configured node forwarding from the remote node
+ to localhost, which allowed me to interact with Jupyter notebooks directly
+ via a web browser on my machine.
+ More information about the cluster such as about the hardware specs can
+ be found at 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "HELIOS"
+literal "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section
@@ -5542,7 +5752,11 @@ literal "false"
 \end_inset
 
 S.
- Pölsterl, scikit-survival: 
+ Pölsterl, 
+\emph on
+scikit-survival:
+\emph default
+ 
 \emph on
 A Library for Time-to-Event Analysis Built on Top of scikit-learn
 \emph default
@@ -5551,6 +5765,141 @@ A Library for Time-to-Event Analysis Built on Top of scikit-learn
  21, no.
  212, pp.
  1–6, 2020.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "scikit-learn"
+literal "false"
+
+\end_inset
+
+Pedregosa et al., 
+\emph on
+Scikit-learn: Machine Learning in Python
+\emph default
+, JMLR 12, pp.
+ 2825-2830, 2011
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "Octoverse"
+literal "false"
+
+\end_inset
+
+Github, 
+\emph on
+The state of open source software.
+ 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://octoverse.github.com/2022/top-programming-languages
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "Python docs"
+literal "false"
+
+\end_inset
+
+Python Software Foundation, 
+\emph on
+Python Documentation, 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://docs.python.org/3/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "Python wiki"
+literal "false"
+
+\end_inset
+
+The Python Wiki, 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://wiki.python.org/moin/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "HELIOS"
+literal "false"
+
+\end_inset
+
+Pavel Strachota, 
+\emph on
+HELIOS cluster documentation, 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://helios.fjfi.cvut.cz/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "Jupyter Notebook"
+literal "false"
+
+\end_inset
+
+Project Jupyter, 
+\emph on
+Jupyter Notebook Documentation, 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://jupyter-notebook.readthedocs.io/en/latest/notebook.html
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body
