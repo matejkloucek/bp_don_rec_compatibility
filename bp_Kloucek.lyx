@@ -5271,8 +5271,100 @@ Gradient Boosted Models .
 Other libraries 
 \end_layout
 
+\begin_layout Subsubsection*
+Pandas
+\end_layout
+
 \begin_layout Standard
-TODO: Write about the other packages
+
+\emph on
+Pandas 
+\emph default
+is an open-source library built on top of the Python programming language
+ used for manipulation with data and data analysis in general.
+ The core of the library is the 
+\emph on
+DataFrame 
+\emph default
+object that is used to organize data in a tabular format.
+ Pandas provides a multitude of tools for working with DataFrames including
+ the ability to extract statistics about the data, handling of missing values,
+ reshaping data sets, as well as the ability to import and export DataFrames
+ in various formats such as .csv, .json and more 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Pandas"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+NumPy
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+NumPy 
+\emph default
+is an open-source Python library used for working with numerical data.
+ More specifically, it provides tools for working with multidimensional
+ numerical arrays and is widely used in other data analysis oriented libraries
+ such as Pandas, Matplotlib and scikit-learn.
+ The centerpiece of the library is the 
+\emph on
+ndarray
+\emph default
+ which is a homogenous 
+\begin_inset Formula $n$
+\end_inset
+
+-dimensional array object, that is equipped with methods to efficiently
+ operate on it 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "NumPy"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection*
+Matplotlib
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Matplotlib 
+\emph default
+is a Python library based on NumPy used for creating both static and animated
+ visualizations of data.
+ These visualizations mainly appear in various types of plots such as line
+ plots, histograms, scatter plots, and 3D plots.
+ It draws inspiration from the MATLAB programming language and Matplotlib
+ itself provides an extension called 
+\emph on
+Pyplot
+\emph default
+, which is a collection of functions that replicate the behaviour of MATLAB
+ for Python 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Matplotlib"
+literal "false"
+
+\end_inset
+
+.
+ In the field of machine learning, matplotlib is often used to validate
+ and evaluate the training process of a machine learning model in order
+ to prevent overfitting or underfitting.
 \end_layout
 
 \begin_layout Subsection
@@ -5895,6 +5987,80 @@ status open
 \begin_layout Plain Layout
 
 https://jupyter-notebook.readthedocs.io/en/latest/notebook.html
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "Pandas"
+literal "false"
+
+\end_inset
+
+The pandas development team, 
+\emph on
+Pandas, 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://pandas.pydata.org/about/
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "NumPy"
+literal "false"
+
+\end_inset
+
+NumPy Developers, 
+\emph on
+NumPy, 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://numpy.org/doc/stable/user/absolute_beginners.html
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "Matplotlib"
+literal "false"
+
+\end_inset
+
+Matplotlib Development Team, 
+\emph on
+Matplotlib, 
+\emph default
+
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://matplotlib.org/
 \end_layout
 
 \end_inset
