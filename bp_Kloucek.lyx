@@ -65,6 +65,7 @@
 \use_default_options false
 \begin_modules
 theorems-ams
+logicalmkup
 \end_modules
 \maintain_unincluded_children false
 \language american
@@ -1032,7 +1033,7 @@ literal "false"
  However, demand for allografts greatly exceeds supply 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Systematic review"
+key "Kidney transplantation,Systematic review"
 literal "false"
 
 \end_inset
@@ -1042,51 +1043,26 @@ literal "false"
  list for potential transplantation.
  While on the waiting list, patients have to undergo dialysis multiple times
  a week for several hours, which supplements the functions of their failing
- kidneys.
- This is problematic not only because it greatly reduces the quality of
- the patient's life and puts an additional burden on the the healthcare
- system, but because time spent on dialysis also reduces the expected survival
- time after a potential tranplantation 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Dialysis"
-literal "false"
-
-\end_inset
-
-.
+ kidneys, which greatly reduces the qualiy of the patient's life and puts
+ an additional burden on the healthcare system.
  It is therefore crucial to minimize the time patients spend on the waiting
- list.
+ list by optimizing the process of finding suitable donor-recipient pairs.
 \end_layout
 
 \begin_layout Standard
-Even more important than the swiftness of the donor-recipient match making,
- is the quality of the given match.
+Even more important than the swiftness of the donor-recipient matchmaking,
+ is the quality of the given match, as that plays the most crucial role
+ in determining the patient's prospects.
  Currently, only a handful of factors are taken into consideration when
  looking for suitable donor-recipient pair, such as whether they are immunologic
 ally compatible, their medical histories and their blood type.
- In recents years, imporovements in these techniques have succesfuly minimised
- the risk of an acute transplantation rejection, which happens the recipient's
- immune system percieves the graft as a foreign, withnin the first year
- of the tranplantation below 
-\begin_inset Formula $15\%$
-\end_inset
-
- 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Chronic kidney allograft loss"
-literal "false"
-
-\end_inset
-
-.
- However, there may be other factors that influence the graft's long term
- performance that are currently not accounted for.
+ These methods have been proven succesful at minimizing the risk of an acute
+ transplant rejection, however there may be other factors that influence
+ the graft's long term performance that are currently unaccounted for.
  Therefore, in order to reduce the ﬂow of people returning to the waiting
- list because of failed grafts, it is necessary to uncover these patterns
- and take them into account when computing compatibility between potential
- donors and recipients.
+ list and to prevent premature deaths because of failed grafts, it is necessary
+ to uncover these patterns and take them into account when computing compatibili
+ty between potential donors and recipients.
  This is where machine learning can play a crucial role, by analyzing large
  amounts of data and identifying patterns that can help find compatible
  pairs or conversely detect incompatible pairings that would otherwise undergo
@@ -1102,12 +1078,13 @@ United Network for Organ Sharing (UNOS)
  dataset, including information on both living and deceased donors, recipients
  and their post-transplant outcome.
  This data will be used to train and test machine learning models that can
- predict the patient's chances of surviving over time, given that he recieves
+ predict the patient's chances of surviving over time, given that they recieve
  a graft from a particular donor.
  These can then be compared in order to decide which donor-recipient pairing
  are the most compatible.
- This paper will focus particularyon the Random Survival Forests model which
- has demonstrated a promising performance in related scientific papers 
+ In particular, this paper will be focused on the Random Survival Forests
+ model which has demonstrated a promising performance in related scientific
+ papers 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Using ML methods to predict kidney transplant survival"
@@ -1117,12 +1094,7 @@ literal "false"
 
  .
  Additionally, the research will also examine the performance of the developed
- models on different population samples, namely on the dataset provided
- by the Czech 
-\emph on
-Institute for Clinical and Experimental Medicine (IKEM)
-\emph default
-.
+ models on different population samples within the UNOS dataset.
 \end_layout
 
 \begin_layout Standard
@@ -1190,7 +1162,7 @@ Machine learning models can be classified based on several parameters including
  data.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsubsection*
 Classification by Data Type
 \end_layout
 
@@ -1299,7 +1271,7 @@ literal "false"
 .
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsubsection*
 Instance-based vs.
  Model-based
 \end_layout
@@ -1343,6 +1315,55 @@ Neural Networks
 .
 \end_layout
 
+\begin_layout Subsection
+Building a Machine Learning Model
+\end_layout
+
+\begin_layout Standard
+The process of building a machine learning model generally consists of the
+ following steps (TODO: explain each one in more detail):
+\end_layout
+
+\begin_layout Subsubsection*
+Preprocessing 
+\end_layout
+
+\begin_layout Standard
+Paragraph about handling missing values.
+\end_layout
+
+\begin_layout Standard
+Paragraph about feature encoding.
+\end_layout
+
+\begin_layout Standard
+Paragraph about Splitting into training, validation and test sets 1.2.1
+\end_layout
+
+\begin_layout Subsubsection*
+Feature Selection
+\end_layout
+
+\begin_layout Standard
+Paragraph about variable importance
+\end_layout
+
+\begin_layout Paragraph*
+Hyperparameter tuning
+\end_layout
+
+\begin_layout Standard
+Paragraph about hyperparameter tuning
+\end_layout
+
+\begin_layout Subsubsection*
+Evaluating Models Performance 
+\end_layout
+
+\begin_layout Standard
+overfitting, underfitting 1.2.2
+\end_layout
+
 \begin_layout Section
 Training and Evaluating a Machine Learning Model
 \end_layout
@@ -1370,8 +1391,9 @@ and
 \emph default
 If a model is trained using all available data, it may perform well on said
  data, but may be unable to generalise for new instances thus making it
- useless in practice, that's why it's important to keep some of the data
- aside for validation and testing, these two together are called 
+ useless in practice, which is why it is important to keep some of the data
+ aside for validation and testing.
+ The datasets used for validation and testing are called 
 \emph on
 hold-out 
 \emph default
@@ -1406,7 +1428,10 @@ given by the error rate of the model on new cases.
 
 \begin_layout Standard
 Better performace of the model can be achieved using a validation set, which
- gives the option to select the best values for the model's hyperparameters
+ gives the option to select the best values for the model's 
+\emph on
+hyperparameters
+\emph default
  (specifics of a given machine learning model that are set before the training
  process begins).
  This is done by training the model multiple times on the training set with
@@ -2499,6 +2524,12 @@ chronic kidney disease
 \emph default
 is a medical condition in which the kidneys gradually lose their ability
  to filter waste products and excess fluids from the blood system.
+ CKD is the main cause for renal transplnatation worldwide as roughly 90%
+ of all renal tranplantation are performed to treat the 
+\emph on
+end-stage renal disease
+\emph default
+, which is the final stage of CKD.
  The prevalence of CKD is estimated to be between 8% and 16% worldwide 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -2522,19 +2553,10 @@ literal "false"
  anemia, cardiovascular disease, bone disease and nerve demage.
  In the final stages when the kidneys fail altogether, the affected person
  needs to regularly undergo dialysis, which supplements the kidney's functions.
- However this needs to be done several times a week and each session lasts
- between 3 to 5 hours, which leads in a significant decrease in quality
+ However, this needs to be done several times a week and each session lasts
+ between 3 to 5 hours, which results in a significant decrease in the quality
  of the patients life.
  Thus when possible, transplantation is a much preferred treatment for CKD.
-\end_layout
-
-\begin_layout Standard
-CKD is the main cause for renal transplnatation worldwide as roughly 90%
- of all renal tranplantation are performed to treat the 
-\emph on
-end-stage renal disease
-\emph default
-, which is the final stage of CKD.
 \end_layout
 
 \begin_layout Section
@@ -2542,8 +2564,8 @@ Pre-Transplant Procedures
 \end_layout
 
 \begin_layout Standard
-There are number of procedures that patients has to undergo before he is
- admitted onto the kindey transplantation wainting list.
+There are number of procedures that a patient has to undergo before they
+ are admitted onto the kindey transplantation wainting list.
 \end_layout
 
 \begin_layout Standard
@@ -2551,7 +2573,7 @@ Firstly, their overall health is checked in order evaluate whether they
  are suitable candidate for the procedure.
  This includes blood tests, imaging studies, and other diagnostic tests
  to check for any underlying health conditions that could affect the success
- of the transplant.
+ of the transplantation.
 \end_layout
 
 \begin_layout Standard
@@ -2560,20 +2582,33 @@ Secondly, a process called
 HLA typing 
 \emph default
 is performed both on the patient and the recipient.
- The process involves testing the person's blood and tissue to determine
- their human leukocyte antigen (HLA) type, which is a protein that plays
- a key role in the body's immune response ( explained in more detail in
- 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "subsec:HLA-Typing"
-plural "false"
-caps "false"
-noprefix "false"
+ HLA typing assumes paramount importance in determining the immunological
+ compatibility between the donor and the recipient, which is necessary for
+ a succesful transplantation.
+ Transplantaion between a non-compatible paring could lead to an acute transplan
+t rejection, which happens when the recipient's immune system percieves
+ the graft as foreign and rejects it.
+\end_layout
+
+\begin_layout Subsection
+HLA Typing 
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:HLA-Typing"
 
 \end_inset
 
-).
+
+\end_layout
+
+\begin_layout Standard
+The process of HLA typing involves testing the person's blood and tissue
+ to determine their 
+\emph on
+human leukocyte antigen
+\emph default
+ (HLA) type, which is a protein that plays a key role in the body's immune
+ response.
  Uncompatible pairs are discarded while potentionally compatible pairs have
  their blood tested against each other in a laboratory using a process called
  
@@ -2603,26 +2638,138 @@ negative
 positive.
  
 \emph default
-A positive crossmatch doesn not automatically mean that the tranplantation
- cannot proceed though, as a succesful tranplantation may still be possible,
- given additional treatment, the pateint's health and if the reaction is
- not too severe.
+A positive crossmatch does not automatically mean that the tranplantation
+ cannot proceed though, as a succesful tranplantation may still be possible
+ if the reaction is not too severe, given that the patient is in favourable
+ health condition and that they are given additional treatment with immunosuppre
+ssive drugs that supress the activity of the immmune system.
  This is often the case when other donors are not easily available.
 \end_layout
 
-\begin_layout Subsection
-HLA Typing 
+\begin_layout Standard
+The decision on which pairings to discard and which ones to to perform a
+ cross-match on is done by calculating a 
+\emph on
+HLA mismatch 
 \begin_inset CommandInset label
 LatexCommand label
-name "subsec:HLA-Typing"
+name "HLA mismatch"
 
 \end_inset
 
+.
+ 
+\emph default
+The HLA antigens are classified based on their biochemical and functional
+ properties 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kidney transplantation"
+literal "false"
 
+\end_inset
+
+: 
+\emph on
+HLA class I
+\emph default
+ and 
+\emph on
+HLA class II.
+ 
+\emph default
+Class I antigens are present on the surface of most nucleated cells in the
+ body, while class II antigens are specific to certain cells related to
+ immune function 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kidney transplantation"
+literal "false"
+
+\end_inset
+
+.
+ These classes are then further subdivided into loci ( a locus denotes a
+ specific postion on a chromosome): HLA-A, HLA-B and HLA-C in the case of
+ HLA class I and HLA-DR, HLA-DQ, HLA-DP in the case of HLA class II.
+ Each locus is further divided into alleles (an allele represents specific
+ DNA sequences at a given locus): HLA-B27, HLA-DRB101, and so on 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kidney transplantation"
+literal "false"
+
+\end_inset
+
+.
+ When calculating the HLA mismatch, a score is given based on the number
+ of allele mismatches for each subclass (HLA-A, HLA-DR, etc.).
+ A higher score indicates a greater degree of immunological incompatibility
+ in the pairing as the best transplant survival has been achieved with no
+ mismatches at HLA-A, -B and -DR.
+ The relationship between HLA mismatches and allograft survival time has
+ been revealed thanks to the UNOS data, that will be used later 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kidney transplantation"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Goals
 \end_layout
 
 \begin_layout Standard
-TODO: Explain HLA typing
+The aforementioned procedures have been very succesful at reducing the risk
+ of graft failure shortly after the transplantation.
+ In recents years, imporovements in these techniques have succesfuly minimised
+ the risk of an acute transplantation rejection within the first year of
+ the tranplantation below 
+\begin_inset Formula $15\%$
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Chronic kidney allograft loss"
+literal "false"
+
+\end_inset
+
+.
+ Nevertheless, it may be possible that there are yet undiscovered correlations
+ effecting the long-term performance of the graft, that are not being accounted
+ for in the current donor-recipient matchmaking process.
+ The progress that has been made in the field of transplantation medicine
+ has also resulted in the abundunce of data about both pre-transplant conditions
+ as well as pateint follow-up.
+ This presents an oppturnity for the use of machine learning techniques,
+ aimed at uncovering these correlations.
+ 
+\end_layout
+
+\begin_layout Standard
+Given that the majority of well-documented data originates from the last
+ 30 years, which is significantly shorter than the average human lifespan,
+ solely considering patients whose grafts have already failed would introduce
+ a bias towards individuals who had a lower probability of survival from
+ the outset.
+ Therefore, it is necessary to include all patients in the analysis, including
+ those with functioning grafts as well as those lost to follow-up (i.e.
+ the status of their graft is unknown).
+ The difficulty lies in the fact that conventional machine learning models
+ do not inherently handle this type of data when considering the patient's
+ survival time as the target variable.
+ However, there exists a field of statstics that adresses these challenges
+ callled 
+\emph on
+survival analysis
+\emph default
+.
 \end_layout
 
 \begin_layout Chapter
@@ -2721,6 +2868,13 @@ data are also possible, but they are uncommon in the case of post-tranplantation
 
 \begin_layout Subsection
 Survival and Hazard Functions
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Survival-and-Hazard"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2762,7 +2916,7 @@ surviving
  In another words, it is definded as
 \begin_inset Formula 
 \begin{equation}
-S(t)=P(T>t)
+S(t)=\Pr(T>t)
 \end{equation}
 
 \end_inset
@@ -2771,7 +2925,7 @@ where
 \begin_inset Formula $T$
 \end_inset
 
- is the random variable the survival time of an individual.
+ is a random variable describing the survival time of an individual.
  
 \end_layout
 
@@ -2779,7 +2933,7 @@ where
 In contrast, the hazard function, as hinted by its alternative name, gives
  the the instantaneous potential per unit time for the event to occur, given
  that the individual has survived up to time t, that is the hazard function
- is focused 
+ is focused on 
 \emph on
 failing
 \emph default
@@ -2810,7 +2964,7 @@ instantenous
 , it is given by the following limit
 \begin_inset Formula 
 \begin{equation}
-h(t)=\lim_{\Delta t\to0}\frac{P\left(t\leq T<t+\Delta t\mid T\geq t\right)}{\Delta t}.
+h(t)=\lim_{\Delta t\to0}\frac{\Pr\left(t\leq T<t+\Delta t\mid T\geq t\right)}{\Delta t}.
 \end{equation}
 
 \end_inset
@@ -2824,10 +2978,10 @@ While the survival functions may seem to be obvious option for describing
  with which the survival models are described by, since it provides a more
  direct measure of risk over time.
  Importantly, either of the function can be derived from the other one using
- the following formulae´
+ the following formulae
 \begin_inset Formula 
 \begin{equation}
-S(t)=\exp\left[-\intop_{0}^{t}h(u)du\right]
+S(t)=\exp\left[-\intop_{0}^{t}h(u)du\right]\label{eq: Hazard to Survival}
 \end{equation}
 
 \end_inset
@@ -2864,6 +3018,13 @@ confounding
 
 \begin_layout Subsection
 Hazard Ratio
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Hazard-Ratio"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2938,7 +3099,15 @@ One of the most widely used methods to estimate the survival function is
 \emph on
 Kaplan-Meier estimator 
 \emph default
-that works as follows.
+that works as follows 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Survival Analysis self-learn"
+literal "false"
+
+\end_inset
+
+.
  Let there be a dataset containing 
 \begin_inset Formula $n$
 \end_inset
@@ -3235,11 +3404,17 @@ name "subsec:Cox-Regression"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
 
-\begin_layout Plain Layout
-Refine this section using 
+\emph on
+Cox regression
+\emph default
+, also referred to as the 
+\emph on
+Cox proportional hazards model
+\emph default
+, is a mathematical model used for analysis of time-to-event data.
+ Specifically, it is used to model an individual's hazard function based
+ on a set of given predictor variables 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Survival Analysis self-learn"
@@ -3247,323 +3422,362 @@ literal "false"
 
 \end_inset
 
- and add citatio
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\emph on
-Cox regression
-\emph default
-, also known as the 
-\emph on
-Proportional hazards model
-\emph default
- or 
-\emph on
-Cox proportional hazards model
-\emph default
-, is a type of survival model that is used to analyze the relationship between
- the time before some event happens and one or more predictor variables.
+.
  It is commonly used in medical research to investigate the factors that
- influence the time to an event, such as graft failure.
+ influence the duration until an event occurs.
+ For example, it can be used to predict survival curves of patients who
+ have undergone kidney transplantation and for identifying factors that
+ impact the likelihood of graft failure.
+\end_layout
+
+\begin_layout Subsubsection
+Formula
 \end_layout
 
 \begin_layout Standard
-The Cox regression model assumes that the 
+The general formula of the Cox regression model describes the hazard function
+ as 
+\begin_inset Formula 
+\begin{equation}
+h(t,\mathbf{X})=h_{0}(t)\exp\left(\sum_{i=1}^{k}\beta_{i}X_{i}\right)\label{eq: Cox regression}
+\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $\mathbf{X}=\left(X_{1},X_{2},\ldots X_{k}\right)$
+\end_inset
+
+ is a set of 
+\begin_inset Formula $k$
+\end_inset
+
+ predictor variables, 
+\begin_inset Formula $h(t,\mathbf{X})$
+\end_inset
+
+ represents the hazard function at time 
+\begin_inset Formula $t$
+\end_inset
+
+ and given predictor variables 
+\begin_inset Formula $\mathbf{X},$
+\end_inset
+
+
+\begin_inset Formula $h_{0}(t)$
+\end_inset
+
+ is an unspecified 
 \emph on
-hazard rate
+baseline hazard function
 \emph default
- (the risk of the event occurring at any given time) is proportional across
- different levels of the predictor variables.
- In other words, the effect of the predictor variables on the hazard rate
- remains constant over time.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-The Cox regression model estimates the hazard ratio, which is the ratio
- of the hazard rate of one group compared to another group, while controlling
- for other factors.
- This allows researchers to examine the impact of different factors on the
- hazard rate while adjusting for potential confounding variables.
-\end_layout
-
-\begin_layout Plain Layout
-Overall, Cox regression is a useful statistical technique that allows researcher
-s to investigate the relationship between predictor variables and survival
- time, while taking into account the complex interplay between different
- factors.
-\end_layout
-
+ and 
+\begin_inset Formula $\beta=\left(\beta_{1},\beta_{2},\ldots,\beta_{k}\right)$
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-Cox regression can be used to identify compatible pairs of donors and recipients
- for kidney transplantations by analyzing the survival time of transplanted
- kidneys and identifying factors that impact the likelihood of graft failure.
-\end_layout
-
-\begin_layout Standard
-One important predictor variable in this context is the degree of human
- leukocyte antigen (HLA) matching between the donor and recipient.
- HLA is a group of genes that play a critical role in the immune system's
- ability to recognize and respond to foreign tissue, and HLA mismatches
- between donor and recipient can increase the risk of graft failure.
-\end_layout
-
-\begin_layout Standard
-Using Cox regression allows analyzing the survival time of transplanted
- kidneys while controlling for other factors that may influence graft survival,
- such as age, sex, and underlying medical conditions and using the results
- to estimate the hazard ratio for HLA mismatch, which represents the relative
- risk of graft failure for each additional HLA mismatch.
- This information can then be used to identify compatible pairs of donors
- and recipients by selecting those with the lowest risk of graft failure
- based on their HLA compatibility and other relevant factors.
- 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Overall, Cox regression is a powerful tool for predicting graft survival
- and improving the success of kidney transplantations by helping to identify
- compatible donor-recipient pairs.
-\end_layout
-
+ represent constant coefficients associated with corresponding predictor
+ variables.
+ The fact that 
+\begin_inset Formula $h_{0}$
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
+ is unspecified, makes Cox regression a semiparametric model (in contrast
+ to parametric models, whose functional form is known) 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Analysis of Survival Data"
+key "Survival Analysis self-learn"
 literal "false"
 
 \end_inset
 
+.
+ Parametric models are more precise when fitted correctly, however it may
+ not always be clear which parametric model is appropriate for a given problem.
+ As a result, a semiparametric model is a great tool when uncertain about
+ which parametric model to use, as a semiparamic model will typically approximat
+e the results of a correct parametric model 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Survival Analysis self-learn"
+literal "false"
 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Cox regression models the relationship between survival time and predictor
- variables using hazard functions, which according to the model can can
- be modeled as product of a baseline hazard function and an exponential
- function of the predictor variables.
-\end_layout
-
-\begin_layout Standard
-The hazard function describes the probability of an event occurring (such
- as death or failure of a transplanted kidney) at a specific point in time,
- given that the event has not already occurred.
- It is denoted by 
-\begin_inset Formula $\lambda\left(t\right)$
-\end_inset
-
- and can be defined as
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{equation}
-\lambda\left(t\right)=\lim_{\Delta t\to0}\frac{P\left(t\leq T<t+\Delta t\mid T\geq t\right)}{\Delta t}\label{eq:hazard function def}
-\end{equation}
-
-\end_inset
-
-where T is a random variable representing the time until the event occurs,
- and 
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-
-\begin_inset Formula $P\left(t\leq T<t+\Delta t\mid T\geq t\right)$
-\end_inset
-
-
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
- represents the probability of the event occurring between time 
-\begin_inset Formula $t$
-\end_inset
-
- and time 
-\begin_inset Formula $t+\Delta t$
-\end_inset
-
-, given that the event has not already occurred by time 
-\begin_inset Formula $t$
 \end_inset
 
 .
 \end_layout
 
 \begin_layout Standard
-The Cox proportional hazards model assumes that the hazard function can
- be modeled as follows
+A core assumption behind the Cox proportional hazards model and thus by
+ extension 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq: Cox regression"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ is that the baseline hazard function is dependent only on time, whereas
+ the second part of the expression 
+\begin_inset Formula $e^{\sum_{i=1}^{k}\beta_{i}X_{i}}$
+\end_inset
+
+ only involves the 
+\begin_inset Formula $X$
+\end_inset
+
+'s, which means the predictor variables are time-independent.
+ This assumption is called the 
+\emph on
+proportional hazards
+\emph default
+ assumption.
+ If time-dependent predictor variables were to be considered, a variation
+ of the Cox model would be required called the 
+\emph on
+extended Cox model
+\emph default
+.
+ 
 \end_layout
 
 \begin_layout Standard
+To measure the effect of a particular predictor variable on the overall
+ hazard, a 
+\emph on
+hazard ratio
+\emph default
+ is calculated without the need to know the baseline hazard function explicitly
+ using only estimates of the 
+\begin_inset Formula $\beta$
+\end_inset
+
+ coefficients.
+\end_layout
+
+\begin_layout Subsubsection
+Partial Maximum Likelihood Estimation
+\end_layout
+
+\begin_layout Standard
+The estimates for the 
+\begin_inset Formula $\beta$
+\end_inset
+
+ coefficients can be obtained using a 
+\emph on
+partial maximum likelihood
+\emph default
+ 
+\emph on
+estimation
+\emph default
+ method and are denoted as 
+\begin_inset Formula $\hat{\beta}$
+\end_inset
+
+.
+ The estimated model would then be 
 \begin_inset Formula 
 \begin{equation}
-\lambda\left(t\mid\mathbf{X}\right)=\lambda_{0}\left(t\right)\exp\left(\beta_{1}X_{1}+\beta_{2}X_{2}+\ldots+\beta_{k}X_{k}\right)
+\hat{h}(t,\mathbf{X})=\hat{h_{0}}(t)\exp\left(\sum_{i=1}^{k}\hat{\beta_{i}}X_{i}\right)\label{eq:Hazard function estimate}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Given that we have a random sample of 
+\begin_inset Formula $n$
+\end_inset
+
+ entries 
+\begin_inset Formula $Y_{1},Y_{2},\ldots,Y_{n}$
+\end_inset
+
+ with each entry containing information about the 
+\begin_inset Formula $k$
+\end_inset
+
+ predictor variables, survival time 
+\begin_inset Formula $T$
+\end_inset
+
+ and censoring status 
+\begin_inset Formula $\delta$
+\end_inset
+
+ and that the sample comes from an unknown joint probability distribution.
+ Then the maximum likelihood estimation for 
+\begin_inset Formula $\beta$
+\end_inset
+
+ is given by 
+\begin_inset Formula 
+\begin{equation}
+\hat{\beta}=\arg\max_{\beta\in\Theta}L\left(\beta\right)\label{eq:Max likelihood function}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+where 
+\begin_inset Formula $L$
+\end_inset
+
+ is the maximum likelihood function given by 
+\begin_inset Formula 
+\begin{equation}
+L\left(\beta\right)=\prod_{i=1}^{k}f_{Y_{i}}(y_{i},\beta)
 \end{equation}
 
 \end_inset
 
 where 
-\begin_inset Formula $\lambda_{0}\left(t\right)$
+\begin_inset Formula $f_{Y_{i}}$
 \end_inset
 
- represents the baseline hazard function that is not dependent on the predictor
- variables, k is the number of predictor variables, 
-\begin_inset Formula $\mathbf{X}=$
+is the univariate probability density function associated with the 
+\begin_inset Formula $i$
 \end_inset
 
-
-\begin_inset Formula $\left(X_{1},X_{2},\ldots,X_{k}\right)$
-\end_inset
-
- is a vector of predictor variables and 
-\begin_inset Formula $\beta_{1},\beta_{2},\ldots,\beta_{k}$
-\end_inset
-
- represent the coefficients associated with each predictor variable.
- The exponential function of the predictor variables represents the proportional
- change in the hazard function associated with a unit change in the correspondin
-g predictor variable, holding all other predictor variables constant.
+-th random variable from the random sample.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-The hazard ratio (HR) can be calculated for each predictor variable by taking
- the exponential of the coefficient associated with that variable, which
- gives the relative change in the hazard function associated with a one-unit
- increase in that variable, while holding all other variables constant:
-\end_layout
-
-\begin_layout Plain Layout
-OR
-\end_layout
-
-\begin_layout Plain Layout
-The hazard ratio (HR) is defined as the ratio of the hazard functions for
- two groups with different values of a predictor variable, while holding
- all other predictor variables constant.
- For example, let :
-\end_layout
-
-\begin_layout Plain Layout
-HR = λ(t | X1) / λ(t | X2) = exp(β(X1 - X2))
-\end_layout
-
-\begin_layout Plain Layout
-where X1 and X2 are two different values of the predictor variable, and
- β is the coefficient associated with the predictor variable.
- The hazard ratio represents the proportional change in the hazard function
- associated with a unit change in the predictor variable.
-\end_layout
+However, one of the key features of the Cox model is that there is no assumed
+ distribution for the survival time, therefore it is not possible to compute
+ a 
+\emph on
+full 
+\emph default
+maximum likelihood 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Survival Analysis self-learn"
+literal "false"
 
 \end_inset
 
-The hazard ratio (
-\begin_inset Formula $HR$
-\end_inset
-
-) is defined as the ratio of the hazard functions for two groups with different
- values of a predictor variable, while holding all other predictor variables
- constant.
- For example, let 
-\begin_inset Formula $\bar{\mathbf{X}}=\left(X_{1},\ldots,X_{i}+1,\ldots,X_{k}\right)$
-\end_inset
-
- then
-\begin_inset Formula 
-\[
-\frac{\lambda\left(t\mid\bar{\mathbf{X}}\right)}{\lambda\left(t\mid\mathbf{X}\right)}=\frac{\lambda_{0}\left(t\right)\exp\left(\beta_{1}X_{1}+\ldots+\beta_{i}\left(X_{i}+1\right)+\ldots+\beta_{k}X_{k}\right)}{\lambda_{0}\left(t\right)\exp\left(\beta_{1}X_{1}+\ldots+\beta_{i}X_{i}+\ldots+\beta_{k}X_{k}\right)}=\frac{\exp\left(\beta_{i}\right)\stackrel[j=1]{k}{\prod}\exp\left(\beta_{j}X_{j}\right)}{\stackrel[j=1]{k}{\prod}\exp\left(\beta_{j}X_{j}\right)}=\exp\left(\beta_{i}\right).
-\]
-
-\end_inset
-
-Meaning that the hazard ratio for a given predictor associated with a one-unit
- increase in that variable is given by
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{equation}
-HR_{i}=\exp\left(\beta_{i}\right),\quad i\in\hat{k}.
-\end{equation}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-More broadly, the hazard ratio for two groups with varying predictor values
+.
+ Therefore, a 
+\emph on
+partial likelihood
+\emph default
+ is used, which
+\emph on
  
-\begin_inset Formula $X_{i}^{(1)}$
+\emph default
+only considers probabilites of the subjects who fail, i.e.
+ with censoring status 
+\begin_inset Formula $\delta=1.$
 \end_inset
 
-and 
-\begin_inset Formula $X_{i}^{(2)}$
-\end_inset
 
- respectively can be written as
 \end_layout
 
 \begin_layout Standard
+This means that the partial likelihood function can be written as
 \begin_inset Formula 
 \begin{equation}
-HR_{i}=\exp\left(\beta_{i}\left(X_{i}^{(1)}-X_{i}^{(2)}\right)\right).
+L=\prod_{j=1}^{p}L_{j}
+\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $p$
+\end_inset
+
+ is the number of failure times within the random sample and 
+\begin_inset Formula $L_{j}$
+\end_inset
+
+ is the likelihood of failing at the 
+\begin_inset Formula $j$
+\end_inset
+
+-th time.
+ The set of individuals at risk of failing at time 
+\begin_inset Formula $j$
+\end_inset
+
+ is denoted by 
+\begin_inset Formula $R(t_{j})$
+\end_inset
+
+.
+ It is important to note that while the partial likelihood focuses only
+ on the subjects that fail, 
+\begin_inset Formula $R(t_{j})$
+\end_inset
+
+ also includes the individuals that will be censored later, thus they are
+ also needed for the computation of 
+\begin_inset Formula $L_{j}$
+\end_inset
+
+.
+ 
+\begin_inset Formula $L_{j}$
+\end_inset
+
+ is defined as the ratio of the hazard function of the individual, who failed
+ at time 
+\begin_inset Formula $j$
+\end_inset
+
+ over the sum of the hazards of individuals at risk at time 
+\begin_inset Formula $j$
+\end_inset
+
+, i.e.
+ 
+\begin_inset Formula 
+\begin{equation}
+L_{j}\left(\beta\right)=\frac{h_{0}\left(t\right)\exp\left(\beta\cdot\mathbf{X}_{j}\right)}{\sum_{i\in R(t_{j})}h_{0}\left(t\right)\exp\left(\beta\cdot\mathbf{X}_{i}\right)}
+\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $\mathbf{X}_{j}$
+\end_inset
+
+ denotes the vector of predictor variables describing the individual who
+ failed at time 
+\begin_inset Formula $j$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbf{X}_{i}$
+\end_inset
+
+ for 
+\begin_inset Formula $i\in R(t_{j})$
+\end_inset
+
+ denotes the vector of predictor variables describing the individuals at
+ risk at time 
+\begin_inset Formula $j$
+\end_inset
+
+.
+ As 
+\begin_inset Formula $h_{0}\left(t\right)$
+\end_inset
+
+ cancels out, the partial likelihood function can be written as 
+\begin_inset Formula 
+\begin{equation}
+L\left(\beta\right)=\prod_{j=1}^{p}\frac{\exp\left(\beta\cdot\mathbf{X}_{j}\right)}{\sum_{i\in R(t_{j})}h_{0}\left(t\right)\exp\left(\beta\cdot\mathbf{X}_{i}\right)}
 \end{equation}
 
 \end_inset
@@ -3572,104 +3786,228 @@ HR_{i}=\exp\left(\beta_{i}\left(X_{i}^{(1)}-X_{i}^{(2)}\right)\right).
 \end_layout
 
 \begin_layout Standard
-As 
-\begin_inset Formula $\lambda_{0}\left(t\right)$
+Once the partial likelihood function 
+\begin_inset Formula $L$
 \end_inset
 
- cancels out, the hazard ratio stays constant over time, in another words
+ is formed, the equation 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Max likelihood function"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ is generally solved by maximizing the natural log of L, i.e.
+ finding the roots of
+\begin_inset Formula 
+\begin{equation}
+\frac{\partial\ln L}{\partial\beta_{i}}=0\qquad\textrm{for \ensuremath{i=1,\ldots,k}}
+\end{equation}
+
+\end_inset
+
+This gives us a system of equations that can be solved numerically 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Survival Analysis self-learn"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Hazard Ratio Estimation
+\end_layout
+
+\begin_layout Standard
+As described in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Hazard-Ratio"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, the hazard ratio is defined as the ratio of hazards of two different individua
+ls.
+ The estimation of the hazard ratio is therefore given by
+\begin_inset Formula 
+\begin{equation}
+\hat{HR}=\frac{\hat{h}(t,\mathbf{X}^{*})}{\hat{h}(t,\mathbf{X})}
+\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $\mathbf{X}^{*}=\left(X_{1}^{*},X_{2}^{*},\ldots,X_{n}^{*}\right)$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbf{X}=\left(X_{1},X_{2},\ldots X_{k}\right)$
+\end_inset
+
+ denote the sets of predictors of two different individuals.
+ The ratio is commonly written so that the higher-valued hazard is in the
+ numerator.
+ This ensures that the ratio is always greater than 
+\begin_inset Formula $1$
+\end_inset
+
+.
+ By using 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:Hazard function estimate"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ we get that 
+\begin_inset Formula 
+\begin{equation}
+\hat{HR}=\frac{\hat{h_{0}}(t)\exp\left(\sum_{i=1}^{k}\hat{\beta_{i}}X_{i}^{*}\right)}{\hat{h_{0}}(t)\exp\left(\sum_{i=1}^{k}\hat{\beta_{i}}X_{i}\right)}=\exp\left(\sum_{i=1}^{k}\hat{\beta_{i}}\left(X_{i}^{*}-X_{i}\right)\right)
+\end{equation}
+
+\end_inset
+
+meaning that the hazard ratio stays constant over time, i.e.
  the hazards are 
 \emph on
-proportional.
+proportional 
+\emph default
+and the effect of the predictor variables on the hazard rate remains constant
+ over time.
 \end_layout
 
 \begin_layout Standard
-The Cox regression model estimates the coefficients 
-\begin_inset Formula $\beta_{i},$
+Now, in order to compute the effect of a predictor variable 
+\begin_inset Formula $X_{j}$
 \end_inset
 
-
-\begin_inset Formula $\forall i\in\hat{k}$
-\end_inset
-
- and the baseline hazard function 
-\begin_inset Formula $\lambda_{0}\left(t\right)$
-\end_inset
-
- using 
-\emph on
-maximum likelihood estimation
-\emph default
-.
- The model can be used to predict the hazard function for different combinations
- of predictor variables, which can be used to estimate the probability of
- an event occurring at different points in time, given the values of the
- predictor variables.
+ on the overall hazard while adjusting for other variables, let vectors
  
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\emph on
-maximum likelihood estimation
-\emph default
- = Metoda maximální věrohodnosti -> využít něco z PRST??
-\end_layout
-
+\begin_inset Formula $\mathbf{X}^{*}$
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-The Cox regression model can also be used to estimate the survival function,
- which represents the probability of surviving beyond a given time 
-\begin_inset Formula $t$
+ and 
+\begin_inset Formula $\mathbf{X}$
 \end_inset
 
-, given the values of the predictor variables.
- The survival function is defined as
-\end_layout
-
-\begin_layout Standard
+ be defined as
 \begin_inset Formula 
 \begin{equation}
-S\left(t\mid\mathbf{X}\right)=\exp\left(-\stackrel[0]{t}{\int}\lambda\left(u\mid\mathbf{X}\right)\mathrm{d}u\right)
+\begin{cases}
+X_{i}^{*}=X_{i} & \textrm{for \ensuremath{i\neq j}}\\
+X_{i}^{*}\neq X_{i} & \textrm{for \ensuremath{i=j}}
+\end{cases}
 \end{equation}
 
 \end_inset
 
-where 
-\begin_inset Formula $\lambda\left(u\mid\mathbf{X}\right)$
+
+\end_layout
+
+\begin_layout Standard
+The estimated hazard ratio for the predictor variable 
+\begin_inset Formula $X_{j}$
 \end_inset
 
- represents the hazard function at time u, given the values of the predictor
- variables.
-\end_layout
-
-\begin_layout Standard
-Overall, Cox regression provides a powerful tool for analyzing survival
- data and identifying the factors that influence the likelihood of an event
- occurring over time.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Explain score test - logrank test
-\end_layout
+ is then given by
+\begin_inset Formula 
+\begin{equation}
+\hat{HR}=\exp\left(\hat{\beta_{j}}\left(X_{j}^{*}-X_{j}\right)\right)
+\end{equation}
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Section
+\begin_layout Standard
+As hazard functions are always positve and the ratio is written in way as
+ to ensure that it is always greater than 
+\begin_inset Formula $1$
+\end_inset
+
+, the greater the hazard ratio, the greater the predictor's influence on
+ the overall hazard.
+\end_layout
+
+\begin_layout Subsubsection
+Adjusted Survival Curves
+\end_layout
+
+\begin_layout Standard
+Upon fitting a Cox regression model onto survival data, survival curves
+ that adjust for the predictor variables (also called 
+\emph on
+adjusted survival curves
+\emph default
+) are defined in a similiar fashion as 
+\begin_inset Formula 
+\begin{equation}
+S(t,\mathbf{X})=S_{0}(t)\exp\left(\sum_{i=1}^{k}\beta_{i}X_{i}\right)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Using estimates 
+\begin_inset Formula $\hat{S_{0}(t)}$
+\end_inset
+
+ and 
+\begin_inset Formula $\hat{\beta_{i}}$
+\end_inset
+
+ computed by the partial likelihood estimation method for 
+\begin_inset Formula $S_{0}(t)$
+\end_inset
+
+ and 
+\begin_inset Formula $\beta_{i}$
+\end_inset
+
+ respectively.
+ We get an estimated survival function
+\begin_inset Formula 
+\begin{equation}
+\hat{S}\left(t,\mathbf{X}\right)=\hat{S_{0}(t)}\exp\left(\sum_{i=1}^{k}\hat{\beta_{i}}X_{i}\right)
+\end{equation}
+
+\end_inset
+
+and by specifying the input vector of predictors 
+\begin_inset Formula $\mathbf{X}$
+\end_inset
+
+ we get a survival curve adjusted for the given predictors.
+\end_layout
+
+\begin_layout Subsubsection
+Uses
+\end_layout
+
+\begin_layout Standard
+The Cox regression model will later be used to select relevant predictor
+ variables for the machine learning model.
+ It will also be used as a benchmark to compare the performance of the machine
+ learning model to a conventional survival analysis model.
+\end_layout
+
+\begin_layout Chapter
 Random Survival Forests
 \begin_inset CommandInset label
 LatexCommand label
@@ -3698,7 +4036,7 @@ random forests,
 which allows it to handle issues commonly associated with conventional survival
  analysis methods, such as restrictive assumptions about the model's parameters
  (e.g.
- proportionality in the Cox Regression model), the inability to handle nonlinear
+ proportionality in the Cox regression model), the inability to handle nonlinear
  relations in the data and issues with missing data, as well as issues associate
 d with regular random forest models, such as being restricted to regression
  and classification tasks and the inability to handle right-censored survival
@@ -3714,24 +4052,21 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-Each tree of the forests ouputs a cummulative hazard function 
+Each tree in the forest ouputs a cummulative hazard function 
 \begin_inset Formula $H(t\mid\mathbf{x})$
 \end_inset
 
-, which takes an input vector 
+, which takes a vector of predictive variables 
 \begin_inset Formula $\mathbf{x}$
 \end_inset
 
- and a set time 
+ describing a given individual and time 
 \begin_inset Formula $t$
 \end_inset
 
- and assigns a probability of an event occuring at time 
+ as inputs, and assigns a probability of an event occuring to the individual
+ at time 
 \begin_inset Formula $t$
-\end_inset
-
- to the individual 
-\begin_inset Formula $\mathbf{x}$
 \end_inset
 
 .
@@ -3749,7 +4084,7 @@ Random Survival Forests have been used in a wide range of applications,
  outcomes and identify important prognostic factors.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Building a Random Survival Forests model
 \end_layout
 
@@ -4118,7 +4453,7 @@ H_{e}^{**}(t\mid\mathbf{x}_{i})=\frac{\sum_{b=1}^{B}I_{i,b}H_{b}(t\mid\mathbf{x}
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Split rules
 \begin_inset CommandInset label
 LatexCommand label
@@ -4394,12 +4729,12 @@ Compute the final prediction for the new individual as the average of the
 
 \end_layout
 
-\begin_layout Subsection
-Calculating Prediction Error
+\begin_layout Section
+Harell's Concordance Index
 \end_layout
 
 \begin_layout Standard
-The prediction error of random survival forest models is calculated using
+The prediction error of a random survival forests model is estimated using
  the 
 \emph on
 Harell's concordance index 
@@ -4416,9 +4751,29 @@ literal "false"
 
 \end_inset
 
-, which is a metric commonly used in medical research as well as machine
- learning to evaluate the performance of predictive models.
- The C-index is equal to the are under the 
+, which is an metric commonly used in medical research to evaluate survival
+ models.
+ The C-index is defined as the ratio of correctly ordered pairs to comparable
+ pairs 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "scikit-survival"
+literal "false"
+
+\end_inset
+
+ (explained in more detail in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Calculating-Harell's-Concordance"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+ The C-index is also closely related to the area under the 
 \emph on
 ROC curve
 \emph default
@@ -4437,16 +4792,6 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-https://developers.google.com/machine-learning/crash-course/classification/roc-and
--auc#:~:text=An%20ROC%20curve%20(receiver%20operating,False%20Positive%20Rate
-\end_layout
-
-\end_inset
-
 Specifically, it plots the 
 \emph on
 true positive rate 
@@ -4522,7 +4867,15 @@ negative cases incorrectly classified as positive) and
 true negatives 
 \emph default
 (i.e.
- negative cases correctly classified as negative).
+ negative cases correctly classified as negative) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "ML Crash Course"
+literal "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -4537,7 +4890,7 @@ status open
 
 \begin_layout Plain Layout
 https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Roc_curve.svg/1024px-Roc_
-curve.svg.png
+curve.svg.png — possibly include a similiar illustration???
 \end_layout
 
 \end_inset
@@ -4550,11 +4903,22 @@ The area under the ROC curve can be interpreted as the probability that
  a given model will rank a random positive example more highly (e.g.
  it will assign a more favorable hazard function) than a random negative
  example.
- The C-index can attain values from 0 to 1 with 1 meaning a perfect model
- whose predictions are always correct and 0 meaning it's always wrong.
+ The C-index can attain values from 0 to 1, where 1 means a perfect model
+ whose predictions are always correct and 0 being the opposite.
  A random classifier that assigns the predicted value with a uniform distributio
 n, will have a C-index of 0.5.
  Generally, models with a C-index above 0.7 are considered to be good predictors.
+\end_layout
+
+\begin_layout Subsection
+Calculating Harell's Concordance Index
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Calculating-Harell's-Concordance"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -4571,8 +4935,8 @@ literal "false"
 \end_layout
 
 \begin_layout Enumerate
-Find all possible pairs of cases across the dataset while excluding the
- following cases: 
+Find all possible pairs of cases across the test dataset while excluding
+ the following cases: 
 \end_layout
 
 \begin_deeper
@@ -4613,9 +4977,13 @@ i.e.
 \begin_layout Standard
 The cases that are left are called 
 \emph on
-permissible
+permissible 
 \emph default
- and we denote their set by 
+(or 
+\emph on
+comparable
+\emph default
+) and we denote their set by 
 \begin_inset Formula $P.$
 \end_inset
 
@@ -4784,12 +5152,125 @@ error
  
 \end_layout
 
+\begin_layout Subsection
+Handling Potential Bias
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+via 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "scikit-survival"
+literal "false"
+
+\end_inset
+
+: Harrell’s concordance index is known to be biased upwards if the amount
+ of censoring in the test data is high [1].
+ Uno et al proposed an alternative estimator of the concordance index that
+ behaves better in such situations.
+ In this section, we are going to apply concordance_index_censored and concordan
+ce_index_ipcw to synthetic survival data and compare their results.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The problem with the Harell's concordance index is that it is known to evaluate
+ the performance of a given model too optimistically, if the ratio of censored
+ individuals in the dataset is high 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "scikit-survival"
+literal "false"
+
+\end_inset
+
+.
+ The general trend is that the larger the dataset, the the lesser the censoring
+ ratio threshold, above which the regular Harell's C-index starts to overestimat
+e the model's performance.
+\end_layout
+
+\begin_layout Standard
+To adress this issue, the scikit-survival package 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:scikit-survival"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ offers an alternative to the conventional C-index called 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+concordance_index_ipcw
+\end_layout
+
+\end_inset
+
+.
+ Unlike the regular C-index, this alternative does not depend on the distributio
+n of the censoring in the test dataset 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "scikit-survival"
+literal "false"
+
+\end_inset
+
+.
+ Instead, it uses the inverse probability of censoring weights to handle
+ a potential bias introduced by high amount of censoring 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "scikit-survival"
+literal "false"
+
+\end_inset
+
+.
+ This is achieved by giving additional weight to uncensored individuals
+ and computing weights for the censored individuals based on their similarity
+ to the uncensored ones.
+ To be able to calculate the weights, Kaplan-Meier estimator is computed
+ first using survival times and censoring status from the test dataset 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "scikit-survival"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Permutation Variable Importance
+\end_layout
+
+\begin_layout Standard
+TODO:Explain permutation variable importance
+\end_layout
+
 \begin_layout Section
 Other Methods
 \end_layout
 
 \begin_layout Standard
-TODO: Mention some of the other methods referrenced in the related papers
+TODO: Mention some of the other methods referenced in the related papers
+ and that are available in the scikit-survival package.
 \end_layout
 
 \begin_layout Standard
@@ -5013,11 +5494,18 @@ on, presence of hepatitis B core antibodies, presence of hepatitis C antibodies,
 \end_layout
 
 \begin_layout Chapter
-Model training
+Data and Software Architecture
 \end_layout
 
 \begin_layout Section
 Data Acquisition
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Data-Acquisition"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -5036,13 +5524,35 @@ ations, an amount sufficient for training a machine learning model.
 \begin_layout Standard
 The data can be obtained free of charge via 
 \emph on
+
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
 https://unos.org
+\end_layout
+
+\end_inset
+
+
 \emph default
  (a VPN may be needed for access from outside the US) upon filling out the
  request form on the website and signing relevant documents regarding the
  use of the data that will be sent via a provided email.
  The data was obtained in the form of a tab-delimited file that was transformed
- into a MongoDB database.
+ into a MongoDB database using the following GitHub repository 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://github.com/ceharvs/transplant2mongo
+\end_layout
+
+\end_inset
+
+ .
  The database tables were then converted into a JSON format using the Database
  tools plugin in IntelliJ IDEA Ultimate.
  
@@ -5064,11 +5574,11 @@ A number of software tools and libraries were used for building the survival
  analysis machine learning model, with the backbone of the application being
  the Python based 
 \emph on
-Scikit-survival 
+scikit-survival 
 \emph default
 package, which is itself built upon the 
 \emph on
-Scikit-learn
+scikit-learn
 \emph default
  package.
  Additionally, the 
@@ -5207,6 +5717,13 @@ literal "false"
 
 \begin_layout Subsubsection*
 scikit-survival
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:scikit-survival"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -5399,20 +5916,242 @@ literal "false"
 .
 \end_layout
 
-\begin_layout Section
-Traing the model
+\begin_layout Chapter
+Model Training
 \end_layout
 
 \begin_layout Standard
-Here I will possible include some code but mostly graphs.
+All pipelines used for data preprocessing, training and evaluating the model
+ are publicly available at 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://github.com/matejkloucek/bp_don_rec_compatibility
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Newline newline
+\end_inset
+
+alongside instructions on how to properly execute them.
 \end_layout
 
 \begin_layout Section
-Optimization
+Cleaning the Data
 \end_layout
 
 \begin_layout Standard
-Trying different things to get better results.
+There are 6 tables to be extracted from the UNOS dataset using MongoDB as
+ mentioned in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Data-Acquisition"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ The one used for this study is the Kidney_Pancreas table, which contains
+ information about kidney and pancreas transplantations performed between
+ 1994 and 2022 in the US.
+ The dataset includes data about both recipients and donors.
+ 
+\end_layout
+
+\begin_layout Standard
+The Kidney_Pancreas table also happens to be the largest in terms of file
+ size.
+ After converting the table to JSON format, the resulting file size reached
+ to approximately 40GB.
+ Consequently, loading the file into a Pandas DataFrame took a significant
+ amount of time.
+ Therefore, it proved advantageous to convert the file to .csv format, which
+ drastically reduced loading time.
+ This efficiency can be attributed to the fact that unlike JSON, which stores
+ data in a hierarchical structure using key-value pairs, the .csv format
+ stores data in a tabular (and therefore faster to read from) format.
+ In its raw form, the dataset contained 
+\begin_inset Formula $1108884$
+\end_inset
+
+ entries and 
+\begin_inset Formula $470$
+\end_inset
+
+ columns, which is usuallly considered to be a too high number for an effective
+ machine learning model.
+ There the number of features needed to be reduced significantly.
+\end_layout
+
+\begin_layout Subsection
+Reducing Number of Features
+\end_layout
+
+\begin_layout Standard
+The dataset contains information about both kidney and pancreas transplantations
+ because they are sometimes performed together, which is a medical procedure
+ called a 
+\emph on
+simultaneous kidney-pancreas transplant 
+\emph default
+(SKP) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "National Kidney Foundation"
+literal "false"
+
+\end_inset
+
+.
+ In fact, most (83%) of pancreas transplantation are performed in the context
+ of SKP's 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "SKP"
+literal "false"
+
+\end_inset
+
+.
+ However, the focus of this paper is solely on kidney transplantations and
+ the number SKP is relatively low compared to the number of stand-alone
+ kidney transplantation.
+ Therefore individuals , who had undergone a SKP were dropped from the dataset
+ and all columns regarding pancreas transplantation were dropped as well.
+ There were <number> of such entries and <number> of such columns.
+\end_layout
+
+\begin_layout Standard
+As the goal of this paper is to predict compatibility of patients prior
+ to transplantation, any column that contains information about the patient's
+ status after or at the time of the transplantation needs to be removed
+ from the dataset.
+ Alongside the dataset, UNOS provides a 
+\emph on
+STAR Files Data Dictionary
+\emph default
+ STAR = Standard Transplant Analysis and Research), which contains information
+ about each of the columns represent.
+ Also in this dictionary, all information gathered after or during the transplan
+tation is labeled as such.
+ These labels were used to create a list of <number> columns to be droped
+ from the dataset.
+\end_layout
+
+\begin_layout Standard
+In order to prevent a significant loss of information by having to either
+ discard too many entries with missing data or by having to impute large
+ amounts of missing values, columns that were missing values in more than
+ 50% 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Experiment with this number and find the best one.
+\end_layout
+
+\end_inset
+
+ of entries were dropped from the dataset.
+ There were 
+\begin_inset Formula $329$
+\end_inset
+
+ of these columns.
+ To ensure that no crucial information was lost, I checked what each of
+ the columns represented one by one.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Is this ok??? Does this hold any weight coming from a person without any
+ medicinal background
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+For the remaining 
+\begin_inset Formula $141$
+\end_inset
+
+ columns I searched through the STAR Files Data Dictionary and dropped columns
+ that were either obviously irrelevant (such as an internal id used by UNOS)
+ or that were describing the patient's status after the transplantation
+ and thus cannot be used to predict compatibility of donors and recipients
+ prior to transplantation.
+\end_layout
+
+\begin_layout Standard
+Two columns that were absolutely necessary for the model are the GTIME_KI
+ and PSTATUS, which are describing the survival time and censoring status
+ respectively.
+ In addition, I also manually added columns that were recognized as significant
+ by any of the related articles 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Using ML methods to predict kidney transplant survival,Systematic review,Predicting survival using tree-based modeling"
+literal "false"
+
+\end_inset
+
+, even though some of them did not pass the 
+\begin_inset Formula $50\%$
+\end_inset
+
+ inclusion threshold.
+\end_layout
+
+\begin_layout Subsection
+Dropping or Imputing Missing Values
+\end_layout
+
+\begin_layout Standard
+TODO: Experiment with whether to drop rows with missing values altogether
+ or impute missing data.
+\end_layout
+
+\begin_layout Subsection
+Feature Encoding
+\end_layout
+
+\begin_layout Standard
+The RSF model requires all input variables to be numerical.
+ However, many of the features in the dataset are categorical and therefore
+ need to be encoded before they can be used for training the RSF model.
+ First, all columns that were already numerical were separated from the
+ categorical ones.
+ Then for all categorical columns, the number of unique values were computed
+ in order to check whether any column had abnormally high number of different
+ values (above 10), making them unsuitable for one-hot-encoding.
+ These turned out to be either:
+\end_layout
+
+\begin_layout Itemize
+dates in the form of strings, which I turned into numerical values by only
+ using the year
+\end_layout
+
+\begin_layout Section
+Feature Selection
+\end_layout
+
+\begin_layout Section
+Hyperparameter Tuning
 \end_layout
 
 \begin_layout Chapter
@@ -5424,16 +6163,8 @@ General evaluation
 \end_layout
 
 \begin_layout Standard
-Discussion about the results.
-\end_layout
-
-\begin_layout Section
-Performance on different population samples
-\end_layout
-
-\begin_layout Standard
-Try to locally differentate ethnic groups within the UNOS database, possibly
- try to fit the model onto the IKEM dataset.
+TODO: Discussion about the results.
+ Mention the age bias.
 \end_layout
 
 \begin_layout Section
@@ -5441,7 +6172,50 @@ Comparison to conventional models
 \end_layout
 
 \begin_layout Standard
-Is this even an improvement?
+TODO: Compare the models performance to the Cox's Regression Model
+\end_layout
+
+\begin_layout Section
+Performance on different population samples
+\end_layout
+
+\begin_layout Standard
+TODO: Try to locally differentiate ethnic groups within the UNOS database.
+ How does the model perform on different population samples? Are different
+ ethnicities more or less compatible?
+\end_layout
+
+\begin_layout Section
+Usage for Computing Compatibility
+\end_layout
+
+\begin_layout Standard
+TODO: How this model could be used for choosing the most optimal donors.
+ In what cases does the age bias matter and when not.
+ (If we had more than one recipient and one (or more) donor(s) and we wanted
+ to choose, which recipient should recieve the donors kidney, then the model
+ would be biased to select the youngest recipient which could result in
+ a case where there would be a donor that would be the best possible match
+ for an older recipient, but a younger recipient would selected since his
+ survival curve would be the most favorable, even though there could be
+ more suitable candidates for him.
+\end_layout
+
+\begin_layout Standard
+However, this would not be an issue in the case where there is only 1 recipient
+ and multiple donors.
+ Than this model would be suitable for selecting the most compatible donor,
+ by selecting the one, upon whose selection would the recipient had the
+ best survival curve.
+\end_layout
+
+\begin_layout Section
+Possibilities for Future Research
+\end_layout
+
+\begin_layout Standard
+Handling the age bias - creating a model capable of picking the best match
+ out of multitude of both donors and recipients.
 \end_layout
 
 \begin_layout Chapter*
@@ -5600,6 +6374,27 @@ By max- imizing survival difference, the tree pushes dissimilar cases apart.
 \begin_layout Bibliography
 \begin_inset CommandInset bibitem
 LatexCommand bibitem
+key "Kidney transplantation"
+literal "false"
+
+\end_inset
+
+S.
+ J.
+ Knechtle, L.
+ P.
+ Marson, P.
+ J.
+ Morris,
+\emph on
+ Kidney Transplantation: Principles and Practice, 
+\emph default
+Elsevier, 2020.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
 key "Chronic kidney allograft loss"
 literal "false"
 
@@ -5615,7 +6410,7 @@ B.
 Diagnosis and prevention of chronic kidney allograft loss, 
 \emph default
 The Lancet, Vol.
- 378, Issue 9800, 2011, 1428-1437
+ 378, Issue 9800, 2011, 1428-1437.
 \end_layout
 
 \begin_layout Bibliography
@@ -5638,7 +6433,19 @@ S.
 Machine learning in predicting graft failure following kidney transplantation:
  A systematic review of published predictive models
 \emph default
-, International Journal of Medical Informatics, Volume 130, 2019, 103957
+, International Journal of Medical Informatics, Vol.
+ 130, 2019, 103957, 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.sciencedirect.com/science/article/pii/S1386505619302977
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Bibliography
@@ -5656,7 +6463,7 @@ D.D.
 Impact of prolonged dialysis prior to renal transplantation.
 
 \emph default
- Clin Transplant, 2018 Jun, 32(6):e13260
+ Clin Transplant, 2018 Jun, 32(6):e13260.
 \end_layout
 
 \begin_layout Bibliography
@@ -5679,7 +6486,18 @@ Using machine learning and an ensemble of methods to predict kidney transplant
  survival
 \emph default
 .
- PLoS ONE 14(1), 2019, e0209068.
+ PLoS ONE 14(1), 2019, e0209068, 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://doi.org/10.1371/journal.pone.0209068
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Bibliography
@@ -5713,7 +6531,7 @@ A.
 Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow 2nd Edition
 \emph default
 .
- O'Reilly Media, 2019
+ O'Reilly Media, 2019.
 \end_layout
 
 \begin_layout Bibliography
@@ -5789,7 +6607,7 @@ Random survival forests.
 Ann.
  Appl.
  Stat.
- 2 (3) 841 - 860, September 2008
+ 2 (3) 841 - 860, September 2008.
 \end_layout
 
 \begin_layout Bibliography
@@ -5832,7 +6650,7 @@ D.
 Survival Analysis: A Self-Learning Text 3rd Edition.
  
 \emph default
-Springer, 2012
+Springer, 2012.
 \end_layout
 
 \begin_layout Bibliography
@@ -5872,7 +6690,7 @@ Pedregosa et al.,
 Scikit-learn: Machine Learning in Python
 \emph default
 , JMLR 12, pp.
- 2825-2830, 2011
+ 2825-2830, 2011.
 \end_layout
 
 \begin_layout Bibliography
@@ -6066,6 +6884,85 @@ https://matplotlib.org/
 \end_inset
 
 
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "Predicting survival using tree-based modeling"
+literal "false"
+
+\end_inset
+
+S.
+ Krikov et.
+ al., 
+\emph on
+Predicting Kidney Transplant Survival Using Tree-Based Modeling
+\emph default
+.
+ ASAIO Journal 53(5):p 592-600, September 2007.
+ | DOI: 10.1097/MAT.0b013e318145b9f7
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "IPCW"
+literal "false"
+
+\end_inset
+
+S.
+ J.W.
+ Willems, 
+\emph on
+Inverse Probability Censoring Weights for Routine Outcome Monitoring Data
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "National Kidney Foundation"
+literal "false"
+
+\end_inset
+
+National Kidney Foundation, 
+\emph on
+A to Z Health Guide
+\emph default
+, 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.kidney.org/atoz/content
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "SKP"
+literal "false"
+
+\end_inset
+
+Jiang AT, BHSc, Rowe N, Sener A, Luke P.
+ 
+\emph on
+Simultaneous pancreas-kidney transplantation: The role in the treatment
+ of type 1 diabetes and end-stage renal disease.
+
+\emph default
+ Can Urol Assoc J.
+ 2014 Mar;8(3-4)
 \end_layout
 
 \end_body
