@@ -5948,6 +5948,10 @@ alongside instructions on how to properly execute them.
 Cleaning the Data
 \end_layout
 
+\begin_layout Subsection
+Separating Living and Deceased Donors
+\end_layout
+
 \begin_layout Standard
 There are 6 tables to be extracted from the UNOS dataset using MongoDB as
  mentioned in 
@@ -5960,12 +5964,19 @@ noprefix "false"
 
 \end_inset
 
-.
- The one used for this study is the Kidney_Pancreas table, which contains
- information about kidney and pancreas transplantations performed between
- 1994 and 2022 in the US.
- The dataset includes data about both recipients and donors.
- 
+, though only 3 are relevant to this study.
+ These 3 being: 
+\end_layout
+
+\begin_layout Itemize
+Kidney_Pancreas, which contains information about kidney and pancreas transplant
+ations performed between 1994 and 2022 in the US including information about
+ both recipients and donors.
+\end_layout
+
+\begin_layout Itemize
+Living_Donor and Deceased_Donor, which contain more detailed information
+ about living and deceased donors respectively.
 \end_layout
 
 \begin_layout Standard
@@ -5975,12 +5986,15 @@ The Kidney_Pancreas table also happens to be the largest in terms of file
  to approximately 40GB.
  Consequently, loading the file into a Pandas DataFrame took a significant
  amount of time.
- Therefore, it proved advantageous to convert the file to .csv format, which
- drastically reduced loading time.
+ Therefore, it proved advantageous to convert all tables from JSON to .csv
+ format, which drastically reduced loading time.
  This efficiency can be attributed to the fact that unlike JSON, which stores
  data in a hierarchical structure using key-value pairs, the .csv format
  stores data in a tabular (and therefore faster to read from) format.
- In its raw form, the dataset contained 
+\end_layout
+
+\begin_layout Standard
+In its original form, the Kidney_Pancreas dataset contained 
 \begin_inset Formula $1108884$
 \end_inset
 
@@ -5988,9 +6002,52 @@ The Kidney_Pancreas table also happens to be the largest in terms of file
 \begin_inset Formula $470$
 \end_inset
 
- columns, which is usuallly considered to be a too high number for an effective
- machine learning model.
- There the number of features needed to be reduced significantly.
+ columns.
+ It contains information about both living and deceased donors, but the
+ details regarding the donors are limited in scope, particularly in the
+ case of living donors.
+ To adress this limitation, a table join was performed with the Living_Donor
+ and Deceased_Donor tables to provide more information about the donors.
+ This merge was based on the DONOR_ID column, with 
+\begin_inset Formula $174381$
+\end_inset
+
+ entries sharing a common DONOR_ID between the Kidney_Pancreas and Living_Donor
+ tables and 
+\begin_inset Formula $399822$
+\end_inset
+
+ entries sharing it between the Kidney_Pancreas and Deceased_Donor.
+ 
+\end_layout
+
+\begin_layout Standard
+Preliminary computations have revealed that the features impacting graft
+ survival vary between living donor and deceased donor transplants.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Should I include some proof here?
+\end_layout
+
+\end_inset
+
+.
+ Consequently, the dataset has been split on based on the type of transplantatio
+n performed, separating living and decead donor tranplantations.
+ Subsequently, independent machine learning models were trained on each
+ of the created subsets seperately.
+ 
+\end_layout
+
+\begin_layout Standard
+The two tables created by this split have 649 columns in the case of living
+ donors and 893 in the case of deceased donors.
+ These numbers are usuallly considered to be too high for an effective machine
+ learning model.
+ Therefore, the number of features needed to be reduced significantly.
 \end_layout
 
 \begin_layout Subsection
@@ -5998,9 +6055,24 @@ Reducing Number of Features
 \end_layout
 
 \begin_layout Standard
+In addition to the dataset, UNOS provides a .xlsx file called 
+\emph on
+STAR Files Data Dictionary
+\emph default
+ (STAR = Standard Transplant Analysis and Research), which contains information
+ about what each of the columns represents.
+ This dictionary was used in the following sections to provide context for
+ the dataset's features.
+\end_layout
+
+\begin_layout Subsubsection*
+Simultaneous Transplantations
+\end_layout
+
+\begin_layout Standard
 The dataset contains information about both kidney and pancreas transplantations
- because they are sometimes performed together, which is a medical procedure
- called a 
+, as they are sometimes performed together in a medical procedure known
+ as the 
 \emph on
 simultaneous kidney-pancreas transplant 
 \emph default
@@ -6024,11 +6096,16 @@ literal "false"
 
 .
  However, the focus of this paper is solely on kidney transplantations and
- the number SKP is relatively low compared to the number of stand-alone
+ the number of SKPs is relatively low compared to the number of stand-alone
  kidney transplantation.
  Therefore individuals , who had undergone a SKP were dropped from the dataset
  and all columns regarding pancreas transplantation were dropped as well.
  There were <number> of such entries and <number> of such columns.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Follow-up Data
 \end_layout
 
 \begin_layout Standard
@@ -6036,16 +6113,14 @@ As the goal of this paper is to predict compatibility of patients prior
  to transplantation, any column that contains information about the patient's
  status after or at the time of the transplantation needs to be removed
  from the dataset.
- Alongside the dataset, UNOS provides a 
-\emph on
-STAR Files Data Dictionary
-\emph default
- STAR = Standard Transplant Analysis and Research), which contains information
- about each of the columns represent.
- Also in this dictionary, all information gathered after or during the transplan
-tation is labeled as such.
- These labels were used to create a list of <number> columns to be droped
- from the dataset.
+ There were <number> of such features were droped from the dataset.
+ The only follow-up features that were retained are the GTIME_KI and GSTATUS_KI
+ columns, which describe the graft's survival time and censoring status
+ respectively.
+\end_layout
+
+\begin_layout Subsubsection*
+Missing Values
 \end_layout
 
 \begin_layout Standard
@@ -6068,8 +6143,8 @@ Experiment with this number and find the best one.
 \end_inset
 
  of these columns.
- To ensure that no crucial information was lost, I checked what each of
- the columns represented one by one.
+ The meaning of each of the columns was checked using the STAR dictionary
+ to ensure no crucial information was lost.
  
 \begin_inset Note Note
 status open
@@ -6081,27 +6156,8 @@ Is this ok??? Does this hold any weight coming from a person without any
 
 \end_inset
 
-.
-\end_layout
-
-\begin_layout Standard
-For the remaining 
-\begin_inset Formula $141$
-\end_inset
-
- columns I searched through the STAR Files Data Dictionary and dropped columns
- that were either obviously irrelevant (such as an internal id used by UNOS)
- or that were describing the patient's status after the transplantation
- and thus cannot be used to predict compatibility of donors and recipients
- prior to transplantation.
-\end_layout
-
-\begin_layout Standard
-Two columns that were absolutely necessary for the model are the GTIME_KI
- and PSTATUS, which are describing the survival time and censoring status
- respectively.
- In addition, I also manually added columns that were recognized as significant
- by any of the related articles 
+ Exception was made for columns that were recognized as significant by any
+ of the related articles 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Using ML methods to predict kidney transplant survival,Systematic review,Predicting survival using tree-based modeling"
@@ -6109,11 +6165,22 @@ literal "false"
 
 \end_inset
 
-, even though some of them did not pass the 
-\begin_inset Formula $50\%$
+.
+\end_layout
+
+\begin_layout Subsubsection*
+Irrelevant Columns
+\end_layout
+
+\begin_layout Standard
+For the remaining 
+\begin_inset Formula $141$
 \end_inset
 
- inclusion threshold.
+ columns, the STAR dictionary was searched with the goal of identifying
+ irrelevant columns and dropping them from the database.
+ These include IDs, codes and form statuses used by either UNOS or individual
+ transplant centers.
 \end_layout
 
 \begin_layout Subsection
@@ -6150,6 +6217,757 @@ dates in the form of strings, which I turned into numerical values by only
 Feature Selection
 \end_layout
 
+\begin_layout Standard
+
+\lang english
+\begin_inset Tabular
+<lyxtabular version="3" rows="21" columns="3">
+<features booktabs="true" tabularvalignment="middle">
+<column alignment="left" valignment="top">
+<column alignment="right" valignment="top">
+<column alignment="right" valignment="top">
+<row>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Feature
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+importances_mean
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+importances_std
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+AGE_DON
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.005035
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.001597
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+DIAG_KI
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.002315
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.000893
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+ETHCAT
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.002189
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.000287
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+DIAB
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.002041
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.001225
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+AGE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.001189
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.001221
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+HIST_DIABETES_DON
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.001011
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.000206
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+HIST_HYPERTENS_DON_Y
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.000979
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.000528
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+CREAT_TRR
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.000977
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.000364
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+HIST_HYPERTENS_DON_N
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.000971
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.000674
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+PRI_PAYMENT_TCR_KI
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.000957
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.000138
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+TOT_SERUM_ALBUM
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.000814
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.000314
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+DAYSWAIT_ALLOC
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.000790
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.000297
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+DGN_TCR
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.000741
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.000678
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+HGT_CM_TCR
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.000668
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.000347
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+WGT_KG_CALC
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.000624
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.000210
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+DIABETES_DON_Y
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.000611
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.000126
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+DIABETES_DON_N
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.000578
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.000191
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+PERIP_VASC_Y
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.000531
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.000399
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+INIT_HGT_CM
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.000469
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.000102
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+INIT_AGE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.000429
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.000841
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Hyperparameter Tuning
 \end_layout
@@ -6163,8 +6981,50 @@ General evaluation
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 TODO: Discussion about the results.
  Mention the age bias.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The accuracy of the model given by the C-index is lower than the one developed
+ in 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Using ML methods to predict kidney transplant survival"
+literal "false"
+
+\end_inset
+
+, however, they used predictors that are unkown prior to the transplantation
+ itself, such as 
+\emph on
+cold ischemia time
+\emph default
+, which describes the time the graft spends outside the body of both the
+ donor and recipient.
+ Consequently, this has a significiant impact the the recipient's survival
+ curve, thus giving their model a significant boost in accuracy.
+ However as mentioned before, the goal of this paper is to develop a machine
+ learning model that can be used for computing compatibility in order to
+ match the suitable pairs of recipients and donors, which this can be used
+ for while the one mentioned in 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Using ML methods to predict kidney transplant survival"
+literal "false"
+
+\end_inset
+
+ cannot.
 \end_layout
 
 \begin_layout Section
@@ -6214,7 +7074,7 @@ Possibilities for Future Research
 \end_layout
 
 \begin_layout Standard
-Handling the age bias - creating a model capable of picking the best match
+Handling the age bias + creating a model capable of picking the best match
  out of multitude of both donors and recipients.
 \end_layout
 
