@@ -1044,7 +1044,7 @@ literal "false"
  list for potential transplantation.
  While on the waiting list, patients have to undergo dialysis multiple times
  a week for several hours, which supplements the functions of their failing
- kidneys, which greatly reduces the qualiy of the patient's life and puts
+ kidneys, which greatly reduces the quality of the patient's life and puts
  an additional burden on the healthcare system.
  It is therefore crucial to minimize the time patients spend on the waiting
  list by optimizing the process of finding suitable donor-recipient pairs.
@@ -1873,14 +1873,6 @@ organ_R_Kidney
 \end_layout
 
 \begin_layout Subsubsection*
-Feature Scaling
-\end_layout
-
-\begin_layout Standard
-TODO: Paragraph about feature scaling
-\end_layout
-
-\begin_layout Subsubsection*
 Splitting Data into Training, Validation and Test Sets
 \begin_inset CommandInset label
 LatexCommand label
@@ -2152,6 +2144,13 @@ noprefix "false"
 
 \begin_layout Subsection
 Hyperparameter tuning
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Hyperparameter-tuning"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2305,17 +2304,6 @@ noprefix "false"
 
 , which use a log-rank test statistic in order to maximize the difference
  between the predicted survival time in each leaf node.
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-https://www.kdnuggets.com/2020/01/decision-tree-algorithm-explained.html
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Subsubsection
@@ -2508,8 +2496,8 @@ For each iteration (ordered pair
 \end_inset
 
 ), the quality of the split is calculated by using the algorithm's criterion.
- In the case of the ID3 algorithm, the criterion is the entropy of a given
- set of examples which is given by
+ Assuming that the tree's criterion is entropy, the entropy of a given set
+ of examples is given by
 \end_layout
 
 \begin_layout Standard
@@ -2623,31 +2611,6 @@ f(\mathbf{x},a)=p^{S_{n}}\left(a\right)=\frac{\left|\left\{ \left(\mathbf{x}^{(i
 
 \begin_layout Subsubsection
 Building a Regression Tree
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-https://www.saedsayad.com/decision_tree_reg.htm#:~:text=The%20ID3%20algorithm%20can
-%20be,Gain%20with%20Standard%20Deviation%20Reduction.&text=A%20decision%20tree%20
-is%20built,with%20similar%20values%20(homogenous).
-\end_layout
-
-\begin_layout Plain Layout
-https://www.datascienceprophet.com/understanding-the-mathematics-behind-decision-t
-ree-algorithm-part-ii/
-\end_layout
-
-\begin_layout Plain Layout
-https://medium.com/machine-learning-researcher/decision-tree-algorithm-in-machine
--learning-248fb7de819e
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -3019,9 +2982,8 @@ Ensemble Learning and Random Forests
 \emph on
 Ensemble learning 
 \emph default
-is machine learning technique that combines the predictions of multiple
- models in order to boost the overall performance of a model on a given
- task.
+is a machine learning technique that combines the predictions of multiple
+ simpler models in order to boost its overall performance on a given task.
  An example of an ensemble learning method are 
 \emph on
 random forests
@@ -3031,7 +2993,7 @@ random forests
  accurate predictions than any single decision tree could make by itself.
  The key idea behind random forests is that every decision tree is trained
  using a different sample of input features, which helps reduce overfitting
- and improves the generalization performance of the model.
+ and improves the generalization capabilites of the model.
 \end_layout
 
 \begin_layout Standard
@@ -4883,25 +4845,6 @@ h(t)=-\left(\frac{\frac{dS(t)}{dt}}{S(t)}\right)
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Maybe write a paragraph about 
-\emph on
-interaction 
-\emph default
-and 
-\emph on
-confounding
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Subsection
 Hazard Ratio
 \begin_inset CommandInset label
@@ -6044,7 +5987,8 @@ noprefix "false"
 \end_layout
 
 \begin_layout Enumerate
-Once a tree is fully grown, each terminal node outputs a 
+Once a tree is fully grown, each terminal node outputs a either a survival
+ function or a 
 \emph on
 cumulative hazard function 
 \emph default
@@ -6141,7 +6085,18 @@ Let
 \end_inset
 
  respectively.
- Then the CHF for the node 
+ Then either a survival function is calculated using the Kaplan-Meier estimator
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Kaplan-Meier-Estimator"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, or a CHF for the node 
 \begin_inset Formula $j$
 \end_inset
 
@@ -6153,18 +6108,7 @@ Let
 
 \end_inset
 
-which is related to the Kaplan-Meier estimator described in 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "subsec:Kaplan-Meier-Estimator"
-plural "false"
-caps "false"
-noprefix "false"
 
-\end_inset
-
-.
- 
 \begin_inset Newline newline
 \end_inset
 
@@ -6303,6 +6247,14 @@ H_{e}^{**}(t\mid\mathbf{x}_{i})=\frac{\sum_{b=1}^{B}I_{i,b}H_{b}(t\mid\mathbf{x}
 \end_inset
 
 
+\end_layout
+
+\begin_layout Section
+Hyperparameters
+\end_layout
+
+\begin_layout Standard
+TODO: List hyperparameters
 \end_layout
 
 \begin_layout Section
@@ -6736,11 +6688,15 @@ error
  
 \end_layout
 
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
 \begin_layout Subsection
 Handling Potential Bias
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 The problem with the Harell's concordance index is that it is known to evaluate
  the performance of a given model too optimistically, if the ratio of censored
  individuals in the dataset is high 
@@ -6757,7 +6713,7 @@ literal "false"
 e the model's performance.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 To adress this issue, the scikit-survival package 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -6812,6 +6768,11 @@ literal "false"
 \end_inset
 
 .
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -7971,7 +7932,7 @@ noprefix "false"
 
 \begin_layout Standard
 Overall, these measures reduced the number of features to 
-\begin_inset Formula $139$
+\begin_inset Formula $137$
 \end_inset
 
  in the case of 
@@ -8155,6 +8116,7 @@ Kidpan_Deceased
 \end_inset
 
 .
+ After training
 \end_layout
 
 \begin_layout Section
@@ -8166,6 +8128,56 @@ name "sec:Feature-Selection"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+After training the model on the whole dataset, the performance of the model
+ described by the C-index was 
+\begin_inset Formula $0.6345$
+\end_inset
+
+ for the living donor model and <number> for the deceased donor model.
+ The hyperparameters used for this training were set to: 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+n_estimators=100
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+min_samples_split=10
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+min_samples_leaf=10
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+max_depth=None
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -8232,7 +8244,7 @@ n_repeats=1
 
  .
  The two resulting tables of variable imortances were used to create a list
- of the 25 most important features.
+ of the 23 most important features.
  The varaible importance of those features was then validated by computing
  permutation importance on a dataset consisting only of these features with
  
@@ -8246,6 +8258,18 @@ n_repeats=5
 \end_inset
 
 .
+ In addition, the 4 columns regarding HLA typing (
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+AMIS, BMIS, DRMIS, HLAMIS
+\end_layout
+
+\end_inset
+
+) were added to study their influence on the graft's long term survival,
+ resulting in 27 features being selected in total.
 \end_layout
 
 \begin_layout Standard
@@ -8265,14 +8289,10 @@ noprefix "false"
 
 \begin_layout Standard
 \begin_inset Float table
-placement h
+placement H
 wide false
 sideways false
 status open
-
-\begin_layout Plain Layout
-
-\end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
@@ -8296,16 +8316,20 @@ status open
 
 
 \backslash
-center
+resizebox{
+\backslash
+textwidth}{!}{
 \end_layout
 
 \end_inset
 
 
 \begin_inset Tabular
-<lyxtabular version="3" rows="21" columns="3">
+<lyxtabular version="3" rows="25" columns="5">
 <features booktabs="true" tabularvalignment="middle">
 <column alignment="left" valignment="top">
+<column alignment="right" valignment="top">
+<column alignment="right" valignment="top">
 <column alignment="right" valignment="top">
 <column alignment="right" valignment="top">
 <row>
@@ -8326,7 +8350,7 @@ Feature
 \begin_layout Plain Layout
 
 \lang english
-importances_mean
+Mean Importance
 \end_layout
 
 \end_inset
@@ -8337,7 +8361,31 @@ importances_mean
 \begin_layout Plain Layout
 
 \lang english
-importances_std
+St.
+ Dev.
+ Importance
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Description
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Data type
 \end_layout
 
 \end_inset
@@ -8350,204 +8398,51 @@ importances_std
 \begin_layout Plain Layout
 
 \lang english
-AGE_DON
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-0.005035
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-0.001597
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-DIAG_KI
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-0.002315
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-0.000893
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-ETHCAT
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-0.002189
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-0.000287
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-DIAB
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-0.002041
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-0.001225
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
 AGE
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="right" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
 \lang english
-0.001189
+0.024871
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="right" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
 \lang english
-0.001221
+0.007475
 \end_layout
 
 \end_inset
 </cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
 \lang english
-HIST_DIABETES_DON
+Recipient's age
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" topline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
 \lang english
-0.001011
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-0.000206
+Numerical
 \end_layout
 
 \end_inset
@@ -8560,7 +8455,7 @@ HIST_DIABETES_DON
 \begin_layout Plain Layout
 
 \lang english
-HIST_HYPERTENS_DON_Y
+AGEDON
 \end_layout
 
 \end_inset
@@ -8571,7 +8466,7 @@ HIST_HYPERTENS_DON_Y
 \begin_layout Plain Layout
 
 \lang english
-0.000979
+0.012540
 \end_layout
 
 \end_inset
@@ -8582,77 +8477,29 @@ HIST_HYPERTENS_DON_Y
 \begin_layout Plain Layout
 
 \lang english
-0.000528
+0.001580
 \end_layout
 
 \end_inset
 </cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
 \lang english
-CREAT_TRR
+Donor's age
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
 \lang english
-0.000977
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-0.000364
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-HIST_HYPERTENS_DON_N
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-0.000971
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-0.000674
+Numerical
 \end_layout
 
 \end_inset
@@ -8676,7 +8523,7 @@ PRI_PAYMENT_TCR_KI
 \begin_layout Plain Layout
 
 \lang english
-0.000957
+0.012119
 \end_layout
 
 \end_inset
@@ -8687,7 +8534,143 @@ PRI_PAYMENT_TCR_KI
 \begin_layout Plain Layout
 
 \lang english
-0.000138
+0.001041
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Recipient's primary payment source
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Categorical
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+ETHCAT
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.010511
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.002499
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Recipient's ethnicity category
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Categorical
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+END_BMI_CALC
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.009909
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.001080
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Recipient's BMI
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Numerical
 \end_layout
 
 \end_inset
@@ -8711,7 +8694,7 @@ TOT_SERUM_ALBUM
 \begin_layout Plain Layout
 
 \lang english
-0.000814
+0.009846
 \end_layout
 
 \end_inset
@@ -8722,7 +8705,485 @@ TOT_SERUM_ALBUM
 \begin_layout Plain Layout
 
 \lang english
-0.000314
+0.001971
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Recipient's total serum albumin
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Numerical
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+WORK_INCOME_TCR
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.009702
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.000435
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Is recipient working for income
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Categorical
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+PRE_TX_TXFUS
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.009500
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.001591
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Did recipient recieve transfusion
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Categorical
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+ETHCAT_DON
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.009020
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.000407
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Donor's ethnicity category
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Categorical
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+DIABETES_DON
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.008933
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.000531
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Donor's diabetes status
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Categorical
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+DAYSWAIT_CHRON_KI
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.008736
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.000717
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Days recipient spent on waiting list
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Numerical
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+EBV_SEROSTATUS
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.008692
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.000600
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Recipient's status of Epstein-Barr virus
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Categorical
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+ON_DIALYSIS
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.008667
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.000418
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Is recipeint regularly administered dialysis
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Categorical
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+PREV_TX_ANY
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.008667
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.000627
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Recipient's past transplantations
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Categorical
 \end_layout
 
 \end_inset
@@ -8746,7 +9207,7 @@ DAYSWAIT_ALLOC
 \begin_layout Plain Layout
 
 \lang english
-0.000790
+0.008268
 \end_layout
 
 \end_inset
@@ -8757,7 +9218,29 @@ DAYSWAIT_ALLOC
 \begin_layout Plain Layout
 
 \lang english
-0.000297
+0.000643
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Days recipient was prioritised for allocation
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Numerical
 \end_layout
 
 \end_inset
@@ -8770,7 +9253,7 @@ DAYSWAIT_ALLOC
 \begin_layout Plain Layout
 
 \lang english
-DGN_TCR
+HCV_SEROSTATUS
 \end_layout
 
 \end_inset
@@ -8781,7 +9264,7 @@ DGN_TCR
 \begin_layout Plain Layout
 
 \lang english
-0.000741
+0.008215
 \end_layout
 
 \end_inset
@@ -8792,7 +9275,29 @@ DGN_TCR
 \begin_layout Plain Layout
 
 \lang english
-0.000678
+0.000306
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Recipient's Hepatitis C status
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Categorical
 \end_layout
 
 \end_inset
@@ -8805,7 +9310,7 @@ DGN_TCR
 \begin_layout Plain Layout
 
 \lang english
-HGT_CM_TCR
+HIST_CIG
 \end_layout
 
 \end_inset
@@ -8816,7 +9321,7 @@ HGT_CM_TCR
 \begin_layout Plain Layout
 
 \lang english
-0.000668
+0.008208
 \end_layout
 
 \end_inset
@@ -8827,7 +9332,29 @@ HGT_CM_TCR
 \begin_layout Plain Layout
 
 \lang english
-0.000347
+0.001030
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Recipient's history of cigarette use
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Categorical
 \end_layout
 
 \end_inset
@@ -8840,7 +9367,7 @@ HGT_CM_TCR
 \begin_layout Plain Layout
 
 \lang english
-WGT_KG_CALC
+FUNC_STAT_TCR
 \end_layout
 
 \end_inset
@@ -8851,7 +9378,7 @@ WGT_KG_CALC
 \begin_layout Plain Layout
 
 \lang english
-0.000624
+0.008014
 \end_layout
 
 \end_inset
@@ -8862,7 +9389,29 @@ WGT_KG_CALC
 \begin_layout Plain Layout
 
 \lang english
-0.000210
+0.000208
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Recipient's overall health status
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Categorical
 \end_layout
 
 \end_inset
@@ -8875,7 +9424,18 @@ WGT_KG_CALC
 \begin_layout Plain Layout
 
 \lang english
-DIABETES_DON_Y
+KI_CREAT_PREOP
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.007738
 \end_layout
 
 \end_inset
@@ -8891,13 +9451,24 @@ DIABETES_DON_Y
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
 \lang english
-0.000126
+Donor's creatinine level
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Numerical
 \end_layout
 
 \end_inset
@@ -8910,7 +9481,7 @@ DIABETES_DON_Y
 \begin_layout Plain Layout
 
 \lang english
-DIABETES_DON_N
+DIAB
 \end_layout
 
 \end_inset
@@ -8921,7 +9492,7 @@ DIABETES_DON_N
 \begin_layout Plain Layout
 
 \lang english
-0.000578
+0.007714
 \end_layout
 
 \end_inset
@@ -8932,7 +9503,29 @@ DIABETES_DON_N
 \begin_layout Plain Layout
 
 \lang english
-0.000191
+0.000167
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Recipient's diabetes status
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Categorical
 \end_layout
 
 \end_inset
@@ -8945,7 +9538,7 @@ DIABETES_DON_N
 \begin_layout Plain Layout
 
 \lang english
-PERIP_VASC_Y
+PERIP_VASC
 \end_layout
 
 \end_inset
@@ -8956,7 +9549,7 @@ PERIP_VASC_Y
 \begin_layout Plain Layout
 
 \lang english
-0.000531
+0.007668
 \end_layout
 
 \end_inset
@@ -8967,7 +9560,29 @@ PERIP_VASC_Y
 \begin_layout Plain Layout
 
 \lang english
-0.000399
+0.000300
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Recipient's peripheral vascular disease status
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Categorical
 \end_layout
 
 \end_inset
@@ -8980,7 +9595,7 @@ PERIP_VASC_Y
 \begin_layout Plain Layout
 
 \lang english
-INIT_HGT_CM
+AMIS
 \end_layout
 
 \end_inset
@@ -8991,7 +9606,7 @@ INIT_HGT_CM
 \begin_layout Plain Layout
 
 \lang english
-0.000469
+0.006838
 \end_layout
 
 \end_inset
@@ -9002,7 +9617,86 @@ INIT_HGT_CM
 \begin_layout Plain Layout
 
 \lang english
-0.000102
+0.001141
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Mismatch at the HLA-A locus
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Numerical
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+DRMIS
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.005818
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.002427
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Mismatch at the HLA-DR locus
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Numerical
 \end_layout
 
 \end_inset
@@ -9015,7 +9709,7 @@ INIT_HGT_CM
 \begin_layout Plain Layout
 
 \lang english
-INIT_AGE
+BMIS
 \end_layout
 
 \end_inset
@@ -9026,7 +9720,7 @@ INIT_AGE
 \begin_layout Plain Layout
 
 \lang english
-0.000429
+0.003345
 \end_layout
 
 \end_inset
@@ -9037,13 +9731,46 @@ INIT_AGE
 \begin_layout Plain Layout
 
 \lang english
-0.000841
+0.001171
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Mismatch at the HLA-B locus
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Numerical
 \end_layout
 
 \end_inset
 </cell>
 </row>
 </lyxtabular>
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
 
 \end_inset
 
@@ -9057,7 +9784,244 @@ name "variable importance table"
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Using the same hyperparameters as before, the C-index of the model using
+ the reduced list of features improved to 
+\begin_inset Formula $0.6366$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Section
+Hyperparameter Tuning 
+\end_layout
+
+\begin_layout Standard
+While for training of the inital models and feature selection the dataset
+ has been split into only the training and the test set, with 80% of the
+ dataset being reserved for training and 20% for testing.
+ For hyperparameter tuning, the dataset has been split into three folds:
+ the training, validation and test sets with the ratio being 70% for training
+ and 15% for validation and testing each.
+ See 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Splitting-Data-into"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ for why this was done.
+\end_layout
+
+\begin_layout Standard
+After experimenting with different combinations of hyperparameters using
+ grid search 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Hyperparameter-tuning"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, the optimal parameters were found to be: 
+\begin_inset Flex Code
+status open
+
 \begin_layout Plain Layout
+n_estimators=200
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+min_samples_split=10
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+min_samples_leaf=15
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+max_depth=None
+\end_layout
+
+\end_inset
+
+.
+ Using these hyperparameters for training the dataset resulted in the improvemen
+t of the model's C-index to 
+\begin_inset Formula $0.6374$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Section
+Example Usage
+\end_layout
+
+\begin_layout Standard
+Once trained, the model can be used to predict allograft's survival as well
+ as cummulative hazard functions based on information about the recipient
+ and the donor as listed in table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "variable importance table"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ In addition, the model can also be used to predict a risk score 
+\begin_inset Formula $R$
+\end_inset
+
+, which is given by 
+\begin_inset Formula 
+\begin{equation}
+R\left(\mathbf{x}\right)=\sum_{j=1}^{n\left(h\right)}H\left(T_{j}\mid\mathbf{x}\right)
+\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ is an input feature vector, 
+\begin_inset Formula $h$
+\end_inset
+
+ is the terminal node that was reached when 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ was introduced, 
+\begin_inset Formula $n\left(h\right)$
+\end_inset
+
+ is the number of unique event times in node 
+\begin_inset Formula $h$
+\end_inset
+
+ and 
+\begin_inset Formula $H\left(t\mid\mathbf{x}\right)$
+\end_inset
+
+ is the cummulative hazard function defined in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:tree CHF"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "scikit-survival"
+literal "false"
+
+\end_inset
+
+.
+ This risk score could be a good way to quantify the compatibility between
+ a potential donor-recipient pairing.
+\end_layout
+
+\begin_layout Standard
+Illustrated in figures 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "surv_example"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "hazard_example"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ are predicted survival functions, cummulative hazard functions and risk
+ scores of 5 randomly selected samples from the test set.
+ In case they were censored, the dotted line represens their observed time
+ of censoration, else, the dashed line represents their graft failure time.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Predicted survival functions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Images/surv_example_no_title.pdf
+	scale 60
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "surv_example"
+
+\end_inset
+
 
 \end_layout
 
@@ -9066,12 +10030,46 @@ name "variable importance table"
 
 \end_layout
 
-\begin_layout Section
-Hyperparameter Tuning
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Predicted cummulative hazard functions
 \end_layout
 
-\begin_layout Standard
-The optimal 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Images/hazard_example_no_title.pdf
+	scale 60
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "hazard_example"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Chapter
@@ -9080,20 +10078,6 @@ Model evaluation
 
 \begin_layout Section
 General evaluation
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-TODO: Discussion about the results.
- Mention the age bias.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -9106,19 +10090,25 @@ literal "false"
 
 \end_inset
 
-, however, they used predictors that are unkown prior to the transplantation
- itself, such as 
+ which had a C-index of 
+\begin_inset Formula $0.7$
+\end_inset
+
+.
+ This is because they used predictors that are unkown prior to the transplantati
+on itself.
+ One such example is the 
 \emph on
 cold ischemia time
 \emph default
 , which describes the time the graft spends outside the body of both the
  donor and recipient.
- Consequently, this has a significiant impact the the recipient's survival
- curve, thus giving their model a significant boost in accuracy.
- However as mentioned before, the goal of this paper is to develop a machine
+ This feature in particular has a significiant impact the the recipient's
+ survival curve, thus giving their model a significant boost in accuracy.
+ However, as mentioned before, the goal of this paper is to develop a machine
  learning model that can be used for computing compatibility in order to
- match the suitable pairs of recipients and donors, which this can be used
- for while the one mentioned in 
+ match the suitable pairs of recipients and donors, which the one developed
+ in 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Using ML methods to predict kidney transplant survival"
@@ -9126,7 +10116,11 @@ literal "false"
 
 \end_inset
 
- cannot.
+ is not suited for.
+\end_layout
+
+\begin_layout Standard
+TODO: Discuss the the most important features.
 \end_layout
 
 \begin_layout Section
