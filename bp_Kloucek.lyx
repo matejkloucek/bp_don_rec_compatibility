@@ -8,6 +8,7 @@
 \begin_preamble
 %% Font setup: please leave the LyX font settings all set to 'default'
 %% if you want to use any of these packages:
+\usepackage{graphicx}
 
 %% Use Times New Roman font for text and Belleek font for math
 %% Please make sure that the 'esint' package is turned off in the
@@ -1246,7 +1247,7 @@ Semi-supervised Learning
 \emph on
 Reinforcement Learning
 \emph default
- is a specialzed case of Semi-supervised learning, where the model is trained
+ is a specialized case of Semi-supervised learning, where the model is trained
  using feedback from the environment and is often used in cases where no
  labeled data exists or when the labeled dataset does not provide the best
  course of action.
@@ -1315,68 +1316,586 @@ Neural Networks
 .
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Building a Machine Learning Model
 \end_layout
 
 \begin_layout Standard
 The process of building a machine learning model generally consists of the
- following steps (TODO: explain each one in more detail):
-\end_layout
-
-\begin_layout Subsubsection*
-Preprocessing 
-\end_layout
-
-\begin_layout Standard
-Paragraph about handling missing values.
-\end_layout
-
-\begin_layout Standard
-Paragraph about feature encoding.
-\end_layout
-
-\begin_layout Standard
-Paragraph about Splitting into training, validation and test sets 1.2.1
-\end_layout
-
-\begin_layout Subsubsection*
-Feature Selection
-\end_layout
-
-\begin_layout Standard
-Paragraph about variable importance
-\end_layout
-
-\begin_layout Paragraph*
-Hyperparameter tuning
-\end_layout
-
-\begin_layout Standard
-Paragraph about hyperparameter tuning
-\end_layout
-
-\begin_layout Subsubsection*
-Evaluating Models Performance 
-\end_layout
-
-\begin_layout Standard
-overfitting, underfitting 1.2.2
-\end_layout
-
-\begin_layout Section
-Training and Evaluating a Machine Learning Model
+ following steps:
 \end_layout
 
 \begin_layout Subsection
-Training, Validation and Test sets
+Data Preprocessing 
+\end_layout
+
+\begin_layout Standard
+Before a machine learning model can even begin to be trained, it is necessary
+ that the training data is formatted correctly.
+ The process of transforming the dataset into a correct format is called
+ 
+\emph on
+preprocessing
+\emph default
+ and is an integral part of the process of building almost every machine
+ learning model.
+ Preprocessing includes, but is not limited to, the following techniques.
+\end_layout
+
+\begin_layout Subsubsection*
+Imputing
+\end_layout
+
+\begin_layout Standard
+One of the most common challenges tackled during preprocessing is missing
+ values.
+ Majority of machine learning models are not capable of handling entries
+ with missing features so unless there is another model at disposal that
+ can handle missing values, the missing values need to handled in one of
+ the following ways.
+ 
+\end_layout
+
+\begin_layout Standard
+The easiest option is to drop columns or rows with missing values from the
+ dataset.
+ This is fast and reliable, however it is not optimal as it can lead to
+ a potential loss of important information that the model could learn from.
+ 
+\end_layout
+
+\begin_layout Standard
+A preferable alternative is replacing the missing values based on some given
+ rule.
+ This process is called 
+\emph on
+imputing 
+\emph default
+and can be performed in many different ways.
+ One of the most popular imputers is the 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+SimpleImputer()
+\end_layout
+
+\end_inset
+
+ provided by the scikit-learn library described in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:scikit-learn"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ For numerical features, it replaces missing values with either the mean
+ or the median of the values in the column that the missing value is located
+ in.
+ In the case of categorical features, it replaces missing values with the
+ most common category in the particular column.
+ Also in the case of both categorical and numerical values, it can simply
+ replace the missing values with a given constant value.
+\end_layout
+
+\begin_layout Subsubsection*
+Encoding Categorical Features
+\end_layout
+
+\begin_layout Standard
+Another challenge tackled during preprocessing arises from the fact that
+ most machine learning models only allow numerical features as input.
+ As a result, categorical values need to be transformed into numerical features
+ in a process called 
+\emph on
+encoding
+\emph default
+.
+ One of the most simple yet most efficient methods of encoding is one-hot
+ encoding, which transforms a categorical column with unique values 
+\begin_inset Formula $(x_{1},\ldots x$
+\end_inset
+
+
+\begin_inset Formula $_{n})$
+\end_inset
+
+ into 
+\begin_inset Formula $n$
+\end_inset
+
+ columns.
+ For each row, the value of the 
+\begin_inset Formula $i$
+\end_inset
+
+-th newly created column is 
+\begin_inset Formula $1$
+\end_inset
+
+ 
+\begin_inset Formula $\iff$
+\end_inset
+
+ the original categorical column had a value 
+\begin_inset Formula $x_{i}$
+\end_inset
+
+.
+ The other newly created columns are assigned a value of 
+\begin_inset Formula $0$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "black"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+
+\lang english
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+center
+\end_layout
+
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="2">
+<features booktabs="true" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+organ
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+R_Kidney
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+L_Kidney
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Pancreas
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+R_Kidney
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Pancreas
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset space \hspace{}
+\length 1cm
+\end_inset
+
+
+\begin_inset Formula $\longrightarrow$
+\end_inset
+
+
+\begin_inset space \hspace{}
+\length 1cm
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="3">
+<features booktabs="true" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+organ_L_Kidney
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+organ_Pancreas
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+organ_R_Kidney
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Feature Scaling
+\end_layout
+
+\begin_layout Standard
+TODO: Paragraph about feature scaling
+\end_layout
+
+\begin_layout Subsubsection*
+Splitting Data into Training, Validation and Test Sets
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Splitting-Data-into"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 The goal of machine learning is to create models that are able to make predictio
 ns when faced with new data that the model hasn't seen during the training
  process.
- To achieve this, it is neccessary to split the data into 3 parts: 
+ To achieve this, it is necessary to split the data into 3 parts: 
 \emph on
 Training set
 \emph default
@@ -1390,10 +1909,11 @@ and
  
 \emph default
 If a model is trained using all available data, it may perform well on said
- data, but may be unable to generalise for new instances thus making it
+ data, but may be unable to generalize for new instances thus making it
  useless in practice, which is why it is important to keep some of the data
  aside for validation and testing.
- The datasets used for validation and testing are called 
+ The datasets used for validation and testing are also referred to as the
+ 
 \emph on
 hold-out 
 \emph default
@@ -1409,7 +1929,7 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-It is desirable to keep the majority of the data for testing with the usual
+It is desirable to keep the majority of the data for training with the usual
  distribution being 70% for training and 15% for training and validation
  each, though with larger datasets, it is possible to allocate even higher
  percentage of the data to training.
@@ -1424,18 +1944,30 @@ Once the training of the model has been done using the training set, the
 generalization error, 
 \emph default
 given by the error rate of the model on new cases.
+ This however, is not suitable for models working with censored data, whose
+ performances is usually evaluated using the C-index described in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Harell's-Concordance-Index"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
-Better performace of the model can be achieved using a validation set, which
- gives the option to select the best values for the model's 
+Better performance of the model can be achieved using a validation set,
+ which gives the option to select the best values for the model's 
 \emph on
 hyperparameters
 \emph default
  (specifics of a given machine learning model that are set before the training
  process begins).
  This is done by training the model multiple times on the training set with
- different hyperparametrs and then comparing their perfomance on the validation
+ different hyperparameters and then comparing their perfomance on the validation
  set.
  Once the best model has been selected, it is then trained using both the
  training and the validation set and its performance is then measured using
@@ -1451,26 +1983,37 @@ literal "false"
 \end_layout
 
 \begin_layout Subsection
-Overfitting and Underfitting
+Evaluating Performance 
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Evaluating-Performance"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-If the generalization error of the model is low on the training set, but
- high on the test set, it means that the model has learned unnecessary details
- from the training set which then hampers its ability to generalise for
+If the model performs well on the training set (e.g.
+ it's generalization error is low), but poorly on the test set, it means
+ that the model has learned unnecessary details (also called 
+\emph on
+noise
+\emph default
+) from the training set which then hampers its ability to generalize for
  new instances.
  This phenomena is called 
 \emph on
 overfitting 
 \emph default
-and is a common problem that arrises during the process of developing a
- machine learning model.
+and is a common problem that arises during the process of developing a machine
+ learning model.
  Overfitting usually caused either by the data being too noisy (errors in
  the data, many outliers), the dataset being too small or by having too
  many irrelevant features.
- One way to overcome this is too adressed the above mentioned problems by
- gathering more data, removing outliers and inputing errors in the data
- or by simplifying the model by choosing fewer features.
+ The above mentioned problems can be overcome by gathering more data, removing
+ outliers and locating errors in the data or by simplifying the model by
+ choosing fewer features.
  Another way of solving the issue of overfitting is constraining how much
  the model can change the values of its parameters, thus making the model
  simpler and less prone to overfitting.
@@ -1495,10 +2038,10 @@ Machine learning models can also face an opposite problem, i.e.
 \emph on
 underfitting 
 \emph default
-and can be solved by using a more appropriate (more complex) model for the
- given task, better selecting features to train the model on or reducing
- any constraints that might have set to simplify the model in order to prevent
- overfitting 
+and can be solved by either using a more appropriate (and more complex)
+ model for the given task, selecting better features to train the model
+ on or reducing any constraints that might have been set to simplify the
+ model in order to prevent overfitting 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Hands-On ML"
@@ -1509,8 +2052,163 @@ literal "false"
 .
 \end_layout
 
+\begin_layout Subsection
+Feature Selection
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Feature-Selection"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+As mentioned in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Evaluating-Performance"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, one of the most common causes for overfitting is having too many features
+ included in the model.
+ This can be solved by only selecting the features that contribute the most
+ to the model's performance.
+ This can not only prevent overfitting and thus increase the model's accuracy
+ scores 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "scikit-learn"
+literal "false"
+
+\end_inset
+
+ but also greatly increase explainability of the model 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "100-page ML"
+literal "false"
+
+\end_inset
+
+ and speed up the training process.
+ 
+\end_layout
+
+\begin_layout Standard
+In the case of classification decision trees and random forests described
+ in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Decision-Trees-and"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, feature importance is most commonly computed using the 
+\emph on
+mean decrease in impurity 
+\emph default
+(MDI) also known 
+\emph on
+Gini importance.
+
+\emph default
+ For each feature used as an input for a given tree, the MDI is calculated
+ as the mean improvement in the accuracy of the given tree when splitting
+ on this feature.
+ In the case of random forests, this importance is then averaged over all
+ trees.
+ This is a very efficient way of computing feature importance as it can
+ be calculated during the training process.
+ However this method can be biased towards overestimating importance of
+ variables with bigger scaled values .
+\end_layout
+
+\begin_layout Standard
+A more reliable, though more computationally demanding, alternative is the
+ 
+\emph on
+permutation importance 
+\emph default
+described in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Permutation-Variable-Importance"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Hyperparameter tuning
+\end_layout
+
+\begin_layout Standard
+An integral part of building a well-performing machine learning model is
+ selecting the best hyperparameters for a given algorithm.
+ These parameters are not optimized by the learning algorithm itself and
+ therefore require experimentation to find the best combination of values
+ for them 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "100-page ML"
+literal "false"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+A common way of finding the best combination of hyperparameters is 
+\emph on
+grid search
+\emph default
+, which works by creating a set of values for each hyperparameter and then
+ evaluating the model's performance for every combination of these hyperparamete
+rs.
+ For numerical parameters, a logarithmic scale is typically used to create
+ a set of possible values (e.q.
+ 
+\begin_inset Formula $\left[0.01,0.1,1,10,100,1000\right]$
+\end_inset
+
+), while for categorical hyperparamaters, it is possible to simply iterate
+ over all possible values.
+ When the best combination of hyperparameters is found, it can be beneficial
+ to experiment with values closer to the found optimal combination 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "100-page ML"
+literal "false"
+
+\end_inset
+
+.
+ 
+\end_layout
+
 \begin_layout Section
 Decision Trees and Random Forests
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Decision-Trees-and"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -1545,18 +2243,9 @@ Decision trees are in practice mostly binary trees where in each parent
 \emph on
 decision node
 \emph default
-), a specific attribute of the feature vector 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Decide on terminology: feature vector / predictor vector
-\end_layout
-
-\end_inset
-
- is examined and a split is made based on a given criteria whose specifics
- are learned during the training process.
+), a specific attribute of the feature vector is examined and a split is
+ made based on a given criteria whose specifics are learned during the training
+ process.
  For example if a value of the given attribute is below a specific threshold,
  the left branch is followed, otherwise the right branch is followed, with
  the threshold being set to maximize a certain performance metric of the
@@ -1584,9 +2273,13 @@ tion tree is called ID3, which selects what attributes from the feature
 \emph on
 Entropy
 \emph default
- or 
+, 
 \emph on
-Information gain
+Information gain 
+\emph default
+or 
+\emph on
+Gini Impurity
 \emph default
  of the subsets created by the split made on each feature.
  In the case of Regression Trees, the criterion used is often based on the
@@ -1600,9 +2293,18 @@ standard deviation
 \emph default
  between labels and their mean values.
  Another type of criterion is used by the decision trees in Random Survival
- Forests, described in more detail later, which use a log-rank test statistic
- in order to maximize the difference between the predicted survival time
- in each leaf node.
+ Forests, described in more detail in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Random-Survival-Forests"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, which use a log-rank test statistic in order to maximize the difference
+ between the predicted survival time in each leaf node.
  
 \begin_inset Note Note
 status open
@@ -2309,7 +3011,7 @@ f\left(\mathbf{x}\right)=\frac{1}{\left|S_{n}\right|}\sum_{(\mathbf{x}^{(i)},y^{
 \end_layout
 
 \begin_layout Subsection
-Ensemble Learning and Random Forests
+Ensemble Learning and Random Forests 
 \end_layout
 
 \begin_layout Standard
@@ -2413,23 +3115,19 @@ literal "false"
 \begin_layout Enumerate
 
 \emph on
-Sampling the data: 
-\emph default
-In order to boost the performance of a random forests model (and other ensemble
- learning methods), it is vital to train the decision trees (or other predictors
-) 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Clash in terminology: here predictors refers to the models themselves while
- before it referred to the attributes/ features of the data.
-\end_layout
+Sampling the data:
+\begin_inset CommandInset label
+LatexCommand label
+name "enu:Sampling-the-data:"
 
 \end_inset
 
- on different samples of the data in order to minimize risk of the predictors
- making the same kind of error.
+ 
+\emph default
+In order to boost the performance of a random forests model (and other ensemble
+ learning methods), it is vital to train the decision trees on different
+ samples of the data in order to minimize risk of the predictors making
+ the same kind of error.
  Samples are taken randomly from the dataset in order to create multiple
  different subsets of the data.
  This process can be divided based on whether the samples are taken 
@@ -2492,7 +3190,7 @@ Extremely Randomized Trees.
 Aggregating Predictions
 \emph default
 : Random forests make predictions by aggregating the predictions made by
- the indivudual decision trees, for example in the case of classification
+ the individual decision trees, for example in the case of classification
  task, the class with the biggest amount of votes is selected while in the
  case of a regression task, the predicted value is calculated by averaging
  the values predicted by the individual decision trees.
@@ -2524,8 +3222,8 @@ chronic kidney disease
 \emph default
 is a medical condition in which the kidneys gradually lose their ability
  to filter waste products and excess fluids from the blood system.
- CKD is the main cause for renal transplnatation worldwide as roughly 90%
- of all renal tranplantation are performed to treat the 
+ CKD is the main cause for renal transplantation worldwide as roughly 90%
+ of all renal transplantation are performed to treat the 
 \emph on
 end-stage renal disease
 \emph default
@@ -2547,10 +3245,10 @@ literal "false"
 \end_inset
 
  in 1990.
- Symptoms of CKD include fatique, nausea, loss of apetite, leg swelling
+ Symptoms of CKD include fatigue, nausea, loss of appetite, leg swelling
  and itching.
  As the disease progresses, it may result in health complications such as
- anemia, cardiovascular disease, bone disease and nerve demage.
+ anemia, cardiovascular disease, bone disease and nerve damage.
  In the final stages when the kidneys fail altogether, the affected person
  needs to regularly undergo dialysis, which supplements the kidney's functions.
  However, this needs to be done several times a week and each session lasts
@@ -2565,7 +3263,7 @@ Pre-Transplant Procedures
 
 \begin_layout Standard
 There are number of procedures that a patient has to undergo before they
- are admitted onto the kindey transplantation wainting list.
+ are admitted onto the kidney transplantation waiting list.
 \end_layout
 
 \begin_layout Standard
@@ -2584,10 +3282,10 @@ HLA typing
 is performed both on the patient and the recipient.
  HLA typing assumes paramount importance in determining the immunological
  compatibility between the donor and the recipient, which is necessary for
- a succesful transplantation.
- Transplantaion between a non-compatible paring could lead to an acute transplan
-t rejection, which happens when the recipient's immune system percieves
- the graft as foreign and rejects it.
+ a successful transplantation.
+ Transplantation between a incompatible paring could lead to an acute transplant
+ rejection, which happens when the recipient's immune system perceives the
+ graft as foreign and rejects it.
 \end_layout
 
 \begin_layout Subsection
@@ -2609,7 +3307,7 @@ human leukocyte antigen
 \emph default
  (HLA) type, which is a protein that plays a key role in the body's immune
  response.
- Uncompatible pairs are discarded while potentionally compatible pairs have
+ Incompatible pairs are discarded while potentially compatible pairs have
  their blood tested against each other in a laboratory using a process called
  
 \emph on
@@ -2633,16 +3331,16 @@ Cross-matching
 \emph on
 negative
 \emph default
-, whereas if a reaction occurs, the crossmatch is called 
+, whereas if a reaction occurs, the cross-match is called 
 \emph on
 positive.
  
 \emph default
-A positive crossmatch does not automatically mean that the tranplantation
- cannot proceed though, as a succesful tranplantation may still be possible
- if the reaction is not too severe, given that the patient is in favourable
+A positive cross-match does not automatically mean that the transplantation
+ cannot proceed though, as a successful transplantation may still be possible
+ if the reaction is not too severe, given that the patient is in favorable
  health condition and that they are given additional treatment with immunosuppre
-ssive drugs that supress the activity of the immmune system.
+ssive drugs that suppress the activity of the immune system.
  This is often the case when other donors are not easily available.
 \end_layout
 
@@ -2690,8 +3388,8 @@ literal "false"
 
 .
  These classes are then further subdivided into loci ( a locus denotes a
- specific postion on a chromosome): HLA-A, HLA-B and HLA-C in the case of
- HLA class I and HLA-DR, HLA-DQ, HLA-DP in the case of HLA class II.
+ specific position on a chromosome): HLA-A, HLA-B and HLA-C in the case
+ of HLA class I and HLA-DR, HLA-DQ, HLA-DP in the case of HLA class II.
  Each locus is further divided into alleles (an allele represents specific
  DNA sequences at a given locus): HLA-B27, HLA-DRB101, and so on 
 \begin_inset CommandInset citation
@@ -2719,16 +3417,1203 @@ literal "false"
 .
 \end_layout
 
+\begin_layout Standard
+Within the UNOS dataset, only the HLA-A, HLA-B and HLA-DR loci are being
+ used computing mismatch.
+ More specifically, the alleles of only two antigens are tracked for each
+ of the mentioned loci.
+ As illustrated in table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "HLA mismatch table"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ a mismatch is calculated for each locus (A, B, DR) by counting how many
+ of the two antigens are different between the donor and the recipient.
+ The overall HLA mismatch is then given by the sum of these locus mismatches.
+ Note that D- represents donor's typing while R- represents recipient's
+ typing.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+HLA Mismatch
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+resizebox{
+\backslash
+textwidth}{!}{
+\end_layout
+
+\end_inset
+
+
+\lang english
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="16">
+<features booktabs="true" tabularvalignment="middle">
+<column alignment="right" valignment="top">
+<column alignment="right" valignment="top">
+<column alignment="right" valignment="top">
+<column alignment="right" valignment="top">
+<column alignment="right" valignment="top">
+<column alignment="right" valignment="top">
+<column alignment="right" valignment="top">
+<column alignment="right" valignment="top">
+<column alignment="right" valignment="top">
+<column alignment="right" valignment="top">
+<column alignment="right" valignment="top">
+<column alignment="right" valignment="top">
+<column alignment="right" valignment="top">
+<column alignment="right" valignment="top">
+<column alignment="right" valignment="top">
+<column alignment="right" valignment="top">
+<row>
+<cell alignment="right" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+DA1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+DA2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+DB1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+DB2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+DDR1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+DDR2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+RA1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+RA2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+RB1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+RB2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+RDR1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+RDR2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+AMIS
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+AMIS
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+DRMIS
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+HLAMIS
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="right" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+3.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+24.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+35.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+44.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+1.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+2.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+1.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+26.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+38.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+44.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+1.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+4.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+2.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+2.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+1.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+4.0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+3.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+32.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+18.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+44.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+11.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+97.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+2.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+23.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+44.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+62.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+7.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+11.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+2.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+2.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+3.0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+2.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+24.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+35.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+41.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+8.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+15.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+2.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+29.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+27.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+44.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+4.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+7.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+1.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+1.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+2.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+5.0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+1.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+25.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+7.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+27.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+1.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+13.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+3.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+25.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+7.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+27.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+1.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+13.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+1.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+1.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+1.0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="right" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+26.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+29.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+7.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+41.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+7.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+13.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+2.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+68.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+35.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+39.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+3.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+97.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+2.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+2.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+2.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+6.0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "HLA mismatch table"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Goals
 \end_layout
 
 \begin_layout Standard
-The aforementioned procedures have been very succesful at reducing the risk
- of graft failure shortly after the transplantation.
- In recents years, imporovements in these techniques have succesfuly minimised
+The aforementioned procedures have been very successful at reducing the
+ risk of graft failure shortly after the transplantation.
+ In recent years, improvements in these techniques have successfully minimized
  the risk of an acute transplantation rejection within the first year of
- the tranplantation below 
+ the transplantation below 
 \begin_inset Formula $15\%$
 \end_inset
 
@@ -2745,9 +4630,9 @@ literal "false"
  effecting the long-term performance of the graft, that are not being accounted
  for in the current donor-recipient matchmaking process.
  The progress that has been made in the field of transplantation medicine
- has also resulted in the abundunce of data about both pre-transplant conditions
- as well as pateint follow-up.
- This presents an oppturnity for the use of machine learning techniques,
+ has also resulted in the abundance of data about both pre-transplant conditions
+ as well as patient follow-up.
+ This presents an opportunity for the use of machine learning techniques,
  aimed at uncovering these correlations.
  
 \end_layout
@@ -2764,8 +4649,8 @@ Given that the majority of well-documented data originates from the last
  The difficulty lies in the fact that conventional machine learning models
  do not inherently handle this type of data when considering the patient's
  survival time as the target variable.
- However, there exists a field of statstics that adresses these challenges
- callled 
+ However, there exists a field of statistics that addresses these challenges
+ called 
 \emph on
 survival analysis
 \emph default
@@ -2849,8 +4734,8 @@ l, which happens, for example, as a result of a study ending before the
 right censoring, 
 \emph default
 meaning that if the survival time were to be plotted along a horizontal
- axis, the event would happen to the right side of the cut-off point of
- the study, but it is unkown by how much.
+ axis, the event would happen to the right side of the cutoff point of the
+ study, but it is unknown by how much.
  
 \end_layout
 
@@ -2860,10 +4745,10 @@ meaning that if the survival time were to be plotted along a horizontal
 Left censored 
 \emph default
 data are also possible, but they are uncommon in the case of post-tranplantation
- data as the the date of tranplantation is naturally almost always known.
+ data as the the date of transplantation is naturally almost always known.
  Left censoring can happen, for example, in the case of predicting the survival
- time after exposure to a virus, as the exact date of this occurence is
- often unkown.
+ time after exposure to a virus, as the exact date of this occurrence is
+ often unknown.
 \end_layout
 
 \begin_layout Subsection
@@ -2913,7 +4798,7 @@ surviving
 \end_inset
 
 .
- In another words, it is definded as
+ In another words, it is defined as
 \begin_inset Formula 
 \begin{equation}
 S(t)=\Pr(T>t)
@@ -2938,7 +4823,8 @@ In contrast, the hazard function, as hinted by its alternative name, gives
 failing
 \emph default
  (i.e.
- event occuring) compared to the survival function which is focused on 
+ event occurring) compared to the survival function which is focused on
+ 
 \emph on
 not failing 
 \emph default
@@ -2959,7 +4845,7 @@ potential
 , is the probability of an event happening within a given time frame and
  as this this potential is 
 \emph on
-instantenous
+instantaneous
 \emph default
 , it is given by the following limit
 \begin_inset Formula 
@@ -3058,7 +4944,7 @@ hazard ratio
 \end_layout
 
 \begin_layout Standard
-A hazard ratio of 1, means that the probability of an event occuring at
+A hazard ratio of 1, means that the probability of an event occurring at
  a given time is the same in both groups.
  If, for example, said groups are sorted by the value of a certain exposure
  variable and their hazard ratio is 1, this means that there is no relationship
@@ -3157,7 +5043,7 @@ literal "false"
 \begin_inset Formula $r_{j}$
 \end_inset
 
- denote the number of individuas at risk at time 
+ denote the number of individuals at risk at time 
 \begin_inset Formula $t_{j}$
 \end_inset
 
@@ -3166,7 +5052,7 @@ literal "false"
 \begin_inset Formula $\forall t_{j}\in\tau$
 \end_inset
 
- the probability of an individual surving past 
+ the probability of an individual surviving past 
 \begin_inset Formula $t_{j}$
 \end_inset
 
@@ -3318,7 +5204,7 @@ noprefix "false"
 
 \begin_layout Standard
 Assuming that a dataset contains information about two groups of individuals
- along with their survival time and cesnoring status, let 
+ along with their survival time and censoring status, let 
 \begin_inset Formula $\tau$
 \end_inset
 
@@ -3482,7 +5368,7 @@ baseline hazard function
 \begin_inset Formula $h_{0}$
 \end_inset
 
- is unspecified, makes Cox regression a semiparametric model (in contrast
+ is unspecified, makes Cox regression a semi-parametric model (in contrast
  to parametric models, whose functional form is known) 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -3494,9 +5380,9 @@ literal "false"
 .
  Parametric models are more precise when fitted correctly, however it may
  not always be clear which parametric model is appropriate for a given problem.
- As a result, a semiparametric model is a great tool when uncertain about
- which parametric model to use, as a semiparamic model will typically approximat
-e the results of a correct parametric model 
+ As a result, a semi-parametric model is a great tool when uncertain about
+ which parametric model to use, as a semi-parametric model will typically
+ approximate the results of a correct parametric model 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Survival Analysis self-learn"
@@ -3528,7 +5414,7 @@ noprefix "false"
 \begin_inset Formula $X$
 \end_inset
 
-'s, which means the predictor variables are time-independent.
+s, which means the predictor variables are time-independent.
  This assumption is called the 
 \emph on
 proportional hazards
@@ -3675,7 +5561,7 @@ partial likelihood
 \emph on
  
 \emph default
-only considers probabilites of the subjects who fail, i.e.
+only considers probabilities of the subjects who fail, i.e.
  with censoring status 
 \begin_inset Formula $\delta=1.$
 \end_inset
@@ -3933,8 +5819,8 @@ The estimated hazard ratio for the predictor variable
 \end_layout
 
 \begin_layout Standard
-As hazard functions are always positve and the ratio is written in way as
- to ensure that it is always greater than 
+As hazard functions are always positive and the ratio is written in way
+ as to ensure that it is always greater than 
 \begin_inset Formula $1$
 \end_inset
 
@@ -3952,7 +5838,7 @@ Upon fitting a Cox regression model onto survival data, survival curves
 \emph on
 adjusted survival curves
 \emph default
-) are defined in a similiar fashion as 
+) are defined in a similar fashion as 
 \begin_inset Formula 
 \begin{equation}
 S(t,\mathbf{X})=S_{0}(t)\exp\left(\sum_{i=1}^{k}\beta_{i}X_{i}\right)
@@ -4001,10 +5887,9 @@ Uses
 \end_layout
 
 \begin_layout Standard
-The Cox regression model will later be used to select relevant predictor
- variables for the machine learning model.
- It will also be used as a benchmark to compare the performance of the machine
- learning model to a conventional survival analysis model.
+The Cox regression model will later be used as a benchmark to compare the
+ performance of the machine learning model to a conventional survival analysis
+ model.
 \end_layout
 
 \begin_layout Chapter
@@ -4052,7 +5937,7 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-Each tree in the forest ouputs a cummulative hazard function 
+Each tree in the forest outputs a cumulative hazard function 
 \begin_inset Formula $H(t\mid\mathbf{x})$
 \end_inset
 
@@ -4064,7 +5949,7 @@ Each tree in the forest ouputs a cummulative hazard function
 \begin_inset Formula $t$
 \end_inset
 
- as inputs, and assigns a probability of an event occuring to the individual
+ as inputs, and assigns a probability of an event occurring to the individual
  at time 
 \begin_inset Formula $t$
 \end_inset
@@ -4073,7 +5958,7 @@ Each tree in the forest ouputs a cummulative hazard function
  The forest's overall prediction ,i.e.
  
 \emph on
-the ensemble commulative hazard,
+the ensemble cumulative hazard,
 \emph default
  is then computed as the average of the individual tree predictions.
 \end_layout
@@ -4102,12 +5987,22 @@ literal "false"
 
 \begin_layout Enumerate
 A set number of subsets is taken from the data using the bootstrap sampling
- method, with each sample excluding on average 37% of the original data.
- The excluded data are referred to as 
+ method as described in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "enu:Sampling-the-data:"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, with each sample excluding on average 37% of the original data.
+ The excluded data is referred to as 
 \emph on
 out-of-bag data 
 \emph default
-(OOB) and they are used for computing the ensemble commulative hazard.
+(OOB) and is later used for computing the ensemble cumulative hazard.
 \end_layout
 
 \begin_layout Enumerate
@@ -4129,11 +6024,8 @@ noprefix "false"
 
  , i.e.
  at each node the algorithm iterates over all possible features and values
- and decides on the best split, with the metric used for deciding the split
- being the difference between survival times predicted by the given child
- nodes.
- This is done by maximazing the log-rank statistic described in detail in
- (the split rule is explained in detail in 
+ for them and decides on the best split.
+ The best split is decided by maximizing the log-rank statistic 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:Log-rank-Test"
@@ -4143,21 +6035,16 @@ noprefix "false"
 
 \end_inset
 
-).
- Another difference between a BST and a regular decision tree is that each
- node contains not only information about the survival time denoted by 
-\begin_inset Formula $T$
-\end_inset
-
-, but also binary information about the censoring status denoted by 
-\begin_inset Formula $\delta$
-\end_inset
-
-.
+, which compares the survival times of the two groups created by the potential
+ split.
  The algorithm is restricted by a criterion that each node should contain
- at least 1 unique death, which leads to a point where no new splithts can
- be made meaning the tree has been fully grown.
- Once this point is reached, each terminal node outputs a 
+ at least 1 unique event time, which leads to a point when no new splits
+ can be made meaning the tree has been fully grown.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Once a tree is fully grown, each terminal node outputs a 
 \emph on
 cumulative hazard function 
 \emph default
@@ -4177,7 +6064,7 @@ Let
 \begin_inset Formula $j\in A$
 \end_inset
 
- contains a set of cases (individuals) 
+ contains a set of individuals 
 \begin_inset Formula $\left(T_{1,j},\delta_{1,j}\right),\ldots,\left(T_{n(j),j},\delta_{n(j),j}\right)$
 \end_inset
 
@@ -4218,42 +6105,47 @@ Let
 \end_inset
 
  if the individual is right-censored (e.g.
- has a functioning graft) and 
+ has a still functioning graft or has been lost to followup) and 
 \begin_inset Formula $\delta_{i,j}=1$
 \end_inset
 
- if an event has been observered at a given at time 
+ if an event has been observed at a given at time 
 \begin_inset Formula $T_{i,j}$
 \end_inset
 
  (e.g.
  graft failure).
- Then let 
+ Let 
 \begin_inset Formula $t_{1,j}<t_{2,j}<\ldots<t_{N(j),j}$
 \end_inset
 
- denote the time of the different events observed in node 
+ denote the unique event times observed in node 
 \begin_inset Formula $j$
 \end_inset
 
 , where 
-\begin_inset Formula $N(j)=\sum_{i=1}^{n(j)}\delta_{i,j}$
+\begin_inset Formula $N(j)$
 \end_inset
 
- is the total number of observed events.
- The CHF for the given node is then given by the Nelson-Maier
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Nelson-Maier is not a thing according to google search...
- possible referring to either the Kaplan-Meier estimator or the Nelson-Aalen
- estimator.
-\end_layout
-
+ is the number of observed unique event times and let 
+\begin_inset Formula $f_{k,j}$
 \end_inset
 
- estimator
+ and 
+\begin_inset Formula $r_{k,j}$
+\end_inset
+
+ represent the number of indivudals who experienced an event (fail) or were
+ at risk at time 
+\begin_inset Formula $t_{k,j}$
+\end_inset
+
+ respectively.
+ Then the CHF for the node 
+\begin_inset Formula $j$
+\end_inset
+
+ is given by the Nelson-Maier estimator
 \begin_inset Formula 
 \begin{equation}
 \hat{H}_{j}(t)=\sum_{t_{k,j}\leq t}\frac{d_{k,j}}{Y_{k,j}}\label{eq:node CHF}
@@ -4261,58 +6153,18 @@ Nelson-Maier is not a thing according to google search...
 
 \end_inset
 
-where 
-\begin_inset Formula $d_{k,j}$
-\end_inset
-
- is the number of events observed at time 
-\begin_inset Formula $t_{k,j}$
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Unclear: should this by 
-\begin_inset Quotes sld
-\end_inset
-
-at time
-\begin_inset Quotes srd
-\end_inset
-
- or 
-\begin_inset Quotes sld
-\end_inset
-
-by time
-\begin_inset Quotes srd
-\end_inset
-
- coz if it's just 
-\begin_inset Quotes sld
-\end_inset
-
-at time
-\begin_inset Quotes srd
-\end_inset
-
- then the sum wouldn't make sense.
-\end_layout
+which is related to the Kaplan-Meier estimator described in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Kaplan-Meier-Estimator"
+plural "false"
+caps "false"
+noprefix "false"
 
 \end_inset
 
- and 
-\begin_inset Formula $Y_{k,j}$
-\end_inset
-
- is the number of people at risk at time 
-\begin_inset Formula $t_{k,j}$
-\end_inset
-
- i.e.
- the number of individuals that are yet to experience an event.
+.
+ 
 \begin_inset Newline newline
 \end_inset
 
@@ -4338,7 +6190,7 @@ H(t\mid\mathbf{x})=\hat{H}_{j}(t).\label{eq:tree CHF}
 \end_layout
 
 \begin_layout Enumerate
-Next, two ensemble commulative hazards functions are calculated.
+Next, two ensemble cumulative hazards functions are calculated.
  The first, called the 
 \emph on
 bootstrap ensemble CHF
@@ -4454,283 +6306,14 @@ H_{e}^{**}(t\mid\mathbf{x}_{i})=\frac{\sum_{b=1}^{B}I_{i,b}H_{b}(t\mid\mathbf{x}
 \end_layout
 
 \begin_layout Section
-Split rules
+Harell's Concordance Index
 \begin_inset CommandInset label
 LatexCommand label
-name "subsec:Split-rules"
+name "sec:Harell's-Concordance-Index"
 
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-TODO: Explain the log-rank statistic.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Copied from [5]:
-\end_layout
-
-\begin_layout Plain Layout
-Computations were implemented using randomSurvivalForest software under
- its default settings [Ishwaran and Kogalur (2007, 2008)].
- In each instance 1000 trees were grown.
- Each of the four splitting rules available in the software package were
- used.
- These were as follows [for more details see Ishwaran and Kogalur (2008)]:
-\end_layout
-
-\begin_layout Enumerate
-A log-rank splitting rule (logrank) that splits nodes by maximization of
- the log- rank test statistic [Segal (1988), LeBlanc and Crowley (1993)].
-\end_layout
-
-\begin_layout Enumerate
-A conservation-of-events splitting rule (conserve) that splits nodes by
- finding daughters closest to the conservation-of-events principle.
-\end_layout
-
-\begin_layout Enumerate
-3.
- A log-rank score rule (logrankscore) that splits nodes using a standardized
- log- rank statistic [Hothorn and Lausen (2003)].
-\end_layout
-
-\begin_layout Enumerate
-4.
- A random log-rank splitting rule (logrankrandom).
- A random split is selected for each of the p candidate variables in a node,
- and the variable with maximum log-rank statistic (at its random split point)
- is used to split the node.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-https://www.randomforestsrc.org/articles/survival.html
-\end_layout
-
-\begin_layout Plain Layout
-The true event time being subject to censoring must be dealt with when growing
- a RSF tree.
- In particular, the splitting rule for growing the tree must specifically
- account for censoring.
- Thus, the goal is to split the tree node into left and right daughters
- with dissimilar event history (survival) behavior.
-\end_layout
-
-\begin_layout Plain Layout
-Log-rank splitting The default splitting rule used by the package is the
- log-rank test statistic and is specified by splitrule="logrank".
- The log-rank test has traditionally been used for two-sample testing with
- survival data, but it can be used for survival splitting as a means for
- maximizing between-node survival differences [2–6].
-\end_layout
-
-\begin_layout Plain Layout
-To explain log-rank splitting, consider a specific tree node to be split.
- Without loss of generality let us assume this is the root node (top of
- the tree).
- For simplicity assume the data is not bootstrapped, thus the root node
- data is (𝑇1,𝐗1,𝛿1),…,(𝑇𝑛,𝐗𝑛,𝛿𝑛) .
- Let 𝑋 denote a specific variable (i.e., one of the coordinates of the feature
- vector).
- A proposed split using 𝑋 is of the form 𝑋≤𝑐 and 𝑋>𝑐 (for simplicity we
- assume 𝑋 is nominal) and splits the node into left and right daughters,
- 𝐿={𝑋𝑖≤𝑐} and 𝑅={𝑋𝑖>𝑐} , respectively.
- Let 𝑡1<𝑡2<⋯<𝑡𝑚 be the distinct death times and let 𝑑𝑗,𝐿,𝑑𝑗,𝑅 and 𝑌𝑗,𝐿,𝑌𝑗,𝑅
- equal the number of deaths and individuals at risk at time 𝑡𝑗 in daughter
- nodes 𝐿,𝑅 .
- At risk means the number of individuals in a daughter who are alive at
- time 𝑡𝑗 , or who have an event (death) at time 𝑡𝑗 : 𝑌𝑗,𝐿=#{𝑇𝑖≥𝑡𝑗,𝑋𝑖≤𝑐},𝑌𝑗,𝑅=#{𝑇
-𝑖≥𝑡𝑗,𝑋𝑖>𝑐}.
- Define 𝑌𝑗=𝑌𝑗,𝐿+𝑌𝑗,𝑅,𝑑𝑗=𝑑𝑗,𝐿+𝑑𝑗,𝑅.
- The log-rank split-statistic value for the split is 𝐿(𝑋,𝑐)=∑𝑗=1𝑚(𝑑𝑗,𝐿−𝑌𝑗,𝐿𝑑𝑗𝑌𝑗)
-∑𝑗=1𝑚𝑌𝑗,𝐿𝑌𝑗(1−𝑌𝑗,𝐿𝑌𝑗)(𝑌𝑗−𝑑𝑗𝑌𝑗−1)𝑑𝑗‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾⎷.
- The value |𝐿(𝑋,𝑐)| is a measure of node separation.
- The larger the value, the greater the survival difference between 𝐿 and
- 𝑅 , and the better the split is.
- The best split is determined by finding the feature 𝑋∗ and split-value
- 𝑐∗ such that |𝐿(𝑋∗,𝑐∗)|≥|𝐿(𝑋,𝑐)| for all 𝑋 and 𝑐 .
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-The math behind RSF can be broken down into the following steps:
-\end_layout
-
-\begin_layout Enumerate
-At each node in the decision tree, a subset of p variables is randomly selected
- from the total set of predictors.
- The best variable is selected as the one that maximizes the difference
- in survival times between the two subsets of data created by the split.
- The log-rank test is commonly used as the criterion for measuring the differenc
-e in survival times between the two groups.
- The log-rank test statistic is defined as:
-\begin_inset Graphics
-	filename pasted1.png
-
-\end_inset
-
-where I(s) and I(t) are the indices of the individuals in the two subsets
- created by the split, Y_i is the survival time of individual i, and delta_i
- is an indicator variable that takes the value 1 if individual i experiences
- an event (i.e., death) and 0 otherwise.
-\end_layout
-
-\begin_layout Enumerate
-Once the best variable has been selected, the data is split into two subsets
- based on a threshold value.
- The threshold value is chosen such that the difference in survival times
- between the two groups is maximized.
-\end_layout
-
-\begin_layout Enumerate
-The process is repeated recursively for each subset of data until a stopping
- criterion is met.
- This typically occurs when a node contains a minimum number of individuals
- or when the maximum tree depth is reached.
-\end_layout
-
-\begin_layout Enumerate
-4: Once all the decision trees have been constructed, they are aggregated
- to create the random survival forest.
- The forest's overall prediction for the survival time of an individual
- is computed as the average of the individual tree predictions.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Let's consider a dataset with 
-\begin_inset Formula $n$
-\end_inset
-
- individuals, where each individual is described by a 
-\begin_inset Formula $k$
-\end_inset
-
--dimensional vector of predictor variables 
-\begin_inset Formula $\mathbf{x}=\left(x_{1},\ldots,x_{k}\right)$
-\end_inset
-
-, and has an associated survival time 
-\begin_inset Formula $t$
-\end_inset
-
- and censoring status 
-\begin_inset Formula $c$
-\end_inset
-
-.
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-What is censoring status?
-\end_layout
-
-\end_inset
-
- The censoring status indicates whether the survival time is observed or
- right-censored (i.e., the event has not occurred by the end of the study).
- The survival function 
-\begin_inset Formula $S\left(t\mid x\right)$
-\end_inset
-
- is defined as the probability of surviving beyond time 
-\begin_inset Formula $t$
-\end_inset
-
-, given the predictor variables 
-\begin_inset Formula $x$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Plain Layout
-The RSF algorithm can be summarized as follows:
-\end_layout
-
-\begin_layout Plain Layout
-1.Generate B bootstrap samples of the data: For each bootstrap sample, grow
- a decision tree as follows:
-\end_layout
-
-\begin_layout Itemize
-a.
- Select a random subset of predictor variables of size m (where m << p).
-\end_layout
-
-\begin_layout Itemize
-b.
- For each node of the tree, select the best split point based on the log-rank
- test statistic, which measures the difference in survival times between
- the two subsets created by the split.
-\end_layout
-
-\begin_layout Itemize
-c.
- Repeat steps a and b until the tree is fully grown.
-\end_layout
-
-\begin_layout Plain Layout
-2.
- Aggregate the B trees to make predictions for a new individual:
-\end_layout
-
-\begin_layout Itemize
-a.
- For each tree, find the terminal node to which the new individual belongs.
-\end_layout
-
-\begin_layout Itemize
-b.
- Compute the survival probability for the new individual as the Kaplan-Meier
- estimate of the survival function for the individuals in the terminal node.
-\end_layout
-
-\begin_layout Itemize
-Compute the final prediction for the new individual as the average of the
- survival probabilities computed in step 3.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Harell's Concordance Index
 \end_layout
 
 \begin_layout Standard
@@ -4773,13 +6356,13 @@ noprefix "false"
 \end_inset
 
 ).
- The C-index is also closely related to the area under the 
+ The C-index is also closely related to the
 \emph on
-ROC curve
+ Area under the ROC curve
 \emph default
- (short for Receiver Operating Characteristics curve), which is a graphical
- plot that illustrates the performance of a binary classification model
- at different classification thresholds 
+ (short for Receiver Operating Characteristics curve) also known as AUC,
+ which is a graphical plot that illustrates the performance of a binary
+ classification model at different classification thresholds 
 \begin_inset CommandInset citation
 LatexCommand cite
 after "Classification - ROC Curve and AUC"
@@ -4876,38 +6459,39 @@ literal "false"
 \end_inset
 
 .
-\end_layout
-
-\begin_layout Standard
-Lowering the classification threshold results in more cases being classified
+ Lowering the classification threshold results in more cases being classified
  as positive, thus generally increasing both the true positive and the false
  negative rate.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Roc_curve.svg/1024px-Roc_
-curve.svg.png — possibly include a similiar illustration???
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 The area under the ROC curve can be interpreted as the probability that
  a given model will rank a random positive example more highly (e.g.
- it will assign a more favorable hazard function) than a random negative
+ it will assign a higher probability of being positive) than a random negative
  example.
  The C-index can attain values from 0 to 1, where 1 means a perfect model
  whose predictions are always correct and 0 being the opposite.
  A random classifier that assigns the predicted value with a uniform distributio
 n, will have a C-index of 0.5.
  Generally, models with a C-index above 0.7 are considered to be good predictors.
+ An example of a machine learning models that use the AUC for evaluation
+ of their performance are classification decision trees 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Decision-Trees"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ and by extension random forests used for classification .
+\end_layout
+
+\begin_layout Standard
+The C-index works in similiar fashion to the AUC in the sense that it compares
+ two random individuals, and checks whether the model assigns a more favorable
+ hazard function to the patient with longer survival time.
 \end_layout
 
 \begin_layout Subsection
@@ -4922,8 +6506,8 @@ name "subsec:Calculating-Harell's-Concordance"
 \end_layout
 
 \begin_layout Standard
-In the case of RSF, it isn't necessary to know the function of the ROC curve
- explicitly, rather the C-index is calculated as follows 
+Not all individuals can be compared to each other as a result of censoring.
+ The C-index is therefore calculated as follows 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Random Survival Forests"
@@ -5157,32 +6741,6 @@ Handling Potential Bias
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-via 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "scikit-survival"
-literal "false"
-
-\end_inset
-
-: Harrell’s concordance index is known to be biased upwards if the amount
- of censoring in the test data is high [1].
- Uno et al proposed an alternative estimator of the concordance index that
- behaves better in such situations.
- In this section, we are going to apply concordance_index_censored and concordan
-ce_index_ipcw to synthetic survival data and compare their results.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 The problem with the Harell's concordance index is that it is known to evaluate
  the performance of a given model too optimistically, if the ratio of censored
  individuals in the dataset is high 
@@ -5258,10 +6816,62 @@ literal "false"
 
 \begin_layout Section
 Permutation Variable Importance
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Permutation-Variable-Importance"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-TODO:Explain permutation variable importance
+Since survival trees use the log-rank statistic as a split criterion as
+ opposed to impurity used in conventional decision trees, variable importance
+ cannot be computed using the mean decrease in impurity method described
+ in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Feature-Selection"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ Consequently, the 
+\emph on
+permutation feature importance
+\emph default
+ described in the original paper introducing random forests 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Random Forests"
+literal "false"
+
+\end_inset
+
+, which is fortunately also implemented within the scikit-learn package.
+\end_layout
+
+\begin_layout Standard
+Permutation importance is calculated by first calculating a baseline metric
+ by evaluating the model's performance when trained on the complete set
+ of features.
+ Next, a feature is permutated from the validation set and the model's performan
+ce is evaluated again.
+ The permutation importance of a given variable is then given by the the
+ difference between the baseline metric and the model's performance after
+ permuting said variable 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "scikit-learn"
+literal "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section
@@ -5269,228 +6879,142 @@ Other Methods
 \end_layout
 
 \begin_layout Standard
-TODO: Mention some of the other methods referenced in the related papers
- and that are available in the scikit-survival package.
+Random Survival Forest is not the only model that combines conventional
+ machine learning techniques with survival analysis.
+ The scikit-survival library 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:scikit-survival"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ also provides implementations of 
+\emph on
+Survival Support Vector Machine 
+\emph default
+and 
+\emph on
+Survival Gradient Boosting.
+\end_layout
+
+\begin_layout Subsubsection*
+Survival Support Vector Machine
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0209068#sec008
-\end_layout
-
-\begin_layout Plain Layout
-Harrell’s concordance index - used to measure performance in this and some
- other papers regarding post transplant survival, - Harrell’s concordance
- index (C-index) [8], which is the percentage of patient pairs correctly
- “ranked” by the model based on their post-transplant survival duration
- in a given timeframe combines predictions from random survival forests
- with a Cox proportional hazards model The Cox proportional hazards model
- is the most widely used model for kidney transplant survival estimation
- the data was provided by UNOS which should be the same dataset we are using
- transplantations performed before and after 2002 have a big difference
- in survival curves so only the transplantations performed from 2002-2012
- were taken into account in this paper (it was published in 2017 and they
- required a 5 year or longer time window) 487 variables, removed the ones
- that were not present in more than 95% of entries unless they were labelled
- as important by previous papers -> resulting dataset had 73 variables for
- variable selection, Breiman-Cutler permutation importance measure for random
- survival forests was used to rank the variables by importance recipient
- age came out as most important so the data was split into age based cohorts
- the split age was calculated to be 50 these are the most important factors
- for each cohort:
-\end_layout
-
-\begin_layout Plain Layout
-methodology: 
-\end_layout
-
-\begin_layout Plain Layout
-Identify important predictive variables by performing variable selection
- techniques such as Lasso or permutation importance.
- Test the performance of multiple predictive models on the data using the
- variables identified in step 1.
- Use cross-validation and metrics such as the concordance index to evaluate
- the performance.
- Determine the best binary split in the data using methods such as decision
- trees.
- Repeat steps 1–3 for both subsets of the data a specified number of times.
- The final model consists of combining the predictions from the models that
- perform best on the different subsets of the data.
+The survival support vector machine is an extension of the conventional
  
-\end_layout
+\emph on
+support vector machine (SVM)
+\emph default
+, which is a supervised machine learning model that works by mapping the
+ feature vector of each sample into high-dimensional space and calculating
+ a hyperplane that seperates them based on their labels, called a 
+\emph on
+decision boundary
+\emph default
+.
+ When faced with a new input, the SVM makes a decision based on which side
+ of the decision boundary the new case falls 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "100-page ML"
+literal "false"
 
 \end_inset
 
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-https://www.sciencedirect.com/science/article/pii/S1386505619302977?casa_token=IzO
-XSEZAHvYAAAAA:qk8ffTkNWAkLvE7vXCExvvOkgy-j0s91ktcFHZZF_Z1AKV9Xf9Bjoz6t7IsrcSDW37
-7-Dpbh0vE#bibl0005 is a review of previously used machine learning models
- predicting kidney transplant survival most frequently used methods were
- artificial neural networks, decision trees and Bayesian belief networks
- most had binary outputs (fail or not fail), only one did survival time
- currently used predictive models are bassed on regression methods - logistic
- and cox regression they divided studies into the ones that used only pre-transp
-lant data, post-transplant data, and all-data ( I will be interested only
- in pre-transplant data) a good introduction: “Increasing prevalence of
- Chronic Kidney Disease (CKD) and end stage of kidney disease over recent
- years has resulted in increased demand for kidney replacement therapy (KRT)
- [1,2].
- Among the available KRT modalities, kidney transplantation has demonstrated
- superior quality of life and survival rates [3].
- However, health systems around the world have not been able to meet the
- growing demand for kidney grafts” , “Machine learning (ML) is a suite of
- methods whose theoretical construct may lead to improved predictive performance
- over conventional statistical modelling [13](Supplementary File 1) ML is
- an efficient way of analysing large quantities of data and identifying
- hidden associations in complex data sets [14,15].
- ML has evolved dramatically over recent decades and is already commonly
- used in medical diagnostics [16,17].
- Its use in building predictive models to diagnose different disease conditions
- continues to expand” “Prediction models developed using Cox regression
- were compared to ML models developed using artificial neural network by
- Akl et al.
- (2008) [22] and Lin et al.
- (2008) [24].
- According to Akl et al.
- (2008) [22], the prediction accuracy (artificial neural network 95% vs
- Cox 90%) and AUC (artificial neural network 0.88 vs Cox 0.72) of artificial
- neural network were 5% and 0.16 higher compared to the Cox regression model.”
- The developed ML models although often more accurate in predicting compatibilit
-y showed bigger inconsistencies than traditional predictive methods like
- the logistic and cox regression “It was interesting to note that models
- developed using a small number of cases reported similar prediction accuracy
- compared with models developed using larger numbers of cases.
- For example, the prediction model developed by Lofaro et al.
- (2010) [32] using 80 records performed similar to the model developed by
- Krikov et al.
- (2007) [29], which was built on a national database of 92,844 patient records.”
- Using machine learning models could help circumvent human bias though it’s
- debatable whether that’s always desirable “The current consensus is that
- there is no one method that fits all data sets, with the complexity of
- the data pivotal [49].
- To get around this uncertainty investigators use multiple machine learning
- methods on single data sets and the best is chosen based on validation
- parameters.“ “Validation parameters have not yet been standardised in the
- literature.
- The studies included in the review have used different validation parameters
- such as sensitivity, area under the curve and accuracy.
- Standardisation of validation parameters will facilitate comparisons between
- different models” “Conventional models such as Cox models and logistic
- regression assume that the predictors are independent of each other “ thus
- they not optimal for handling non-linear relationships between “predictors”
- (find definition) and outcomes “Most of the machine learning based predictive
- models predicted graft failure with high sensitivity and specificity” ---
- what does sensitivity and specificity mean
+.
 \end_layout
+
+\begin_layout Standard
+The survival SVM differs from the regular SVM in the sense that it uses
+ survival time as well as censoring status as labels and uses both of these
+ to calculate the hyperplane.
+ The survival SVM can work with two types of problems: a regression problem
+ which outputs predicted survival time and a ranking problem which ranks
+ individuals based on their survival time.
+ This is however slightly disadvantageous as these types of predictions
+ are not easily tranferrable to standard survival analysis outputs, namely
+ the survival and hazard functions 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "scikit-survival"
+literal "false"
 
 \end_inset
 
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0252069 The
- aim of this one is predicting the waiting time on a kidney transplant waiting
- list Cox regression models was used, sensitivity analysis was performed
- using different Cox models “The major characteristics associated with changes
- in the likelihood of transplantation were age, subregion, cPRA, and frequency
- of HLA-DR, -B and -A.” “Although approximately 5,000 deceased donor kidney
- transplants take place yearly in the country, the supply of organs does
- not meet demand, and the gap is growing [2, 3].
- As a result, recurrent tests and procedures are necessary every 2–3 years
- to maintain patients on active transplant list [4].
- Since this poses a significant economic burden to the healthcare system,
- predicting a patient’s waiting time can help planning for pre-transplant
- evaluation, and thus promote a more efficient use of resources “ “estimating
- waiting time on the transplant list can help identifying the underprivileged,
- and thus impact allocation score, bringing more equity to transplantation
- programs” a good sentence: “this study aimed at identifying the relevant
- predictors and combine them into a predictor model to estimate time on
- a kidney transplant waiting list using machine learning.” “Allocation was
- performed as established by the National Transplantation System of the
- Brazilian Ministry of Health [12, 13].
- For deceased donor transplants, allocation criteria are based on HLA matching
- (highest number of points for HLA DR, followed by HLA B and HLA A), recipient’s
- age (<18 years), date of registration on the waiting list, and panel reactive
- antibody (PRA).
- A point score system based on blood group and HLA match is used as follows:
- DR: 0 MM = 10 points; 1 MM = 5 points; 2 MM = 0 point; B: 0 MM = 4 points;
- 1 MM = 2 points; 2 MM = 0 point; A: 0 MM = 1 point; 1 MM = 0.5 point; 2
- MM = 0 point.
- “The following variables were evaluated as predictors: age, sex, race,
- comorbidities, time on dialysis, blood group, calculated panel class I
- (cPRA), HLA-A, HLA-B, HLA-DR, number of blood transfusions, pregnancies,
- previous kidney transplants, and pre-transplant serology for Hepatitis
- B and C.” “During the study period, 28.4% of the patients were transplanted
- with a deceased donor (Fig 1).
- The median waiting time for transplantation was 26.3 months.”
+.
 \end_layout
+
+\begin_layout Subsubsection*
+Survival Gradient Boosting
+\end_layout
+
+\begin_layout Standard
+Survival gradient boosting builds on the basis of regular 
+\emph on
+gradient boosting
+\emph default
+, which is an ensemble supervised machine learning technique that works
+ by combining predictions of many 
+\emph on
+weak learners
+\emph default
+, models that are only slightly better than random guessing, and sequentially
+ improving their performance by gradiually optimizing a loss function by
+ using its gradient.
+ Gradient boosting models generally achieve greater accracy than random
+ forests, however take much longer to train 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "100-page ML,scikit-survival"
+literal "false"
 
 \end_inset
 
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-https://journals.lww.com/asaiojournal/Fulltext/2007/09000/Predicting_Kidney_Transp
-lant_Survival_Using.11.aspx “The goal of this project was to develop the models
- predicting probability of kidney allograft survival at 1, 3, 5, 7, and
- 10 years” ( allograft = The transplant of an organ, tissue, or cells from
- one individual to another individual, aloštěp) Tree-based forests were
- used “We generated five separate logistic regression models predicting
- the graft survival as a binary variable at 1, 3, 5, 7, and 10 years of
- the follow-up.
- We used a conservative approach to variable selection.
- Only variables that had significant association (p < 0.05) with the outcome
- in all of 5 models were included in the final tree-based analysis.
- In other words, variables that were not significant in at least one model
- were excluded.” “Using the set of variables selected by these methods, we
- tested the tree-based model for convergence and demonstrated poor performance,
- which were thought to be due to potential collinearity in the data.
- To make the model more practical and parsimonious, we evaluated the performance
- of the model with the shorter list of variables, excluding the variables
- that were considered nonessential.
- Heartbeating donor variable was found to have significant missing information,
- whereas nonmissing data were collinear with donor type (living versus deceased).
- Variables describing cardiovascular disease history were collinear with
- the variable describing peripheral vascular disease history and therefore
- the latter was removed.
- The variable describing the use of antihypertensive medications by the
- donor was largely homogenous and was also removed.
- RRT modality immediately before transplant was not used, and instead predominan
-t RRT modality during ESRD course was included in the model.
- We also excluded the variable describing dialysis network because the model
- did not converge in its presence.
- Based on R2 statistics, the model based on the shorter list of variables
- (below) performed not worse than the one less parsimonious based on the
- longer list of predictors.” “The final list included the following recipient
- variables: recipient race, gender, age, height, weight, recipient having
- a transplant before the current one (yes/no), total number of transplants
- (including the current one), the time recipient has been on the list before
- transplant, predominant renal replacement therapy modality, percent time
- on peritoneal dialysis before transplant, number of renal replacement therapy
- modalities used before transplant, specific combination of renal replacement
- therapy modalities, recipient comorbidity score, history of cardiovascular
- disease, history of unstable angina, history of diabetes, history of hypertensi
-on, presence of hepatitis B core antibodies, presence of hepatitis C antibodies,
- peak and most recent level of panel reactive antibodies, and primary source
- of pay for medical services.
- In addition, the following donor variables were used in the final model:
- donor race, gender, age, height, weight, donor type (living or deceased).”
+.
 \end_layout
+
+\begin_layout Standard
+While in the case of conventional gradient boosting the loss function given
+ by prediction error (e.q.
+ mean squared error), in the case survival gradient boosting the loss function
+ is the partial likelihood loss partial likelihood loss Cox regression described
+ in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Cox-Regression"
+plural "false"
+caps "false"
+noprefix "false"
 
 \end_inset
 
+.
+\end_layout
 
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The reasons for why the RSF model was chosen include the above described
+ disadvantages of the aformetioned alternatives and promising accuracy that
+ the RSF model displayed in the related articles 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Using ML methods to predict kidney transplant survival,Systematic review"
+literal "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Chapter
@@ -5563,6 +7087,14 @@ Alongside the data from the UNOS database, another dataset was provided
  by the Czech Institute for Clinical and Experimental Medicine (IKEM), however
  the dataset was limited in size and thus was not suitable for training
  a machine learning model.
+ 
+\end_layout
+
+\begin_layout Standard
+As the dataset provided by IKEM was the first to be acquired, the option
+ to train the model partly on generated data was considered to supplement
+ the limited size of the IKEM dataset, however as the much larger UNOS dataset
+ was acquired, this was no longer necessary.
 \end_layout
 
 \begin_layout Section
@@ -5684,6 +7216,13 @@ scikit-learn and scikit-survival
 
 \begin_layout Subsubsection*
 scikit-learn
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:scikit-learn"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -5775,13 +7314,8 @@ noprefix "false"
 
 \end_inset
 
-, 
-\emph on
-Survival Support Vector Machine 
-\emph default
-and 
-\emph on
-Gradient Boosted Models .
+.
+ 
 \end_layout
 
 \begin_layout Subsection
@@ -5921,8 +7455,9 @@ Model Training
 \end_layout
 
 \begin_layout Standard
-All pipelines used for data preprocessing, training and evaluating the model
- are publicly available at 
+The code used for training the machine learnign model including pipelines
+ used for data preprocessing, training and evaluating the model are publicly
+ available at 
 \begin_inset Newline newline
 \end_inset
 
@@ -5941,11 +7476,13 @@ https://github.com/matejkloucek/bp_don_rec_compatibility
 \begin_inset Newline newline
 \end_inset
 
-alongside instructions on how to properly execute them.
+in the form of Jupyter Notebooks.
+ Intructions on how to properly execute them are included in the README
+ file located in the above GitHub repository.
 \end_layout
 
 \begin_layout Section
-Cleaning the Data
+Data Preprocessing
 \end_layout
 
 \begin_layout Subsection
@@ -5969,14 +7506,42 @@ noprefix "false"
 \end_layout
 
 \begin_layout Itemize
-Kidney_Pancreas, which contains information about kidney and pancreas transplant
-ations performed between 1994 and 2022 in the US including information about
- both recipients and donors.
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+Kidney_Pancreas
+\end_layout
+
+\end_inset
+
+, which contains information about kidney and pancreas transplantations
+ performed between 1994 and 2022 in the US including information about both
+ recipients and donors.
 \end_layout
 
 \begin_layout Itemize
-Living_Donor and Deceased_Donor, which contain more detailed information
- about living and deceased donors respectively.
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+Living_Donor
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+Deceased_Donor
+\end_layout
+
+\end_inset
+
+, which contain more detailed information about living and deceased donors
+ respectively.
 \end_layout
 
 \begin_layout Standard
@@ -5994,7 +7559,17 @@ The Kidney_Pancreas table also happens to be the largest in terms of file
 \end_layout
 
 \begin_layout Standard
-In its original form, the Kidney_Pancreas dataset contained 
+In its original form, the 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+Kidney_Pancreas
+\end_layout
+
+\end_inset
+
+ dataset contained 
 \begin_inset Formula $1108884$
 \end_inset
 
@@ -6006,35 +7581,103 @@ In its original form, the Kidney_Pancreas dataset contained
  It contains information about both living and deceased donors, but the
  details regarding the donors are limited in scope, particularly in the
  case of living donors.
- To adress this limitation, a table join was performed with the Living_Donor
- and Deceased_Donor tables to provide more information about the donors.
- This merge was based on the DONOR_ID column, with 
+ To adress this limitation, a table join was performed with the 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+Living_Donor
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+Deceased_Donor
+\end_layout
+
+\end_inset
+
+ tables to provide more information about the donors.
+ This merge was based on the 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+DONOR_ID
+\end_layout
+
+\end_inset
+
+ column, with 
 \begin_inset Formula $174381$
 \end_inset
 
- entries sharing a common DONOR_ID between the Kidney_Pancreas and Living_Donor
+ entries sharing a common 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+DONOR_ID
+\end_layout
+
+\end_inset
+
+ between the 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+Kidney_Pancreas
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+Living_Donor
+\end_layout
+
+\end_inset
+
  tables and 
 \begin_inset Formula $399822$
 \end_inset
 
- entries sharing it between the Kidney_Pancreas and Deceased_Donor.
- 
-\end_layout
-
-\begin_layout Standard
-Preliminary computations have revealed that the features impacting graft
- survival vary between living donor and deceased donor transplants.
- 
-\begin_inset Note Note
+ entries sharing it between the 
+\begin_inset Flex Code
 status open
 
 \begin_layout Plain Layout
-Should I include some proof here?
+Kidney_Pancreas
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+Deceased_Donor
 \end_layout
 
 \end_inset
 
 .
+ 
+\end_layout
+
+\begin_layout Standard
+Preliminary experimentations with the data and RSF models have revealed
+ that the features impacting graft survival vary between living donor and
+ deceased donor transplantations.
  Consequently, the dataset has been split on based on the type of transplantatio
 n performed, separating living and decead donor tranplantations.
  Subsequently, independent machine learning models were trained on each
@@ -6043,11 +7686,69 @@ n performed, separating living and decead donor tranplantations.
 \end_layout
 
 \begin_layout Standard
-The two tables created by this split have 649 columns in the case of living
- donors and 893 in the case of deceased donors.
- These numbers are usuallly considered to be too high for an effective machine
- learning model.
- Therefore, the number of features needed to be reduced significantly.
+The two new datasets created by the merge and the subsequent split split
+ will from now be referred to as too as 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+Kidpan_Living
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+Kidpand_Deceased
+\end_layout
+
+\end_inset
+
+.
+ The 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+Kidpan_Living
+\end_layout
+
+\end_inset
+
+ table had 
+\begin_inset Formula $174381$
+\end_inset
+
+ entries and 
+\begin_inset Formula $649$
+\end_inset
+
+ columns, while the 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+Kidpand_Deceased
+\end_layout
+
+\end_inset
+
+ table had 
+\begin_inset Formula $399822$
+\end_inset
+
+ entries and 
+\begin_inset Formula $893$
+\end_inset
+
+ columns.
+ In both cases, the number of columns is usuallly considered to be high
+ for an effective machine learning model as it could lead to overfitting
+ and poor explainability.
+ Therefore, the number of features had to be reduced significantly.
 \end_layout
 
 \begin_layout Subsection
@@ -6100,8 +7801,8 @@ literal "false"
  kidney transplantation.
  Therefore individuals , who had undergone a SKP were dropped from the dataset
  and all columns regarding pancreas transplantation were dropped as well.
- There were <number> of such entries and <number> of such columns.
- 
+ These columns were selected manually based on their description in the
+ STAR dictionary.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -6111,61 +7812,74 @@ Follow-up Data
 \begin_layout Standard
 As the goal of this paper is to predict compatibility of patients prior
  to transplantation, any column that contains information about the patient's
- status after or at the time of the transplantation needs to be removed
- from the dataset.
- There were <number> of such features were droped from the dataset.
- The only follow-up features that were retained are the GTIME_KI and GSTATUS_KI
+ status after or at the time of the transplantation had to be removed from
+ the dataset.
+ This was also done by manually selecting such columns based on their descriptio
+n in the STAR dictionary.
+ The only follow-up features that were retained are the 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+GTIME_KI
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+GSTATUS_KI
+\end_layout
+
+\end_inset
+
  columns, which describe the graft's survival time and censoring status
  respectively.
 \end_layout
 
 \begin_layout Subsubsection*
-Missing Values
+Duplicate Columns
 \end_layout
 
 \begin_layout Standard
-In order to prevent a significant loss of information by having to either
- discard too many entries with missing data or by having to impute large
- amounts of missing values, columns that were missing values in more than
- 50% 
-\begin_inset Note Note
+As the original 
+\begin_inset Flex Code
 status open
 
 \begin_layout Plain Layout
-Experiment with this number and find the best one.
+Kidney_Pancreas
 \end_layout
 
 \end_inset
 
- of entries were dropped from the dataset.
- There were 
-\begin_inset Formula $329$
+ table also contained some information about donors, duplicate columns were
+ created upon merging with the 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+Living_Donor
+\end_layout
+
 \end_inset
 
- of these columns.
- The meaning of each of the columns was checked using the STAR dictionary
- to ensure no crucial information was lost.
+ and 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+Deceased_Donor
+\end_layout
+
+\end_inset
+
+ tables.
+ Some were easy to identify as they shared the same name, while others had
+ to be identified manually.
  
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Is this ok??? Does this hold any weight coming from a person without any
- medicinal background
-\end_layout
-
-\end_inset
-
- Exception was made for columns that were recognized as significant by any
- of the related articles 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Using ML methods to predict kidney transplant survival,Systematic review,Predicting survival using tree-based modeling"
-literal "false"
-
-\end_inset
-
-.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -6173,23 +7887,199 @@ Irrelevant Columns
 \end_layout
 
 \begin_layout Standard
-For the remaining 
-\begin_inset Formula $141$
-\end_inset
-
- columns, the STAR dictionary was searched with the goal of identifying
- irrelevant columns and dropping them from the database.
- These include IDs, codes and form statuses used by either UNOS or individual
- transplant centers.
+The STAR dictionary was also used to identify obviously irrelevant features
+ and drop them to speed up the training process.
+ These include IDs, codes and form statuses used internall by either UNOS
+ or individual transplant centers.
 \end_layout
 
-\begin_layout Subsection
-Dropping or Imputing Missing Values
+\begin_layout Subsubsection*
+Deceased and Living Donor Columns
 \end_layout
 
 \begin_layout Standard
-TODO: Experiment with whether to drop rows with missing values altogether
- or impute missing data.
+As mentioned above, the 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+Kidney_Pancreas
+\end_layout
+
+\end_inset
+
+ table itself contains limited information about both deceased and living
+ donors.
+ Therefore, columns regarding deceased donors had to be dropped from the
+ dataset used for training of the model for living donors and vice versa.
+ This was done excluding columns with high percentage of missing values
+ (
+\begin_inset Formula $>50\%$
+\end_inset
+
+) as the columns regarding deceased donors would be left unfilled in the
+ case of grafts from living donors.
+ The opposite case was handled in the same fashion accordingly.
+\end_layout
+
+\begin_layout Subsubsection*
+Low Quality Data
+\end_layout
+
+\begin_layout Standard
+Dropping columns with high percentage of missing values was also done to
+ prevent a significant loss of information by having to either impute large
+ amounts of missing values or discarding entries with missing features.
+ Columns with only one unqiue value were dropped as well.
+\end_layout
+
+\begin_layout Subsubsection*
+HLA typing
+\end_layout
+
+\begin_layout Standard
+As illustrated in the table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "HLA mismatch table"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, each locus of both the donor and the recipient has two columns.
+ These columns are categorical and represent different alleles.
+ The number of unique alleles exceeds 
+\begin_inset Formula $100$
+\end_inset
+
+ in some cases.
+ This would create a problem when encoding categorical columns as it would
+ create an enormous amount of new columns.
+ Fortunately, these columns can be dropped from the dataset as they are
+ already used for calculating HLA mismatch and therefore dropping them does
+ not result in a significant loss of information.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Overall, these measures reduced the number of features to 
+\begin_inset Formula $139$
+\end_inset
+
+ in the case of 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+Kidpan_Living
+\end_layout
+
+\end_inset
+
+ and to <number> in the case of 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+Deceased_Donor
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Ensuring Correct Formatting
+\end_layout
+
+\begin_layout Standard
+Upon loading the dataset into a DataFrame, many of the columns had incorrect
+ data types.
+ Specifically there were two issues:
+\end_layout
+
+\begin_layout Enumerate
+Categorical variables that were described using digits were incorrectly
+ classified as numerical.
+ This would lead to misleading results and had to be dealt with by identifying
+ these columns using the STAR dictionary and changing their data type to
+ 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+object
+\end_layout
+
+\end_inset
+
+ so that they could be encoded later.
+\end_layout
+
+\begin_layout Enumerate
+Columns containing dates were formatted as strings and were thus identified
+ as categorical.
+ This would lead to problems when encoding since there would be a new column
+ created for every unique time.
+ This was dealt with by only using the year and setting its datatype to
+ 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+float64
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Imputing Missing Values
+\end_layout
+
+\begin_layout Standard
+Missing values were imputed using scikit-learn's 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+SimpleImputer()
+\end_layout
+
+\end_inset
+
+ with the 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+mean
+\end_layout
+
+\end_inset
+
+ strategy for numerical features and 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+most_frequent
+\end_layout
+
+\end_inset
+
+ strategy for categorical features.
 \end_layout
 
 \begin_layout Subsection
@@ -6198,35 +8088,80 @@ Feature Encoding
 
 \begin_layout Standard
 The RSF model requires all input variables to be numerical.
- However, many of the features in the dataset are categorical and therefore
- need to be encoded before they can be used for training the RSF model.
- First, all columns that were already numerical were separated from the
- categorical ones.
- Then for all categorical columns, the number of unique values were computed
- in order to check whether any column had abnormally high number of different
- values (above 10), making them unsuitable for one-hot-encoding.
- These turned out to be either:
+ However, many of the features in the dataset were categorical and therefore
+ had to be encoded before they could be used for training the RSF model.
+ Scikit-learn's OneHotEncoder was used to encode the categorical variables.
+ Encoding the whole 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+Kidpan_Living
 \end_layout
 
-\begin_layout Itemize
-dates in the form of strings, which I turned into numerical values by only
- using the year
+\end_inset
+
+ dataset resulted in the training dataset having 
+\begin_inset Formula $812$
+\end_inset
+
+ columns after merging with the categorical values.
+ In the case of 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+Kidpan_Deceased
+\end_layout
+
+\end_inset
+
+, this number reached to <number>.
+\end_layout
+
+\begin_layout Standard
+After feature selection described in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Feature-Selection"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, the encoded dataset had 
+\begin_inset Formula $111$
+\end_inset
+
+ columns in the case of 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+Kidpan_Living
+\end_layout
+
+\end_inset
+
+ and <number> in the case of 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+Kidpan_Deceased
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section
 Feature Selection
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-HLA mismatch is not that important because the transplantation would not
- happen in the first place if the donor-recipient pair were uncompatible,
- therefore most transplantations happened between pairs with low mismatch
- and therefore does not appear to have much significance
-\end_layout
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Feature-Selection"
 
 \end_inset
 
@@ -6234,8 +8169,139 @@ HLA mismatch is not that important because the transplantation would not
 \end_layout
 
 \begin_layout Standard
+In order to simplify the model and improve its performance, the best features
+ were selected by calculting their importance using permutation importance
+ described in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Permutation-Variable-Importance"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ In comparsion to variable importance calculated by the Gini importace 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Feature-Selection"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, computing permutation importance is a very time consuming task.
+ The scikit-learn's implementation of permutation importance offers a 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+n_repeats
+\end_layout
+
+\end_inset
+
+ parameter, which controls the number of times a feature is permutated in
+ the dataset reslting in increased accuracy of the feature importance by
+ reducing randomness.
+ However, this also greatly increases the computational complexity.
+ Thus, the variable importances were computed initially on smaller dataset,
+ created by dropping all entries with missing features, with 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+n_repeats=5
+\end_layout
+
+\end_inset
+
+.
+ This was followed by a computation on a larger dataset with imputed missing
+ values with 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+n_repeats=1
+\end_layout
+
+\end_inset
+
+ .
+ The two resulting tables of variable imortances were used to create a list
+ of the 25 most important features.
+ The varaible importance of those features was then validated by computing
+ permutation importance on a dataset consisting only of these features with
+ 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+n_repeats=5
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+The selected features along with their description and varaible importance
+ can be found in table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "variable importance table"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Variable Importance
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 
 \lang english
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+center
+\end_layout
+
+\end_inset
+
+
 \begin_inset Tabular
 <lyxtabular version="3" rows="21" columns="3">
 <features booktabs="true" tabularvalignment="middle">
@@ -6982,10 +9048,30 @@ INIT_AGE
 \end_inset
 
 
+\begin_inset CommandInset label
+LatexCommand label
+name "variable importance table"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
 Hyperparameter Tuning
+\end_layout
+
+\begin_layout Standard
+The optimal 
 \end_layout
 
 \begin_layout Chapter
@@ -7427,6 +9513,45 @@ Foundations of Machine Learning
 \emph default
 .
  MIT Press, 2018.
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "Gini importance"
+literal "false"
+
+\end_inset
+
+C.
+ Strobl, A.
+ Boulesteix, A.
+ Zeileis, T.
+ Hothorn, 
+\emph on
+Bias in random forest variable importance measures: illustrations, sources
+ and a solution
+\emph default
+.
+ BMC Bioinformatics.
+ 2007 Jan 25;8:25.
+ 
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "Random Forests"
+literal "false"
+
+\end_inset
+
+L.
+ Breiman, 
+\emph on
+Random Forests
+\emph default
+, Machine Learning, 45, 5-32, 2001
 \end_layout
 
 \begin_layout Bibliography
