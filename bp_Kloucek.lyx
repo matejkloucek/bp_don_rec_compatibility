@@ -7383,8 +7383,8 @@ Cluster Computing
 Due to the large size of the tables extracted from the UNOS dataset, reaching
  up to 40GB in the JSON format, conducting any meaningful operations locally
  became infeasible since in order to do any sort of processing, the data
- needed to be first loaded into main memory, which, in my case, had a capacity
- of only 12GB.
+ needed to be first loaded into main memory, which is far beyond the capacity
+ of regular computers.
  As a result, all computing was conducted remotely on the HELIOS high-performanc
 e computing cluster hosted at the Department of Mathematics, Faculty of
  Nuclear Sciences and Physical Engineering, Czech Technical University in
@@ -7392,11 +7392,11 @@ e computing cluster hosted at the Department of Mathematics, Faculty of
  The cluster can provide up to 384GB of main memory on a single node, which
  was more than enough for the needs of this project.
  The connection to the cluster was established using SSH in the Linux shell.
- To enhance practicality, I configured node forwarding from the remote node
- to localhost, which allowed me to interact with Jupyter notebooks directly
- via a web browser on my machine.
- More information about the cluster such as about the hardware specs can
- be found at 
+ To enhance practicality, remote nodes were forwarded onto localhost, which
+ allowed working with Jupyter notebooks directly via a web browser on a
+ local machine.
+ More information about the cluster such as regarding the hardware specs
+ can be found at 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "HELIOS"
@@ -7795,6 +7795,42 @@ GSTATUS_KI
 
  columns, which describe the graft's survival time and censoring status
  respectively.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+Note for following chapters
+\emph default
+: Owing to the nature of the 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+GTIME_KI
+\end_layout
+
+\end_inset
+
+ and 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+GSTATUS_KI
+\end_layout
+
+\end_inset
+
+ columns, the survival times computed and predicted in the following sections
+ and chapters describe the survival time of the graft itself, not necessarily
+ the survival time of the patient, as the graft may fail but the patient
+ may continue to live on either by returning to dialysis or by getting another
+ transplant.
+ Nevertheless, for the sake of simplicity, the survival time of the graft
+ will sometimes be referred to as the patient's or recipient's survival
+ time.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -8248,7 +8284,7 @@ n_repeats=1
 status open
 
 \begin_layout Plain Layout
-n_repeats=5
+n_repeats=15
 \end_layout
 
 \end_inset
@@ -8281,6 +8317,8 @@ noprefix "false"
 \end_inset
 
 .
+ For categorical features, values of their most important encoded subfeature
+ are used in this table.
 \end_layout
 
 \begin_layout Standard
@@ -8321,7 +8359,7 @@ textwidth}{!}{
 
 
 \begin_inset Tabular
-<lyxtabular version="3" rows="25" columns="5">
+<lyxtabular version="3" rows="26" columns="5">
 <features booktabs="true" tabularvalignment="middle">
 <column alignment="left" valignment="top">
 <column alignment="right" valignment="top">
@@ -8403,9 +8441,7 @@ AGE
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang english
-0.024871
+0.025524
 \end_layout
 
 \end_inset
@@ -8416,7 +8452,7 @@ AGE
 \begin_layout Plain Layout
 
 \lang english
-0.007475
+0.005794
 \end_layout
 
 \end_inset
@@ -8462,7 +8498,7 @@ AGEDON
 \begin_layout Plain Layout
 
 \lang english
-0.012540
+0.015870
 \end_layout
 
 \end_inset
@@ -8471,9 +8507,7 @@ AGEDON
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang english
-0.001580
+0.002372
 \end_layout
 
 \end_inset
@@ -8502,35 +8536,38 @@ Numerical
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang english
-PRI_PAYMENT_TCR_KI
+HLAMIS
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang english
-0.012119
+0.014202
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
+0.001809
+\end_layout
 
-\lang english
-0.001041
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+overall HLA mismatch
 \end_layout
 
 \end_inset
@@ -8541,82 +8578,14 @@ PRI_PAYMENT_TCR_KI
 \begin_layout Plain Layout
 
 \lang english
-Recipient's primary payment source
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-Categorical
+Numerical
 \end_layout
 
 \end_inset
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-ETHCAT
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-0.010511
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-0.002499
-\end_layout
-
-\end_inset
-</cell>
 <cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-Recipient's ethnicity category
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-Categorical
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -8627,24 +8596,20 @@ END_BMI_CALC
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang english
-0.009909
+0.012784
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang english
-0.001080
+0.001401
 \end_layout
 
 \end_inset
@@ -8673,35 +8638,29 @@ Numerical
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang english
-TOT_SERUM_ALBUM
+DRMIS
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang english
-0.009846
+0.010725
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang english
-0.001971
+0.001533
 \end_layout
 
 \end_inset
@@ -8712,7 +8671,7 @@ TOT_SERUM_ALBUM
 \begin_layout Plain Layout
 
 \lang english
-Recipient's total serum albumin
+Mismatch at the HLA-DR locus
 \end_layout
 
 \end_inset
@@ -8730,35 +8689,31 @@ Numerical
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
 \lang english
-WORK_INCOME_TCR
+ON_DIALYSIS
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang english
-0.009702
+0.010116
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang english
-0.000435
+0.001832
 \end_layout
 
 \end_inset
@@ -8769,7 +8724,7 @@ WORK_INCOME_TCR
 \begin_layout Plain Layout
 
 \lang english
-Is recipient working for income
+Is recipeint regularly administered dialysis
 \end_layout
 
 \end_inset
@@ -8787,7 +8742,211 @@ Categorical
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+BMIS
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.009605
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.001134
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Mismatch at the HLA-B locus
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Numerical
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DIAB
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.009528
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.002777
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Recipient's diabetes status
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Categorical
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+AMIS
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.009310
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.000711
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Mismatch at the HLA-A locus
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Numerical
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ETHCAT
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.008813
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.003179
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Recipient's ethnicity category
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Categorical
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -8798,24 +8957,20 @@ PRE_TX_TXFUS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang english
-0.009500
+0.008088
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang english
-0.001591
+0.001182
 \end_layout
 
 \end_inset
@@ -8844,7 +8999,113 @@ Categorical
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+PERIP_VASC
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.007778
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.000708
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Recipient's peripheral vascular disease status
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Categorical
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DAYSWAIT_CHRON_KI
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.007472
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.000778
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Days recipient spent on waiting list
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Numerical
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -8855,24 +9116,24 @@ ETHCAT_DON
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
 \lang english
-0.009020
+0.006864
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
 \lang english
-0.000407
+0.000557
 \end_layout
 
 \end_inset
@@ -8901,7 +9162,349 @@ Categorical
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+PRI_PAYMENT_TCR_KI
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.006821
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.000796
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Recipient's primary payment source
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Categorical
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+FUNC_STAT_TCR
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.006570
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.000299
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Recipient's overall health status
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Categorical
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+TOT_SERUM_ALBUM
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.006915
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.001306
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Recipient's total serum albumin
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Numerical
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+HIST_CIG
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.006426
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.000307
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Recipient's history of cigarette use
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Categorical
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+HCV_SEROSTATUS
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.006025
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.000423
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Recipient's Hepatitis C status
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Categorical
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+EBV_SEROSTATUS
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.006014
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.000245
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Recipient's status of Epstein-Barr virus
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Categorical
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -8912,24 +9515,24 @@ DIABETES_DON
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
 \lang english
-0.008933
+0.005850
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
 \lang english
-0.000531
+0.000000
 \end_layout
 
 \end_inset
@@ -8964,7 +9567,7 @@ Categorical
 \begin_layout Plain Layout
 
 \lang english
-DAYSWAIT_CHRON_KI
+WORK_INCOME_TCR
 \end_layout
 
 \end_inset
@@ -8975,7 +9578,7 @@ DAYSWAIT_CHRON_KI
 \begin_layout Plain Layout
 
 \lang english
-0.008736
+0.005793
 \end_layout
 
 \end_inset
@@ -8986,7 +9589,7 @@ DAYSWAIT_CHRON_KI
 \begin_layout Plain Layout
 
 \lang english
-0.000717
+0.000187
 \end_layout
 
 \end_inset
@@ -8997,64 +9600,7 @@ DAYSWAIT_CHRON_KI
 \begin_layout Plain Layout
 
 \lang english
-Days recipient spent on waiting list
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-Numerical
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-EBV_SEROSTATUS
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-0.008692
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-0.000600
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-Recipient's status of Epstein-Barr virus
+Is recipient working for income
 \end_layout
 
 \end_inset
@@ -9072,149 +9618,29 @@ Categorical
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-ON_DIALYSIS
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-0.008667
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-0.000418
-\end_layout
-
-\end_inset
-</cell>
 <cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang english
-Is recipeint regularly administered dialysis
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-Categorical
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-PREV_TX_ANY
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-0.008667
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-0.000627
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-Recipient's past transplantations
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-Categorical
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
 DAYSWAIT_ALLOC
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang english
-0.008268
+0.005418
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang english
-0.000643
+0.000838
 \end_layout
 
 \end_inset
@@ -9249,7 +9675,7 @@ Numerical
 \begin_layout Plain Layout
 
 \lang english
-HCV_SEROSTATUS
+PREV_TX_ANY
 \end_layout
 
 \end_inset
@@ -9260,7 +9686,7 @@ HCV_SEROSTATUS
 \begin_layout Plain Layout
 
 \lang english
-0.008215
+0.005222
 \end_layout
 
 \end_inset
@@ -9271,7 +9697,7 @@ HCV_SEROSTATUS
 \begin_layout Plain Layout
 
 \lang english
-0.000306
+0.001113
 \end_layout
 
 \end_inset
@@ -9282,64 +9708,7 @@ HCV_SEROSTATUS
 \begin_layout Plain Layout
 
 \lang english
-Recipient's Hepatitis C status
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-Categorical
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-HIST_CIG
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-0.008208
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-0.001030
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-Recipient's history of cigarette use
+Recipient's past transplantations
 \end_layout
 
 \end_inset
@@ -9351,348 +9720,6 @@ Recipient's history of cigarette use
 
 \lang english
 Categorical
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-FUNC_STAT_TCR
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-0.008014
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-0.000208
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-Recipient's overall health status
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-Categorical
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-KI_CREAT_PREOP
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-0.007738
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-0.000611
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-Donor's creatinine level
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-Numerical
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-DIAB
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-0.007714
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-0.000167
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-Recipient's diabetes status
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-Categorical
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-PERIP_VASC
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-0.007668
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-0.000300
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-Recipient's peripheral vascular disease status
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-Categorical
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-AMIS
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-0.006838
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-0.001141
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-Mismatch at the HLA-A locus
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-Numerical
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-DRMIS
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-0.005818
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-0.002427
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-Mismatch at the HLA-DR locus
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-Numerical
 \end_layout
 
 \end_inset
@@ -9705,7 +9732,7 @@ Numerical
 \begin_layout Plain Layout
 
 \lang english
-BMIS
+KI_CREAT_PREOP
 \end_layout
 
 \end_inset
@@ -9716,7 +9743,7 @@ BMIS
 \begin_layout Plain Layout
 
 \lang english
-0.003345
+0.004947
 \end_layout
 
 \end_inset
@@ -9727,7 +9754,7 @@ BMIS
 \begin_layout Plain Layout
 
 \lang english
-0.001171
+0.000517
 \end_layout
 
 \end_inset
@@ -9738,7 +9765,7 @@ BMIS
 \begin_layout Plain Layout
 
 \lang english
-Mismatch at the HLA-B locus
+Donor's creatinine level
 \end_layout
 
 \end_inset
@@ -9983,9 +10010,6 @@ noprefix "false"
  In the case they were censored, the dotted line represens their observed
  time of censoration, else, the dashed line represents their graft failure
  time.
- The plateauing of both of the curves is caused by there still being individuals
- at risk at the time of the last unique event time in the terminal nodes
- of the survival trees.
 \end_layout
 
 \begin_layout Standard
@@ -10011,15 +10035,6 @@ status open
 
 \begin_layout Plain Layout
 Predicted survival functions
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
 \begin_inset CommandInset label
 LatexCommand label
 name "surv_example"
@@ -10034,9 +10049,14 @@ name "surv_example"
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 \begin_inset Float figure
-placement h
+placement H
 wide false
 sideways false
 status open
@@ -10057,15 +10077,6 @@ status open
 
 \begin_layout Plain Layout
 Predicted cummulative hazard functions
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
 \begin_inset CommandInset label
 LatexCommand label
 name "hazard_example"
@@ -10078,6 +10089,58 @@ name "hazard_example"
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset label
+LatexCommand label
+name "The-plateauing"
+
+\end_inset
+
+The plateauing of both of the curves is caused by the fact that the limited
+ amount of samples belonging to the individual terminal nodes of the survival
+ trees.
+ More specificallmy this is caused by the high amount of censoring in the
+ dataset (
+\begin_inset Formula $55\%$
+\end_inset
+
+ in the complete 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+Kidney_Pancreas
+\end_layout
+
+\end_inset
+
+ dataset and 
+\begin_inset Formula $61\%$
+\end_inset
+
+ in the 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+Kipan_Living
+\end_layout
+
+\end_inset
+
+ dataset), which results in situations where there are many censored individuals
+ belonging to a terminal node, whose time of censoring is greater than the
+ last unique event time.
+ Consequently, the survival functions, computed using the Kaplan-Meier estimator
+ in each survival tree, have a constant non-zero value past the last unique
+ event time.
 \end_layout
 
 \begin_layout Chapter
@@ -10111,12 +10174,13 @@ cold ischemia time
 \emph default
 , which describes the time the graft spends outside the body of both the
  donor and recipient.
- This feature in particular has a significiant impact the the recipient's
- survival curve, thus giving their model a significant boost in accuracy.
+ This feature in particular has a significiant impact on the recipient's
+ survival prospects, thus giving their model a significant boost in accuracy.
  However, as mentioned before, the goal of this paper is to develop a machine
  learning model that can be used for computing compatibility in order to
- match the suitable pairs of recipients and donors, which the one developed
- in 
+ match the suitable pairs of recipients and donors and therefore should
+ only use information that is knows prior to the transplantation.
+ Thus, the model developed in 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Using ML methods to predict kidney transplant survival"
@@ -10124,7 +10188,12 @@ literal "false"
 
 \end_inset
 
- is not suited for.
+, while more accurate in predicting survival time, is not suitable for such
+ a task.
+\end_layout
+
+\begin_layout Subsection
+Important Features
 \end_layout
 
 \begin_layout Standard
@@ -10156,19 +10225,19 @@ noprefix "false"
  In figure 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "kaplan_meier_age_group"
+reference "fig: KM_age"
 plural "false"
 caps "false"
 noprefix "false"
 
 \end_inset
 
-, survival curves were computed by selecting 10000 random samples from the
- whole dataset for each age group 0-14, 15-29, 30-44, 45-59, 60+.
+, survival curves were computed by selecting 1000 random samples from the
+ test for each age group 0-14, 15-29, 30-44, 45-59, 60+.
  Next, survival curves of these cohorts were computed with the Kaplan-Meier
  estimator using observed survival time and censoring status.
 \begin_inset Float figure
-placement h
+placement H
 wide false
 sideways false
 status open
@@ -10176,7 +10245,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename Images/kaplan_meier_age.pdf
+	filename Images/KaplanMeier_test_average_age.pdf
 	scale 60
 
 \end_inset
@@ -10189,14 +10258,81 @@ status open
 
 \begin_layout Plain Layout
 Kaplan-Meier survival curves by age group
+\begin_inset CommandInset label
+LatexCommand label
+name "fig: KM_age"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+From observation, age exhibits little influence on the graft's survival
+ in the age groups 0-59 and only begins to have a significant impact in
+ the 60+ age cohort.
+ This trend can also be observed on the predictions made by the RSF model.
+ Plotted in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig: RSF_age"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ are averages of 1000 survival functions predicted for each of the age cohort
+ using the same samples as for computing the survival curve in figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig: KM_age"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Images/RSF_average_age.pdf
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Averaged RSF predictions by age
 \begin_inset CommandInset label
 LatexCommand label
-name "kaplan_meier_age_group"
+name "fig: RSF_age"
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -10209,12 +10345,170 @@ name "kaplan_meier_age_group"
 
 \end_inset
 
-From observation, age exhibits little influence on the graft's survival
- in the age groups 0-59 and only begins to have a significant impact in
- the 60+ age cohort.
+
 \end_layout
 
-\begin_layout Section
+\begin_layout Standard
+Another feature with a siginificant variable importance is HLA mismatch
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "HLA mismatch"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ By grouping samples by the level of their HLA mismatch and computing their
+ survival curves using the Kaplan-Meier estimator.
+ It can be observed (fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig: KM_HLA"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+) that recipients with zero HLA mismatches have more optimistic survival
+ curves than others.
+ It can also be observed that survival curves of recipients with few (but
+ more than one) mismatches do not differ significantly from the survival
+ curves of recipients with higher mismatch levels.
+ It is also important to note that the distance between the survival curve
+ of the paitents 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Images/kaplan_meier_hlamis.pdf
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Kaplan-Meier survival curves by HLA mismatch
+\begin_inset CommandInset label
+LatexCommand label
+name "fig: KM_HLA"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This also hold true for the predictions made by the RSF model (fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Averaged-RSF-predictions_HLA"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+), which were computed by grouping the entries from the test set by their
+ HLA mismatch, and then averaging the predictions made for each of the subsets.
+ Note that the model's predictions start to deviate from the observed survival
+ curves (fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig: KM_HLA"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+) around the 6000 days mark, which is a result of the plateuing effect described
+ in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "The-plateauing"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Images/RSF_average_hlamis.pdf
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Averaged RSF predictions by HLA mismatch
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Averaged-RSF-predictions_HLA"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
 Comparison to Conventional Models
 \end_layout
 
@@ -10306,7 +10600,7 @@ noprefix "false"
 
 \begin_layout Standard
 \begin_inset Float table
-placement h
+placement H
 wide false
 sideways false
 status open
@@ -10688,8 +10982,7 @@ noprefix "false"
 
 \end_inset
 
-) reveals that there aren't any dramatic differences between the particular
- groups.
+) reveals that there are slight differences between the particular groups.
  However, pairings where at least one from the donor-recipient pairing was
  asian, had more favourable survival curve.
  On the other hand pairing where either the donor or the recipient were
@@ -10809,8 +11102,62 @@ Kaplan-Meier survival curves: white recipients
 \end_layout
 
 \begin_layout Standard
-These trends can also be observed on the predictions made by the RSF model:
- <insert figure>
+These trends can also be observed on the predictions made by the RSF model
+ (fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Averaged-RSF-predictions_ethcat"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+)
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename Images/RSF_average_ethcat.pdf
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Averaged RSF predictions by ethnicity
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Averaged-RSF-predictions_ethcat"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
