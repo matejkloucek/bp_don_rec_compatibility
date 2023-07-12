@@ -6254,7 +6254,150 @@ Hyperparameters
 \end_layout
 
 \begin_layout Standard
-TODO: List hyperparameters
+Like any other machine learning model, the RSF model has multiple hyperparameter
+s that define its behaviour.
+ As RSF are dervied from conventional random forests, they also share many
+ of the same hyperparameters.
+ The most important hyperparameters that the scikit-survivals's 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:scikit-survival"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ implementation of RSF allows to be set are 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "scikit-survival"
+literal "false"
+
+\end_inset
+
+: 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+n_estimators
+\end_layout
+
+\end_inset
+
+: The number of survival trees in the forest.
+ Usually, the more larger the better, however, more trees also means longer
+ training times.
+ Moreover, the benefits gained by adding more trees becomes deminishing,
+ meaning that there is a point, where the added computational complexity
+ is not worth it 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "scikit-learn"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+max_depth
+\end_layout
+
+\end_inset
+
+: The maximum allowed depth of a tree.
+ If none is set, then tree is allowed to grow until all leaves contain less
+ than 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+min_samples_split
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "scikit-learn"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+min_samples_split
+\end_layout
+
+\end_inset
+
+: The minimum number of samples required to split a node.
+ As mentioned beforem this parameter can limit the growth of the survival
+ trees and therefore speed up the training process.
+ However, setting this parameter too high can result in underfitting as
+ the model may fail to capture more complex realations in the data.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+min_samples_leaf
+\end_layout
+
+\end_inset
+
+: The minimum number of samples required to be in a leaf node.
+ This will ensure more samples are used for calculating the survival / cummulati
+ve hazard functions.
+ Therefore, raising this number will smooth the predictions 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "scikit-survival"
+literal "false"
+
+\end_inset
+
+.
+ However, setting this parameter too high may worsen the model's ability
+ to make accurate predictions.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+max_features
+\end_layout
+
+\end_inset
+
+: The maximum number of features to be considered when looking for a best
+ split.
+ Having only a random subset of the features available when looking for
+ the best split may help to differentiate the individual trees and reduce
+ overfitting.
+ However, setting this number too low may again reduce the accuracy of the
+ model.
 \end_layout
 
 \begin_layout Section
@@ -8163,6 +8306,10 @@ name "sec:Feature-Selection"
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 After training the model on the whole dataset, the performance of the model
  described by the C-index was 
 \begin_inset Formula $0.634$
@@ -8210,6 +8357,11 @@ max_depth=None
 \end_inset
 
 .
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -8276,7 +8428,7 @@ n_repeats=1
 
  .
  The two resulting tables of variable imortances were used to create a list
- of the 23 most important features.
+ of the 27 most important features.
  The varaible importance of those features was then validated by computing
  permutation importance on a dataset consisting only of these features with
  
@@ -8290,18 +8442,6 @@ n_repeats=15
 \end_inset
 
 .
- In addition, the 4 columns regarding HLA typing (
-\begin_inset Flex Code
-status open
-
-\begin_layout Plain Layout
-AMIS, BMIS, DRMIS, HLAMIS
-\end_layout
-
-\end_inset
-
-) were added to study their influence on the graft's long term survival,
- resulting in 27 features being selected in total.
 \end_layout
 
 \begin_layout Standard
@@ -8318,7 +8458,7 @@ noprefix "false"
 
 .
  For categorical features, values of their most important encoded subfeature
- are used in this table.
+ are listed in this table.
 \end_layout
 
 \begin_layout Standard
@@ -9813,6 +9953,10 @@ name "variable importance table"
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 Using the same hyperparameters as before, the C-index of the model using
  the reduced list of features improved to 
 \begin_inset Formula $0.636$
@@ -9820,6 +9964,11 @@ Using the same hyperparameters as before, the C-index of the model using
 
 .
  
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -9899,8 +10048,8 @@ max_depth=None
 \end_inset
 
 .
- Using these hyperparameters for training the dataset resulted in the improvemen
-t of the model's C-index to 
+ Using these hyperparameters and the reduced list of features, the RSF model
+ achieveda an accuracy given by the C-index of 
 \begin_inset Formula $0.638$
 \end_inset
 
