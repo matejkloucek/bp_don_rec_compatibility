@@ -3421,7 +3421,7 @@ HLA Mismatch
 \end_layout
 
 \begin_layout Plain Layout
-\begin_inset VSpace medskip
+\begin_inset VSpace smallskip
 \end_inset
 
 
@@ -3614,7 +3614,7 @@ AMIS
 \begin_layout Plain Layout
 
 \lang english
-AMIS
+BMIS
 \end_layout
 
 \end_inset
@@ -3649,7 +3649,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-3.0
+2
 \end_layout
 
 \end_inset
@@ -3660,7 +3660,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-24.0
+31
 \end_layout
 
 \end_inset
@@ -3671,7 +3671,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-35.0
+18
 \end_layout
 
 \end_inset
@@ -3682,7 +3682,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-44.0
+38
 \end_layout
 
 \end_inset
@@ -3693,7 +3693,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-1.0
+11
 \end_layout
 
 \end_inset
@@ -3704,7 +3704,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-2.0
+13
 \end_layout
 
 \end_inset
@@ -3715,7 +3715,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-1.0
+2
 \end_layout
 
 \end_inset
@@ -3726,7 +3726,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-26.0
+97
 \end_layout
 
 \end_inset
@@ -3737,7 +3737,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-38.0
+44
 \end_layout
 
 \end_inset
@@ -3748,7 +3748,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-44.0
+97
 \end_layout
 
 \end_inset
@@ -3759,7 +3759,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-1.0
+1
 \end_layout
 
 \end_inset
@@ -3770,7 +3770,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-4.0
+4
 \end_layout
 
 \end_inset
@@ -3781,7 +3781,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-2.0
+1
 \end_layout
 
 \end_inset
@@ -3792,7 +3792,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-2.0
+2
 \end_layout
 
 \end_inset
@@ -3803,7 +3803,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-1.0
+2
 \end_layout
 
 \end_inset
@@ -3814,7 +3814,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-4.0
+5
 \end_layout
 
 \end_inset
@@ -3827,7 +3827,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-3.0
+3
 \end_layout
 
 \end_inset
@@ -3838,7 +3838,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-32.0
+68
 \end_layout
 
 \end_inset
@@ -3849,7 +3849,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-18.0
+7
 \end_layout
 
 \end_inset
@@ -3860,7 +3860,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-44.0
+62
 \end_layout
 
 \end_inset
@@ -3871,7 +3871,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-11.0
+4
 \end_layout
 
 \end_inset
@@ -3882,7 +3882,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-97.0
+15
 \end_layout
 
 \end_inset
@@ -3893,7 +3893,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-2.0
+1
 \end_layout
 
 \end_inset
@@ -3904,7 +3904,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-23.0
+3
 \end_layout
 
 \end_inset
@@ -3915,7 +3915,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-44.0
+52
 \end_layout
 
 \end_inset
@@ -3926,7 +3926,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-62.0
+62
 \end_layout
 
 \end_inset
@@ -3937,7 +3937,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-7.0
+4
 \end_layout
 
 \end_inset
@@ -3948,7 +3948,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-11.0
+15
 \end_layout
 
 \end_inset
@@ -3959,7 +3959,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-2.0
+1
 \end_layout
 
 \end_inset
@@ -3970,7 +3970,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-2.0
+1
 \end_layout
 
 \end_inset
@@ -3981,7 +3981,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-0.0
+0
 \end_layout
 
 \end_inset
@@ -3992,7 +3992,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-3.0
+2
 \end_layout
 
 \end_inset
@@ -4005,7 +4005,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-2.0
+26
 \end_layout
 
 \end_inset
@@ -4016,7 +4016,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-24.0
+29
 \end_layout
 
 \end_inset
@@ -4027,7 +4027,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-35.0
+53
 \end_layout
 
 \end_inset
@@ -4038,7 +4038,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-41.0
+70
 \end_layout
 
 \end_inset
@@ -4049,7 +4049,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-8.0
+11
 \end_layout
 
 \end_inset
@@ -4060,7 +4060,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-15.0
+15
 \end_layout
 
 \end_inset
@@ -4071,7 +4071,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-2.0
+23
 \end_layout
 
 \end_inset
@@ -4082,7 +4082,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-29.0
+24
 \end_layout
 
 \end_inset
@@ -4093,7 +4093,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-27.0
+38
 \end_layout
 
 \end_inset
@@ -4104,7 +4104,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-44.0
+53
 \end_layout
 
 \end_inset
@@ -4115,7 +4115,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-4.0
+14
 \end_layout
 
 \end_inset
@@ -4126,7 +4126,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-7.0
+15
 \end_layout
 
 \end_inset
@@ -4137,7 +4137,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-1.0
+2
 \end_layout
 
 \end_inset
@@ -4148,7 +4148,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-1.0
+1
 \end_layout
 
 \end_inset
@@ -4159,7 +4159,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-2.0
+1
 \end_layout
 
 \end_inset
@@ -4170,7 +4170,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-5.0
+4
 \end_layout
 
 \end_inset
@@ -4183,7 +4183,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-1.0
+1
 \end_layout
 
 \end_inset
@@ -4194,7 +4194,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-25.0
+29
 \end_layout
 
 \end_inset
@@ -4205,7 +4205,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-7.0
+8
 \end_layout
 
 \end_inset
@@ -4216,7 +4216,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-27.0
+44
 \end_layout
 
 \end_inset
@@ -4227,7 +4227,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-1.0
+3
 \end_layout
 
 \end_inset
@@ -4238,7 +4238,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-13.0
+7
 \end_layout
 
 \end_inset
@@ -4249,7 +4249,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-3.0
+1
 \end_layout
 
 \end_inset
@@ -4260,7 +4260,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-25.0
+29
 \end_layout
 
 \end_inset
@@ -4271,7 +4271,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-7.0
+8
 \end_layout
 
 \end_inset
@@ -4282,7 +4282,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-27.0
+44
 \end_layout
 
 \end_inset
@@ -4293,7 +4293,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-1.0
+3
 \end_layout
 
 \end_inset
@@ -4304,7 +4304,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-13.0
+7
 \end_layout
 
 \end_inset
@@ -4315,7 +4315,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-1.0
+0
 \end_layout
 
 \end_inset
@@ -4326,7 +4326,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-1.0
+0
 \end_layout
 
 \end_inset
@@ -4337,7 +4337,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-0.0
+0
 \end_layout
 
 \end_inset
@@ -4348,7 +4348,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-1.0
+0
 \end_layout
 
 \end_inset
@@ -4361,7 +4361,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-26.0
+23
 \end_layout
 
 \end_inset
@@ -4372,7 +4372,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-29.0
+68
 \end_layout
 
 \end_inset
@@ -4383,7 +4383,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-7.0
+44
 \end_layout
 
 \end_inset
@@ -4394,7 +4394,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-41.0
+48
 \end_layout
 
 \end_inset
@@ -4405,7 +4405,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-7.0
+1
 \end_layout
 
 \end_inset
@@ -4416,7 +4416,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-13.0
+8
 \end_layout
 
 \end_inset
@@ -4427,7 +4427,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-2.0
+2
 \end_layout
 
 \end_inset
@@ -4438,7 +4438,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-68.0
+24
 \end_layout
 
 \end_inset
@@ -4449,7 +4449,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-35.0
+52
 \end_layout
 
 \end_inset
@@ -4460,7 +4460,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-39.0
+35
 \end_layout
 
 \end_inset
@@ -4471,7 +4471,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-3.0
+2
 \end_layout
 
 \end_inset
@@ -4482,7 +4482,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-97.0
+8
 \end_layout
 
 \end_inset
@@ -4493,7 +4493,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-2.0
+2
 \end_layout
 
 \end_inset
@@ -4504,7 +4504,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-2.0
+2
 \end_layout
 
 \end_inset
@@ -4515,7 +4515,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-2.0
+1
 \end_layout
 
 \end_inset
@@ -4526,7 +4526,7 @@ HLAMIS
 \begin_layout Plain Layout
 
 \lang english
-6.0
+5
 \end_layout
 
 \end_inset
@@ -4554,10 +4554,6 @@ name "HLA mismatch table"
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -7577,7 +7573,7 @@ https://github.com/matejkloucek/bp_don_rec_compatibility
 \end_inset
 
 in the form of Jupyter Notebooks.
- Intructions on how to properly execute them are included in the README
+ Instructions on how to properly execute them are included in the README
  file located in the above GitHub repository.
 \end_layout
 
@@ -7681,7 +7677,7 @@ Kidney_Pancreas
  It contains information about both living and deceased donors, but the
  details regarding the donors are limited in scope, particularly in the
  case of living donors.
- To adress this limitation, a table join was performed with the 
+ To address this limitation, a table join was performed with the 
 \begin_inset Flex Code
 status open
 
@@ -7775,17 +7771,57 @@ Deceased_Donor
 \end_layout
 
 \begin_layout Standard
-Preliminary experimentations with the data and RSF models have revealed
+Preliminary results gained by experimenting with the RSF models have revealed
  that the features impacting graft survival vary between living donor and
  deceased donor transplantations.
- Consequently, the dataset has been split on based on the type of transplantatio
-n performed, separating living and decead donor tranplantations.
- Subsequently, independent machine learning models were trained on each
- of the created subsets seperately.
+ Consequently, this paper will focus solely on transplantations from a living
+ donor.
+ As a result, dataset has been split on based on the type of transplantation
+ performed, separating living and deceased donor transplantations.
+ The subset resulting from this split containing information about the living
+ donor transplantation will from now on be referred to as 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+Kidpan_Living
+\end_layout
+
+\end_inset
+
+.
+ The 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+Kidpan_Living
+\end_layout
+
+\end_inset
+
+ table had 
+\begin_inset Formula $174381$
+\end_inset
+
+ entries and 
+\begin_inset Formula $649$
+\end_inset
+
+ columns.
+ The number of columns is usually considered to be high for an effective
+ machine learning model as it could lead to overfitting and poor explainability.
+ Therefore, the number of features had to be reduced significantly.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Subsequently, independent machine learning models were trained on each of
+ the created subsets seperately.
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 The two new datasets created by the merge and the subsequent split split
  will from now be referred to as too as 
 \begin_inset Flex Code
@@ -7845,10 +7881,15 @@ Kidpand_Deceased
 \end_inset
 
  columns.
- In both cases, the number of columns is usuallly considered to be high
- for an effective machine learning model as it could lead to overfitting
- and poor explainability.
+ In both cases, the number of columns is usually considered to be high for
+ an effective machine learning model as it could lead to overfitting and
+ poor explainability.
  Therefore, the number of features had to be reduced significantly.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -7897,7 +7938,7 @@ literal "false"
 
 .
  However, the focus of this paper is solely on kidney transplantations and
- the number of SKPs is relatively low compared to the number of stand-alone
+ the number of SKPs is relatively low compared to the number of standalone
  kidney transplantation.
  Therefore individuals , who had undergone a SKP were dropped from the dataset
  and all columns regarding pancreas transplantation were dropped as well.
@@ -8025,7 +8066,7 @@ Irrelevant Columns
 \begin_layout Standard
 The STAR dictionary was also used to identify obviously irrelevant features
  and drop them to speed up the training process.
- These include IDs, codes and form statuses used internall by either UNOS
+ These include IDs, codes and form statuses used internally by either UNOS
  or individual transplant centers.
 \end_layout
 
@@ -8047,7 +8088,18 @@ Kidney_Pancreas
  table itself contains limited information about both deceased and living
  donors.
  Therefore, columns regarding deceased donors had to be dropped from the
- dataset used for training of the model for living donors and vice versa.
+ dataset used for training of the model for living donors
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+.
+ and vice versa
+\end_layout
+
+\end_inset
+
+.
  This was done excluding columns with high percentage of missing values
  (
 \begin_inset Formula $>50\%$
@@ -8055,7 +8107,17 @@ Kidney_Pancreas
 
 ) as the columns regarding deceased donors would be left unfilled in the
  case of grafts from living donors.
- The opposite case was handled in the same fashion accordingly.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+The opposite case was handled in the same fashion accordingly.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection*
@@ -8066,7 +8128,7 @@ Low Quality Data
 Dropping columns with high percentage of missing values was also done to
  prevent a significant loss of information by having to either impute large
  amounts of missing values or discarding entries with missing features.
- Columns with only one unqiue value were dropped as well.
+ Columns with only one unique value were dropped as well.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -8110,7 +8172,13 @@ Overall, these measures reduced the number of features to
 \begin_inset Formula $137$
 \end_inset
 
- in the case of 
+.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+in the case of 
 \begin_inset Flex Code
 status open
 
@@ -8131,6 +8199,11 @@ Deceased_Donor
 \end_inset
 
 .
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -8228,6 +8301,10 @@ The RSF model requires all input variables to be numerical.
  had to be encoded before they could be used for training the RSF model.
  Scikit-learn's OneHotEncoder was used to encode the categorical variables.
  Encoding the whole 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 \begin_inset Flex Code
 status open
 
@@ -8237,12 +8314,22 @@ Kidpan_Living
 
 \end_inset
 
+
+\end_layout
+
+\end_inset
+
  dataset resulted in the training dataset having 
 \begin_inset Formula $812$
 \end_inset
 
  columns after merging with the categorical values.
- In the case of 
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+In the case of 
 \begin_inset Flex Code
 status open
 
@@ -8255,43 +8342,9 @@ Kidpan_Deceased
 , this number reached to <number>.
 \end_layout
 
-\begin_layout Standard
-After feature selection described in 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:Feature-Selection"
-plural "false"
-caps "false"
-noprefix "false"
-
 \end_inset
 
-, the encoded dataset had 
-\begin_inset Formula $111$
-\end_inset
 
- columns in the case of 
-\begin_inset Flex Code
-status open
-
-\begin_layout Plain Layout
-Kidpan_Living
-\end_layout
-
-\end_inset
-
- and <number> in the case of 
-\begin_inset Flex Code
-status open
-
-\begin_layout Plain Layout
-Kidpan_Deceased
-\end_layout
-
-\end_inset
-
-.
- After training
 \end_layout
 
 \begin_layout Section
@@ -8366,7 +8419,7 @@ max_depth=None
 
 \begin_layout Standard
 In order to simplify the model and improve its performance, the best features
- were selected by calculting their importance using permutation importance
+ were selected by calculating their importance using permutation importance
  described in 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -8378,7 +8431,8 @@ noprefix "false"
 \end_inset
 
 .
- In comparsion to variable importance calculated by the Gini importace 
+ In comparison to variable importance calculated by the Gini importance
+ 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:Feature-Selection"
@@ -8400,7 +8454,7 @@ n_repeats
 \end_inset
 
  parameter, which controls the number of times a feature is permutated in
- the dataset reslting in increased accuracy of the feature importance by
+ the dataset resulting in increased accuracy of the feature importance by
  reducing randomness.
  However, this also greatly increases the computational complexity.
  Thus, the variable importances were computed initially on smaller dataset,
@@ -8429,7 +8483,7 @@ n_repeats=1
  .
  The two resulting tables of variable imortances were used to create a list
  of the 27 most important features.
- The varaible importance of those features was then validated by computing
+ The variable importance of those features was then validated by computing
  permutation importance on a dataset consisting only of these features with
  
 \begin_inset Flex Code
@@ -8445,7 +8499,7 @@ n_repeats=15
 \end_layout
 
 \begin_layout Standard
-The selected features along with their description and varaible importance
+The selected features along with their description and variable importance
  can be found in table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -8457,7 +8511,7 @@ noprefix "false"
 \end_inset
 
 .
- For categorical features, values of their most important encoded subfeature
+ For categorical features, values of their most important encoded sub-feature
  are listed in this table.
 \end_layout
 
@@ -8475,6 +8529,13 @@ status open
 Variable Importance
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace smallskip
 \end_inset
 
 
@@ -8864,7 +8925,7 @@ ON_DIALYSIS
 \begin_layout Plain Layout
 
 \lang english
-Is recipeint regularly administered dialysis
+Is recipient regularly administered dialysis
 \end_layout
 
 \end_inset
@@ -9121,7 +9182,7 @@ PRE_TX_TXFUS
 \begin_layout Plain Layout
 
 \lang english
-Did recipient recieve transfusion
+Did recipient receive transfusion
 \end_layout
 
 \end_inset
@@ -9953,17 +10014,38 @@ name "variable importance table"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Using the same hyperparameters as before, the C-index of the model using
- the reduced list of features improved to 
-\begin_inset Formula $0.636$
+After one-hot encoding the categrocial features in this reduced dataset,
+ the final number of columns before training was 
+\begin_inset Formula $111$
 \end_inset
 
 .
  
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+in the case of 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+Kidpan_Living
+\end_layout
+
+\end_inset
+
+ and <number> in the case of 
+\begin_inset Flex Code
+status open
+
+\begin_layout Plain Layout
+Kidpan_Deceased
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \end_inset
@@ -9976,7 +10058,7 @@ Hyperparameter Tuning
 \end_layout
 
 \begin_layout Standard
-While for training of the inital models and feature selection the dataset
+While for training of the initial models and feature selection the dataset
  has been split into only the training and the test set, with 80% of the
  dataset being reserved for training and 20% for testing.
  For hyperparameter tuning, the dataset has been split into three folds:
@@ -10049,7 +10131,7 @@ max_depth=None
 
 .
  Using these hyperparameters and the reduced list of features, the RSF model
- achieveda an accuracy given by the C-index of 
+ achieved an accuracy given by the C-index of 
 \begin_inset Formula $0.638$
 \end_inset
 
@@ -10057,12 +10139,12 @@ max_depth=None
 \end_layout
 
 \begin_layout Section
-Example Usage
+Model's Capabilities
 \end_layout
 
 \begin_layout Standard
 Once trained, the model can be used to predict allograft's survival as well
- as cummulative hazard functions based on information about the recipient
+ as cumulative hazard functions based on information about the recipient
  and the donor as listed in table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -10110,7 +10192,7 @@ where
 \begin_inset Formula $H\left(t\mid\mathbf{x}\right)$
 \end_inset
 
- is the cummulative hazard function defined in 
+ is the cumulative hazard function defined in 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:tree CHF"
@@ -10156,7 +10238,7 @@ noprefix "false"
 
  are predicted survival functions, cumulative hazard functions and risk
  scores of five randomly selected samples from the test set.
- In the case they were censored, the dotted line represens their observed
+ In the case they were censored, the dotted line represents their observed
  time of censoration, else, the dashed line represents their graft failure
  time.
 \end_layout
@@ -10225,7 +10307,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Predicted cummulative hazard functions
+Predicted cumulative hazard functions
 \begin_inset CommandInset label
 LatexCommand label
 name "hazard_example"
@@ -10255,7 +10337,7 @@ name "The-plateauing"
 The plateauing of both of the curves is caused by the fact that the limited
  amount of samples belonging to the individual terminal nodes of the survival
  trees.
- More specificallmy this is caused by the high amount of censoring in the
+ More specifically, this is caused by the high amount of censoring in the
  dataset (
 \begin_inset Formula $55\%$
 \end_inset
@@ -10315,15 +10397,15 @@ literal "false"
 \end_inset
 
 .
- This is because they used predictors that are unkown prior to the transplantati
-on itself.
+ This is because they used predictors that are unknown prior to the transplantat
+ion itself.
  One such example is the 
 \emph on
 cold ischemia time
 \emph default
 , which describes the time the graft spends outside the body of both the
  donor and recipient.
- This feature in particular has a significiant impact on the recipient's
+ This feature in particular has a significant impact on the recipient's
  survival prospects, thus giving their model a significant boost in accuracy.
  However, as mentioned before, the goal of this paper is to develop a machine
  learning model that can be used for computing compatibility in order to
@@ -10343,6 +10425,13 @@ literal "false"
 
 \begin_layout Subsection
 Important Features
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Important-Features"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -10498,8 +10587,7 @@ name "fig: RSF_age"
 \end_layout
 
 \begin_layout Standard
-Another feature with a siginificant variable importance is HLA mismatch
- 
+Another feature with a significant variable importance is HLA mismatch 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "HLA mismatch"
@@ -10528,8 +10616,11 @@ noprefix "false"
  It can also be observed that survival curves of recipients with few (but
  more than one) mismatches do not differ significantly from the survival
  curves of recipients with higher mismatch levels.
- It is also important to note that the distance between the survival curve
- of the paitents 
+ It is also important to note that the distance between the survival curves
+ of patients with some HLA mismatches and the ones without, seems to grow
+ larger with time suggesting that HLA mismatch level is important not only
+ for prevetning acute rejections, but also for long term survival.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -10672,22 +10763,12 @@ noprefix "false"
 
 \end_inset
 
- fitted onto the 
-\begin_inset Flex Code
-status open
-
-\begin_layout Plain Layout
-Kidpan_Living
-\end_layout
-
-\end_inset
-
- dataset had a C-index of 
+ fitted onto the same dataset had a C-index of 
 \begin_inset Formula $0.619$
 \end_inset
 
- so the random forests model clearly outperforms Cox regression when making
- predictions based the features listed in 
+, meaning that the random forests model clearly outperforms Cox regression
+ when making predictions based on the features listed in 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "variable importance table"
@@ -10705,7 +10786,7 @@ Performance on different population samples
 \end_layout
 
 \begin_layout Standard
-In order to investigate the influence of ethnical background on the outcome
+In order to investigate the influence of ethnic background on the outcome
  of a kidney transplantation.
  The dataset has been grouped by the 
 \begin_inset Flex Code
@@ -10727,10 +10808,10 @@ ETHCAT_DON
 
 \end_inset
 
- categories representing the recipient's and the donor's ethnical categories
+ categories representing the recipient's and the donor's ethnic categories
  respectively.
- Within the UNOS dataset, individuals are divided into 7 categories: white,
- black, hispanic, asian, native American, Pacific islander and multiracial.
+ Within the UNOS dataset, individuals are divided into 7 categories: White,
+ Black, Hispanic, Asian, Native American, Pacific Islander and Multiracial.
  Consequently, the dataset was divided into 49 subsets.
  To ensure adequate sample sizes were, only 10 subsets with the most entries
  were selected for further investigation.
@@ -10755,16 +10836,19 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
 Ethnicities of recipients and donors
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace smallskip
 \end_inset
 
 
@@ -11132,10 +11216,10 @@ noprefix "false"
 \end_inset
 
 ) reveals that there are slight differences between the particular groups.
- However, pairings where at least one from the donor-recipient pairing was
- asian, had more favourable survival curve.
- On the other hand pairing where either the donor or the recipient were
- black, had a slightly less favourable survival curve than the others.
+ Namely, pairings where at least one from the donor-recipient pairing was
+ Asian, had more favorable survival curve.
+ On the other hand, pairings where either the donor or the recipient were
+ Black, had a slightly less favorable survival curve than the others.
  
 \begin_inset Float figure
 placement H
@@ -11314,23 +11398,1507 @@ Usage for Computing Compatibility
 \end_layout
 
 \begin_layout Standard
-TODO: How this model could be used for choosing the most optimal donors.
- In what cases does the age bias matter and when not.
- (If we had more than one recipient and one (or more) donor(s) and we wanted
- to choose, which recipient should recieve the donors kidney, then the model
- would be biased to select the youngest recipient which could result in
- a case where there would be a donor that would be the best possible match
- for an older recipient, but a younger recipient would selected since his
- survival curve would be the most favorable, even though there could be
- more suitable candidates for him.
+The RSF model could be used in cases where there is one patient looking
+ for a donor and multiple donors are available.
+ The model would then be ussed to asses their compatibility by calculating
+ the risk score of each of the possible pairings and the the pairing with
+ the lowest risk score would be chosen.
+ 
 \end_layout
 
 \begin_layout Standard
-However, this would not be an issue in the case where there is only 1 recipient
- and multiple donors.
- Than this model would be suitable for selecting the most compatible donor,
- by selecting the one, upon whose selection would the recipient had the
- best survival curve.
+Following is an example of how the model could be used for computing compatibili
+ty and thus assist in the decision-making process of choosing the best donor-rec
+ipient paring: Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Patient-Information"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ contains information about the patient and table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Donor-information"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ contains information about 5 possible donors along with a risk score predicted
+ by the RSF model if the donor's kidney was to be selected for the transplantati
+on.
+ The donor-recipient pairing with the lowest rick score would be selected
+ for transplantation.
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Patient Information
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Patient-Information"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+
+\lang english
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+resizebox{4.5 cm}{!}{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="20" columns="2">
+<features booktabs="true" tabularvalignment="middle">
+<column alignment="left" valignment="top">
+<column alignment="left" valignment="top">
+<row>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Column
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Value
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+CREAT_TRR
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+6.82
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+AGE
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+57
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+END_BMI_CALC
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+28.30
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+DAYSWAIT_CHRON_KI
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+211
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+TOT_SERUM_ALBUM
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+3.50
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+DAYSWAIT_ALLOC
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+211
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+PREV_TX_ANY
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+N
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+ON_DIALYSIS
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Y
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+DIAB
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+2
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+WORK_INCOME_TCR
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Y
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+PRI_PAYMENT_TCR_KI
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+PRE_TX_TXFUS
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+N
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+PERIP_VASC
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Y
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+ETHCAT
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+FUNC_STAT_TCR
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+2090
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+HCV_SEROSTATUS
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+N
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+HIST_CIG
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+N
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+EBV_SEROSTATUS
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+P
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+DIAG_KI
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+3069
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Donor information + Risk Score predicted by RSF
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Donor-information"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+
+\lang english
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+resizebox{
+\backslash
+textwidth}{!}{
+\end_layout
+
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="10">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+AGE_DON
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+DRMIS
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+AMIS
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+BMIS
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+HLAMIS
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+KI_CREAT_PREOP
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+ETHCAT_DON
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+DIABETES_DON
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Risk Score
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+23 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+1 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+1 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+3 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.86 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+2 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+N 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7036
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+30 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+1 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+1 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+1 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+3 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.86 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+1 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+N 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7665
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+45 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+1 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+1 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+2 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+4 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.90
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+1 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+N 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7878
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+49 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.90
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+1 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+N 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5603
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+41 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+2 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+2 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+2 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+6 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+1.00
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+2 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+N 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7734
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+In this case, the donor number 4 would be selected.
+\end_layout
+
+\begin_layout Subsection
+Age Bias
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Age-Bias"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+On the other hand, a situation for which the model might not be suited for
+ is a case where there are multiple patients and one (or more) donor(s).
+ If the model were to be used to find the best match in this scenario, the
+ model would tend to select the youngest patient and discriminate against
+ older patients as the recipient's age is the most important feature influencing
+ the graft's survival time as shown in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Important-Features"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ This however, could result in cases where a donor could be the best possible
+ match for an older recipient by all other measures but the age, while for
+ the younger patients, even better suited match might be found in the near
+ future, however the model would still rank the younger patinent as the
+ best match solely because of his age.
+\end_layout
+
+\begin_layout Standard
+Taking age out of the equation would not be a good solution as that would
+ seriously damper the models accuracy.
+ There also might be important correlations between age and other features.
+ Preferably, the resulting risk score could be weighted based on the recipients
+ age, e.g.
+ if 
+\begin_inset Formula $C$
+\end_inset
+
+ were to denote the resulting compatibility, 
+\begin_inset Formula $R$
+\end_inset
+
+ the risk score predicted by the RSF model, 
+\begin_inset Formula $w$
+\end_inset
+
+ the weight and 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ the pairing's feature vector, then 
+\begin_inset Formula 
+\begin{equation}
+C\left(\mathbf{x}\right)=w\left(\mathbf{x}\right)\cdot R\left(\mathbf{x}\right)\label{eq:age_weighted}
+\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $w$
+\end_inset
+
+ could, for example, be defined as
+\begin_inset Formula 
+\begin{equation}
+w\left(\mathbf{x}\right)=\left(\frac{x^{(AGE)}}{c}\right)^{-1}\label{eq:weight}
+\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $x^{(AGE)}$
+\end_inset
+
+ is the recipient's age variable of the feature vector and 
+\begin_inset Formula $c$
+\end_inset
+
+ could be a constant such as the 
+\emph on
+life expectancy
+\emph default
+ in the given region.
+\end_layout
+
+\begin_layout Standard
+However, as illustrated in fig.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig: KM_age"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, the recipient's age only begins to play a factor in the 
+\begin_inset Formula $60+$
+\end_inset
+
+ age group.
+ Therefore, using the formula suggested in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:age_weighted"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ may put younger patients at a disadvantage, when compared to middle-aged
+ patients.
+ Consequently, an alternative solution could be to subtract a certain amount
+ from the risk score of patients belonging to the 
+\begin_inset Formula $60+$
+\end_inset
+
+ age cohort.
+ Using the same symbols as before, the the compatibility could be given
+ by
+\begin_inset Formula 
+\begin{equation}
+C\left(\mathbf{x}\right)=\begin{cases}
+R\left(\mathbf{x}\right) & \textrm{if }x^{(AGE)}<60\\
+R\left(\mathbf{x}\right)-c & \textrm{else}
+\end{cases}
+\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $c$
+\end_inset
+
+ could be the difference between the average risk in the 
+\begin_inset Formula $0-59$
+\end_inset
+
+ and 
+\begin_inset Formula $60$
+\end_inset
+
+ age cohorts.
+ The average risk score of both of the cohorts was calculated by sampling
+ 1000 samples from each of the cohort, calculating a risk score for each
+ of the samples and finally taking their averages.
+ The resulting difference in average risk scores was
+\begin_inset Formula 
+\begin{equation}
+c=\hat{R}_{0-59}-\hat{R}_{60+}=2269
+\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $\hat{R}_{n}$
+\end_inset
+
+ represent the average risk score of the 
+\begin_inset Formula $n$
+\end_inset
+
+ age cohort.
 \end_layout
 
 \begin_layout Section
@@ -11338,8 +12906,44 @@ Possibilities for Future Research
 \end_layout
 
 \begin_layout Standard
-Handling the age bias + creating a model capable of picking the best match
- out of multitude of both donors and recipients.
+In spite of the RSF model's demonstrated superiority in accuracy in comparison
+ to the Cox Regression method, which is commonly used for kidney transplant
+ survival estimation, the c-index value of 
+\begin_inset Formula $0.638$
+\end_inset
+
+ indicates that the model is still far from being a reliable predictor.
+ Therefore, a future research could focus on enhancing the model's accuracy
+ by altering the model's algorithm or by working with higher quality data.
+ For example, the UNOS dataset contains detailed medical information obtained
+ at the time of transplantation aalong with abundant follow-up data.
+ However, for the purposes of this study, a more expansive dataset regarding
+ the pre-transplantation state of both the donor and the recipient would
+ be advantageous.
+ Consequently, a potential future research could entail gathering of such
+ data.
+\end_layout
+
+\begin_layout Standard
+Furthermore, it can also be expected, that future models will naturally
+ improve their prediction accuracy due to the availability of larger quantities
+ of non-censored as well as high-quality data.
+\end_layout
+
+\begin_layout Standard
+Additionaly, it may prove worthwhile to adapt the model for scenarios involving
+ multiple donors and recipients, extending beyond the suggestions outlined
+ in 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Age-Bias"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Chapter*
@@ -11370,12 +12974,40 @@ addcontentsline{toc}{chapter}{Conclusion}
 
 \end_inset
 
-
+The increasing prevalence of the end-stage kidney renal disease imposes
+ a great strain on the healthcare system.
+ With the demand for kidneys greatly exceeding the supply, patients have
+ to undergo months, sometimes even years of dialysis waiting list.
+ Consequently, effective matchmaking of donor-recipeint parings is of the
+ utmost importance, not only to ensure that people don't return to the waiting
+ list but, even more importantly, to prevent premature deaths.
+ Finding pairings that will ensure the longest possible survival time is
+ crucial for achieving this goal.
+ This however, is no easy task as there are complex factors affecting the
+ compatibility of donors and patients, many of which may be currently unaccounte
+d for.
+ 
 \end_layout
 
 \begin_layout Standard
-Text of the conclusion\SpecialChar ldots
+Machine learning demonstrates a promising solution to this problem.
+ The random forests model, a machine learning model that builds on the foundatio
+n of survival analysis, outperforms the conventionally used Cox proportional
+ hazards model in predicting survival time.
+ Machine learning models like these have the ability to evaluate the quality
+ of a potential match based on predicted survival time, and could thus be
+ used as a part of the decision-making process of choosing the the optimal
+ donor-recipient pairing.
+ As demonstrated, these models could also serve as a tool for examining
+ the influence of various factors on the outcome of renal transplantations,
+ both short-term and long-term.
+\end_layout
 
+\begin_layout Standard
+Although further research is required to improve the model's reliability
+ to a level suitable for clinical adoption, the model even in its premature
+ stages is still able to reveal insights into the determinants impacting
+ graft survival following renal transplantations..
 \end_layout
 
 \begin_layout Bibliography
