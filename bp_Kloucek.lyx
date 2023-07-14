@@ -999,8 +999,8 @@ United Network for Organ Sharing (UNOS)
  This data will be used to train and test machine learning models that can
  predict the patient's chances of surviving over time, given that they recieve
  a graft from a particular donor.
- These can then be compared in order to decide which donor-recipient pairing
- are the most compatible.
+ These can then be compared in order to select the the most compatible donor-rec
+ipient pairing.
  In particular, this paper will be focused on the Random Survival Forests
  model which has demonstrated a promising performance in related scientific
  papers 
@@ -1011,7 +1011,7 @@ literal "false"
 
 \end_inset
 
- .
+.
  Additionally, the research will also examine the performance of the developed
  models on different population samples within the UNOS dataset.
 \end_layout
@@ -1092,7 +1092,7 @@ Supervised Learning
 \emph default
  is a type of Machine Learning where models require a labeled dataset for
  their learning, which means that along with the data, the desired output
- needs to provided to the computer as well.
+ needs to be provided to the computer as well.
  Supervised learning can be further subdivided into Regression and Classificatio
 n, based on whether the desired output is a continuous numerical value or
  a discrete one respectively.
@@ -1134,9 +1134,12 @@ Unsupervised Learning
 \emph on
 Clustering
 \emph default
- which is used to find groups with shared characteristics, Association which
- is used to find relation between the input variables (also called predictors)
- in a given dataset, or 
+ which is used to find groups with shared characteristics, 
+\emph on
+Association
+\emph default
+ which is used to find relation between the input variables (also called
+ predictors) in a given dataset, or 
 \emph on
 Dimensional reduction
 \emph default
@@ -1150,10 +1153,10 @@ A combination of these, called
 \emph on
 Semi-supervised Learning
 \emph default
-, uses a combination of both labeled and unlabeled data and first uses an
- Unsupervised Machine Learning model to first cluster the data in order
- to classify the unlabeled data and then uses a Supervised machine Learning
- model on this newly labeled data.
+, uses a combination of both labeled and unlabeled data.
+ Firstly, it uses an Unsupervised Machine Learning model to cluster the
+ data in order to classify the unlabeled data and then uses a Supervised
+ machine Learning model on this newly labeled data.
  This is advantageous to using a simple Supervised Machine Learning model
  as it allows working with larger amounts of data that would otherwise be
  unusable because of the lack of labeling, thus potentially resulting in
@@ -1221,7 +1224,7 @@ On the other hand
 Model-based learning
 \emph default
  algorithms develop a mathematical function whose parameters are learned
- from the training data and predictions about new data are then accomplished
+ from the training data and predictions about new data are then obtained
  by providing the newly introduced data as an input to the function.
  Model-based learning algorithms are for example 
 \emph on
@@ -2156,14 +2159,14 @@ Regression trees.
 
 \begin_layout Standard
 Decision trees are in practice mostly binary trees where in each parent
- node (also called 
+ node (also called a 
 \emph on
 decision node
 \emph default
-), a specific attribute of the feature vector is examined and a split is
- made based on a given criteria whose specifics are learned during the training
- process.
- For example if a value of the given attribute is below a specific threshold,
+) a set attributes of feature vector is examined in order to make a split
+ based on a given criteria.
+ The specifics of this criteria are learned during the training process.
+ For example, if a value of the given feature is below a specific threshold,
  the left branch is followed, otherwise the right branch is followed, with
  the threshold being set to maximize a certain performance metric of the
  model.
@@ -2172,7 +2175,7 @@ decision node
 terminal node
 \emph default
 ) is reached, the example is assigned a probability of belonging to a given
- categorical value in case of a classification tree or assigned a real target
+ categorical value in case of a classification tree or assigned a numerical
  value in case of a regression tree.
  
 \end_layout
@@ -2220,8 +2223,8 @@ noprefix "false"
 
 \end_inset
 
-, which use a log-rank test statistic in order to maximize the difference
- between the predicted survival time in each leaf node.
+, which use the log-rank test statistic in order to maximize the difference
+ between the predicted survival in the child nodes.
 \end_layout
 
 \begin_layout Subsubsection
@@ -2253,7 +2256,7 @@ Let
 \begin_inset Formula $\left\{ \left(x^{(i)},y^{(i)}\right)\right\} _{i=1}^{N}$
 \end_inset
 
-is a collection of labeled examples with numerical predictors, where 
+is a collection of labeled examples with numerical features, where 
 \begin_inset Formula $N$
 \end_inset
 
@@ -2274,7 +2277,7 @@ is a collection of labeled examples with numerical predictors, where
 \end_inset
 
  is its label.
- The decision tree model is denoted by
+ The decision tree model is denoted by 
 \begin_inset Formula $f(\mathbf{x})$
 \end_inset
 
@@ -2312,11 +2315,11 @@ Let
 \begin_inset Formula $S_{i}$
 \end_inset
 
- denote the set of labeled examples included in a given node 
+ denote a set of labeled examples included in node 
 \begin_inset Formula $i$
 \end_inset
 
- , 
+ , let 
 \begin_inset Formula $p^{S_{i}}(a)$
 \end_inset
 
@@ -2336,9 +2339,10 @@ Let
 \begin_inset Formula $i$
 \end_inset
 
-.
- In the first step of the algorithm, the decision tree is consists of only
- its root node that contains all of the labeled examples i.e.
+ (i.e.
+ features that have not been used to make a split before).
+ In the first step of the algorithm, the decision tree consists only of
+ its root node, which contains all of the labeled examples i.e.
  
 \begin_inset Formula $S_{0}=$
 \end_inset
@@ -2347,7 +2351,7 @@ Let
 \begin_inset Formula $\left\{ \left(x^{(i)},y^{(i)}\right)\right\} _{i=1}^{N}$
 \end_inset
 
-, all features are available i.e.
+ ,all features are available for splitting i.e.
  
 \begin_inset Formula $F_{0}=\hat{k}$
 \end_inset
@@ -2377,8 +2381,8 @@ The next step of the algorithm is to iterate over all possible features
 \end_inset
 
  (the possible threshold values can be chosen, for example, as midpoints
- between values of the predictors e.g.
- if the predictor 
+ between values of the given feature, e.g.
+ if the feature 
 \begin_inset Formula $j$
 \end_inset
 
@@ -2386,11 +2390,11 @@ The next step of the algorithm is to iterate over all possible features
 \begin_inset Formula $\left[1,2,3\right]$
 \end_inset
 
- then we may choose the possible threshold values as 
+ then the possible threshold values may be chosen as 
 \begin_inset Formula $\left[1.5,2.5\right]$
 \end_inset
 
-) and split 
+, and split 
 \begin_inset Formula $S_{0}$
 \end_inset
 
@@ -2413,7 +2417,7 @@ For each iteration (ordered pair
 \begin_inset Formula $\left(j,t\right)$
 \end_inset
 
-), the quality of the split is calculated by using the algorithm's criterion.
+), the quality of the split is evaluated by using the algorithm's criterion.
  Assuming that the tree's criterion is entropy, the entropy of a given set
  of examples is given by
 \end_layout
@@ -2431,7 +2435,7 @@ H(S)=-\sum_{a\in S}p^{S}\left(a\right)\log_{2}p^{S}\left(a\right).\label{eq:entr
 
 \begin_layout Standard
 The quality of the given split is then determined by the weighted sum of
- the entropies of the two subsets created by the split i.e.
+ entropies of the two subsets created by the split i.e.
 \end_layout
 
 \begin_layout Standard
@@ -2482,7 +2486,7 @@ Once the best split has been found, each of the created subsets serves as
 \end_layout
 
 \begin_layout Standard
-The algorithm stops if either there are no further attributes to split upon,
+The algorithm stops if there are either no further attributes to split upon,
  all possible decisions would reduce entropy less then some set amount or
  the tree reaches a set maximum depth (the minimum number of edges connecting
  the root to a leaf node).
@@ -2535,8 +2539,8 @@ Building a Regression Tree
 This time suppose the opposite case i.e.
  that the dataset consists of examples with categorical valued predictors
  and labels with continuous numerical values.
- As a result, the Standard Deviation Reduction algorithm would be good choice
- to build the regression tree.
+ As a result, the Standard Deviation Reduction algorithm would be a good
+ choice for building a regression tree.
 \end_layout
 
 \begin_layout Standard
@@ -2553,7 +2557,7 @@ where
 \end_inset
 
  is the total number of features in the dataset.
- Again let 
+ Again, let 
 \begin_inset Formula $\left\{ \left(x^{(i)},y^{(i)}\right)\right\} _{i=1}^{N}$
 \end_inset
 
@@ -2624,32 +2628,32 @@ Let
 \begin_inset Formula $S_{i}$
 \end_inset
 
- denote the set of labeled examples included in a given node 
+ denote the set of labeled examples included in node 
 \begin_inset Formula $i$
 \end_inset
 
-, 
+, let 
 \begin_inset Formula $F_{i}$
 \end_inset
 
- is the set of all possible features in the node 
-\begin_inset Formula $S_{i}$
+ be the set of all possible features in the node 
+\begin_inset Formula $i$
 \end_inset
 
 , 
 \begin_inset Formula $\sigma(S_{i})$
 \end_inset
 
- is the standard deviation for labels in 
-\begin_inset Formula $S_{i}$
+ be the standard deviation of labels in node 
+\begin_inset Formula $i$
 \end_inset
 
-, while 
+ and let 
 \begin_inset Formula $\sigma\left(S_{i},j\right)$
 \end_inset
 
- is standard deviation in 
-\begin_inset Formula $S_{i}$
+ be the standard deviation of labels in the node 
+\begin_inset Formula $i$
 \end_inset
 
  for feature 
@@ -2660,8 +2664,8 @@ Let
 \end_layout
 
 \begin_layout Standard
-In the first step of the algorithm, again the decision tree consists of
- only its root node that contains all labeled example i.e.
+In the first step of the algorithm, again, the decision tree consists only
+ of its root node that contains all of the labeled samples i.e.
  
 \begin_inset Formula $S_{0}=$
 \end_inset
@@ -2675,11 +2679,11 @@ In the first step of the algorithm, again the decision tree consists of
 \end_inset
 
 .
- The standard deviation of all labels in 
+ The standard deviation of the labels in 
 \begin_inset Formula $S_{0}$
 \end_inset
 
- given by
+ is given by
 \end_layout
 
 \begin_layout Standard
@@ -2747,7 +2751,7 @@ where
 \begin_inset Formula $N_{c}$
 \end_inset
 
- denote the number of examples in 
+ denote the number of samples in 
 \begin_inset Formula $S_{0}$
 \end_inset
 
@@ -2800,7 +2804,7 @@ where
 \begin_inset Formula $y_{c}^{(i)}$
 \end_inset
 
- are the labels of examples whose feature 
+ are the labels of samples whose feature 
 \begin_inset Formula $j$
 \end_inset
 
