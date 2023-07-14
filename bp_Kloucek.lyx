@@ -743,64 +743,18 @@ Konzultant:
 \lang czech
 Abstrakt:
 \emph default
- Abstrakt max.
- na 10 řádků.
- Abstrakt max.
- na 10 řádků.
- Abstrakt max.
- na 10 řádků.
- Abstrakt max.
- na 10 řádků.
- Abstrakt max.
- na 10 řádků.
- Abstrakt max.
- na 10 řádků.
- Abstrakt max.
- na 10 řádků.
- Abstrakt max.
- na 10 řádků.
- Abstrakt max.
- na 10 řádků.
- Abstrakt max.
- na 10 řádků.
- Abstrakt max.
- na 10 řádků.
- Abstrakt max.
- na 10 řádků.
- Abstrakt max.
- na 10 řádků.
- Abstrakt max.
- na 10 řádků.
- Abstrakt max.
- na 10 řádků.
- Abstrakt max.
- na 10 řádků.
- Abstrakt max.
- na 10 řádků.
- Abstrakt max.
- na 10 řádků.
- Abstrakt max.
- na 10 řádků.
- Abstrakt max.
- na 10 řádků.
- Abstrakt max.
- na 10 řádků.
- Abstrakt max.
- na 10 řádků.
- Abstrakt max.
- na 10 řádků.
- Abstrakt max.
- na 10 řádků.
- Abstrakt max.
- na 10 řádků.
- Abstrakt max.
- na 10 řádků.
- Abstrakt max.
- na 10 řádků.
- Abstrakt max.
- na 10 řádků.
- Abstrakt max.
- na 10 řádků.
+ Se zvyšující se prevalencí onemocnění spojených s ledvinami, je vylepšení
+ procesu hledání vhodných párů dárců a příjemců zásadní pro zmírnění zátěže,
+ kterou pro zdravotnický systém představují pacienti se selhávajícími ledvinami.
+ Předchozí studie ukázali, jak mohou metody strojového učení být použity
+ pro predikování času přežití po transplantaci ledvin.
+ V této studii je pro výpočet kompatibility mezi dárci a příjemci použit
+ model náhodného přežívacího lesa, který predikuje dobu přežití na základě
+ jejich pre-transplantačních metrik.
+ Model je také použit pro zkoumání různých faktorů ovlivňující přežití štěpu.
+ Součástí studie je také podrobné prozkoumání algoritmů, které stojí za
+ modelem náhodného přežívacího lesa, a analýzi přežití, oblasti statistiky,
+ která se běžně využívá v medicínském výzkumu.
  
 \end_layout
 
@@ -820,8 +774,8 @@ Abstrakt:
 \lang czech
 Klíčová slova:
 \emph default
- analýza přežívání, random survival forests, strojové učení, transplantace
- ledvin
+ strojové učení, rozhodovací strom, náhodný les, transplantace ledvin, analýza
+ přežívání, náhodný přežívací les 
 \end_layout
 
 \begin_layout Standard
@@ -881,56 +835,20 @@ Author:
 \emph on
 Abstract:
 \emph default
- Max.
- 10 lines of English abstract text.
- Max.
- 10 lines of English abstract text.
- Max.
- 10 lines of English abstract text.
- Max.
- 10 lines of English abstract text.
- Max.
- 10 lines of English abstract text.
- Max.
- 10 lines of English abstract text.
- Max.
- 10 lines of English abstract text.
- Max.
- 10 lines of English abstract text.
- Max.
- 10 lines of English abstract text.
- Max.
- 10 lines of English abstract text.
- Max.
- 10 lines of English abstract text.
- Max.
- 10 lines of English abstract text.
- Max.
- 10 lines of English abstract text.
- Max.
- 10 lines of English abstract text.
- Max.
- 10 lines of English abstract text.
- Max.
- 10 lines of English abstract text.
- Max.
- 10 lines of English abstract text.
- Max.
- 10 lines of English abstract text.
- Max.
- 10 lines of English abstract text.
- Max.
- 10 lines of English abstract text.
- Max.
- 10 lines of English abstract text.
- Max.
- 10 lines of English abstract text.
- Max.
- 10 lines of English abstract text.
- Max.
- 10 lines of English abstract text.
- Max.
- 10 lines of English abstract text.
+ With the increasing prevalence of kidney-related diseases, the improvement
+ of the donor-recipient match-making process becomes crucial for alleviating
+ some of the burden placed on the healthcare system by patients with failing
+ kidneys.
+ Several other studies have already demonstrated how machine learning methods
+ could be used for predicting survival time after renal transplantation.
+ In this study, the random survival forest model is used to predict compatibilit
+y between donors and recipients by trying to predict their survival time
+ based on their pre-transplantation metrics.
+ The model is then also used to investigate the various factors influencing
+ graft survival.
+ The study also includes an in-depth examination of the algorithms behind
+ the random survival forests model, as well as survival analysis, a field
+ of statistics commonly used in medicinal resarch.
 \end_layout
 
 \begin_layout Standard
@@ -946,8 +864,8 @@ Abstract:
 \emph on
 Key words:
 \emph default
- Machine learning, Random survival forests, Renal transplantation, Survival
- analysis
+ Machine learning, Decision tree, Random forest, Renal transplantation,
+ Survival analysis, Random survival forest
 \end_layout
 
 \begin_layout Standard
