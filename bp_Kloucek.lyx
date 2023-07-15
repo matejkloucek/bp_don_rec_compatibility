@@ -3060,7 +3060,7 @@ Building the decision trees
 \emph default
 : For each sample of the data and input features, a decision tree is built
  using a given split criterion.
- For even more randomized trees it is possible to randomly select the threshold
+ For even more randomized trees, it is possible to randomly select a threshold
  values for each split in the decision trees, instead of searching for the
  best possible threshold.
  These are called 
@@ -3163,13 +3163,13 @@ Secondly, a process called
 \emph on
 HLA typing 
 \emph default
-is performed both on the patient and the recipient.
+is performed both on the patient and the potential donor.
  HLA typing assumes paramount importance in determining the immunological
  compatibility between the donor and the recipient, which is necessary for
  a successful transplantation.
- Transplantation between a incompatible paring could lead to an acute transplant
- rejection, which happens when the recipient's immune system perceives the
- graft as foreign and rejects it.
+ Transplantation between an immunologically incompatible paring could lead
+ to an acute transplant rejection, which happens when the recipient's immune
+ system perceives the graft as foreign and rejects it.
 \end_layout
 
 \begin_layout Subsection
@@ -3287,8 +3287,7 @@ literal "false"
  When calculating the HLA mismatch, a score is given based on the number
  of allele mismatches for each subclass (HLA-A, HLA-DR, etc.).
  A higher score indicates a greater degree of immunological incompatibility
- in the pairing as the best transplant survival has been achieved with no
- mismatches at HLA-A, -B and -DR.
+ in the pairing..
  The relationship between HLA mismatches and allograft survival time has
  been revealed thanks to the UNOS data, that will be used later 
 \begin_inset CommandInset citation
@@ -3316,7 +3315,7 @@ noprefix "false"
 
 \end_inset
 
- a mismatch is calculated for each locus (A, B, DR) by counting how many
+, a mismatch is calculated for each locus (A, B, DR) by counting how many
  of the two antigens are different between the donor and the recipient.
  The overall HLA mismatch is then given by the sum of these locus mismatches.
  Note that D- represents donor's typing while R- represents recipient's
@@ -4524,7 +4523,8 @@ Given that the majority of well-documented data originates from the last
  a bias towards individuals who had a lower probability of survival from
  the outset.
  Therefore, it is necessary to include all patients in the analysis, including
- those with functioning grafts as well as those lost to follow-up (i.e.
+ those with still functioning grafts as well as those lost to follow-up
+ (i.e.
  the status of their graft is unknown).
  The difficulty lies in the fact that conventional machine learning models
  do not inherently handle this type of data when considering the patient's
@@ -4546,7 +4546,7 @@ Introduction to Survival Analysis
 \end_layout
 
 \begin_layout Standard
-Survival analysis is a collection of statistical procedures for data analysis
+Survival analysis is a collection of statistical procedures for data analysis,
  for which the outcome variable of interest is time until an event occurs,
  usually referred to as 
 \emph on
@@ -4569,7 +4569,7 @@ literal "false"
  More specifically, time-to-event refers to the time from the beginning
  of a follow-up i.e.
  the period during which the subject of a study is observed, usually from
- the date of diagnosis, the start of a treatment or transplantation, until
+ the date of diagnosis, the start of a treatment or a transplantation, until
  the occurrence of an event of interest, usually meaning the death of a
  patient, disease incidence, relapse from remission, recovery or in the
  case of kidney transplantation: 
@@ -4577,9 +4577,8 @@ literal "false"
 graft failure
 \emph default
 .
- Survival analysis involves several statistical techniques that are used
- during the pre-transplant procedure as a part of the process of finding
- compatible donor-recipient pairing, namely the 
+ Survival analysis involves several statistical techniques that are commonly
+ used in medicinal research, namely the 
 \emph on
 Kaplan-Meier estimator
 \emph default
@@ -4697,7 +4696,7 @@ where
 \begin_layout Standard
 In contrast, the hazard function, as hinted by its alternative name, gives
  the the instantaneous potential per unit time for the event to occur, given
- that the individual has survived up to time t, that is the hazard function
+ that the individual has survived up to time t, that is, the hazard function
  is focused on 
 \emph on
 failing
@@ -4743,8 +4742,8 @@ While the survival functions may seem to be obvious option for describing
  models aimed at predicting survival time, it is usually the hazard function,
  with which the survival models are described by, since it provides a more
  direct measure of risk over time.
- Importantly, either of the function can be derived from the other one using
- the following formulae
+ Importantly, either of the functions can be derived from the other one
+ using one of the following formulae
 \begin_inset Formula 
 \begin{equation}
 S(t)=\exp\left[-\intop_{0}^{t}h(u)du\right]\label{eq: Hazard to Survival}
@@ -4883,7 +4882,11 @@ literal "false"
 \begin_inset Formula $\delta_{i}=0$
 \end_inset
 
- if the entry is right censored.
+ if the entry is right censored at time 
+\begin_inset Formula $T_{i}$
+\end_inset
+
+.
  Let 
 \begin_inset Formula $\tau$
 \end_inset
@@ -4929,7 +4932,7 @@ literal "false"
 \begin_inset Formula $\Pr(T>t_{j}\mid T\geq t_{j})$
 \end_inset
 
- that is deductible from the dataset as follows
+ which is deductible from the dataset as follows
 \begin_inset Formula 
 \begin{equation}
 \Pr(T>t_{j}\mid T\geq t_{j})=1-\frac{f_{j}}{r_{j}}.
@@ -5034,9 +5037,9 @@ name "subsec:Log-rank-Test"
 \end_layout
 
 \begin_layout Standard
-The log-rank test is statistical test used to compare the survival distribution
- of two or more groups and decide whether their survival curves are statisticall
-y equivalent or not 
+The log-rank test is a statistical test used to compare the survival distributio
+n of two or more groups and decide whether their survival curves are statistical
+ly equivalent or not 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Survival Analysis self-learn"
@@ -5243,7 +5246,8 @@ literal "false"
  not always be clear which parametric model is appropriate for a given problem.
  As a result, a semi-parametric model is a great tool when uncertain about
  which parametric model to use, as a semi-parametric model will typically
- approximate the results of a correct parametric model 
+ approximate the results of a correct parametric molog-rank statistic is
+ only concerned with comparing two groups.del 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Survival Analysis self-learn"
@@ -5476,7 +5480,7 @@ where
 \begin_inset Formula $L_{j}$
 \end_inset
 
- is defined as the ratio of the hazard function of the individual, who failed
+ is defined as a ratio of the hazard function of the individual, who failed
  at time 
 \begin_inset Formula $j$
 \end_inset
@@ -5824,12 +5828,6 @@ the ensemble cumulative hazard,
  is then computed as the average of the individual tree predictions.
 \end_layout
 
-\begin_layout Standard
-Random Survival Forests have been used in a wide range of applications,
- including medicine, engineering, and social sciences, to model survival
- outcomes and identify important prognostic factors.
-\end_layout
-
 \begin_layout Section
 Building a Random Survival Forests model
 \end_layout
@@ -5896,7 +5894,7 @@ noprefix "false"
 
 \end_inset
 
-, which compares the survival times of the two groups created by the potential
+, which compares the survival curves of the two groups created by the potential
  split.
  The algorithm is restricted by a criterion that each node should contain
  at least 1 unique event time, which leads to a point when no new splits
@@ -5905,7 +5903,7 @@ noprefix "false"
 \end_layout
 
 \begin_layout Enumerate
-Once a tree is fully grown, each terminal node outputs a either a survival
+Once a tree is fully grown, each terminal node outputs either a survival
  function or a 
 \emph on
 cumulative hazard function 
@@ -6003,7 +6001,7 @@ Let
 \end_inset
 
  respectively.
- Then either a survival function is calculated using the Kaplan-Meier estimator
+ Then either a survival function is estimated using the Kaplan-Meier estimator
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -6021,7 +6019,7 @@ noprefix "false"
  is given by the Nelson-Maier estimator
 \begin_inset Formula 
 \begin{equation}
-\hat{H}_{j}(t)=\sum_{t_{k,j}\leq t}\frac{d_{k,j}}{Y_{k,j}}\label{eq:node CHF}
+\hat{H}_{j}(t)=\sum_{t_{k,j}\leq t}\frac{r_{k,j}}{f_{k,j}}\label{eq:node CHF}
 \end{equation}
 
 \end_inset
@@ -6698,7 +6696,7 @@ Whether a given case has a better or a worse predicted outcome is decided
  if
 \begin_inset Formula 
 \begin{equation}
-\sum_{k=1}^{n}H_{e}^{**}(t_{k}\mid\mathbf{x}_{i})<\sum_{k=1}^{n}H_{e}^{**}(t_{k}\mid\mathbf{x}_{j})\label{eq:worse outcome def}
+\sum_{k=1}^{n}H_{e}^{**}(t_{k}\mid\mathbf{x}_{i})>\sum_{k=1}^{n}H_{e}^{**}(t_{k}\mid\mathbf{x}_{j})\label{eq:worse outcome def}
 \end{equation}
 
 \end_inset
@@ -6860,7 +6858,7 @@ noprefix "false"
 .
  Consequently, the 
 \emph on
-permutation feature importance
+permutation feature importance,
 \emph default
  described in the original paper introducing random forests 
 \begin_inset CommandInset citation
@@ -6870,7 +6868,18 @@ literal "false"
 
 \end_inset
 
-, which is fortunately also implemented within the scikit-learn package.
+, is used to compute variable importance.
+ Fortunately also implemented within the scikit-learn 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:scikit-learn"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ package.
 \end_layout
 
 \begin_layout Standard
@@ -7081,7 +7090,7 @@ https://unos.org
 \emph default
  (a VPN may be needed for access from outside the US) upon filling out the
  request form on the website and signing relevant documents regarding the
- use of the data that will be sent via a provided email.
+ use of the data that will be sent via email.
  The data was obtained in the form of a tab-delimited file that was transformed
  into a MongoDB database using the following GitHub repository 
 \begin_inset Flex URL
@@ -7206,8 +7215,7 @@ notebook interface
 ).
  Computational notebooks are documents that enable users to integrate executable
  computer code, plain text, visualization and other interactive tools in
- a structured manner.
- 
+ a structured manner 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Jupyter Notebook"
@@ -7215,6 +7223,7 @@ literal "false"
 
 \end_inset
 
+.
  One of the fundamental advantages of computational notebooks is the ability
  to partition code into smaller self-contained units with each unit having
  the result of their execution attached to them.
@@ -7473,7 +7482,7 @@ Model Training
 \end_layout
 
 \begin_layout Standard
-The code used for training the machine learnign model including pipelines
+The code used for training the machine learning model including pipelines
  used for data preprocessing, training and evaluating the model are publicly
  available at 
 \begin_inset Newline newline
@@ -7698,7 +7707,7 @@ Preliminary results gained by experimenting with the RSF models have revealed
  deceased donor transplantations.
  Consequently, this paper will focus solely on transplantations from a living
  donor.
- As a result, dataset has been split on based on the type of transplantation
+ As a result, dataset has been split based on the type of transplantation
  performed, separating living and deceased donor transplantations.
  The subset resulting from this split containing information about the living
  donor transplantation will from now on be referred to as 
@@ -7731,7 +7740,7 @@ Kidpan_Living
 \end_inset
 
  columns.
- The number of columns is usually considered to be high for an effective
+ This number of columns is usually considered to be too high for an effective
  machine learning model as it could lead to overfitting and poor explainability.
  Therefore, the number of features had to be reduced significantly.
 \begin_inset Note Note
@@ -8379,7 +8388,7 @@ n_repeats
  the dataset resulting in increased accuracy of the feature importance by
  reducing randomness.
  However, this also greatly increases the computational complexity.
- Thus, the variable importances were computed initially on smaller dataset,
+ Thus, the variable importances were computed initially on a smaller dataset
  created by dropping all entries with missing features, with 
 \begin_inset Flex Code
 status open
@@ -8397,7 +8406,7 @@ n_repeats=5
 status open
 
 \begin_layout Plain Layout
-n_repeats=1
+n_repeats=2
 \end_layout
 
 \end_inset
@@ -9980,9 +9989,9 @@ Hyperparameter Tuning
 \end_layout
 
 \begin_layout Standard
-While for training of the initial models and feature selection the dataset
- has been split into only the training and the test set, with 80% of the
- dataset being reserved for training and 20% for testing.
+While for training of the initial models and feature selection, the dataset
+ has been split only into the training and test sets, with 80% of the dataset
+ being reserved for training and 20% for testing.
  For hyperparameter tuning, the dataset has been split into three folds:
  the training, validation and test sets with the ratio being 70% for training
  and 15% for validation and testing each.
@@ -10588,7 +10597,7 @@ name "fig: KM_HLA"
 \end_layout
 
 \begin_layout Standard
-This also hold true for the predictions made by the RSF model (fig.
+This also holds true for the predictions made by the RSF model (fig.
  
 \begin_inset CommandInset ref
 LatexCommand ref
