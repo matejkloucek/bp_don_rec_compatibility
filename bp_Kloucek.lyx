@@ -5528,7 +5528,7 @@ where
  cancels out, the partial likelihood function can be written as 
 \begin_inset Formula 
 \begin{equation}
-L\left(\beta\right)=\prod_{j=1}^{p}\frac{\exp\left(\beta\cdot\mathbf{X}_{j}\right)}{\sum_{i\in R(t_{j})}h_{0}\left(t\right)\exp\left(\beta\cdot\mathbf{X}_{i}\right)}
+L\left(\beta\right)=\prod_{j=1}^{p}\frac{\exp\left(\beta\cdot\mathbf{X}_{j}\right)}{\sum_{i\in R(t_{j})}\exp\left(\beta\cdot\mathbf{X}_{i}\right)}
 \end{equation}
 
 \end_inset
@@ -8251,7 +8251,7 @@ Kidpan_Living
 \end_inset
 
  dataset resulted in the training dataset having 
-\begin_inset Formula $812$
+\begin_inset Formula $810$
 \end_inset
 
  columns after merging with the categorical values.
@@ -10709,7 +10709,11 @@ noprefix "false"
 
 \end_inset
 
-.
+.Though it is important to note, that the Cox regression model took a significant
+ly less amount of time to fit and had considerably lesser memory requirements
+ in comparison to the RSF model.
+ This prompts the question as to whether such added computational complexity
+ is worth the improved accuracy.
 \end_layout
 
 \begin_layout Section
