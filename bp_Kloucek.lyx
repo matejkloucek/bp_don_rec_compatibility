@@ -748,7 +748,7 @@ Abstrakt:
  kterou pro zdravotnický systém představují pacienti se selhávajícími ledvinami.
  Předchozí studie ukázali, jak mohou metody strojového učení být použity
  pro predikování času přežití po transplantaci ledvin.
- V této studii je pro výpočet kompatibility mezi dárci a příjemci použit
+ V této studii je pro ohodnocení kompatibility mezi dárci a příjemci použit
  model náhodného přežívacího lesa, který predikuje dobu přežití na základě
  jejich pre-transplantačních metrik.
  Model je také použit pro zkoumání různých faktorů ovlivňující přežití štěpu.
@@ -841,9 +841,9 @@ Abstract:
  kidneys.
  Several other studies have already demonstrated how machine learning methods
  could be used for predicting survival time after renal transplantation.
- In this study, the random survival forest model is used to predict compatibilit
-y between donors and recipients by trying to predict their survival time
- based on their pre-transplantation metrics.
+ In this study, the random survival forest model is used to evaluate compatibili
+ty between donors and recipients by predicting their survival time based
+ on their pre-transplantation metrics.
  The model is then also used to investigate the various factors influencing
  graft survival.
  The study also includes an in-depth examination of the algorithms behind
@@ -996,11 +996,12 @@ United Network for Organ Sharing (UNOS)
 \emph default
  dataset, including information on both living and deceased donors, recipients
  and their post-transplant outcome.
- This data will be used to train and test machine learning models that can
- predict the patient's chances of surviving over time, given that they recieve
- a graft from a particular donor.
- These can then be compared in order to select the the most compatible donor-rec
-ipient pairing.
+ This data will be used to train and test a machine learning model that
+ will evaluate the compatibility between a donor and a recipient by computing
+ a risk score based on the patient's predicted survival and hazard functions,
+ given that they recieve a graft from that particular donor.
+ This score can then be compared in order to select the the most compatible
+ donor-recipient pairing.
  In particular, this paper will be focused on the Random Survival Forests
  model which has demonstrated a promising performance in related scientific
  papers 
@@ -1091,12 +1092,12 @@ Classification by Data Type
 Supervised Learning
 \emph default
  is a type of Machine Learning where models require a labeled dataset for
- their learning, which means that along with the data, the desired output
- needs to be provided to the computer as well.
+ their learning, which means that the desired output needs to be provided
+ to the computer during the training process along with the data.
  Supervised learning can be further subdivided into Regression and Classificatio
-n, based on whether the desired output is a continuous numerical value or
- a discrete one respectively.
- The examples of Supervised Learning models include: 
+n tasks based on whether the desired output is a continuous numerical value
+ or a discrete one respectively.
+ Examples of Supervised Learning models include: 
 \emph on
 Linear
 \emph default
@@ -1128,7 +1129,7 @@ The opposite of Supervised Learning is
 \emph on
 Unsupervised Learning
 \emph default
-, where models are trained on an unlabeled dataset with the aim of finding
+ where models are trained on an unlabeled dataset with the aim of finding
  patterns in the given data or grouping data with similar characteristics.
  An example of Unsupervised Learning is 
 \emph on
