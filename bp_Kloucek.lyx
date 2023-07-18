@@ -1922,9 +1922,9 @@ overfitting
 \emph default
 and is a common problem that arises during the process of developing a machine
  learning model.
- Overfitting usually caused either by the data being too noisy (errors in
- the data, many outliers), the dataset being too small or by having too
- many irrelevant features.
+ Overfitting is usually caused either by the data being too noisy (errors
+ in the data, many outliers), the dataset being too small, or by having
+ too many irrelevant features.
  The above mentioned problems can be overcome by gathering more data, removing
  outliers and locating errors in the data or by simplifying the model by
  choosing fewer features.
@@ -1945,9 +1945,9 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-Machine learning models can also face an opposite problem, i.e.
- not being able learn the underlying patterns in the data and thus being
- inaccurate on both the test and training data.
+Machine learning models can also face the opposite problem, i.e.
+ not being able learn the underlying patterns in the training data and thus
+ being inaccurate on both the test and training data.
  This is called 
 \emph on
 underfitting 
@@ -1992,8 +1992,8 @@ noprefix "false"
  included in the model.
  This can be solved by only selecting the features that contribute the most
  to the model's performance.
- This can not only prevent overfitting and thus increase the model's accuracy
- scores 
+ This can prevent overfitting and thus increase the model's accuracy scores
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "scikit-learn"
@@ -2042,7 +2042,7 @@ Gini importance.
  This is a very efficient way of computing feature importance as it can
  be calculated during the training process.
  However this method can be biased towards overestimating importance of
- variables with bigger scaled values .
+ variables with bigger scaled values.
 \end_layout
 
 \begin_layout Standard
@@ -2164,7 +2164,7 @@ Decision trees are in practice mostly binary trees where in each parent
 \emph on
 decision node
 \emph default
-) a set attributes of feature vector is examined in order to make a split
+) a set attributes of a feature vector is examined in order to make a split
  based on a given criteria.
  The specifics of this criteria are learned during the training process.
  For example, if a value of the given feature is below a specific threshold,
@@ -4592,7 +4592,19 @@ and the
 Cox proportional hazards model
 \emph default
  just to name a few.
- These will be explained in detail further in this chapter.
+ These will be explained in detail further in this chapter, with the former
+ two also being a vital part of the algorithm behind random survival forests
+ described in
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Random-Survival-Forests"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsection
@@ -4697,8 +4709,11 @@ where
 \begin_layout Standard
 In contrast, the hazard function, as hinted by its alternative name, gives
  the the instantaneous potential per unit time for the event to occur, given
- that the individual has survived up to time t, that is, the hazard function
- is focused on 
+ that the individual has survived up to time 
+\begin_inset Formula $t$
+\end_inset
+
+, that is, the hazard function is focused on 
 \emph on
 failing
 \emph default
@@ -4792,8 +4807,8 @@ outcome variable
 hazard ratio
 \emph default
  (HR), which describes the relative risk of an event occurring in one group
- compared to another , i.e.
- it is calculated as the ratio of the hazard functions of the two groups
+ compared to another, i.e.
+ it is calculated as the ratio of the hazard functions of two groups
 \begin_inset Formula 
 \begin{equation}
 \mathrm{HR}(t)=\frac{h_{1}(t)}{h_{2}(t)}
@@ -5179,6 +5194,9 @@ literal "false"
  For example, it can be used to predict survival curves of patients who
  have undergone kidney transplantation and for identifying factors that
  impact the likelihood of graft failure.
+ The Cox regression model will also be used later as a benchmark to compare
+ the performance of the machine learning model to a conventional survival
+ analysis model.
 \end_layout
 
 \begin_layout Subsubsection
@@ -5748,16 +5766,6 @@ and by specifying the input vector of predictors
  we get a survival curve adjusted for the given predictors.
 \end_layout
 
-\begin_layout Subsubsection
-Uses
-\end_layout
-
-\begin_layout Standard
-The Cox regression model will later be used as a benchmark to compare the
- performance of the machine learning model to a conventional survival analysis
- model.
-\end_layout
-
 \begin_layout Chapter
 Random Survival Forests
 \begin_inset CommandInset label
@@ -5776,7 +5784,7 @@ Random Survival Forests
 \emph default
  (RSF) is an ensemble machine learning method used for analyzing right-censored
  survival data.
- RSF combine the concepts of 
+ RSF combines the concepts of 
 \emph on
 survival analysis
 \emph default
@@ -5803,7 +5811,7 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-Each tree in the forest outputs a cumulative hazard function 
+Each tree in the forest outputs a either a cumulative hazard function 
 \begin_inset Formula $H(t\mid\mathbf{x})$
 \end_inset
 
@@ -5815,18 +5823,15 @@ Each tree in the forest outputs a cumulative hazard function
 \begin_inset Formula $t$
 \end_inset
 
- as inputs, and assigns a probability of an event occurring to the individual
- at time 
-\begin_inset Formula $t$
-\end_inset
-
-.
- The forest's overall prediction ,i.e.
+ as inputs.
+ The forest's overall prediction, i.e.
  
 \emph on
 the ensemble cumulative hazard,
 \emph default
  is then computed as the average of the individual tree predictions.
+ The individual survival trees can also be used to output survival functions,
+ from which an ensemble survival function is computed in the same manner.
 \end_layout
 
 \begin_layout Section
@@ -6002,7 +6007,7 @@ Let
 \end_inset
 
  respectively.
- Then either a survival function is estimated using the Kaplan-Meier estimator
+ Then, either a survival function is estimated using the Kaplan-Meier estimator
  
 \begin_inset CommandInset ref
 LatexCommand ref
