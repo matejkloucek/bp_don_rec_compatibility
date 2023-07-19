@@ -743,18 +743,19 @@ Konzultant:
 \lang czech
 Abstrakt:
 \emph default
- Se zvyšující se prevalencí onemocnění spojených s ledvinami, je vylepšení
+ Se zvyšující se prevalencí onemocnění spojených s ledvinami je vylepšení
  procesu hledání vhodných párů dárců a příjemců zásadní pro zmírnění zátěže,
  kterou pro zdravotnický systém představují pacienti se selhávajícími ledvinami.
- Předchozí studie ukázali, jak mohou metody strojového učení být použity
+ Předchozí studie ukázaly, jak mohou metody strojového učení být použity
  pro predikování času přežití po transplantaci ledvin.
  V této studii je pro ohodnocení kompatibility mezi dárci a příjemci použit
  model náhodného přežívacího lesa, který predikuje dobu přežití na základě
  jejich pre-transplantačních metrik.
- Model je také použit pro zkoumání různých faktorů ovlivňující přežití štěpu.
+ Model je také použit pro zkoumání různých faktorů ovlivňujících přežití
+ štěpu.
  Součástí studie je také podrobné prozkoumání algoritmů, které stojí za
- modelem náhodného přežívacího lesa, a analýzi přežití, oblasti statistiky,
- která se běžně využívá v medicínském výzkumu.
+ modelem náhodného přežívacího lesa, a analýzy přežití, která se běžně využívá
+ v medicínském výzkumu.
  
 \end_layout
 
