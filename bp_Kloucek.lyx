@@ -1156,7 +1156,7 @@ Semi-supervised Learning
 \emph default
 , uses a combination of both labeled and unlabeled data.
  Firstly, it uses an Unsupervised Machine Learning model to cluster the
- data in order to classify the unlabeled data and then uses a Supervised
+ data in order to classify the unlabeled data and then uses a Supervised // vazne, neni to naopak?
  machine Learning model on this newly labeled data.
  This is advantageous to using a simple Supervised Machine Learning model
  as it allows working with larger amounts of data that would otherwise be
@@ -1279,7 +1279,7 @@ One of the most common challenges tackled during preprocessing is missing
 \end_layout
 
 \begin_layout Standard
-The easiest option is to drop columns or rows with missing values from the
+The easiest option is to drop columns or rows with missing values from the // columns and rows je trochu zavadejici. ve skutecnosti vynechas pozorovani nebo featuru, ne?
  dataset.
  This is fast and reliable, however it is not optimal as it can lead to
  a potential loss of important information that the model could learn from.
@@ -1368,7 +1368,7 @@ encoding
 \end_inset
 
 .
- The other newly created columns are assigned a value of
+ The other newly created columns are assigned a value of // tohle se da matematicky popsat trochu lepe. A hlavne je dobre pridat nejaky popisek k te tabulce a odkazat na ni, aby bylo jasne, co tam ukazujes
 \begin_inset Formula $0$
 \end_inset
 
