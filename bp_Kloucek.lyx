@@ -1857,7 +1857,7 @@ Once the training of the model has been done using the training set, the
 \emph on
 generalization error,
 \emph default
-given by the error rate of the model on new cases.
+given by the error rate of the model on new cases. // kde beres new cases, kdyz o validation setu mluvis az v dalsim odstavci?
  This however, is not suitable for models working with censored data, whose
  performances is usually evaluated using the C-index described in
 \begin_inset CommandInset ref
@@ -1884,7 +1884,7 @@ hyperparameters
  different hyperparameters and then comparing their perfomance on the validation
  set.
  Once the best model has been selected, it is then trained using both the
- training and the validation set and its performance is then measured using
+ training and the validation set and its performance is then measured using // no to nevim jestli to chces pretrenovat na validation set, ne?
  the test set
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -1909,7 +1909,7 @@ name "subsec:Evaluating-Performance"
 
 \begin_layout Standard
 If the model performs well on the training set (e.g.
- it's generalization error is low), but poorly on the test set, it means
+ it's generalization error is low), but poorly on the test set, it means // no pockej, tady pouzivas test set k ladeni modelu?
  that the model has learned unnecessary details (also called
 \emph on
 noise
@@ -2042,7 +2042,7 @@ Gini importance.
  This is a very efficient way of computing feature importance as it can
  be calculated during the training process.
  However this method can be biased towards overestimating importance of
- variables with bigger scaled values.
+ variables with bigger scaled values. // nejaka normalizace tedy?
 \end_layout
 
 \begin_layout Standard
@@ -2095,7 +2095,7 @@ literal "false"
 \begin_layout Standard
 A common way of finding the best combination of hyperparameters is
 \emph on
-grid search
+grid search // nejaka jina metoda treba?
 \emph default
 , which works by creating a set of values for each hyperparameter and then
  evaluating the model's performance for every combination of these hyperparamete
@@ -2261,7 +2261,7 @@ is a collection of labeled examples with numerical features, where
 \begin_inset Formula $N$
 \end_inset
 
- is the size of the collection,
+ is the size of the collection, //pozor, tady mas x tluste, predtim v zavorce obycejne - neni jasne, ze to jsou stejna x
 \begin_inset Formula $\mathbf{x}^{(i)}=(x_{1}^{(i)},\ldots,x_{k}^{(i)})$
 \end_inset
 
@@ -2377,7 +2377,7 @@ The next step of the algorithm is to iterate over all possible features
 \begin_inset Formula $j\in F_{0}$
 \end_inset
 
- and all possible threshold values
+ and all possible threshold values  // nemelo by mit t taky nejaky index? muze jich byt vic, ne?
 \begin_inset Formula $t$
 \end_inset
 
@@ -2420,7 +2420,7 @@ For each iteration (ordered pair
 
 ), the quality of the split is evaluated by using the algorithm's criterion.
  Assuming that the tree's criterion is entropy, the entropy of a given set
- of examples is given by
+ of examples is given by // vzorecky ti nekontroluju, to si zkontroluj poradne sam, jestli je mas dobre. stejne tak nekontroluju ruzne odvozeni a prechody z jednoho vzorecku na druhy. muzeme to treba spolu pak projit
 \end_layout
 
 \begin_layout Standard
@@ -2526,7 +2526,7 @@ dimensional vector whose attributes are of the same data type as in the
 \begin{equation}
 f(\mathbf{x},a)=p^{S_{n}}\left(a\right)=\frac{\left|\left\{ \left(\mathbf{x}^{(i)},y^{(i)}\right)\in S_{n}\mid y^{(i)}=a\right\} \right|}{\left|S_{n}\right|}.\label{eq:class tree final}
 \end{equation}
-
+ // a jeste bys tedy mel rict, jakou tridu tedy nakonec vyberes, ne?
 \end_inset
 
 
@@ -2746,7 +2746,7 @@ where
  belongs to the class
 \begin_inset Formula $c$
 \end_inset
-
+// a sigma(c) je co?
 .
  Let
 \begin_inset Formula $N_{c}$
@@ -2768,7 +2768,7 @@ where
 
 \begin_inset Formula $N_{c}=|\left\{ \left(\mathbf{x}^{(i)},y^{(i)}\right)\in S_{0}\mid x_{j}^{(i)}=c\right\} |$
 \end_inset
-
+// proc ty rovne zavorky?
 , then
 \begin_inset Formula $p\left(c\right)$
 \end_inset
@@ -2896,6 +2896,8 @@ f\left(\mathbf{x}\right)=\frac{1}{\left|S_{n}\right|}\sum_{(\mathbf{x}^{(i)},y^{
 
 \end_layout
 
+// a kdyz jsou categorical values i labels? nebo naopak oboje numericke? nebo nejaky mix?
+
 \begin_layout Subsection
 Ensemble Learning and Random Forests
 \end_layout
@@ -2977,7 +2979,7 @@ vote
 \begin_inset Formula $C$
 \end_inset
 
- is the set of all possible classes.
+ is the set of all possible classes. // a kdyz to neni classification ale regression problem?
 \end_layout
 
 \begin_layout Subsubsection
@@ -3086,6 +3088,8 @@ The most important hyperparameters to be set before the beginning of the
  training process are the number of trees in the forest, the size of the
  bootstrap sample, the size of the feature sample, and the split criterion
  used to build the decision trees.
+
+ // ok, nechtelo by to nejaky maly zaver, priklad nebo tak neco? prijde mi, ze kapitola konci v pulce....
 \end_layout
 
 \begin_layout Chapter
