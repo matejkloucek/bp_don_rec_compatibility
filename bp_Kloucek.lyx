@@ -949,7 +949,7 @@ literal "false"
 \end_inset
 
 .
- However, demand for allografts greatly exceeds supply 
+ However, demand for allografts greatly exceeds supply  // obecne kdyz poprve uvadis takhle odborne pojmy, tak je vysvetli
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Kidney transplantation,Systematic review"
@@ -963,7 +963,7 @@ literal "false"
  While on the waiting list, patients have to undergo dialysis multiple times
  a week for several hours, which supplements the functions of their failing
  kidneys, which greatly reduces the quality of the patient's life and puts
- an additional burden on the healthcare system.
+ an additional burden on the healthcare system. // a je to extremne drahe, radove mega rocne na 1 pacienta
  It is therefore crucial to minimize the time patients spend on the waiting
  list by optimizing the process of finding suitable donor-recipient pairs.
 \end_layout
@@ -1057,7 +1057,7 @@ General Overview of Machine Learning
 \begin_layout Standard
 Machine learning is a rapidly growing field within the larger discipline
  of artificial intelligence, which is concerned with the development of
- algorithms and statistical models that enable computers to autonomously
+ algorithms and statistical models that enable computers to autonomously // hele tady bych byl opatrny, ne vzdy se ty modely autonomously improve. Stejne tak nize "newly inroduced data". Zkus to trochu preformulovat
  improve their performance on a given task.
  The key idea behind machine learning is to develop algorithms that can
  identify patterns and relationships in large amounts of data, and then
@@ -1067,7 +1067,7 @@ Machine learning is a rapidly growing field within the larger discipline
 
 \begin_layout Standard
 In general, machine learning is a great tool when solving problems that
- would conventionally require an insurmountable amount of programming or
+ would conventionally require an insurmountable amount of programming or // takove vyrazy, insourmountable, bych spis nepouzival
  when working with large amounts of data from which one could not easily
  extract information or identify meaningful patterns.
 \end_layout
@@ -1091,7 +1091,7 @@ Classification by Data Type
 \emph on
 Supervised Learning
 \emph default
- is a type of Machine Learning where models require a labeled dataset for
+ is a type of Machine Learning where models require a labeled dataset for // nepsal bych velka pismena Machine Learning takto v textu
  their learning, which means that the desired output needs to be provided
  to the computer during the training process along with the data.
  Supervised learning can be further subdivided into Regression and Classificatio
