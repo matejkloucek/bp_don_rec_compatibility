@@ -1426,7 +1426,7 @@ noprefix "false"
 \begin_inset Formula 
 \begin{equation}
 y_{j}=\begin{cases}
-1 & \Longleftrightarrow y=x_{j} \\
+1 & \Longleftrightarrow y=x_{j}\\
 0 & \textrm{else}
 \end{cases}
 \end{equation}
@@ -1976,8 +1976,8 @@ name "subsec:Evaluating-Performance"
 
 \begin_layout Standard
 If the model performs well on the training set (e.g.
- it's generalization error is low), but poorly on the test set, it means
- that the model has learned unnecessary details (also called 
+ it's generalization error is low), but poorly on the hold-out sets, it
+ means that the model has learned unnecessary details (also called 
 \emph on
 noise
 \emph default
@@ -2014,7 +2014,7 @@ literal "false"
 \begin_layout Standard
 Machine learning models can also face the opposite problem, i.e.
  not being able learn the underlying patterns in the training data and thus
- being inaccurate on both the test and training data.
+ being inaccurate on both the hold-out and training data.
  This is called 
 \emph on
 underfitting 
@@ -2110,6 +2110,16 @@ Gini importance.
  be calculated during the training process.
  However this method can be biased towards overestimating importance of
  variables with bigger scaled values.
+ To adress this issue, numerical features are often scaled to the 
+\begin_inset Formula $0-1$
+\end_inset
+
+ range in a process called 
+\emph on
+normalization
+\emph default
+.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -2321,7 +2331,7 @@ Let
 \end_inset
 
  be the set of possible categorical values, 
-\begin_inset Formula $\left\{ \left(x^{(i)},y^{(i)}\right)\right\} _{i=1}^{N}$
+\begin_inset Formula $\left\{ \left(\mathbf{x}^{(i)},y^{(i)}\right)\right\} _{i=1}^{N}$
 \end_inset
 
 is a collection of labeled examples with numerical features, where 
@@ -2445,47 +2455,53 @@ The next step of the algorithm is to iterate over all possible features
 \end_inset
 
  and all possible threshold values 
-\begin_inset Formula $t$
+\begin_inset Formula $t_{j}\in T_{j}$
 \end_inset
 
- (the possible threshold values can be chosen, for example, as midpoints
- between values of the given feature, e.g.
- if the feature 
+ where 
+\begin_inset Formula $T_{j}$
+\end_inset
+
+ is the set of all possible threshold values for the feature 
 \begin_inset Formula $j$
 \end_inset
 
- takes on the values 
-\begin_inset Formula $\left[1,2,3\right]$
+.
+ The possible threshold values can be chosen, for example, as midpoints
+ between values of the given feature, e.g.
+ if 
+\begin_inset Formula $x_{j}^{(i)}\in\left[1,2,3\right]$
 \end_inset
 
- then the possible threshold values may be chosen as 
-\begin_inset Formula $\left[1.5,2.5\right]$
+ then the possible threshold values 
+\begin_inset Formula $T_{j}$
 \end_inset
 
-, and split 
+ may be chosen as 
+\begin_inset Formula $T_{j}=\left[1.5,2.5\right]$
+\end_inset
+
+.
+ For each iteration (ordered pair 
+\begin_inset Formula $\left(j,t_{j}\right)$
+\end_inset
+
+), 
 \begin_inset Formula $S_{0}$
 \end_inset
 
- into two subsets defined as
+ is split into two subsets defined as
 \end_layout
 
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-S_{0-}\stackrel{\mathrm{def}}{=}\left\{ \left(\mathbf{x},y\right)\mid\left(\mathbf{x},y\right)\in S_{0},x_{j}<t\right\} \quad\mathrm{and}\quad S_{0+}\stackrel{\mathrm{def}}{=}\left\{ \left(\mathbf{x},y\right)\mid\left(\mathbf{x},y\right)\in S_{0},x_{j}\geq t\right\} .\label{eq:class tree split}
+S_{0-}\stackrel{\mathrm{def}}{=}\left\{ \left(\mathbf{x},y\right)\mid\left(\mathbf{x},y\right)\in S_{0},x_{j}<t_{j}\right\} \quad\mathrm{and}\quad S_{0+}\stackrel{\mathrm{def}}{=}\left\{ \left(\mathbf{x},y\right)\mid\left(\mathbf{x},y\right)\in S_{0},x_{j}\geq t_{j}\right\} .\label{eq:class tree split}
 \end{equation}
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-For each iteration (ordered pair 
-\begin_inset Formula $\left(j,t\right)$
-\end_inset
-
-), the quality of the split is evaluated by using the algorithm's criterion.
+and the quality of the split is evaluated by using the algorithm's criterion.
  Assuming that the tree's criterion is entropy, the entropy of a given set
  of examples is given by
 \end_layout
@@ -2592,6 +2608,26 @@ dimensional vector whose attributes are of the same data type as in the
 \begin_inset Formula 
 \begin{equation}
 f(\mathbf{x},a)=p^{S_{n}}\left(a\right)=\frac{\left|\left\{ \left(\mathbf{x}^{(i)},y^{(i)}\right)\in S_{n}\mid y^{(i)}=a\right\} \right|}{\left|S_{n}\right|}.\label{eq:class tree final}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The example 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ is then classified as belonging to the class 
+\begin_inset Formula $c\in C$
+\end_inset
+
+ if 
+\begin_inset Formula 
+\begin{equation}
+c=\underset{a\in C}{\arg\max}f(\mathbf{x},a)
 \end{equation}
 
 \end_inset
@@ -2708,7 +2744,7 @@ Let
 \begin_inset Formula $i$
 \end_inset
 
-, 
+, let 
 \begin_inset Formula $\sigma(S_{i})$
 \end_inset
 
@@ -2982,23 +3018,39 @@ random forests
  made by a set amount of decision trees, allowing the model to make more
  accurate predictions than any single decision tree could make by itself.
  The key idea behind random forests is that every decision tree is trained
- using a different sample of input features, which helps reduce overfitting
- and improves the generalization capabilites of the model.
+ using different input features and different subsets of the of the training
+ samples, which helps reduce overfitting and improves the generalization
+ capabilites of the model.
+\end_layout
+
+\begin_layout Subsubsection
+Examples of Random Forests
 \end_layout
 
 \begin_layout Standard
-An example of a random forests model is training a group of classification
- trees on different random subsets of the training data and when faced with
- new input, predicting the class of the given input by choosing the class
- that got the most 
-\begin_inset Quotes sld
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Examples-of-Random"
+
 \end_inset
 
+A random forests model trained for a classification problem consists of
+ an ensemble of classification trees.
+ When making predictions based on an example it has not seen during the
+ training process, the random forests model classifies the input as belonging
+ to class 
+\begin_inset Formula $c$
+\end_inset
+
+, if 
+\begin_inset Formula $c$
+\end_inset
+
+ got the highest number of 
+\emph on
 votes
-\begin_inset Quotes srd
-\end_inset
-
- by the classification trees 
+\emph default
+ by the individual classification trees 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Hands-On ML"
@@ -3011,15 +3063,7 @@ literal "false"
 \begin_inset Formula $c$
 \end_inset
 
- gets a 
-\begin_inset Quotes sld
-\end_inset
-
-vote
-\begin_inset Quotes srd
-\end_inset
-
- by the decision tree when the input 
+ gets a vote by a classification tree when the input 
 \begin_inset Formula $\mathbf{x}$
 \end_inset
 
@@ -3045,6 +3089,38 @@ vote
 \end_inset
 
  is the set of all possible classes.
+\end_layout
+
+\begin_layout Standard
+Similarly, a random forest built for a regression problem consists of an
+ ensemble of regression trees.
+ The prediction of the forest is given by taking the average of the predictions
+ made by the individual regression trees, i.e.
+ 
+\begin_inset Formula 
+\begin{equation}
+\hat{f}\left(\mathbf{x}\right)=\frac{1}{N}\sum_{n=1}^{N}f_{n}(\mathbf{x})
+\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ is an input feature vector, 
+\begin_inset Formula $\hat{f}$
+\end_inset
+
+ is the forest's prediction, 
+\begin_inset Formula $N$
+\end_inset
+
+ is the total number of trees and 
+\begin_inset Formula $f_{n}$
+\end_inset
+
+ are the predictions made by the individual regression forests.
 \end_layout
 
 \begin_layout Subsubsection
@@ -3153,6 +3229,84 @@ The most important hyperparameters to be set before the beginning of the
  training process are the number of trees in the forest, the size of the
  bootstrap sample, the size of the feature sample, and the split criterion
  used to build the decision trees.
+\end_layout
+
+\begin_layout Subsubsection
+Weak and Strong Learners
+\end_layout
+
+\begin_layout Standard
+The reason why random forests are effective, and therefore so popular, lies
+ in the 
+\emph on
+law of large numbers
+\emph default
+.
+ This means that by combining predictions from multiple 
+\emph on
+weak learners
+\emph default
+, each only slightly better than random guessing, the ensemble model achieves
+ much higher accuracy (
+\emph on
+strong learner
+\emph default
+) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Hands-On ML,Random Forests"
+literal "false"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+For example, considering a classification random forest as described in
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Examples-of-Random"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ that is designed to classify inputs into two categories.
+ Suppose that the forest consists of 
+\begin_inset Formula $1000$
+\end_inset
+
+ classification trees whose predictions are correct only 
+\begin_inset Formula $51\%$
+\end_inset
+
+ of the time (weak learners), i.e.
+ the probability that they will give their vote to the correct class is
+ 
+\begin_inset Formula $51\%$
+\end_inset
+
+.
+ When the votes of all 
+\begin_inset Formula $1000$
+\end_inset
+
+ trees are combined, the probability that the correct class will recieve
+ the highest number of votes is 
+\begin_inset Formula $74.68\%$
+\end_inset
+
+.
+ This implies that the random forest will accurately˚ categorize a newly
+ introduced input with 
+\begin_inset Formula $74.68\%$
+\end_inset
+
+ sucess rate making it a fairly strong learner.
 \end_layout
 
 \begin_layout Chapter
