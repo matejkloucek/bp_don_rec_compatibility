@@ -950,7 +950,7 @@ literal "false"
 \end_inset
 
 .
- However, demand for allografts greatly exceeds supply 
+ However, demand for transplants (allografts) greatly exceeds supply 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Kidney transplantation,Systematic review"
@@ -964,7 +964,8 @@ literal "false"
  While on the waiting list, patients have to undergo dialysis multiple times
  a week for several hours, which supplements the functions of their failing
  kidneys, which greatly reduces the quality of the patient's life and puts
- an additional burden on the healthcare system.
+ an additional burden on the healthcare system due to the high cost and
+ resources required for dialysis treatment.
  It is therefore crucial to minimize the time patients spend on the waiting
  list by optimizing the process of finding suitable donor-recipient pairs.
 \end_layout
@@ -1057,20 +1058,25 @@ General Overview of Machine Learning
 
 \begin_layout Standard
 Machine learning is a rapidly growing field within the larger discipline
- of artificial intelligence, which is concerned with the development of
- algorithms and statistical models that enable computers to autonomously
- improve their performance on a given task.
- The key idea behind machine learning is to develop algorithms that can
- identify patterns and relationships in large amounts of data, and then
- use these algorithms to make predictions or decisions based on newly introduced
- data.
+ of artificial intelligence.
+ It involves developing algorithms and statistical models by enabling computers
+ to learn from data without the necessity of explicit programming for their
+ learning process.
+ 
+\end_layout
+
+\begin_layout Standard
+The key idea behind machine learning is to create algorithms (models) capable
+ of recognizing patterns and relationships within large datasets.
+ These models are then utilized to make predictions or decisions using new,
+ unseen data that was not part of their training process.
 \end_layout
 
 \begin_layout Standard
 In general, machine learning is a great tool when solving problems that
- would conventionally require an insurmountable amount of programming or
- when working with large amounts of data from which one could not easily
- extract information or identify meaningful patterns.
+ would conventionally require an infeasible amount of programming or when
+ working with large amounts of data from which one could not easily extract
+ information or identify meaningful patterns.
 \end_layout
 
 \begin_layout Subsection
@@ -1092,58 +1098,65 @@ Classification by Data Type
 \emph on
 Supervised Learning
 \emph default
- is a type of Machine Learning where models require a labeled dataset for
+ is a type of machine learning where models require a labeled dataset for
  their learning, which means that the desired output needs to be provided
  to the computer during the training process along with the data.
- Supervised learning can be further subdivided into Regression and Classificatio
-n tasks based on whether the desired output is a continuous numerical value
+ Supervised learning can be further subdivided into 
+\emph on
+regression
+\emph default
+ and 
+\emph on
+classification
+\emph default
+ tasks based on whether the desired output is a continuous numerical value
  or a discrete one respectively.
- Examples of Supervised Learning models include: 
+ Examples of supervised learning models include: 
 \emph on
-Linear
+linear
 \emph default
  and 
 \emph on
-Logistic Regression
+logistic regression
 \emph default
 , 
 \emph on
-Random Forests
+decision trees
 \emph default
 , 
 \emph on
-Decision Trees
+random forests
 \emph default
 , 
 \emph on
-Supporting Vector Machines
+supporting vector machines
 \emph default
  and 
 \emph on
-Neural Networks
+neural networks
 \emph default
 .
 \end_layout
 
 \begin_layout Standard
-The opposite of Supervised Learning is 
+The opposite of supervised learning is 
 \emph on
-Unsupervised Learning
+unsupervised learning
 \emph default
  where models are trained on an unlabeled dataset with the aim of finding
  patterns in the given data or grouping data with similar characteristics.
- An example of Unsupervised Learning is 
+ An example of unsupervised learning is 
 \emph on
-Clustering
+clustering
 \emph default
  which is used to find groups with shared characteristics, 
 \emph on
-Association
+association
 \emph default
  which is used to find relation between the input variables (also called
  predictors) in a given dataset, or 
 \emph on
-Dimensional reduction
+dimensional reduction
 \emph default
  which is used to simplify data in order to more easily extract information
  from it.
@@ -1153,24 +1166,27 @@ Dimensional reduction
 \begin_layout Standard
 A combination of these, called 
 \emph on
-Semi-supervised Learning
+semi-supervised learning
 \emph default
 , uses a combination of both labeled and unlabeled data.
- Firstly, it uses an Unsupervised Machine Learning model to cluster the
- data in order to classify the unlabeled data and then uses a Supervised
- machine Learning model on this newly labeled data.
- This is advantageous to using a simple Supervised Machine Learning model
- as it allows working with larger amounts of data that would otherwise be
- unusable because of the lack of labeling, thus potentially resulting in
- higher accuracy of the model.
+ Typically, an unsupervised machine learning model is used first in order
+ group similiar examples and assign the unlabeled data a label based on
+ the labeled example they were grouped with.
+ Then, a supervised machine learning model is used on this newly labeled
+ data.
+ However, models using reverse order also exist.
+ Using semi-supervised learning is advantageous to using a simple supervised
+ machine learning model as it allows working with larger amounts of data
+ that would otherwise be unusable because of the lack of labeling, thus
+ potentially resulting in higher accuracy of the model.
 \end_layout
 
 \begin_layout Standard
 
 \emph on
-Reinforcement Learning
+Reinforcement learning
 \emph default
- is a specialized case of Semi-supervised learning, where the model is trained
+ is a specialized case of semi-supervised learning, where the model is trained
  using feedback from the environment and is often used in cases where no
  labeled data exists or when the labeled dataset does not provide the best
  course of action.
@@ -1208,7 +1224,7 @@ Instance-based
  learning algorithms work by comparing the similarity of new input data
  to the training data, an example of this is the 
 \emph on
-k-Nearest Neighbors
+k-nearest neighbors
 \emph default
  algorithm, which finds 
 \begin_inset Formula $k$
@@ -1223,18 +1239,18 @@ k-Nearest Neighbors
 \begin_layout Standard
 On the other hand 
 \emph on
-Model-based learning
+model-based learning
 \emph default
  algorithms develop a mathematical function whose parameters are learned
  from the training data and predictions about new data are then obtained
  by providing the newly introduced data as an input to the function.
- Model-based learning algorithms are for example 
+ model-based learning algorithms are for example 
 \emph on
-Linear Regression
+linear regression
 \emph default
  and 
 \emph on
-Neural Networks
+neural networks
 \emph default
 .
 \end_layout
@@ -1280,9 +1296,9 @@ One of the most common challenges tackled during preprocessing is missing
 \end_layout
 
 \begin_layout Standard
-The easiest option is to drop columns or rows with missing values from the
- dataset.
- This is fast and reliable, however it is not optimal as it can lead to
+The easiest option is to drop either the features or the samples containing
+ missing values from the dataset.
+ This is fast and reliable, however, it is not optimal as it can lead to
  a potential loss of important information that the model could learn from.
  
 \end_layout
@@ -1339,7 +1355,7 @@ encoding
 \emph default
 .
  One of the most simple yet most efficient methods of encoding is one-hot
- encoding, which transforms a categorical column with unique values 
+ encoding, which transforms a categorical feature with unique values 
 \begin_inset Formula $(x_{1},\ldots x$
 \end_inset
 
@@ -1351,66 +1367,113 @@ encoding
 \begin_inset Formula $n$
 \end_inset
 
- columns.
- For each row, the value of the 
-\begin_inset Formula $i$
+ columns as shown in Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:One-hot-encoding"
+plural "false"
+caps "false"
+noprefix "false"
+
 \end_inset
 
--th newly created column is 
-\begin_inset Formula $1$
+.
+ For each row, let 
+\begin_inset Formula $y$
 \end_inset
 
+ denote the original categorical value, i.e.
  
-\begin_inset Formula $\iff$
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $y\in(x_{1},\ldots x_{n})$
 \end_inset
 
- the original categorical column had a value 
-\begin_inset Formula $x_{i}$
+ and let 
+\begin_inset Formula $y_{j}$
+\end_inset
+
+ denote the value of the encoded column 
+\begin_inset Formula $j\in\hat{n}$
 \end_inset
 
 .
- The other newly created columns are assigned a value of 
-\begin_inset Formula $0$
+ Then
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+
+\begin_inset Formula 
+\begin{equation}
+y_{j}=\begin{cases}
+1 & \Longleftrightarrow y=x_{j} \\
+0 & \textrm{else}
+\end{cases}
+\end{equation}
+
 \end_inset
 
-.
-\end_layout
 
-\begin_layout Standard
-\begin_inset Box Frameless
-position "t"
-hor_pos "c"
-has_inner_box 1
-inner_pos "t"
-use_parbox 0
-use_makebox 0
-width "100col%"
-special "none"
-height "1in"
-height_special "totalheight"
-thickness "0.4pt"
-separation "3pt"
-shadowsize "4pt"
-framecolor "black"
-backgroundcolor "none"
+\begin_inset Float table
+placement H
+wide false
+sideways false
 status open
 
 \begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+One-hot encoding
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:One-hot-encoding"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
 
 \lang english
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-center
-\end_layout
-
-\end_inset
-
-
 \begin_inset Tabular
 <lyxtabular version="3" rows="6" columns="2">
 <features booktabs="true" tabularvalignment="middle">
@@ -1858,9 +1921,12 @@ Once the training of the model has been done using the training set, the
 \emph on
 generalization error, 
 \emph default
-given by the error rate of the model on new cases.
- This however, is not suitable for models working with censored data, whose
- performances is usually evaluated using the C-index described in 
+given by the error rate of the predictions that the model makes based on
+ samples from the hold-out sets, i.e.
+ samples it has not seen during the training process.
+ Though not all models use generalization error for evaluation, for example,
+ models focused on time-to-event predictions are usually evaluated using
+ the C-index described in 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Harell's-Concordance-Index"
