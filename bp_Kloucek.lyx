@@ -4790,9 +4790,9 @@ literal "false"
 .
  More specifically, time-to-event refers to the time from the beginning
  of a follow-up i.e.
- the period during which the subject of a study is observed, usually from
+ the period during which the subject of a study is observed, usually from // usually v medicine, ale tohle se taky pouziva na odhad casu kdy se poroucha stroj a 1000 a 1 dalsich veci
  the date of diagnosis, the start of a treatment or a transplantation, until
- the occurrence of an event of interest, usually meaning the death of a
+ the occurrence of an event of interest, usually meaning the death of a // dtto
  patient, disease incidence, relapse from remission, recovery or in the
  case of kidney transplantation:
 \emph on
@@ -4815,7 +4815,7 @@ Cox proportional hazards model
  just to name a few.
  These will be explained in detail further in this chapter, with the former
  two also being a vital part of the algorithm behind random survival forests
- described in
+ described in Section
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Random-Survival-Forests"
@@ -4929,7 +4929,7 @@ where
 
 \begin_layout Standard
 In contrast, the hazard function, as hinted by its alternative name, gives
- the the instantaneous potential per unit time for the event to occur, given
+ the the instantaneous potential per unit time for the event to occur, given //co to je, unit time?
  that the individual has survived up to time
 \begin_inset Formula $t$
 \end_inset
@@ -4980,7 +4980,7 @@ While the survival functions may seem to be obvious option for describing
  with which the survival models are described by, since it provides a more
  direct measure of risk over time.
  Importantly, either of the functions can be derived from the other one
- using one of the following formulae
+ using one of the following formulae // no ale to nemas ze svoji hlavy, ne? tak by to chtelo zdroj
 \begin_inset Formula
 \begin{equation}
 S(t)=\exp\left[-\intop_{0}^{t}h(u)du\right]\label{eq: Hazard to Survival}
@@ -5224,7 +5224,7 @@ literal "false"
 
 \end_inset
 
-
+// vzorecky ti nekontroluju, zkontroluj si je sam jeste jednou. A mel bys jim primerene rozumet
 \begin_inset Formula
 \begin{equation}
 \hat{S}(t_{j})=\Pr(T>t_{j})=\prod_{k=1}^{j}\Pr(T>t_{k}\mid T\geq t_{k}).
@@ -5486,7 +5486,7 @@ literal "false"
  not always be clear which parametric model is appropriate for a given problem.
  As a result, a semi-parametric model is a great tool when uncertain about
  which parametric model to use, as a semi-parametric model will typically
- approximate the results of a correct parametric molog-rank statistic is
+ approximate the results of a correct parametric molog-rank statistic is // molog? :)
  only concerned with comparing two groups.del
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -5603,7 +5603,7 @@ Given that we have a random sample of
 \end_inset
 
  and that the sample comes from an unknown joint probability distribution.
- Then the maximum likelihood estimation for
+ Then the maximum likelihood estimation for // tady to beres hodne rychle
 \begin_inset Formula $\beta$
 \end_inset
 
@@ -5635,7 +5635,7 @@ where
 \begin_inset Formula $f_{Y_{i}}$
 \end_inset
 
-is the univariate probability density function associated with the
+is the univariate probability density function associated with the // no a tuhle hustotu beres kde?
 \begin_inset Formula $i$
 \end_inset
 
@@ -5700,7 +5700,7 @@ where
 \begin_inset Formula $j$
 \end_inset
 
- is denoted by
+ is denoted by // proc je to tady znacene jinak nez predtim?
 \begin_inset Formula $R(t_{j})$
 \end_inset
 
@@ -5721,7 +5721,7 @@ where
 \end_inset
 
  is defined as a ratio of the hazard function of the individual, who failed
- at time
+ at time // co kdyz jich umrelo vic nez jeden?
 \begin_inset Formula $j$
 \end_inset
 
@@ -5984,7 +5984,7 @@ and by specifying the input vector of predictors
 \begin_inset Formula $\mathbf{X}$
 \end_inset
 
- we get a survival curve adjusted for the given predictors.
+ we get a survival curve adjusted for the given predictors. // tohle pak pouzijes? prijde mi to tu trochu navic
 \end_layout
 
 \begin_layout Chapter
