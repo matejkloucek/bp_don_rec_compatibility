@@ -509,9 +509,10 @@ Acknowledgment:
 
 \begin_layout Standard
 \noindent
-I would like to thank ............................................
- for (his/her expert guidance) and expres´s my gratitude to ..........................................
- for (his/her language assistance).
+I would like to thank Ing.
+ Tomáš Kouřim for his expert guidance and express my gratitude to Ing.
+ Pavel Strachota, Ph.D.
+ for his assistance with the formal aspects of this project.
 \end_layout
 
 \begin_layout Standard
@@ -1321,7 +1322,7 @@ SimpleImputer()
 
 \end_inset
 
- provided by the scikit-learn library described in 
+ provided by the scikit-learn library described in Section 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:scikit-learn"
@@ -1926,7 +1927,7 @@ given by the error rate of the predictions that the model makes based on
  samples it has not seen during the training process.
  Though not all models use generalization error for evaluation, for example,
  models focused on time-to-event predictions are usually evaluated using
- the C-index described in 
+ the C-index described in Section 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Harell's-Concordance-Index"
@@ -2045,7 +2046,7 @@ name "subsec:Feature-Selection"
 \end_layout
 
 \begin_layout Standard
-As mentioned in 
+As mentioned in Section 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:Evaluating-Performance"
@@ -2082,7 +2083,7 @@ literal "false"
 
 \begin_layout Standard
 In the case of classification decision trees and random forests described
- in 
+ in Section 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Decision-Trees-and"
@@ -2128,7 +2129,7 @@ A more reliable, though more computationally demanding, alternative is the
 \emph on
 permutation importance 
 \emph default
-described in 
+described in Section 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Permutation-Variable-Importance"
@@ -2291,7 +2292,7 @@ standard deviation
 \emph default
  between labels and their mean values.
  Another type of criterion is used by the decision trees in Random Survival
- Forests, described in more detail in 
+ Forests, described in more detail in Section 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Random-Survival-Forests"
@@ -3265,7 +3266,7 @@ literal "false"
 
 \begin_layout Standard
 For example, considering a classification random forest as described in
- 
+ Section 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:Examples-of-Random"
@@ -3527,7 +3528,7 @@ Within the UNOS dataset, only the HLA-A, HLA-B and HLA-DR loci are being
  used computing mismatch.
  More specifically, the alleles of only two antigens are tracked for each
  of the mentioned loci.
- As illustrated in table 
+ As illustrated in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "HLA mismatch table"
@@ -4815,7 +4816,7 @@ Cox proportional hazards model
  just to name a few.
  These will be explained in detail further in this chapter, with the former
  two also being a vital part of the algorithm behind random survival forests
- described in
+ described in Section 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Random-Survival-Forests"
@@ -4929,8 +4930,8 @@ where
 
 \begin_layout Standard
 In contrast, the hazard function, as hinted by its alternative name, gives
- the the instantaneous potential per unit time for the event to occur, given
- that the individual has survived up to time 
+ the the instantaneous potential per unit time (usually days) for the event
+ to occur, given that the individual has survived up to time 
 \begin_inset Formula $t$
 \end_inset
 
@@ -5286,7 +5287,7 @@ literal "false"
 
 .
  The log-rank statistic is also used as a split-rule criterion for building
- survival trees that are explained in 
+ survival trees that are explained in Section 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Random-Survival-Forests"
@@ -5933,11 +5934,15 @@ As hazard functions are always positive and the ratio is written in way
  the overall hazard.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
 \begin_layout Subsubsection
 Adjusted Survival Curves
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Upon fitting a Cox regression model onto survival data, survival curves
  that adjust for the predictor variables (also called 
 \emph on
@@ -5954,7 +5959,7 @@ S(t,\mathbf{X})=S_{0}(t)\exp\left(\sum_{i=1}^{k}\beta_{i}X_{i}\right)
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Using estimates 
 \begin_inset Formula $\hat{S_{0}(t)}$
 \end_inset
@@ -5985,6 +5990,11 @@ and by specifying the input vector of predictors
 \end_inset
 
  we get a survival curve adjusted for the given predictors.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Chapter
@@ -6074,7 +6084,7 @@ literal "false"
 
 \begin_layout Enumerate
 A set number of subsets is taken from the data using the bootstrap sampling
- method as described in 
+ method as described in Section 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "enu:Sampling-the-data:"
@@ -6099,7 +6109,7 @@ binary survival tree
 \emph default
 (BST) is built for each of the bootstrap samples.
  The algorithm for growing a BST generally follows the same principles as
- described in 
+ described in Section 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:Decision-Trees"
@@ -6112,7 +6122,8 @@ noprefix "false"
  , i.e.
  at each node the algorithm iterates over all possible features and values
  for them and decides on the best split.
- The best split is decided by maximizing the log-rank statistic 
+ The best split is decided by maximizing the log-rank statistic (described
+ in Section 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:Log-rank-Test"
@@ -6122,7 +6133,7 @@ noprefix "false"
 
 \end_inset
 
-, which compares the survival curves of the two groups created by the potential
+), which compares the survival curves of the two groups created by the potential
  split.
  The algorithm is restricted by a criterion that each node should contain
  at least 1 unique event time, which leads to a point when no new splits
@@ -6230,7 +6241,7 @@ Let
 
  respectively.
  Then, either a survival function is estimated using the Kaplan-Meier estimator
- 
+ (described in Section 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:Kaplan-Meier-Estimator"
@@ -6240,7 +6251,7 @@ noprefix "false"
 
 \end_inset
 
-, or a CHF for the node 
+), or a CHF for the node 
 \begin_inset Formula $j$
 \end_inset
 
@@ -6368,7 +6379,7 @@ where
 \begin_inset Formula $b$
 \end_inset
 
-, defined in (
+, defined in 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:tree CHF"
@@ -6378,7 +6389,7 @@ noprefix "false"
 
 \end_inset
 
-).
+.
 \begin_inset Newline newline
 \end_inset
 
@@ -6402,7 +6413,8 @@ Like any other machine learning model, the RSF model has multiple hyperparameter
 s that define its behaviour.
  As RSF are dervied from conventional random forests, they also share many
  of the same hyperparameters.
- The most important hyperparameters that the scikit-survivals's 
+ The most important hyperparameters that the scikit-survivals's (see Section
+ 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:scikit-survival"
@@ -6412,7 +6424,7 @@ noprefix "false"
 
 \end_inset
 
- implementation of RSF allows to be set are 
+) implementation of RSF allows to be set are 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "scikit-survival"
@@ -6715,7 +6727,8 @@ The area under the ROC curve can be interpreted as the probability that
 n, will have an AUC of 0.5.
  Generally, models with an AUC above 0.7 are considered to be good predictors.
  An example of a machine learning models that use the AUC for evaluation
- of their performance are classification decision trees 
+ of their performance are classification decision trees (described in Section
+ 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:Decision-Trees"
@@ -6725,7 +6738,7 @@ noprefix "false"
 
 \end_inset
 
- and by extension random forests used for classification .
+) and by extension random forests used for classification .
 \end_layout
 
 \begin_layout Standard
@@ -6956,23 +6969,6 @@ noprefix "false"
 \end_layout
 
 \begin_layout Standard
-The prediction 
-\emph on
-error
-\emph default
- (
-\begin_inset Formula $PE$
-\end_inset
-
-) is then simply given by 
-\begin_inset Formula $PE=1-C$
-\end_inset
-
-.
- 
-\end_layout
-
-\begin_layout Standard
 \begin_inset Note Note
 status open
 
@@ -7137,7 +7133,7 @@ Other Methods
 \begin_layout Standard
 Random Survival Forest is not the only model that combines conventional
  machine learning techniques with survival analysis.
- The scikit-survival library 
+ The scikit-survival library (see Section 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:scikit-survival"
@@ -7147,7 +7143,7 @@ noprefix "false"
 
 \end_inset
 
- also provides implementations of 
+) also provides implementations of 
 \emph on
 Survival Support Vector Machine 
 \emph default
@@ -7239,7 +7235,7 @@ While in the case of conventional gradient boosting the loss function given
  by prediction error (e.q.
  mean squared error), in the case survival gradient boosting the loss function
  is the partial likelihood loss partial likelihood loss Cox regression described
- in 
+ in Section 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:Cox-Regression"
@@ -7659,7 +7655,7 @@ is a Python library based on NumPy used for creating both static and animated
 \emph on
 Pyplot
 \emph default
-, which is a collection of functions that replicate the behaviour of MATLAB
+, which is a collection of functions that replicate the behavior of MATLAB
  for Python 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -7689,7 +7685,7 @@ e computing cluster hosted at the Department of Mathematics, Faculty of
  Nuclear Sciences and Physical Engineering, Czech Technical University in
  Prague.
  The cluster can provide up to 384GB of main memory on a single node, which
- was more than enough for the needs of this project.
+ was a sufficient for the needs of this project.
  The connection to the cluster was established using SSH in the Linux shell.
  To enhance practicality, remote nodes were forwarded onto localhost, which
  allowed working with Jupyter notebooks directly via a web browser on a
@@ -7712,8 +7708,8 @@ Model Training
 
 \begin_layout Standard
 The code used for training the machine learning model including pipelines
- used for data preprocessing, training and evaluating the model are publicly
- available at 
+ used for data preprocessing, training and evaluating the random survival
+ forest model are publicly available at 
 \begin_inset Newline newline
 \end_inset
 
@@ -7747,7 +7743,7 @@ Separating Living and Deceased Donors
 
 \begin_layout Standard
 There are 6 tables to be extracted from the UNOS dataset using MongoDB as
- mentioned in 
+ mentioned in Section 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Data-Acquisition"
@@ -8592,7 +8588,7 @@ noprefix "false"
 
 .
  In comparison to variable importance calculated by the Gini importance
- 
+ (described in 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:Feature-Selection"
@@ -8602,8 +8598,23 @@ noprefix "false"
 
 \end_inset
 
-, computing permutation importance is a very time consuming task.
- The scikit-learn's implementation of permutation importance offers a 
+), computing permutation importance is a highly time consuming, as well
+ as resource demanding task.
+ 
+\end_layout
+
+\begin_layout Standard
+The scikit-learn's implementation of permutation importance allows computing
+ of permutation importance to be done in parallel on multiple cores.
+ However, due to the specifics of the implementation of random survival
+ forests in the scikit-survival's package, this was extremely memory demanding
+ and couldn't be completed even using the Helios cluster.
+ Therefore, the computations were performed using only a single core which
+ resulted in computation times of up to 10 hours.
+\end_layout
+
+\begin_layout Standard
+The scikit-learn's implementation of permutation importance offers a 
 \begin_inset Flex Code
 status open
 
@@ -8660,7 +8671,7 @@ n_repeats=15
 
 \begin_layout Standard
 The selected features along with their description and variable importance
- can be found in table 
+ can be found in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "variable importance table"
@@ -8687,6 +8698,13 @@ status open
 
 \begin_layout Plain Layout
 Variable Importance
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Variable-Importance"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -10159,13 +10177,6 @@ status open
 \end_inset
 
 
-\begin_inset CommandInset label
-LatexCommand label
-name "variable importance table"
-
-\end_inset
-
-
 \end_layout
 
 \end_inset
@@ -10224,7 +10235,7 @@ While for training of the initial models and feature selection, the dataset
  For hyperparameter tuning, the dataset has been split into three folds:
  the training, validation and test sets with the ratio being 70% for training
  and 15% for validation and testing each.
- See 
+ See Section 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:Splitting-Data-into"
@@ -10239,7 +10250,7 @@ noprefix "false"
 
 \begin_layout Standard
 After experimenting with different combinations of hyperparameters using
- grid search 
+ grid search (described in Section 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:Hyperparameter-tuning"
@@ -10249,7 +10260,11 @@ noprefix "false"
 
 \end_inset
 
-, the optimal parameters were found to be: 
+), the optimal parameters were found to be:
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
 \begin_inset Flex Code
 status open
 
@@ -10259,7 +10274,11 @@ n_estimators=200
 
 \end_inset
 
-, 
+
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
 \begin_inset Flex Code
 status open
 
@@ -10269,7 +10288,11 @@ min_samples_split=10
 
 \end_inset
 
-, 
+ 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
 \begin_inset Flex Code
 status open
 
@@ -10279,7 +10302,11 @@ min_samples_leaf=15
 
 \end_inset
 
- and 
+ 
+\end_layout
+
+\begin_layout Labeling
+\labelwidthstring 00.00.0000
 \begin_inset Flex Code
 status open
 
@@ -10290,7 +10317,11 @@ max_depth=None
 \end_inset
 
 .
- Using these hyperparameters and the reduced list of features, the RSF model
+ 
+\end_layout
+
+\begin_layout Standard
+Using these hyperparameters and the reduced list of features, the RSF model
  achieved an accuracy given by the C-index of 
 \begin_inset Formula $0.638$
 \end_inset
@@ -10305,10 +10336,10 @@ Model's Capabilities
 \begin_layout Standard
 Once trained, the model can be used to predict allograft's survival as well
  as cumulative hazard functions based on information about the recipient
- and the donor as listed in table 
+ and the donor as listed in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "variable importance table"
+reference "tab:Variable-Importance"
 plural "false"
 caps "false"
 noprefix "false"
@@ -10376,7 +10407,7 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-Illustrated in figures 
+Illustrated in Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "surv_example"
@@ -10386,7 +10417,7 @@ noprefix "false"
 
 \end_inset
 
-, 
+ and Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "hazard_example"
@@ -10487,13 +10518,24 @@ name "hazard_example"
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Subsection
+Model's Limitation
 \begin_inset CommandInset label
 LatexCommand label
 name "The-plateauing"
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
+With increasing time, the predicted survival curves eventually flatten,
+ which is an inacuracy of the model as survival curves cannot stay constant
+ forever and must eventually decline to zero.
+\end_layout
+
+\begin_layout Standard
 The plateauing of both of the curves is caused by the fact that the limited
  amount of samples belonging to the individual terminal nodes of the survival
  trees.
@@ -10595,10 +10637,10 @@ name "subsec:Important-Features"
 \end_layout
 
 \begin_layout Standard
-As can be seen in the table 
+As can be seen in the Table 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "variable importance table"
+reference "tab:Variable-Importance"
 plural "false"
 caps "false"
 noprefix "false"
@@ -10609,7 +10651,7 @@ noprefix "false"
  graft's survival time.
  This is not surprising, as this is the case with most other medical conditions.
  The impact of the recipient's age on survival time can also be validated
- using the Kaplan-Meier estimator 
+ using the Kaplan-Meier estimator (described in Section 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:Kaplan-Meier-Estimator"
@@ -10619,8 +10661,8 @@ noprefix "false"
 
 \end_inset
 
-.
- In figure 
+).
+ In Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig: KM_age"
@@ -10676,7 +10718,7 @@ From observation, age exhibits little influence on the graft's survival
  in the age groups 0-59 and only begins to have a significant impact in
  the 60+ age cohort.
  This trend can also be observed on the predictions made by the RSF model.
- Plotted in figure 
+ Plotted in Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig: RSF_age"
@@ -10687,7 +10729,7 @@ noprefix "false"
 \end_inset
 
  are averages of 1000 survival functions predicted for each of the age cohort
- using the same samples as for computing the survival curve in figure 
+ using the same samples as for computing the survival curve in Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig: KM_age"
@@ -10747,7 +10789,8 @@ name "fig: RSF_age"
 \end_layout
 
 \begin_layout Standard
-Another feature with a significant variable importance is HLA mismatch 
+Another feature with a significant variable importance is HLA mismatch (describe
+d in Section 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "HLA mismatch"
@@ -10757,11 +10800,10 @@ noprefix "false"
 
 \end_inset
 
-.
+).
  By grouping samples by the level of their HLA mismatch and computing their
  survival curves using the Kaplan-Meier estimator.
- It can be observed (fig.
- 
+ It can be observed in Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig: KM_HLA"
@@ -10771,7 +10813,7 @@ noprefix "false"
 
 \end_inset
 
-) that recipients with zero HLA mismatches have more optimistic survival
+ that recipients with zero HLA mismatches have more optimistic survival
  curves than others.
  It can also be observed that survival curves of recipients with few (but
  more than one) mismatches do not differ significantly from the survival
@@ -10826,7 +10868,7 @@ name "fig: KM_HLA"
 \end_layout
 
 \begin_layout Standard
-This also holds true for the predictions made by the RSF model (fig.
+This also holds true for the predictions made by the RSF model (see Figure
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -10840,8 +10882,7 @@ noprefix "false"
 ), which were computed by grouping the entries from the test set by their
  HLA mismatch, and then averaging the predictions made for each of the subsets.
  Note that the model's predictions start to deviate from the observed survival
- curves (fig.
- 
+ curves in Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig: KM_HLA"
@@ -10851,8 +10892,8 @@ noprefix "false"
 
 \end_inset
 
-) around the 6000 days mark, which is a result of the plateuing effect described
- in 
+ around the 6000 days mark, which is a result of the plateuing effect described
+ in Section 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "The-plateauing"
@@ -10913,7 +10954,7 @@ Comparison to Conventional Models
 \end_layout
 
 \begin_layout Standard
-The Cox Regression model 
+The Cox Regression model (described in Section 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:Cox-Regression"
@@ -10923,15 +10964,15 @@ noprefix "false"
 
 \end_inset
 
- fitted onto the same dataset had a C-index of 
+) fitted onto the same dataset had a C-index of 
 \begin_inset Formula $0.619$
 \end_inset
 
 , meaning that the random forests model clearly outperforms Cox regression
- when making predictions based on the features listed in 
+ when making predictions based on the features listed in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "variable importance table"
+reference "tab:Variable-Importance"
 plural "false"
 caps "false"
 noprefix "false"
@@ -10979,10 +11020,10 @@ ETHCAT_DON
  Consequently, the dataset was divided into 49 subsets.
  To ensure adequate sample sizes were, only 10 subsets with the most entries
  were selected for further investigation.
- The selected subsets are listed in table 
+ The selected subsets are listed in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "ethcat table"
+reference "tab:Ethnicities-of-recipients"
 plural "false"
 caps "false"
 noprefix "false"
@@ -11004,6 +11045,13 @@ status open
 
 \begin_layout Plain Layout
 Ethnicities of recipients and donors
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Ethnicities-of-recipients"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -11353,13 +11401,6 @@ asian
 \end_inset
 
 
-\begin_inset CommandInset label
-LatexCommand label
-name "ethcat table"
-
-\end_inset
-
-
 \end_layout
 
 \end_inset
@@ -11368,11 +11409,11 @@ name "ethcat table"
 \end_layout
 
 \begin_layout Standard
-Plotting the calculated Kaplan-Meier survival curves on a graph (fig.
+Plotting the calculated Kaplan-Meier survival curves on a graph (see Figure
  
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "kaplan-meier ethinicity figure"
+reference "fig:Kaplan-Meier-survival-curves-by-eth"
 plural "false"
 caps "false"
 noprefix "false"
@@ -11407,14 +11448,14 @@ status open
 
 \begin_layout Plain Layout
 Kaplan-Meier survival curves by ethnicity
-\end_layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Kaplan-Meier-survival-curves-by-eth"
 
 \end_inset
 
 
-\begin_inset CommandInset label
-LatexCommand label
-name "kaplan-meier ethinicity figure"
+\end_layout
 
 \end_inset
 
@@ -11428,11 +11469,10 @@ name "kaplan-meier ethinicity figure"
 \end_inset
 
 This is even more visible when focusing only on the pairings where the recipient
- was white (fig.
- 
+ was white (see Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "kaplan-meier white recipient figure"
+reference "fig:Kaplan-Meier-survival-curves-white-recipients"
 plural "false"
 caps "false"
 noprefix "false"
@@ -11440,10 +11480,10 @@ noprefix "false"
 \end_inset
 
 ).
- Also in figure 
+ Also in Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "kaplan-meier white recipient figure"
+reference "fig:Kaplan-Meier-survival-curves-white-recipients"
 plural "false"
 caps "false"
 noprefix "false"
@@ -11465,13 +11505,6 @@ status open
 
 \begin_layout Plain Layout
 \align center
-\begin_inset CommandInset label
-LatexCommand label
-name "kaplan-meier white recipient figure"
-
-\end_inset
-
-
 \begin_inset Graphics
 	filename Images/kaplan_meier_ethnicity_white_recipient.pdf
 	scale 60
@@ -11485,7 +11518,14 @@ name "kaplan-meier white recipient figure"
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Kaplan-Meier survival curves: white recipients
+Kaplan-Meier survival curves: white recipients 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Kaplan-Meier-survival-curves-white-recipients"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -11500,8 +11540,7 @@ Kaplan-Meier survival curves: white recipients
 
 \begin_layout Standard
 These trends can also be observed on the predictions made by the RSF model
- (fig.
- 
+ (see Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Averaged-RSF-predictions_ethcat"
@@ -11583,7 +11622,7 @@ noprefix "false"
 
 \end_inset
 
- contains information about the patient and table 
+ contains information about the patient, Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Donor-information"
@@ -12908,7 +12947,7 @@ On the other hand, a situation for which the model might not be suited for
  If the model were to be used to find the best match in this scenario, the
  model would tend to select the youngest patient and discriminate against
  older patients as the recipient's age is the most important feature influencing
- the graft's survival time as shown in 
+ the graft's survival time as shown in Section 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:Important-Features"
@@ -12984,8 +13023,7 @@ life expectancy
 \end_layout
 
 \begin_layout Standard
-However, as illustrated in fig.
- 
+However, as illustrated in Figure 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig: KM_age"
@@ -13097,7 +13135,7 @@ Furthermore, it can also be expected, that future models will naturally
 \begin_layout Standard
 Additionaly, it may prove worthwhile to adapt the model for scenarios involving
  multiple donors and recipients, extending beyond the suggestions outlined
- in 
+ in Section 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:Age-Bias"
