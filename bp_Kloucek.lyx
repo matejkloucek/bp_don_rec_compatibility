@@ -3512,6 +3512,7 @@ literal "false"
 \end_inset
 
 .
+ Each locus has two alleles, one from each parent.
  When calculating the HLA mismatch, a score is given based on the number
  of allele mismatches for each subclass (HLA-A, HLA-DR, etc.).
  A higher score indicates a greater degree of immunological incompatibility
@@ -3531,8 +3532,6 @@ literal "false"
 \begin_layout Standard
 Within the UNOS dataset, only the HLA-A, HLA-B and HLA-DR loci are being
  used for computing mismatch.
- More specifically, the alleles of only two antigens are tracked for each
- of the mentioned loci.
  As illustrated in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -5574,11 +5573,11 @@ Let
 \end_inset
 
 .
- Then the log-rank statistic for the group 
+ The log-rank statistic for the group 
 \begin_inset Formula $i$
 \end_inset
 
- is given by 
+ is then given by 
 \begin_inset Formula 
 \begin{equation}
 L^{(i)}=\frac{(O_{i}-E_{i})^{2}}{\mathrm{Var}(O_{i}-E_{i})}
@@ -5705,17 +5704,6 @@ literal "false"
 \end_inset
 
 .
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-log-rank statistic is only concerned with comparing two groups.del
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
