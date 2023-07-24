@@ -3365,12 +3365,14 @@ literal "false"
 \end_layout
 
 \begin_layout Section
-Pre-Transplant Procedures
+Current Strategies for Assessing Donor-Recipient Compatibility
 \end_layout
 
 \begin_layout Standard
-There are number of procedures that a patient has to undergo before they
- are admitted onto the kidney transplantation waiting list.
+There is a number of procedures that both the patient and a potential donor
+ have to undergo before a transplantation.
+ Results of these procedures are then used for assessing the compatibility
+ between the patient and the potential donor.
 \end_layout
 
 \begin_layout Standard
@@ -3378,7 +3380,10 @@ Firstly, their overall health is checked in order evaluate whether they
  are suitable candidate for the procedure.
  This includes blood tests, imaging studies, and other diagnostic tests
  to check for any underlying health conditions that could affect the success
- of the transplantation.
+ of the transplantation such as history of diseases related to the functionality
+ of kidneys.
+ It also necessary that the donor and the recipients have compatible blood
+ types.
 \end_layout
 
 \begin_layout Standard
@@ -4912,7 +4917,15 @@ surviving
 \end_inset
 
 .
- In another words, it is defined as
+ In another words, it is defined as 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Survival Analysis self-learn"
+literal "false"
+
+\end_inset
+
+
 \begin_inset Formula 
 \begin{equation}
 S(t)=\Pr(T>t)
@@ -4964,7 +4977,15 @@ potential
 \emph on
 instantaneous
 \emph default
-, it is given by the following limit
+, it is given by the following limit 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Survival Analysis self-learn"
+literal "false"
+
+\end_inset
+
+
 \begin_inset Formula 
 \begin{equation}
 h(t)=\lim_{\Delta t\to0}\frac{\Pr\left(t\leq T<t+\Delta t\mid T\geq t\right)}{\Delta t}.
@@ -4981,7 +5002,15 @@ While the survival functions may seem to be obvious option for describing
  with which the survival models are described by, since it provides a more
  direct measure of risk over time.
  Importantly, either of the functions can be derived from the other one
- using one of the following formulae
+ using one of the following formulae 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Survival Analysis self-learn"
+literal "false"
+
+\end_inset
+
+
 \begin_inset Formula 
 \begin{equation}
 S(t)=\exp\left[-\intop_{0}^{t}h(u)du\right]\label{eq: Hazard to Survival}
@@ -5501,7 +5530,7 @@ literal "false"
 
 \begin_layout Standard
 A core assumption behind the Cox proportional hazards model and thus by
- extension 
+ extension equation (
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq: Cox regression"
@@ -5511,7 +5540,7 @@ noprefix "false"
 
 \end_inset
 
- is that the baseline hazard function is dependent only on time, whereas
+) is that the baseline hazard function is dependent only on time, whereas
  the second part of the expression 
 \begin_inset Formula $e^{\sum_{i=1}^{k}\beta_{i}X_{i}}$
 \end_inset
@@ -5782,7 +5811,7 @@ Once the partial likelihood function
 \begin_inset Formula $L$
 \end_inset
 
- is formed, the equation 
+ is formed, the equation (
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:Max likelihood function"
@@ -5792,7 +5821,7 @@ noprefix "false"
 
 \end_inset
 
- is generally solved by maximizing the natural log of L, i.e.
+) is generally solved by maximizing the natural log of L, i.e.
  finding the roots of
 \begin_inset Formula 
 \begin{equation}
@@ -5817,7 +5846,7 @@ Hazard Ratio Estimation
 \end_layout
 
 \begin_layout Standard
-As described in 
+As described in Section 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:Hazard-Ratio"
@@ -5853,7 +5882,7 @@ where
 \end_inset
 
 .
- By using 
+ By using (
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:Hazard function estimate"
@@ -5863,7 +5892,7 @@ noprefix "false"
 
 \end_inset
 
- we get that 
+) we get that 
 \begin_inset Formula 
 \begin{equation}
 \hat{HR}=\frac{\hat{h_{0}}(t)\exp\left(\sum_{i=1}^{k}\hat{\beta_{i}}X_{i}^{*}\right)}{\hat{h_{0}}(t)\exp\left(\sum_{i=1}^{k}\hat{\beta_{i}}X_{i}\right)}=\exp\left(\sum_{i=1}^{k}\hat{\beta_{i}}\left(X_{i}^{*}-X_{i}\right)\right)
@@ -6379,7 +6408,7 @@ where
 \begin_inset Formula $b$
 \end_inset
 
-, defined in 
+, defined in (
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:tree CHF"
@@ -6389,7 +6418,7 @@ noprefix "false"
 
 \end_inset
 
-.
+).
 \begin_inset Newline newline
 \end_inset
 
@@ -8576,7 +8605,7 @@ max_depth=None
 \begin_layout Standard
 In order to simplify the model and improve its performance, the best features
  were selected by calculating their importance using permutation importance
- described in 
+ described in Section 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Permutation-Variable-Importance"
@@ -8588,7 +8617,7 @@ noprefix "false"
 
 .
  In comparison to variable importance calculated by the Gini importance
- (described in 
+ (described in Section 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:Feature-Selection"
@@ -8674,7 +8703,7 @@ The selected features along with their description and variable importance
  can be found in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "variable importance table"
+reference "tab:Variable-Importance"
 plural "false"
 caps "false"
 noprefix "false"
@@ -10383,7 +10412,7 @@ where
 \begin_inset Formula $H\left(t\mid\mathbf{x}\right)$
 \end_inset
 
- is the cumulative hazard function defined in 
+ is the cumulative hazard function defined in (
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:tree CHF"
@@ -10393,7 +10422,7 @@ noprefix "false"
 
 \end_inset
 
- 
+) 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "scikit-survival"
@@ -13038,7 +13067,7 @@ noprefix "false"
 \end_inset
 
  age group.
- Therefore, using the formula suggested in 
+ Therefore, using the formula suggested in (
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:age_weighted"
@@ -13048,7 +13077,7 @@ noprefix "false"
 
 \end_inset
 
- may put younger patients at a disadvantage, when compared to middle-aged
+) may put younger patients at a disadvantage, when compared to middle-aged
  patients.
  Consequently, an alternative solution could be to subtract a certain amount
  from the risk score of patients belonging to the 
@@ -13209,7 +13238,7 @@ n of survival analysis, outperforms the conventionally used Cox proportional
 Although further research is required to improve the model's reliability
  to a level suitable for clinical adoption, the model even in its premature
  stages is still able to reveal insights into the determinants impacting
- graft survival following renal transplantations..
+ graft survival following renal transplantations.
 \end_layout
 
 \begin_layout Bibliography
