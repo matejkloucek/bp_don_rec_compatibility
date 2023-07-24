@@ -3530,13 +3530,13 @@ literal "false"
 
 \begin_layout Standard
 Within the UNOS dataset, only the HLA-A, HLA-B and HLA-DR loci are being
- used computing mismatch.
+ used for computing mismatch.
  More specifically, the alleles of only two antigens are tracked for each
  of the mentioned loci.
  As illustrated in Table 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "HLA mismatch table"
+reference "tab:HLA-Mismatch"
 plural "false"
 caps "false"
 noprefix "false"
@@ -3548,6 +3548,31 @@ noprefix "false"
  The overall HLA mismatch is then given by the sum of these locus mismatches.
  Note that D- represents donor's typing while R- represents recipient's
  typing.
+ 
+\end_layout
+
+\begin_layout Standard
+For example, in the first row of the Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:HLA-Mismatch"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, the HLA mismatch is 5 since the both of the alleles at the HLA-B and HLA-DR
+ locus differ, therefore, the HLA mismatch at the locus level is 2 for the
+ HLA-B and HLA-DR loci.
+ At the HLA-A locus, both the donor and the recipient have one identical
+ allele (2) therefore, the mismatch at the HLA-A locus is only 1.
+ In total, the HLA mismatch is 
+\begin_inset Formula $1+2+2=5$
+\end_inset
+
+.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -3562,6 +3587,13 @@ status open
 
 \begin_layout Plain Layout
 HLA Mismatch
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:HLA-Mismatch"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -3592,29 +3624,175 @@ textwidth}{!}{
 \end_inset
 
 
-\lang english
-
 \begin_inset Tabular
-<lyxtabular version="3" rows="6" columns="16">
-<features booktabs="true" tabularvalignment="middle">
-<column alignment="right" valignment="top">
-<column alignment="right" valignment="top">
-<column alignment="right" valignment="top">
-<column alignment="right" valignment="top">
-<column alignment="right" valignment="top">
-<column alignment="right" valignment="top">
-<column alignment="right" valignment="top">
-<column alignment="right" valignment="top">
-<column alignment="right" valignment="top">
-<column alignment="right" valignment="top">
-<column alignment="right" valignment="top">
-<column alignment="right" valignment="top">
-<column alignment="right" valignment="top">
-<column alignment="right" valignment="top">
-<column alignment="right" valignment="top">
-<column alignment="right" valignment="top">
+<lyxtabular version="3" rows="7" columns="16">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
 <row>
-<cell alignment="right" valignment="top" topline="true" usebox="none">
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+donor's HLA typing 
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+recipient's HLA typing
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+mismatch at locus level
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+total mismatch
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3625,7 +3803,7 @@ DA1
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3636,7 +3814,7 @@ DA2
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3647,7 +3825,7 @@ DB1
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3658,7 +3836,7 @@ DB2
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3669,7 +3847,7 @@ DDR1
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3680,7 +3858,7 @@ DDR2
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3691,7 +3869,7 @@ RA1
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3702,7 +3880,7 @@ RA2
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3713,7 +3891,7 @@ RB1
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3724,7 +3902,7 @@ RB2
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3735,7 +3913,7 @@ RDR1
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3746,7 +3924,7 @@ RDR2
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3757,7 +3935,7 @@ AMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3768,7 +3946,7 @@ BMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3779,7 +3957,7 @@ DRMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3792,7 +3970,7 @@ HLAMIS
 </cell>
 </row>
 <row>
-<cell alignment="right" valignment="top" topline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3803,7 +3981,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3814,7 +3992,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3825,7 +4003,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3836,7 +4014,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3847,7 +4025,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3858,7 +4036,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3869,7 +4047,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3880,7 +4058,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3891,7 +4069,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3902,7 +4080,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3913,7 +4091,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3924,7 +4102,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3935,7 +4113,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3946,7 +4124,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3957,7 +4135,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" topline="true" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3970,7 +4148,7 @@ HLAMIS
 </cell>
 </row>
 <row>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3981,7 +4159,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3992,7 +4170,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4003,7 +4181,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4014,7 +4192,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4025,7 +4203,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4036,7 +4214,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4047,7 +4225,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4058,7 +4236,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4069,7 +4247,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4080,7 +4258,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4091,7 +4269,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4102,7 +4280,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4113,7 +4291,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4124,7 +4302,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4135,7 +4313,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4148,7 +4326,7 @@ HLAMIS
 </cell>
 </row>
 <row>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4159,7 +4337,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4170,7 +4348,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4181,7 +4359,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4192,7 +4370,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4203,7 +4381,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4214,7 +4392,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4225,7 +4403,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4236,7 +4414,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4247,7 +4425,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4258,7 +4436,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4269,7 +4447,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4280,7 +4458,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4291,7 +4469,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4302,7 +4480,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4313,7 +4491,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4326,7 +4504,7 @@ HLAMIS
 </cell>
 </row>
 <row>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4337,7 +4515,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4348,7 +4526,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4359,7 +4537,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4370,7 +4548,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4381,7 +4559,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4392,7 +4570,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4403,7 +4581,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4414,7 +4592,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4425,7 +4603,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4436,7 +4614,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4447,7 +4625,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4458,7 +4636,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4469,7 +4647,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4480,7 +4658,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4491,7 +4669,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4504,7 +4682,7 @@ HLAMIS
 </cell>
 </row>
 <row>
-<cell alignment="right" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4515,7 +4693,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4526,7 +4704,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4537,7 +4715,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4548,7 +4726,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4559,7 +4737,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4570,7 +4748,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4581,7 +4759,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4592,7 +4770,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4603,7 +4781,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4614,7 +4792,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4625,7 +4803,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4636,7 +4814,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4647,7 +4825,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4658,7 +4836,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4669,7 +4847,7 @@ HLAMIS
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4686,6 +4864,8 @@ HLAMIS
 \end_inset
 
 
+\lang english
+
 \begin_inset ERT
 status open
 
@@ -4693,13 +4873,6 @@ status open
 
 }
 \end_layout
-
-\end_inset
-
-
-\begin_inset CommandInset label
-LatexCommand label
-name "HLA mismatch table"
 
 \end_inset
 
@@ -4795,7 +4968,7 @@ literal "false"
 
 .
  More specifically, time-to-event refers to the time from the beginning
- of a follow-up i.e.
+ of a follow-up, i.e.
  the period during which the subject of a study is observed, usually from
  the date of diagnosis, the start of a treatment or a transplantation, until
  the occurrence of an event of interest, usually meaning the death of a
@@ -4805,7 +4978,14 @@ literal "false"
 graft failure
 \emph default
 .
- Survival analysis involves several statistical techniques that are commonly
+ Survival analysis is not limited to medical applications, as it is often
+ used, for instance, to model reliability in engineering, i.e.
+ to study the time until a failure of mechanical system occurs.
+ 
+\end_layout
+
+\begin_layout Standard
+Survival analysis involves several statistical techniques that are commonly
  used in medicinal research, namely the 
 \emph on
 Kaplan-Meier estimator
@@ -5516,8 +5696,7 @@ literal "false"
  not always be clear which parametric model is appropriate for a given problem.
  As a result, a semi-parametric model is a great tool when uncertain about
  which parametric model to use, as a semi-parametric model will typically
- approximate the results of a correct parametric molog-rank statistic is
- only concerned with comparing two groups.del 
+ approximate the results of the correct parametric model 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Survival Analysis self-learn"
@@ -5526,6 +5705,17 @@ literal "false"
 \end_inset
 
 .
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+log-rank statistic is only concerned with comparing two groups.del
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -5653,10 +5843,14 @@ where
 \begin_inset Formula $L$
 \end_inset
 
- is the maximum likelihood function given by 
+ is the maximum likelihood function.
+\end_layout
+
+\begin_layout Standard
+The maximum likelihood function is conventionally defined as 
 \begin_inset Formula 
 \begin{equation}
-L\left(\beta\right)=\prod_{i=1}^{k}f_{Y_{i}}(y_{i},\beta)
+L\left(\beta\right)=\prod_{i=1}^{k}f_{Y_{i}}(y_{i},\beta)\label{eq:full maximum likelihood function}
 \end{equation}
 
 \end_inset
@@ -5670,10 +5864,7 @@ is the univariate probability density function associated with the
 \end_inset
 
 -th random variable from the random sample.
-\end_layout
-
-\begin_layout Standard
-However, one of the key features of the Cox model is that there is no assumed
+ However, one of the key features of the Cox model is that there is no assumed
  distribution for the survival time, therefore it is not possible to compute
  a 
 \emph on
@@ -5687,7 +5878,17 @@ literal "false"
 
 \end_inset
 
-.
+ as defined in (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:full maximum likelihood function"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
  Therefore, a 
 \emph on
 partial likelihood
