@@ -6260,7 +6260,7 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-Each tree in the forest outputs a either a cumulative hazard function 
+Each tree in the forest outputs either a cumulative hazard function // either-or, or ti chybi
 \begin_inset Formula $H(t\mid\mathbf{x})$
 \end_inset
 
@@ -6444,7 +6444,7 @@ Let
 \begin_inset Formula $N(j)$
 \end_inset
 
- is the number of observed unique event times and let
+ is the number of observed unique event times in node j //ne? and let
 \begin_inset Formula $f_{k,j}$
 \end_inset
 
@@ -6507,7 +6507,7 @@ H(t\mid\mathbf{x})=\hat{H}_{j}(t).\label{eq:tree CHF}
 \end_layout
 
 \begin_layout Enumerate
-Next, two ensemble cumulative hazards functions are calculated.
+Next, two ensemble cumulative hazards functions are calculated. // hele tohle si po sobe precti a poradne si zkontroluj indexy atd. Ja asi chapu co je tim mysleno, ale podle me to dost motas. number of bootstrap samples neni jasne co je, H∗b(t|x) nikde nepouzijes. Obecne mi prijde, ze bys to mohl popsat trochu lepe.
  The first, called the
 \emph on
 bootstrap ensemble CHF
@@ -6664,7 +6664,7 @@ n_estimators
 \end_inset
 
 : The number of survival trees in the forest.
- Usually, the more larger the better, however, more trees also means longer
+ Usually, the more the better, however, more trees also means longer // hele zda se mi, ze se trochu zvysil pocet preklepu v teto casti, zdaleka vsechny neopravuju. Precti si to po sobe poradne
  training times.
  Moreover, the benefits gained by adding more trees becomes deminishing,
  meaning that there is a point, where the added computational complexity
@@ -7068,7 +7068,7 @@ if
 \begin_inset Formula
 \[
 c_{i,j}=\begin{cases}
-1 & \textrm{if \ensuremath{T_{i}<T_{j}\Longrightarrow i} has worse predicted outcome than \ensuremath{j} (\ref{eq:worse outcome def})}\\
+1 & \textrm{if \ensuremath{T_{i}<T_{j}\Longrightarrow i} has worse predicted outcome than \ensuremath{j} (\ref{eq:worse outcome def})}\\ // hele fakt se pouziva worse predicted outcome? to mi zni kostrbate, neni mozne neco jako shorter survival time prediction?
 0.5 & \textrm{if }\ensuremath{T_{i}<T_{j}\Longrightarrow}\textrm{predicted outcomes of \ensuremath{i} and \ensuremath{j} are tied}\\
 0 & \textrm{else}
 \end{cases}
@@ -7111,7 +7111,7 @@ if
 \begin_inset Formula $\:\land\:\delta_{i}\neq\delta_{j}$
 \end_inset
 
-
+// nechybi tady jeste ty opacne pripady? ze j je horsi a ma horsi predikci? nebo to beres jako ze se ty indexy prohodi?
 \begin_inset Formula
 \[
 c_{i,j}=\begin{cases}
@@ -7173,7 +7173,7 @@ and
 \begin_inset Formula $H_{e}^{**}$
 \end_inset
 
- is the OOB ensemble CHF defined in (
+ is the OOB ensemble CHF defined in ( // hele jeste me napada. co nejaky ten test set? to vubec nepouzivas?
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:OOB ensemble CHF"
@@ -7476,7 +7476,7 @@ noprefix "false"
 \begin_layout Standard
 The reasons for why the RSF model was chosen include the above described
  disadvantages of the aformetioned alternatives and promising accuracy that
- the RSF model displayed in the related articles
+ the RSF model displayed in the related articles // v teto casti opet hodne preklepu. A je mozna skoda, ze SVM ani gradient boosting nepopisujes trochu vic (ale to uz ted nech)
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Using ML methods to predict kidney transplant survival,Systematic review"
