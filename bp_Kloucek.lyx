@@ -38,7 +38,7 @@
 %\addtocontents{lof}{\protect\thispagestyle{empty}}
 %\addtocontents{lot}{\protect\thispagestyle{empty}}
 
-%% Shifts the top line of the TOC (not the title) 1cm upwards 
+%% Shifts the top line of the TOC (not the title) 1cm upwards
 %% so that the whole TOC fits on 1 page. Additional page size
 %% adjustment is performed at the point where the TOC
 %% is inserted.
@@ -421,7 +421,7 @@ ends the centered part (the required new paragraph before "}" is inserted
 \begin_layout Labeling
 \paragraph_spacing single
 \labelwidthstring MMMMMMMMM
-Author: 
+Author:
 \series bold
 Matěj Klouček
 \end_layout
@@ -429,7 +429,7 @@ Matěj Klouček
 \begin_layout Labeling
 \paragraph_spacing single
 \labelwidthstring MMMMMMMMM
-Supervisor: 
+Supervisor:
 \series bold
 Ing.
  Tomáš Kouřim
@@ -438,7 +438,7 @@ Ing.
 \begin_layout Labeling
 \paragraph_spacing single
 \labelwidthstring MMMMMMMMM
-Consultant: 
+Consultant:
 \series bold
 Ing.
  Pavel Strachota , Ph.D.
@@ -554,7 +554,7 @@ I declare that this Bachelor's Degree Project is entirely my own work and
 
 \begin_layout Standard
 \noindent
-Prague, 
+Prague,
 \begin_inset ERT
 status open
 
@@ -757,7 +757,7 @@ Abstrakt:
  Součástí studie je také podrobné prozkoumání algoritmů, které stojí za
  modelem náhodného přežívacího lesa, a analýzy přežití, která se běžně využívá
  v medicínském výzkumu.
- 
+
 \end_layout
 
 \begin_layout Standard
@@ -777,7 +777,7 @@ Abstrakt:
 Klíčová slova:
 \emph default
  strojové učení, rozhodovací strom, náhodný les, transplantace ledvin, analýza
- přežívání, náhodný přežívací les 
+ přežívání, náhodný přežívací les
 \end_layout
 
 \begin_layout Standard
@@ -942,7 +942,7 @@ addcontentsline{toc}{chapter}{Introduction}
 \begin_layout Standard
 Kidney transplantation is the single best treatment for patients with end-stage
  kidney disease as it has demonstrated the best quality of life improvement
- and the best survival rate amongst other possible treatments 
+ and the best survival rate amongst other possible treatments
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Chronic kidney allograft loss,Systematic review"
@@ -951,7 +951,7 @@ literal "false"
 \end_inset
 
 .
- However, demand for transplants (allografts) greatly exceeds supply 
+ However, demand for transplants (allografts) greatly exceeds supply
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Kidney transplantation,Systematic review"
@@ -993,7 +993,7 @@ ty between potential donors and recipients.
 
 \begin_layout Standard
 The research will involve analyzing data on past transplantations from the
- US-based 
+ US-based
 \emph on
 United Network for Organ Sharing (UNOS)
 \emph default
@@ -1007,7 +1007,7 @@ United Network for Organ Sharing (UNOS)
  donor-recipient pairing.
  In particular, this paper will be focused on the Random Survival Forests
  model which has demonstrated a promising performance in related scientific
- papers 
+ papers
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Using ML methods to predict kidney transplant survival"
@@ -1063,7 +1063,7 @@ Machine learning is a rapidly growing field within the larger discipline
  It involves developing algorithms and statistical models by enabling computers
  to learn from data without the necessity of explicit programming for their
  learning process.
- 
+
 \end_layout
 
 \begin_layout Standard
@@ -1102,37 +1102,37 @@ Supervised Learning
  is a type of machine learning where models require a labeled dataset for
  their learning, which means that the desired output needs to be provided
  to the computer during the training process along with the data.
- Supervised learning can be further subdivided into 
+ Supervised learning can be further subdivided into
 \emph on
 regression
 \emph default
- and 
+ and
 \emph on
 classification
 \emph default
  tasks based on whether the desired output is a continuous numerical value
  or a discrete one respectively.
- Examples of supervised learning models include: 
+ Examples of supervised learning models include:
 \emph on
 linear
 \emph default
- and 
+ and
 \emph on
 logistic regression
 \emph default
-, 
+,
 \emph on
 decision trees
 \emph default
-, 
+,
 \emph on
 random forests
 \emph default
-, 
+,
 \emph on
 supporting vector machines
 \emph default
- and 
+ and
 \emph on
 neural networks
 \emph default
@@ -1140,32 +1140,32 @@ neural networks
 \end_layout
 
 \begin_layout Standard
-The opposite of supervised learning is 
+The opposite of supervised learning is
 \emph on
 unsupervised learning
 \emph default
  where models are trained on an unlabeled dataset with the aim of finding
  patterns in the given data or grouping data with similar characteristics.
- An example of unsupervised learning is 
+ An example of unsupervised learning is
 \emph on
 clustering
 \emph default
- which is used to find groups with shared characteristics, 
+ which is used to find groups with shared characteristics,
 \emph on
 association
 \emph default
  which is used to find relation between the input variables (also called
- predictors) in a given dataset, or 
+ predictors) in a given dataset, or
 \emph on
 dimensional reduction
 \emph default
  which is used to simplify data in order to more easily extract information
  from it.
- 
+
 \end_layout
 
 \begin_layout Standard
-A combination of these, called 
+A combination of these, called
 \emph on
 semi-supervised learning
 \emph default
@@ -1191,17 +1191,17 @@ Reinforcement learning
  using feedback from the environment and is often used in cases where no
  labeled data exists or when the labeled dataset does not provide the best
  course of action.
- The learning system (called 
+ The learning system (called
 \emph on
 agent
 \emph default
  in this case) learns by performing actions from which it receives either
  rewards or penalties from the environment and based on these has to develop
- a strategy to maximize rewards (called 
+ a strategy to maximize rewards (called
 \emph on
 policy
 \emph default
-) 
+)
 \begin_inset CommandInset citation
 LatexCommand cite
 key "100-page ML,Hands-On ML"
@@ -1223,33 +1223,33 @@ Instance-based vs.
 Instance-based
 \emph default
  learning algorithms work by comparing the similarity of new input data
- to the training data, an example of this is the 
+ to the training data, an example of this is the
 \emph on
 k-nearest neighbors
 \emph default
- algorithm, which finds 
+ algorithm, which finds
 \begin_inset Formula $k$
 \end_inset
 
  examples from the training data that have the most similar features to
  the given input and outputs either the most frequent or the average label
  value in this cohort.
- 
+
 \end_layout
 
 \begin_layout Standard
-On the other hand 
+On the other hand
 \emph on
 model-based learning
 \emph default
  algorithms develop a mathematical function whose parameters are learned
  from the training data and predictions about new data are then obtained
  by providing the newly introduced data as an input to the function.
- model-based learning algorithms are for example 
+ model-based learning algorithms are for example
 \emph on
 linear regression
 \emph default
- and 
+ and
 \emph on
 neural networks
 \emph default
@@ -1266,14 +1266,14 @@ The process of building a machine learning model generally consists of the
 \end_layout
 
 \begin_layout Subsection
-Data Preprocessing 
+Data Preprocessing
 \end_layout
 
 \begin_layout Standard
 Before a machine learning model can even begin to be trained, it is necessary
  that the training data is formatted correctly.
  The process of transforming the dataset into a correct format is called
- 
+
 \emph on
 preprocessing
 \emph default
@@ -1293,7 +1293,7 @@ One of the most common challenges tackled during preprocessing is missing
  with missing features so unless there is another model at disposal that
  can handle missing values, the missing values need to handled in one of
  the following ways.
- 
+
 \end_layout
 
 \begin_layout Standard
@@ -1301,18 +1301,18 @@ The easiest option is to drop either the features or the samples containing
  missing values from the dataset.
  This is fast and reliable, however, it is not optimal as it can lead to
  a potential loss of important information that the model could learn from.
- 
+
 \end_layout
 
 \begin_layout Standard
 A preferable alternative is replacing the missing values based on some given
  rule.
- This process is called 
+ This process is called
 \emph on
-imputing 
+imputing
 \emph default
 and can be performed in many different ways.
- One of the most popular imputers is the 
+ One of the most popular imputers is the
 \begin_inset Flex Code
 status open
 
@@ -1322,7 +1322,7 @@ SimpleImputer()
 
 \end_inset
 
- provided by the scikit-learn library described in Section 
+ provided by the scikit-learn library described in Section
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:scikit-learn"
@@ -1350,13 +1350,13 @@ Encoding Categorical Features
 Another challenge tackled during preprocessing arises from the fact that
  most machine learning models only allow numerical features as input.
  As a result, categorical values need to be transformed into numerical features
- in a process called 
+ in a process called
 \emph on
 encoding
 \emph default
 .
  One of the most simple yet most efficient methods of encoding is one-hot
- encoding, which transforms a categorical feature with unique values 
+ encoding, which transforms a categorical feature with unique values
 \begin_inset Formula $(x_{1},\ldots x$
 \end_inset
 
@@ -1364,11 +1364,11 @@ encoding
 \begin_inset Formula $_{n})$
 \end_inset
 
- into 
+ into
 \begin_inset Formula $n$
 \end_inset
 
- columns as shown in Table 
+ columns as shown in Table
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:One-hot-encoding"
@@ -1379,12 +1379,12 @@ noprefix "false"
 \end_inset
 
 .
- For each row, let 
+ For each row, let
 \begin_inset Formula $y$
 \end_inset
 
  denote the original categorical value, i.e.
- 
+
 \family roman
 \series medium
 \shape up
@@ -1401,11 +1401,11 @@ noprefix "false"
 \begin_inset Formula $y\in(x_{1},\ldots x_{n})$
 \end_inset
 
- and let 
+ and let
 \begin_inset Formula $y_{j}$
 \end_inset
 
- denote the value of the encoded column 
+ denote the value of the encoded column
 \begin_inset Formula $j\in\hat{n}$
 \end_inset
 
@@ -1424,7 +1424,7 @@ noprefix "false"
 \noun default
 \color inherit
 
-\begin_inset Formula 
+\begin_inset Formula
 \begin{equation}
 y_{j}=\begin{cases}
 1 & \Longleftrightarrow y=x_{j}\\
@@ -1874,29 +1874,29 @@ name "subsec:Splitting-Data-into"
 The goal of machine learning is to create models that are able to make predictio
 ns when faced with new data that the model hasn't seen during the training
  process.
- To achieve this, it is necessary to split the data into 3 parts: 
+ To achieve this, it is necessary to split the data into 3 parts:
 \emph on
 Training set
 \emph default
-, 
+,
 \emph on
-Validation set 
+Validation set
 \emph default
 and
 \emph on
  Test set.
- 
+
 \emph default
 If a model is trained using all available data, it may perform well on said
  data, but may be unable to generalize for new instances thus making it
  useless in practice, which is why it is important to keep some of the data
  aside for validation and testing.
  The datasets used for validation and testing are also referred to as the
- 
+
 \emph on
-hold-out 
+hold-out
 \emph default
-sets 
+sets
 \begin_inset CommandInset citation
 LatexCommand cite
 key "100-page ML"
@@ -1918,16 +1918,16 @@ It is desirable to keep the majority of the data for training with the usual
 Once the training of the model has been done using the training set, the
  performance of the model is tested using the test set, i.e.
  data that it hasn't seen before.
- A good metric for measuring the quality of the model is the 
+ A good metric for measuring the quality of the model is the
 \emph on
-generalization error, 
+generalization error,
 \emph default
 given by the error rate of the predictions that the model makes based on
  samples from the hold-out sets, i.e.
  samples it has not seen during the training process.
  Though not all models use generalization error for evaluation, for example,
  models focused on time-to-event predictions are usually evaluated using
- the C-index described in Section 
+ the C-index described in Section
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Harell's-Concordance-Index"
@@ -1942,7 +1942,7 @@ noprefix "false"
 
 \begin_layout Standard
 Better performance of the model can be achieved using a validation set,
- which gives the option to select the best values for the model's 
+ which gives the option to select the best values for the model's
 \emph on
 hyperparameters
 \emph default
@@ -1953,7 +1953,7 @@ hyperparameters
  set.
  Once the best model has been selected, it is then trained using both the
  training and the validation set and its performance is then measured using
- the test set 
+ the test set
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Hands-On ML"
@@ -1965,7 +1965,7 @@ literal "false"
 \end_layout
 
 \begin_layout Subsection
-Evaluating Performance 
+Evaluating Performance
 \begin_inset CommandInset label
 LatexCommand label
 name "subsec:Evaluating-Performance"
@@ -1978,15 +1978,15 @@ name "subsec:Evaluating-Performance"
 \begin_layout Standard
 If the model performs well on the training set (e.g.
  it's generalization error is low), but poorly on the hold-out sets, it
- means that the model has learned unnecessary details (also called 
+ means that the model has learned unnecessary details (also called
 \emph on
 noise
 \emph default
 ) from the training set which then hampers its ability to generalize for
  new instances.
- This phenomena is called 
+ This phenomena is called
 \emph on
-overfitting 
+overfitting
 \emph default
 and is a common problem that arises during the process of developing a machine
  learning model.
@@ -1999,9 +1999,9 @@ and is a common problem that arises during the process of developing a machine
  Another way of solving the issue of overfitting is constraining how much
  the model can change the values of its parameters, thus making the model
  simpler and less prone to overfitting.
- This is called 
+ This is called
 \emph on
-regularization 
+regularization
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Hands-On ML"
@@ -2016,14 +2016,14 @@ literal "false"
 Machine learning models can also face the opposite problem, i.e.
  not being able learn the underlying patterns in the training data and thus
  being inaccurate on both the hold-out and training data.
- This is called 
+ This is called
 \emph on
-underfitting 
+underfitting
 \emph default
 and can be solved by either using a more appropriate (and more complex)
  model for the given task, selecting better features to train the model
  on or reducing any constraints that might have been set to simplify the
- model in order to prevent overfitting 
+ model in order to prevent overfitting
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Hands-On ML"
@@ -2046,7 +2046,7 @@ name "subsec:Feature-Selection"
 \end_layout
 
 \begin_layout Standard
-As mentioned in Section 
+As mentioned in Section
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:Evaluating-Performance"
@@ -2061,7 +2061,7 @@ noprefix "false"
  This can be solved by only selecting the features that contribute the most
  to the model's performance.
  This can prevent overfitting and thus increase the model's accuracy scores
- 
+
 \begin_inset CommandInset citation
 LatexCommand cite
 key "scikit-learn"
@@ -2069,7 +2069,7 @@ literal "false"
 
 \end_inset
 
- but also greatly increase explainability of the model 
+ but also greatly increase explainability of the model
 \begin_inset CommandInset citation
 LatexCommand cite
 key "100-page ML"
@@ -2078,12 +2078,12 @@ literal "false"
 \end_inset
 
  and speed up the training process.
- 
+
 \end_layout
 
 \begin_layout Standard
 In the case of classification decision trees and random forests described
- in Section 
+ in Section
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Decision-Trees-and"
@@ -2093,11 +2093,11 @@ noprefix "false"
 
 \end_inset
 
-, feature importance is most commonly computed using the 
+, feature importance is most commonly computed using the
 \emph on
-mean decrease in impurity 
+mean decrease in impurity
 \emph default
-(MDI) also known 
+(MDI) also known
 \emph on
 Gini importance.
 
@@ -2111,25 +2111,25 @@ Gini importance.
  be calculated during the training process.
  However this method can be biased towards overestimating importance of
  variables with bigger scaled values.
- To adress this issue, numerical features are often scaled to the 
+ To adress this issue, numerical features are often scaled to the
 \begin_inset Formula $0-1$
 \end_inset
 
- range in a process called 
+ range in a process called
 \emph on
 normalization
 \emph default
 .
- 
+
 \end_layout
 
 \begin_layout Standard
 A more reliable, though more computationally demanding, alternative is the
- 
+
 \emph on
-permutation importance 
+permutation importance
 \emph default
-described in Section 
+described in Section
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Permutation-Variable-Importance"
@@ -2158,7 +2158,7 @@ An integral part of building a well-performing machine learning model is
  selecting the best hyperparameters for a given algorithm.
  These parameters are not optimized by the learning algorithm itself and
  therefore require experimentation to find the best combination of values
- for them 
+ for them
 \begin_inset CommandInset citation
 LatexCommand cite
 key "100-page ML"
@@ -2167,11 +2167,11 @@ literal "false"
 \end_inset
 
 .
- 
+
 \end_layout
 
 \begin_layout Standard
-A common way of finding the best combination of hyperparameters is 
+A common way of finding the best combination of hyperparameters is
 \emph on
 grid search
 \emph default
@@ -2180,14 +2180,14 @@ grid search
 rs.
  For numerical parameters, a logarithmic scale is typically used to create
  a set of possible values (e.q.
- 
+
 \begin_inset Formula $\left[0.01,0.1,1,10,100,1000\right]$
 \end_inset
 
 ), while for categorical hyperparamaters, it is possible to simply iterate
  over all possible values.
  When the best combination of hyperparameters is found, it can be beneficial
- to experiment with values closer to the found optimal combination 
+ to experiment with values closer to the found optimal combination
 \begin_inset CommandInset citation
 LatexCommand cite
 key "100-page ML"
@@ -2196,7 +2196,7 @@ literal "false"
 \end_inset
 
 .
- 
+
 \end_layout
 
 \begin_layout Section
@@ -2226,19 +2226,19 @@ Decision Trees are a supervised, model-based machine learning method used
  for both regression and classification, whose main benefits are that it
  can handle complex and nonlinear relations in data.
  There are two types of decision trees based on the type of target variable:
- 
+
 \emph on
-Classification trees 
+Classification trees
 \emph default
-and 
+and
 \emph on
 Regression trees.
- 
+
 \end_layout
 
 \begin_layout Standard
 Decision trees are in practice mostly binary trees where in each parent
- node (also called a 
+ node (also called a
 \emph on
 decision node
 \emph default
@@ -2249,50 +2249,50 @@ decision node
  the left branch is followed, otherwise the right branch is followed, with
  the threshold being set to maximize a certain performance metric of the
  model.
- Once the leaf node (also called 
+ Once the leaf node (also called
 \emph on
 terminal node
 \emph default
 ) is reached, the example is assigned a probability of belonging to a given
  categorical value in case of a classification tree or assigned a numerical
  value in case of a regression tree.
- 
+
 \end_layout
 
 \begin_layout Standard
 Different decision tree algorithms use different split rules also known
- as 
+ as
 \emph on
 criterions.
 
 \emph default
  For example, one of the most common algorithms used for generating a classifica
 tion tree is called ID3, which selects what attributes from the feature
- vector to split upon based on 
+ vector to split upon based on
 \emph on
 Entropy
 \emph default
-, 
+,
 \emph on
-Information gain 
+Information gain
 \emph default
-or 
+or
 \emph on
 Gini Impurity
 \emph default
  of the subsets created by the split made on each feature.
  In the case of Regression Trees, the criterion used is often based on the
- reduction of 
+ reduction of
 \emph on
 variance
 \emph default
- or 
+ or
 \emph on
 standard deviation
 \emph default
  between labels and their mean values.
  Another type of criterion is used by the decision trees in Random Survival
- Forests, described in more detail in Section 
+ Forests, described in more detail in Section
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Random-Survival-Forests"
@@ -2311,7 +2311,7 @@ Building a Classification Tree
 \end_layout
 
 \begin_layout Standard
-A classification tree using the ID3 algorithm is built as follows 
+A classification tree using the ID3 algorithm is built as follows
 \begin_inset CommandInset citation
 LatexCommand cite
 key "100-page ML"
@@ -2323,7 +2323,7 @@ literal "false"
 \begin_inset Newline newline
 \end_inset
 
-Let 
+Let
 \begin_inset Formula $C$
 \end_inset
 
@@ -2331,58 +2331,58 @@ Let
 \begin_inset Formula $\left\{ 1,2,\ldots,p\right\} $
 \end_inset
 
- be the set of possible categorical values, 
+ be the set of possible categorical values,
 \begin_inset Formula $\left\{ \left(\mathbf{x}^{(i)},y^{(i)}\right)\right\} _{i=1}^{N}$
 \end_inset
 
-is a collection of labeled examples with numerical features, where 
+is a collection of labeled examples with numerical features, where
 \begin_inset Formula $N$
 \end_inset
 
- is the size of the collection, 
+ is the size of the collection,
 \begin_inset Formula $\mathbf{x}^{(i)}=(x_{1}^{(i)},\ldots,x_{k}^{(i)})$
 \end_inset
 
- is a 
+ is a
 \begin_inset Formula $k$
 \end_inset
 
--dimensional feature vector of the example 
+-dimensional feature vector of the example
 \begin_inset Formula $i\in\hat{N}$
 \end_inset
 
- and 
+ and
 \begin_inset Formula $y^{(i)}\in C$
 \end_inset
 
  is its label.
- The decision tree model is denoted by 
+ The decision tree model is denoted by
 \begin_inset Formula $f(\mathbf{x})$
 \end_inset
 
  which is a function that estimates the probability of a given example to
- be of class 
+ be of class
 \begin_inset Formula $a\in C$
 \end_inset
 
  i.e.
  it is defined as
-\begin_inset Formula 
+\begin_inset Formula
 \begin{equation}
 f(\mathbf{x},a)\stackrel{\mathrm{def}}{=}\Pr\left(y=a\mid\mathbf{x}\right),\label{eq:class tree def}
 \end{equation}
 
 \end_inset
 
-where 
+where
 \begin_inset Formula $\mathbf{x}$
 \end_inset
 
- is a 
+ is a
 \begin_inset Formula $k$
 \end_inset
 
--dimensional feature vector and 
+-dimensional feature vector and
 \begin_inset Formula $y$
 \end_inset
 
@@ -2390,31 +2390,31 @@ where
 \end_layout
 
 \begin_layout Standard
-Let 
+Let
 \begin_inset Formula $S_{i}$
 \end_inset
 
- denote a set of labeled examples included in node 
+ denote a set of labeled examples included in node
 \begin_inset Formula $i$
 \end_inset
 
- , let 
+ , let
 \begin_inset Formula $p^{S_{i}}(a)$
 \end_inset
 
- denote the proportion of the examples in 
+ denote the proportion of the examples in
 \begin_inset Formula $S_{i}$
 \end_inset
 
- that belong to class 
+ that belong to class
 \begin_inset Formula $a$
 \end_inset
 
- and let 
+ and let
 \begin_inset Formula $F_{i}$
 \end_inset
 
- denote the set of all possible features in a given node 
+ denote the set of all possible features in a given node
 \begin_inset Formula $i$
 \end_inset
 
@@ -2422,16 +2422,16 @@ Let
  features that have not been used to make a split before).
  In the first step of the algorithm, the decision tree consists only of
  its root node, which contains all of the labeled examples i.e.
- 
+
 \begin_inset Formula $S_{0}=$
 \end_inset
 
- 
+
 \begin_inset Formula $\left\{ \left(x^{(i)},y^{(i)}\right)\right\} _{i=1}^{N}$
 \end_inset
 
  ,all features are available for splitting i.e.
- 
+
 \begin_inset Formula $F_{0}=\hat{k}$
 \end_inset
 
@@ -2439,7 +2439,7 @@ Let
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula 
+\begin_inset Formula
 \begin{equation}
 p^{S_{0}}\left(a\right)=\frac{\left|\left\{ \left(\mathbf{x}^{(i)},y^{(i)}\right)\mid y^{(i)}=a,\left(\mathbf{x}^{(i)},y^{(i)}\right)\in S_{0}\right\} \right|}{\left|S_{0}\right|}.\label{eq:class tree proportion}
 \end{equation}
@@ -2451,43 +2451,43 @@ p^{S_{0}}\left(a\right)=\frac{\left|\left\{ \left(\mathbf{x}^{(i)},y^{(i)}\right
 
 \begin_layout Standard
 The next step of the algorithm is to iterate over all possible features
- 
+
 \begin_inset Formula $j\in F_{0}$
 \end_inset
 
- and all possible threshold values 
+ and all possible threshold values
 \begin_inset Formula $t_{j}\in T_{j}$
 \end_inset
 
- where 
+ where
 \begin_inset Formula $T_{j}$
 \end_inset
 
- is the set of all possible threshold values for the feature 
+ is the set of all possible threshold values for the feature
 \begin_inset Formula $j$
 \end_inset
 
 .
  The possible threshold values can be chosen, for example, as midpoints
  between values of the given feature, e.g.
- if 
+ if
 \begin_inset Formula $x_{j}^{(i)}\in\left[1,2,3\right]$
 \end_inset
 
- then the possible threshold values 
+ then the possible threshold values
 \begin_inset Formula $T_{j}$
 \end_inset
 
- may be chosen as 
+ may be chosen as
 \begin_inset Formula $T_{j}=\left[1.5,2.5\right]$
 \end_inset
 
 .
- For each iteration (ordered pair 
+ For each iteration (ordered pair
 \begin_inset Formula $\left(j,t_{j}\right)$
 \end_inset
 
-), 
+),
 \begin_inset Formula $S_{0}$
 \end_inset
 
@@ -2495,7 +2495,7 @@ The next step of the algorithm is to iterate over all possible features
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula 
+\begin_inset Formula
 \begin{equation}
 S_{0-}\stackrel{\mathrm{def}}{=}\left\{ \left(\mathbf{x},y\right)\mid\left(\mathbf{x},y\right)\in S_{0},x_{j}<t_{j}\right\} \quad\mathrm{and}\quad S_{0+}\stackrel{\mathrm{def}}{=}\left\{ \left(\mathbf{x},y\right)\mid\left(\mathbf{x},y\right)\in S_{0},x_{j}\geq t_{j}\right\} .\label{eq:class tree split}
 \end{equation}
@@ -2508,7 +2508,7 @@ and the quality of the split is evaluated by using the algorithm's criterion.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula 
+\begin_inset Formula
 \begin{equation}
 H(S)=-\sum_{a\in S}p^{S}\left(a\right)\log_{2}p^{S}\left(a\right).\label{eq:entropy}
 \end{equation}
@@ -2524,14 +2524,14 @@ The quality of the given split is then determined by the weighted sum of
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula 
+\begin_inset Formula
 \begin{equation}
 H(S_{-},S_{+})=\frac{\left|S_{-}\right|}{\left|S\right|}H(S_{-})+\frac{\left|S_{+}\right|}{\left|S\right|}H(S_{+}),\label{eq:class tree entropy}
 \end{equation}
 
 \end_inset
 
-where the goal is to minimize 
+where the goal is to minimize
 \begin_inset Formula $H(S_{-},S_{+})$
 \end_inset
 
@@ -2541,15 +2541,15 @@ where the goal is to minimize
 \begin_layout Standard
 Once the best split has been found, each of the created subsets serves as
  a new decision node, i.e.
- 
+
 \begin_inset Newline newline
 \end_inset
 
- 
+
 \begin_inset Formula $S_{1}\coloneqq S_{0-}$
 \end_inset
 
-, 
+,
 \begin_inset Formula $S_{2}:=$
 \end_inset
 
@@ -2559,11 +2559,11 @@ Once the best split has been found, each of the created subsets serves as
 
  and the branching continues considering only the attributes that were not
  previously used, i.e.
- given that 
+ given that
 \begin_inset Formula $j_{0}\in F_{0}$
 \end_inset
 
- was chosen as the optimal predictor to split upon, then 
+ was chosen as the optimal predictor to split upon, then
 \begin_inset Formula $F_{1}=F_{2}=F_{0}\setminus\left\{ j_{0}\right\} $
 \end_inset
 
@@ -2578,35 +2578,35 @@ The algorithm stops if there are either no further attributes to split upon,
 \end_layout
 
 \begin_layout Standard
-When a new input 
+When a new input
 \begin_inset Formula $\mathbf{x}$
 \end_inset
 
- is introduced in the form of a 
+ is introduced in the form of a
 \begin_inset Formula $k-$
 \end_inset
 
 dimensional vector whose attributes are of the same data type as in the
- feature vectors 
+ feature vectors
 \begin_inset Formula $\mathbf{x}^{(i)}$
 \end_inset
 
 , the decision tree is followed from the root down, evaluating the attributes
- of 
+ of
 \begin_inset Formula $\mathbf{x}$
 \end_inset
 
  in each decision node until a leaf node is reached.
- Let 
+ Let
 \begin_inset Formula $S_{n}$
 \end_inset
 
- denote such leaf node, then for 
+ denote such leaf node, then for
 \begin_inset Formula $\forall a\in C$
 \end_inset
 
 
-\begin_inset Formula 
+\begin_inset Formula
 \begin{equation}
 f(\mathbf{x},a)=p^{S_{n}}\left(a\right)=\frac{\left|\left\{ \left(\mathbf{x}^{(i)},y^{(i)}\right)\in S_{n}\mid y^{(i)}=a\right\} \right|}{\left|S_{n}\right|}.\label{eq:class tree final}
 \end{equation}
@@ -2617,16 +2617,16 @@ f(\mathbf{x},a)=p^{S_{n}}\left(a\right)=\frac{\left|\left\{ \left(\mathbf{x}^{(i
 \end_layout
 
 \begin_layout Standard
-The example 
+The example
 \begin_inset Formula $\mathbf{x}$
 \end_inset
 
- is then classified as belonging to the class 
+ is then classified as belonging to the class
 \begin_inset Formula $c\in C$
 \end_inset
 
- if 
-\begin_inset Formula 
+ if
+\begin_inset Formula
 \begin{equation}
 c=\underset{a\in C}{\arg\max}f(\mathbf{x},a)
 \end{equation}
@@ -2649,79 +2649,79 @@ This time suppose the opposite case i.e.
 \end_layout
 
 \begin_layout Standard
-Let 
+Let
 \begin_inset Formula $X_{j}$
 \end_inset
 
- be the set of all possible categorical values for the feature 
+ be the set of all possible categorical values for the feature
 \begin_inset Formula $j\in\hat{k},$
 \end_inset
 
-where 
+where
 \begin_inset Formula $k$
 \end_inset
 
  is the total number of features in the dataset.
- Again, let 
+ Again, let
 \begin_inset Formula $\left\{ \left(x^{(i)},y^{(i)}\right)\right\} _{i=1}^{N}$
 \end_inset
 
- denote a collection of labeled examples, where 
+ denote a collection of labeled examples, where
 \begin_inset Formula $N$
 \end_inset
 
- is the size of the collection, 
+ is the size of the collection,
 \begin_inset Formula $\mathbf{x}^{(i)}=(x_{1}^{(i)},\ldots,x_{k}^{(i)})$
 \end_inset
 
- is a 
+ is a
 \begin_inset Formula $k$
 \end_inset
 
--dimensional feature vector of the example 
+-dimensional feature vector of the example
 \begin_inset Formula $i\in\hat{N}$
 \end_inset
 
-, where 
+, where
 \begin_inset Formula $x_{j}^{(i)}\in X_{j}$
 \end_inset
 
- for 
+ for
 \begin_inset Formula $\forall j\in\hat{k}$
 \end_inset
 
- and 
+ and
 \begin_inset Formula $y^{(i)}\in\mathbb{R}^{+}$
 \end_inset
 
  is the target value.
- The decision tree model will this time be a function that takes a 
+ The decision tree model will this time be a function that takes a
 \begin_inset Formula $k$
 \end_inset
 
--dimensional feature vector with the same type of attributes as 
+-dimensional feature vector with the same type of attributes as
 \begin_inset Formula $\mathbf{x}^{(i)}$
 \end_inset
 
-, 
+,
 \begin_inset Formula $i\in\hat{k}$
 \end_inset
 
  as input, i.e.
- if 
+ if
 \begin_inset Formula $\mathbf{x=}(x_{1},\ldots,x_{k})$
 \end_inset
 
- then 
+ then
 \begin_inset Formula $x_{j}\in X_{j}$
 \end_inset
 
- for 
+ for
 \begin_inset Formula $\forall j\in\hat{k}$
 \end_inset
 
  and outputs a real valued estimation, i.e.
- 
+
 \begin_inset Formula $f(\mathbf{x})\in\mathbb{R}^{+}$
 \end_inset
 
@@ -2729,39 +2729,39 @@ where
 \end_layout
 
 \begin_layout Standard
-Let 
+Let
 \begin_inset Formula $S_{i}$
 \end_inset
 
- denote the set of labeled examples included in node 
+ denote the set of labeled examples included in node
 \begin_inset Formula $i$
 \end_inset
 
-, let 
+, let
 \begin_inset Formula $F_{i}$
 \end_inset
 
- be the set of all possible features in the node 
+ be the set of all possible features in the node
 \begin_inset Formula $i$
 \end_inset
 
-, let 
+, let
 \begin_inset Formula $\sigma(S_{i})$
 \end_inset
 
- be the standard deviation of labels in node 
+ be the standard deviation of labels in node
 \begin_inset Formula $i$
 \end_inset
 
- and let 
+ and let
 \begin_inset Formula $\sigma\left(S_{i},j\right)$
 \end_inset
 
- be the standard deviation of labels in the node 
+ be the standard deviation of labels in the node
 \begin_inset Formula $i$
 \end_inset
 
- for feature 
+ for feature
 \begin_inset Formula $j\in F_{i}$
 \end_inset
 
@@ -2771,20 +2771,20 @@ Let
 \begin_layout Standard
 In the first step of the algorithm, again, the decision tree consists only
  of its root node that contains all of the labeled samples i.e.
- 
+
 \begin_inset Formula $S_{0}=$
 \end_inset
 
- 
+
 \begin_inset Formula $\left\{ \left(x^{(i)},y^{(i)}\right)\right\} _{i=1}^{N}$
 \end_inset
 
-, 
+,
 \begin_inset Formula $F_{0}=\hat{k}$
 \end_inset
 
 .
- The standard deviation of the labels in 
+ The standard deviation of the labels in
 \begin_inset Formula $S_{0}$
 \end_inset
 
@@ -2792,26 +2792,26 @@ In the first step of the algorithm, again, the decision tree consists only
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula 
+\begin_inset Formula
 \begin{equation}
 \sigma\left(S_{0}\right)=\sqrt{\frac{1}{N}\sum_{i=1}^{N}\left(y^{(i)}-\overline{y}\right)^{2}},
 \end{equation}
 
 \end_inset
 
-where 
+where
 \begin_inset Formula $N$
 \end_inset
 
- is the number of examples in 
+ is the number of examples in
 \begin_inset Formula $S_{0}$
 \end_inset
 
- and 
+ and
 \begin_inset Formula $\overline{y}$
 \end_inset
 
- is the mean value of labels in 
+ is the mean value of labels in
 \begin_inset Formula $S_{0}$
 \end_inset
 
@@ -2819,105 +2819,105 @@ where
 \end_layout
 
 \begin_layout Standard
-For 
+For
 \begin_inset Formula $\forall j\in F_{0}$
 \end_inset
 
-, the standard deviation for the feature 
+, the standard deviation for the feature
 \begin_inset Formula $j$
 \end_inset
 
  is then calculated by
-\begin_inset Formula 
+\begin_inset Formula
 \begin{equation}
 \sigma\left(S_{0},j\right)=\sum_{c\in X_{j}}p\left(c\right)\sigma\left(c\right)
 \end{equation}
 
 \end_inset
 
-where 
+where
 \begin_inset Formula $p\left(c\right)$
 \end_inset
 
- is the proportion of examples in 
+ is the proportion of examples in
 \begin_inset Formula $S_{0}$
 \end_inset
 
- whose feature 
+ whose feature
 \begin_inset Formula $j$
 \end_inset
 
- belongs to the class 
+ belongs to the class
 \begin_inset Formula $c$
 \end_inset
 
 .
- Let 
+ Let
 \begin_inset Formula $N_{c}$
 \end_inset
 
- denote the number of samples in 
+ denote the number of samples in
 \begin_inset Formula $S_{0}$
 \end_inset
 
- whose feature 
+ whose feature
 \begin_inset Formula $j$
 \end_inset
 
- belongs to the class 
+ belongs to the class
 \begin_inset Formula $c$
 \end_inset
 
  i.e.
- 
+
 \begin_inset Formula $N_{c}=|\left\{ \left(\mathbf{x}^{(i)},y^{(i)}\right)\in S_{0}\mid x_{j}^{(i)}=c\right\} |$
 \end_inset
 
-, then 
+, then
 \begin_inset Formula $p\left(c\right)$
 \end_inset
 
  is given by
-\begin_inset Formula 
+\begin_inset Formula
 \begin{equation}
 p\left(c\right)=\frac{N_{c}}{\left|S_{0}\right|}
 \end{equation}
 
 \end_inset
 
-and 
+and
 \begin_inset Formula $\sigma\left(c\right)$
 \end_inset
 
- is the standard deviation of labels in 
+ is the standard deviation of labels in
 \begin_inset Formula $S_{0}$
 \end_inset
 
- whose feature 
+ whose feature
 \begin_inset Formula $j$
 \end_inset
 
  belongs to the class c, i.e.
-\begin_inset Formula 
+\begin_inset Formula
 \begin{equation}
 \sigma\left(c\right)=\sqrt{\frac{1}{N_{c}}\sum_{i=1}^{N_{c}}\left(y_{c}^{(i)}-\overline{y_{c}}\right)^{2}}
 \end{equation}
 
 \end_inset
 
-where 
+where
 \begin_inset Formula $y_{c}^{(i)}$
 \end_inset
 
- are the labels of samples whose feature 
+ are the labels of samples whose feature
 \begin_inset Formula $j$
 \end_inset
 
- belongs to the class 
+ belongs to the class
 \begin_inset Formula $c$
 \end_inset
 
- and 
+ and
 \begin_inset Formula $\overline{y_{c}}$
 \end_inset
 
@@ -2925,12 +2925,12 @@ where
 \end_layout
 
 \begin_layout Standard
-The best split is then chosen as the one with the highest 
+The best split is then chosen as the one with the highest
 \emph on
 standard deviation reduction
 \emph default
  given by
-\begin_inset Formula 
+\begin_inset Formula
 \begin{equation}
 \varDelta\sigma\left(S_{0},j\right)=\sigma\left(S_{0}\right)-\sigma\left(S_{0},j\right).
 \end{equation}
@@ -2944,12 +2944,12 @@ standard deviation reduction
 \begin_inset Formula $S_{0}$
 \end_inset
 
- is then split into subsets based on the chosen feature 
+ is then split into subsets based on the chosen feature
 \begin_inset Formula $j$
 \end_inset
 
  (the split is not necessarily binary), i.e.
-\begin_inset Formula 
+\begin_inset Formula
 \begin{equation}
 S_{c}=\left\{ \left(x^{(i)},y^{(i)}\right)\in S_{0}\mid x_{j}^{(i)}=c\right\} \qquad\forall c\in X_{j}
 \end{equation}
@@ -2960,7 +2960,7 @@ S_{c}=\left\{ \left(x^{(i)},y^{(i)}\right)\in S_{0}\mid x_{j}^{(i)}=c\right\} \q
 \end_layout
 
 \begin_layout Standard
-where each 
+where each
 \begin_inset Formula $S_{c}$
 \end_inset
 
@@ -2971,26 +2971,26 @@ where each
 The algorithm is stopped if either the selected reduction in variation is
  below a set threshold, there are no more features to split upon or if the
  tree reaches set maximum depth.
- 
+
 \end_layout
 
 \begin_layout Standard
-When the model is presented with a new input 
+When the model is presented with a new input
 \begin_inset Formula $\mathbf{x}$
 \end_inset
 
 , it follows the tree from the root down until a leaf node is reached.
- Let 
+ Let
 \begin_inset Formula $S_{n}$
 \end_inset
 
  denote such a leaf node , then output values is given by the average value
- of the labels in 
+ of the labels in
 \begin_inset Formula $S_{n}$
 \end_inset
 
 , i.e.
-\begin_inset Formula 
+\begin_inset Formula
 \begin{equation}
 f\left(\mathbf{x}\right)=\frac{1}{\left|S_{n}\right|}\sum_{(\mathbf{x}^{(i)},y^{(i)})\in S_{n}}y^{(i)}.
 \end{equation}
@@ -3001,17 +3001,17 @@ f\left(\mathbf{x}\right)=\frac{1}{\left|S_{n}\right|}\sum_{(\mathbf{x}^{(i)},y^{
 \end_layout
 
 \begin_layout Subsection
-Ensemble Learning and Random Forests 
+Ensemble Learning and Random Forests
 \end_layout
 
 \begin_layout Standard
 
 \emph on
-Ensemble learning 
+Ensemble learning
 \emph default
 is a machine learning technique that combines the predictions of multiple
  simpler models in order to boost its overall performance on a given task.
- An example of an ensemble learning method are 
+ An example of an ensemble learning method are
 \emph on
 random forests
 \emph default
@@ -3039,19 +3039,19 @@ A random forests model trained for a classification problem consists of
  an ensemble of classification trees.
  When making predictions based on an example it has not seen during the
  training process, the random forests model classifies the input as belonging
- to class 
+ to class
 \begin_inset Formula $c$
 \end_inset
 
-, if 
+, if
 \begin_inset Formula $c$
 \end_inset
 
- got the highest number of 
+ got the highest number of
 \emph on
 votes
 \emph default
- by the individual classification trees 
+ by the individual classification trees
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Hands-On ML"
@@ -3060,24 +3060,24 @@ literal "false"
 \end_inset
 
 .
- A class 
+ A class
 \begin_inset Formula $c$
 \end_inset
 
- gets a vote by a classification tree when the input 
+ gets a vote by a classification tree when the input
 \begin_inset Formula $\mathbf{x}$
 \end_inset
 
- is assigned the highest probability of belonging to 
+ is assigned the highest probability of belonging to
 \begin_inset Formula $c$
 \end_inset
 
 , i.e.
- class 
+ class
 \begin_inset Formula $c\in C$
 \end_inset
 
- gets the vote 
+ gets the vote
 \begin_inset Formula $\Longleftrightarrow c=\underset{a\in C}{\arg\max}$
 \end_inset
 
@@ -3085,7 +3085,7 @@ literal "false"
 \begin_inset Formula $\Pr\left(y=a\mid\mathbf{x}\right)$
 \end_inset
 
- , where 
+ , where
 \begin_inset Formula $C$
 \end_inset
 
@@ -3097,27 +3097,27 @@ Similarly, a random forest built for a regression problem consists of an
  ensemble of regression trees.
  The prediction of the forest is given by taking the average of the predictions
  made by the individual regression trees, i.e.
- 
-\begin_inset Formula 
+
+\begin_inset Formula
 \begin{equation}
 \hat{f}\left(\mathbf{x}\right)=\frac{1}{N}\sum_{n=1}^{N}f_{n}(\mathbf{x})
 \end{equation}
 
 \end_inset
 
-where 
+where
 \begin_inset Formula $\mathbf{x}$
 \end_inset
 
- is an input feature vector, 
+ is an input feature vector,
 \begin_inset Formula $\hat{f}$
 \end_inset
 
- is the forest's prediction, 
+ is the forest's prediction,
 \begin_inset Formula $N$
 \end_inset
 
- is the total number of trees and 
+ is the total number of trees and
 \begin_inset Formula $f_{n}$
 \end_inset
 
@@ -3130,7 +3130,7 @@ Building a Random Forest
 
 \begin_layout Standard
 The process of building a random forest model can divided into four steps
- 
+
 \begin_inset CommandInset citation
 LatexCommand cite
 key "100-page ML,Hands-On ML"
@@ -3151,7 +3151,7 @@ name "enu:Sampling-the-data:"
 
 \end_inset
 
- 
+
 \emph default
 In order to boost the performance of a random forests model (and other ensemble
  learning methods), it is vital to train the decision trees on different
@@ -3159,7 +3159,7 @@ In order to boost the performance of a random forests model (and other ensemble
  the same kind of error.
  Samples are taken randomly from the dataset in order to create multiple
  different subsets of the data.
- This process can be divided based on whether the samples are taken 
+ This process can be divided based on whether the samples are taken
 \begin_inset Quotes sld
 \end_inset
 
@@ -3169,17 +3169,17 @@ with replacement
 
  or not i.e.
  whether instances of the data can be used in training of multiple predictors
- or just once, this is called 
+ or just once, this is called
 \emph on
-bagging 
+bagging
 \emph default
-(abbreviation of 
+(abbreviation of
 \emph on
 bootstrap aggregating
 \emph default
 ) and
 \emph on
- pasting 
+ pasting
 \emph default
 respectively, with bagging being the generally more often used case for
  random forests.
@@ -3188,14 +3188,14 @@ respectively, with bagging being the generally more often used case for
 \begin_layout Enumerate
 
 \emph on
-Feature sampling: 
+Feature sampling:
 \emph default
 In order to even more differentiate the individual decision trees, only
  a random subset of the input features are considered when building a particular
  decision tree.
  The model will perform best when the input feature are independent of each
  other.
- 
+
 \end_layout
 
 \begin_layout Enumerate
@@ -3208,7 +3208,7 @@ Building the decision trees
  For even more randomized trees, it is possible to randomly select a threshold
  values for each split in the decision trees, instead of searching for the
  best possible threshold.
- These are called 
+ These are called
 \emph on
 Extremely Randomized Trees.
 \end_layout
@@ -3238,12 +3238,12 @@ Weak and Strong Learners
 
 \begin_layout Standard
 The reason why random forests are effective, and therefore so popular, lies
- in the 
+ in the
 \emph on
 law of large numbers
 \emph default
 .
- This means that by combining predictions from multiple 
+ This means that by combining predictions from multiple
 \emph on
 weak learners
 \emph default
@@ -3252,7 +3252,7 @@ weak learners
 \emph on
 strong learner
 \emph default
-) 
+)
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Hands-On ML,Random Forests"
@@ -3261,12 +3261,12 @@ literal "false"
 \end_inset
 
 .
- 
+
 \end_layout
 
 \begin_layout Standard
 For example, considering a classification random forest as described in
- Section 
+ Section
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:Examples-of-Random"
@@ -3277,33 +3277,33 @@ noprefix "false"
 \end_inset
 
  that is designed to classify inputs into two categories.
- Suppose that the forest consists of 
+ Suppose that the forest consists of
 \begin_inset Formula $1000$
 \end_inset
 
- classification trees whose predictions are correct only 
+ classification trees whose predictions are correct only
 \begin_inset Formula $51\%$
 \end_inset
 
  of the time (weak learners), i.e.
  the probability that they will give their vote to the correct class is
- 
+
 \begin_inset Formula $51\%$
 \end_inset
 
 .
- When the votes of all 
+ When the votes of all
 \begin_inset Formula $1000$
 \end_inset
 
  trees are combined, the probability that the correct class will recieve
- the highest number of votes is 
+ the highest number of votes is
 \begin_inset Formula $74.68\%$
 \end_inset
 
 .
  This implies that the random forest will accurately˚ categorize a newly
- introduced input with 
+ introduced input with
 \begin_inset Formula $74.68\%$
 \end_inset
 
@@ -3319,23 +3319,23 @@ Chronic Kidney Disease
 \end_layout
 
 \begin_layout Standard
-The 
+The
 \emph on
-chronic kidney disease 
+chronic kidney disease
 \emph default
 (CKD)
 \emph on
- 
+
 \emph default
 is a medical condition in which the kidneys gradually lose their ability
  to filter waste products and excess fluids from the blood system.
  CKD is the main cause for renal transplantation worldwide as roughly 90%
- of all renal transplantation are performed to treat the 
+ of all renal transplantation are performed to treat the
 \emph on
 end-stage renal disease
 \emph default
 , which is the final stage of CKD.
- The prevalence of CKD is estimated to be between 8% and 16% worldwide 
+ The prevalence of CKD is estimated to be between 8% and 16% worldwide
 \begin_inset CommandInset citation
 LatexCommand cite
 key "CKD: Global Dimensions and Perspectives"
@@ -3343,11 +3343,11 @@ literal "false"
 
 \end_inset
 
- and is observed to be on the rise, as in 2015, CKD caused roughly 
+ and is observed to be on the rise, as in 2015, CKD caused roughly
 \begin_inset Formula $1.2$
 \end_inset
 
- million deaths compared to 
+ million deaths compared to
 \begin_inset Formula $409,000$
 \end_inset
 
@@ -3387,9 +3387,9 @@ Firstly, their overall health is checked in order evaluate whether they
 \end_layout
 
 \begin_layout Standard
-Secondly, a process called 
+Secondly, a process called
 \emph on
-HLA typing 
+HLA typing
 \emph default
 is performed both on the patient and the potential donor.
  HLA typing assumes paramount importance in determining the immunological
@@ -3401,7 +3401,7 @@ is performed both on the patient and the potential donor.
 \end_layout
 
 \begin_layout Subsection
-HLA Typing 
+HLA Typing
 \begin_inset CommandInset label
 LatexCommand label
 name "subsec:HLA-Typing"
@@ -3413,7 +3413,7 @@ name "subsec:HLA-Typing"
 
 \begin_layout Standard
 The process of HLA typing involves testing the person's blood and tissue
- to determine their 
+ to determine their
 \emph on
 human leukocyte antigen
 \emph default
@@ -3421,7 +3421,7 @@ human leukocyte antigen
  response.
  Incompatible pairs are discarded while potentially compatible pairs have
  their blood tested against each other in a laboratory using a process called
- 
+
 \emph on
 cross-matching.
 \end_layout
@@ -3439,14 +3439,14 @@ Cross-matching
  or lyse.
  This reaction can be seen under a microscope, and the degree of lysis can
  be graded to determine the strength of the reaction.
- When no reaction occurs, the cross-match is called 
+ When no reaction occurs, the cross-match is called
 \emph on
 negative
 \emph default
-, whereas if a reaction occurs, the cross-match is called 
+, whereas if a reaction occurs, the cross-match is called
 \emph on
 positive.
- 
+
 \emph default
 A positive cross-match does not automatically mean that the transplantation
  cannot proceed though, as a successful transplantation may still be possible
@@ -3458,9 +3458,9 @@ ssive drugs that suppress the activity of the immune system.
 
 \begin_layout Standard
 The decision on which pairings to discard and which ones to to perform a
- cross-match on is done by calculating a 
+ cross-match on is done by calculating a
 \emph on
-HLA mismatch 
+HLA mismatch
 \begin_inset CommandInset label
 LatexCommand label
 name "HLA mismatch"
@@ -3468,10 +3468,10 @@ name "HLA mismatch"
 \end_inset
 
 .
- 
+
 \emph default
 The HLA antigens are classified based on their biochemical and functional
- properties 
+ properties
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Kidney transplantation"
@@ -3479,18 +3479,18 @@ literal "false"
 
 \end_inset
 
-: 
+:
 \emph on
 HLA class I
 \emph default
- and 
+ and
 \emph on
 HLA class II.
- 
+
 \emph default
 Class I antigens are present on the surface of most nucleated cells in the
  body, while class II antigens are specific to certain cells related to
- immune function 
+ immune function
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Kidney transplantation"
@@ -3503,7 +3503,7 @@ literal "false"
  specific position on a chromosome): HLA-A, HLA-B and HLA-C in the case
  of HLA class I and HLA-DR, HLA-DQ, HLA-DP in the case of HLA class II.
  Each locus is further divided into alleles (an allele represents specific
- DNA sequences at a given locus): HLA-B27, HLA-DRB101, and so on 
+ DNA sequences at a given locus): HLA-B27, HLA-DRB101, and so on
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Kidney transplantation"
@@ -3518,7 +3518,7 @@ literal "false"
  A higher score indicates a greater degree of immunological incompatibility
  in the pairing..
  The relationship between HLA mismatches and allograft survival time has
- been revealed thanks to the UNOS data, that will be used later 
+ been revealed thanks to the UNOS data, that will be used later
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Kidney transplantation"
@@ -3532,7 +3532,7 @@ literal "false"
 \begin_layout Standard
 Within the UNOS dataset, only the HLA-A, HLA-B and HLA-DR loci are being
  used for computing mismatch.
- As illustrated in Table 
+ As illustrated in Table
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:HLA-Mismatch"
@@ -3547,11 +3547,11 @@ noprefix "false"
  The overall HLA mismatch is then given by the sum of these locus mismatches.
  Note that D- represents donor's typing while R- represents recipient's
  typing.
- 
+
 \end_layout
 
 \begin_layout Standard
-For example, in the first row of the Table 
+For example, in the first row of the Table
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:HLA-Mismatch"
@@ -3566,12 +3566,12 @@ noprefix "false"
  HLA-B and HLA-DR loci.
  At the HLA-A locus, both the donor and the recipient have one identical
  allele (2) therefore, the mismatch at the HLA-A locus is only 1.
- In total, the HLA mismatch is 
+ In total, the HLA mismatch is
 \begin_inset Formula $1+2+2=5$
 \end_inset
 
 .
- 
+
 \end_layout
 
 \begin_layout Standard
@@ -3647,7 +3647,7 @@ textwidth}{!}{
 \begin_inset Text
 
 \begin_layout Plain Layout
-donor's HLA typing 
+donor's HLA typing
 \end_layout
 
 \end_inset
@@ -4892,11 +4892,11 @@ The aforementioned procedures have been very successful at reducing the
  risk of graft failure shortly after the transplantation.
  In recent years, improvements in these techniques have successfully minimized
  the risk of an acute transplantation rejection within the first year of
- the transplantation below 
+ the transplantation below
 \begin_inset Formula $15\%$
 \end_inset
 
- 
+
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Chronic kidney allograft loss"
@@ -4913,7 +4913,7 @@ literal "false"
  as well as patient follow-up.
  This presents an opportunity for the use of machine learning techniques,
  aimed at uncovering these correlations.
- 
+
 \end_layout
 
 \begin_layout Standard
@@ -4930,7 +4930,7 @@ Given that the majority of well-documented data originates from the last
  do not inherently handle this type of data when considering the patient's
  survival time as the target variable.
  However, there exists a field of statistics that addresses these challenges
- called 
+ called
 \emph on
 survival analysis
 \emph default
@@ -4948,16 +4948,16 @@ Introduction to Survival Analysis
 \begin_layout Standard
 Survival analysis is a collection of statistical procedures for data analysis,
  for which the outcome variable of interest is time until an event occurs,
- usually referred to as 
+ usually referred to as
 \emph on
-time-to-event 
+time-to-event
 \emph default
-or 
+or
 \emph on
 survival time.
 
 \emph default
- 
+
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Survival Analysis self-learn"
@@ -4972,7 +4972,7 @@ literal "false"
  the date of diagnosis, the start of a treatment or a transplantation, until
  the occurrence of an event of interest, usually meaning the death of a
  patient, disease incidence, relapse from remission, recovery or in the
- case of kidney transplantation: 
+ case of kidney transplantation:
 \emph on
 graft failure
 \emph default
@@ -4980,27 +4980,27 @@ graft failure
  Survival analysis is not limited to medical applications, as it is often
  used, for instance, to model reliability in engineering, i.e.
  to study the time until a failure of mechanical system occurs.
- 
+
 \end_layout
 
 \begin_layout Standard
 Survival analysis involves several statistical techniques that are commonly
- used in medicinal research, namely the 
+ used in medicinal research, namely the
 \emph on
 Kaplan-Meier estimator
 \emph default
-, the 
+, the
 \emph on
-Log-Rank test 
+Log-Rank test
 \emph default
-and the 
+and the
 \emph on
 Cox proportional hazards model
 \emph default
  just to name a few.
  These will be explained in detail further in this chapter, with the former
  two also being a vital part of the algorithm behind random survival forests
- described in Section 
+ described in Section
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Random-Survival-Forests"
@@ -5019,7 +5019,7 @@ Data Censoring
 
 \begin_layout Standard
 A crucial challenge that all survival analysis methods have to tackle is
- 
+
 \emph on
 data censoring
 \emph default
@@ -5027,20 +5027,20 @@ data censoring
 l, which happens, for example, as a result of a study ending before the
  said individual experiences an event or if the individual withdraws from
  the study.
- This kind of censoring is called 
+ This kind of censoring is called
 \emph on
-right censoring, 
+right censoring,
 \emph default
 meaning that if the survival time were to be plotted along a horizontal
  axis, the event would happen to the right side of the cutoff point of the
  study, but it is unknown by how much.
- 
+
 \end_layout
 
 \begin_layout Standard
 
 \emph on
-Left censored 
+Left censored
 \emph default
 data are also possible, but they are uncommon in the case of post-tranplantation
  data as the the date of transplantation is naturally almost always known.
@@ -5061,42 +5061,42 @@ name "subsec:Survival-and-Hazard"
 \end_layout
 
 \begin_layout Standard
-The two fundamental functions of survival analysis are the 
+The two fundamental functions of survival analysis are the
 \emph on
-survival function 
+survival function
 \emph default
-denoted by 
+denoted by
 \begin_inset Formula $S(t)$
 \end_inset
 
- and the 
+ and the
 \emph on
-hazard function, 
+hazard function,
 \emph default
-also called the 
+also called the
 \emph on
-instantaneous failure rate 
+instantaneous failure rate
 \emph default
-denoted by 
+denoted by
 \emph on
 
 \begin_inset Formula $h(t)$
 \end_inset
 
 .
- 
+
 \emph default
-The survival function describes the probability of an individual 
+The survival function describes the probability of an individual
 \emph on
 surviving
 \emph default
  (i.e.
- not experiencing an event) longer, than a specified point in time 
+ not experiencing an event) longer, than a specified point in time
 \begin_inset Formula $t$
 \end_inset
 
 .
- In another words, it is defined as 
+ In another words, it is defined as
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Survival Analysis self-learn"
@@ -5105,40 +5105,40 @@ literal "false"
 \end_inset
 
 
-\begin_inset Formula 
+\begin_inset Formula
 \begin{equation}
 S(t)=\Pr(T>t)
 \end{equation}
 
 \end_inset
 
-where 
+where
 \begin_inset Formula $T$
 \end_inset
 
  is a random variable describing the survival time of an individual.
- 
+
 \end_layout
 
 \begin_layout Standard
 In contrast, the hazard function, as hinted by its alternative name, gives
  the the instantaneous potential per unit time (usually days) for the event
- to occur, given that the individual has survived up to time 
+ to occur, given that the individual has survived up to time
 \begin_inset Formula $t$
 \end_inset
 
-, that is, the hazard function is focused on 
+, that is, the hazard function is focused on
 \emph on
 failing
 \emph default
  (i.e.
  event occurring) compared to the survival function which is focused on
- 
+
 \emph on
-not failing 
+not failing
 \emph default
 (i.e.
- surviving) 
+ surviving)
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Survival Analysis self-learn"
@@ -5147,16 +5147,16 @@ literal "false"
 \end_inset
 
 .
- What is meant by the word 
+ What is meant by the word
 \emph on
 potential
 \emph default
 , is the probability of an event happening within a given time frame and
- as this this potential is 
+ as this this potential is
 \emph on
 instantaneous
 \emph default
-, it is given by the following limit 
+, it is given by the following limit
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Survival Analysis self-learn"
@@ -5165,7 +5165,7 @@ literal "false"
 \end_inset
 
 
-\begin_inset Formula 
+\begin_inset Formula
 \begin{equation}
 h(t)=\lim_{\Delta t\to0}\frac{\Pr\left(t\leq T<t+\Delta t\mid T\geq t\right)}{\Delta t}.
 \end{equation}
@@ -5181,7 +5181,7 @@ While the survival functions may seem to be obvious option for describing
  with which the survival models are described by, since it provides a more
  direct measure of risk over time.
  Importantly, either of the functions can be derived from the other one
- using one of the following formulae 
+ using one of the following formulae
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Survival Analysis self-learn"
@@ -5190,7 +5190,7 @@ literal "false"
 \end_inset
 
 
-\begin_inset Formula 
+\begin_inset Formula
 \begin{equation}
 S(t)=\exp\left[-\intop_{0}^{t}h(u)du\right]\label{eq: Hazard to Survival}
 \end{equation}
@@ -5198,7 +5198,7 @@ S(t)=\exp\left[-\intop_{0}^{t}h(u)du\right]\label{eq: Hazard to Survival}
 \end_inset
 
 
-\begin_inset Formula 
+\begin_inset Formula
 \begin{equation}
 h(t)=-\left(\frac{\frac{dS(t)}{dt}}{S(t)}\right)
 \end{equation}
@@ -5221,25 +5221,25 @@ name "subsec:Hazard-Ratio"
 
 \begin_layout Standard
 One of the most common goals of survival analysis is to describe a correlation
- between a given 
+ between a given
 \emph on
 exposure variable
 \emph default
  ( i.e.
- a feature of an instance in the data) and the 
+ a feature of an instance in the data) and the
 \emph on
 outcome variable
 \emph default
  (e.g.
  survival time).
- This relationship is described using the 
+ This relationship is described using the
 \emph on
 hazard ratio
 \emph default
  (HR), which describes the relative risk of an event occurring in one group
  compared to another, i.e.
  it is calculated as the ratio of the hazard functions of two groups
-\begin_inset Formula 
+\begin_inset Formula
 \begin{equation}
 \mathrm{HR}(t)=\frac{h_{1}(t)}{h_{2}(t)}
 \end{equation}
@@ -5259,7 +5259,7 @@ A hazard ratio of 1, means that the probability of an event occurring at
 
 \begin_layout Standard
 Analogously, a hazard ratio of 5 would mean that the first group has a five
- times larger hazard than the second group 
+ times larger hazard than the second group
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Survival Analysis self-learn"
@@ -5275,7 +5275,7 @@ Survival Analysis Methods
 \end_layout
 
 \begin_layout Subsection
-Kaplan-Meier Estimator 
+Kaplan-Meier Estimator
 \begin_inset CommandInset label
 LatexCommand label
 name "subsec:Kaplan-Meier-Estimator"
@@ -5287,11 +5287,11 @@ name "subsec:Kaplan-Meier-Estimator"
 
 \begin_layout Standard
 One of the most widely used methods to estimate the survival function is
- the 
+ the
 \emph on
-Kaplan-Meier estimator 
+Kaplan-Meier estimator
 \emph default
-that works as follows 
+that works as follows
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Survival Analysis self-learn"
@@ -5300,86 +5300,86 @@ literal "false"
 \end_inset
 
 .
- Let there be a dataset containing 
+ Let there be a dataset containing
 \begin_inset Formula $n$
 \end_inset
 
- entries with each entry 
+ entries with each entry
 \begin_inset Formula $i$
 \end_inset
 
- containing information about the individual's survival time 
+ containing information about the individual's survival time
 \begin_inset Formula $T_{i}$
 \end_inset
 
- and censoring status 
+ and censoring status
 \begin_inset Formula $\delta_{i}$
 \end_inset
 
-, where 
+, where
 \begin_inset Formula $\delta_{i}=1$
 \end_inset
 
- if an event has been observed at time 
+ if an event has been observed at time
 \begin_inset Formula $T_{i}$
 \end_inset
 
- and 
+ and
 \begin_inset Formula $\delta_{i}=0$
 \end_inset
 
- if the entry is right censored at time 
+ if the entry is right censored at time
 \begin_inset Formula $T_{i}$
 \end_inset
 
 .
- Let 
+ Let
 \begin_inset Formula $\tau$
 \end_inset
 
- denote the set of all unique event times, i.e 
+ denote the set of all unique event times, i.e
 \begin_inset Formula $\tau\coloneqq\left\{ T_{i}\mid\delta_{i}=1,\:i=0,\ldots,n\right\} ,$
 \end_inset
 
- let 
+ let
 \begin_inset Formula $f_{j}$
 \end_inset
 
- denote the denote the number of individuals who fail at time 
+ denote the denote the number of individuals who fail at time
 \begin_inset Formula $t_{j}$
 \end_inset
 
- and let 
+ and let
 \begin_inset Formula $r_{j}$
 \end_inset
 
- denote the number of individuals at risk at time 
+ denote the number of individuals at risk at time
 \begin_inset Formula $t_{j}$
 \end_inset
 
  (i.e.
- have yet to experience an event or are yet to be censored), then 
+ have yet to experience an event or are yet to be censored), then
 \begin_inset Formula $\forall t_{j}\in\tau$
 \end_inset
 
- the probability of an individual surviving past 
+ the probability of an individual surviving past
 \begin_inset Formula $t_{j}$
 \end_inset
 
- for 
+ for
 \begin_inset Formula $j=1,\ldots,|\tau|$
 \end_inset
 
- given that they have already survived until at least 
+ given that they have already survived until at least
 \begin_inset Formula $t_{j}$
 \end_inset
 
- is given by the conditional probability 
+ is given by the conditional probability
 \begin_inset Formula $\Pr(T>t_{j}\mid T\geq t_{j})$
 \end_inset
 
  which is deductible from the dataset as follows
-\begin_inset Formula 
+\begin_inset Formula
 \begin{equation}
 \Pr(T>t_{j}\mid T\geq t_{j})=1-\frac{f_{j}}{r_{j}}.
 \end{equation}
@@ -5387,45 +5387,45 @@ literal "false"
 \end_inset
 
 Note that the number of individuals at risk does not take in account the
- individuals that were previously censored, that is 
+ individuals that were previously censored, that is
 \begin_inset Formula $r_{j}=r_{j-1}-f_{j-1}-c_{j-1}$
 \end_inset
 
-, where 
+, where
 \begin_inset Formula $c_{j-1}$
 \end_inset
 
-is the number of individuals that were censored during 
+is the number of individuals that were censored during
 \begin_inset Formula $[t_{j-1},t_{j})$
 \end_inset
 
 .
- 
+
 \end_layout
 
 \begin_layout Standard
 The survival function is a function that outputs the probability of surviving
- past a given time 
+ past a given time
 \begin_inset Formula $t$
 \end_inset
 
-, therefore, thanks to the 
+, therefore, thanks to the
 \emph on
 chain rule
 \emph default
- of probability, the 
+ of probability, the
 \emph on
 Kaplan-Meier curve
 \emph default
- 
+
 \begin_inset Formula $\hat{S}$
 \end_inset
 
- estimates the survival function at times 
+ estimates the survival function at times
 \begin_inset Formula $t_{1},\ldots,t_{|\tau|}$
 \end_inset
 
- as follows 
+ as follows
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Survival Analysis self-learn"
@@ -5434,7 +5434,7 @@ literal "false"
 \end_inset
 
 
-\begin_inset Formula 
+\begin_inset Formula
 \begin{equation}
 \hat{S}(t_{j})=\Pr(T>t_{j})=\prod_{k=1}^{j}\Pr(T>t_{k}\mid T\geq t_{k}).
 \end{equation}
@@ -5446,21 +5446,21 @@ literal "false"
 
 \begin_layout Standard
 Thanks to this notation, the Kaplan-Meier formula is often referred to as
- the 
+ the
 \emph on
-product-limit formula 
+product-limit formula
 \emph default
 as it is a product of probabilities that is limited by the time point being
  observed.
- The Kaplan-Meier curve itself assumes that 
+ The Kaplan-Meier curve itself assumes that
 \begin_inset Formula $\hat{S}(t)$
 \end_inset
 
- remains constant over 
+ remains constant over
 \begin_inset Formula $t_{j}\leq t<t_{j+1}$
 \end_inset
 
-, therefore the curve has a 
+, therefore the curve has a
 \begin_inset Quotes sld
 \end_inset
 
@@ -5485,7 +5485,7 @@ name "subsec:Log-rank-Test"
 \begin_layout Standard
 The log-rank test is a statistical test used to compare the survival distributio
 n of two or more groups and decide whether their survival curves are statistical
-ly equivalent or not 
+ly equivalent or not
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Survival Analysis self-learn"
@@ -5495,7 +5495,7 @@ literal "false"
 
 .
  The log-rank statistic is also used as a split-rule criterion for building
- survival trees that are explained in Section 
+ survival trees that are explained in Section
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Random-Survival-Forests"
@@ -5514,48 +5514,48 @@ noprefix "false"
 
 \begin_layout Standard
 Assuming that a dataset contains information about two groups of individuals
- along with their survival time and censoring status, let 
+ along with their survival time and censoring status, let
 \begin_inset Formula $\tau$
 \end_inset
 
  again denote the set of all unique event times regardless of group.
- Then 
+ Then
 \begin_inset Formula $\forall t_{j}\in\tau$
 \end_inset
 
- an expected count of failures 
+ an expected count of failures
 \begin_inset Formula $e_{j}^{(i)}$
 \end_inset
 
  is computed for each group
-\begin_inset Formula 
+\begin_inset Formula
 \begin{equation}
 e_{j}^{(1)}=\frac{r_{j}^{(1)}}{r_{j}^{(1)}+r_{j}^{(2)}}\cdot(f_{j}^{(1)}+f_{j}^{(2)}),\qquad e_{j}^{(2)}=\frac{r_{j}^{(2)}}{r_{j}^{(1)}+r_{j}^{(2)}}\cdot(f_{j}^{(1)}+f_{j}^{(2)})
 \end{equation}
 
 \end_inset
 
-where 
+where
 \begin_inset Formula $r_{j}^{(i)}$
 \end_inset
 
- is the number of individuals from group 
+ is the number of individuals from group
 \begin_inset Formula $i$
 \end_inset
 
- at risk at time 
+ at risk at time
 \begin_inset Formula $t_{j}$
 \end_inset
 
- and 
+ and
 \begin_inset Formula $f_{j}^{(i)}$
 \end_inset
 
- is the number of failures in group 
+ is the number of failures in group
 \begin_inset Formula $i$
 \end_inset
 
- at time 
+ at time
 \begin_inset Formula $t_{j}.$
 \end_inset
 
@@ -5563,22 +5563,22 @@ where
 \end_layout
 
 \begin_layout Standard
-Let 
+Let
 \begin_inset Formula $O_{i}-E_{i}=\sum_{t_{j}\in\tau}f_{j}^{(i)}-e_{j}^{(i)}$
 \end_inset
 
  represent the sum of the differences between the observed and the expected
- counts of failures over all of the unique event times for group 
+ counts of failures over all of the unique event times for group
 \begin_inset Formula $i$
 \end_inset
 
 .
- The log-rank statistic for the group 
+ The log-rank statistic for the group
 \begin_inset Formula $i$
 \end_inset
 
- is then given by 
-\begin_inset Formula 
+ is then given by
+\begin_inset Formula
 \begin{equation}
 L^{(i)}=\frac{(O_{i}-E_{i})^{2}}{\mathrm{Var}(O_{i}-E_{i})}
 \end{equation}
@@ -5589,7 +5589,7 @@ L^{(i)}=\frac{(O_{i}-E_{i})^{2}}{\mathrm{Var}(O_{i}-E_{i})}
 \end_layout
 
 \begin_layout Subsection
-Cox Regression 
+Cox Regression
 \begin_inset CommandInset label
 LatexCommand label
 name "subsec:Cox-Regression"
@@ -5604,13 +5604,13 @@ name "subsec:Cox-Regression"
 \emph on
 Cox regression
 \emph default
-, also referred to as the 
+, also referred to as the
 \emph on
 Cox proportional hazards model
 \emph default
 , is a mathematical model used for analysis of time-to-event data.
  Specifically, it is used to model an individual's hazard function based
- on a set of given predictor variables 
+ on a set of given predictor variables
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Survival Analysis self-learn"
@@ -5635,31 +5635,31 @@ Formula
 
 \begin_layout Standard
 The general formula of the Cox regression model describes the hazard function
- as 
-\begin_inset Formula 
+ as
+\begin_inset Formula
 \begin{equation}
 h(t,\mathbf{X})=h_{0}(t)\exp\left(\sum_{i=1}^{k}\beta_{i}X_{i}\right)\label{eq: Cox regression}
 \end{equation}
 
 \end_inset
 
-where 
+where
 \begin_inset Formula $\mathbf{X}=\left(X_{1},X_{2},\ldots X_{k}\right)$
 \end_inset
 
- is a set of 
+ is a set of
 \begin_inset Formula $k$
 \end_inset
 
- predictor variables, 
+ predictor variables,
 \begin_inset Formula $h(t,\mathbf{X})$
 \end_inset
 
- represents the hazard function at time 
+ represents the hazard function at time
 \begin_inset Formula $t$
 \end_inset
 
- and given predictor variables 
+ and given predictor variables
 \begin_inset Formula $\mathbf{X},$
 \end_inset
 
@@ -5667,22 +5667,22 @@ where
 \begin_inset Formula $h_{0}(t)$
 \end_inset
 
- is an unspecified 
+ is an unspecified
 \emph on
 baseline hazard function
 \emph default
- and 
+ and
 \begin_inset Formula $\beta=\left(\beta_{1},\beta_{2},\ldots,\beta_{k}\right)$
 \end_inset
 
  represent constant coefficients associated with corresponding predictor
  variables.
- The fact that 
+ The fact that
 \begin_inset Formula $h_{0}$
 \end_inset
 
  is unspecified, makes Cox regression a semi-parametric model (in contrast
- to parametric models, whose functional form is known) 
+ to parametric models, whose functional form is known)
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Survival Analysis self-learn"
@@ -5695,7 +5695,7 @@ literal "false"
  not always be clear which parametric model is appropriate for a given problem.
  As a result, a semi-parametric model is a great tool when uncertain about
  which parametric model to use, as a semi-parametric model will typically
- approximate the results of the correct parametric model 
+ approximate the results of the correct parametric model
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Survival Analysis self-learn"
@@ -5719,37 +5719,37 @@ noprefix "false"
 \end_inset
 
 ) is that the baseline hazard function is dependent only on time, whereas
- the second part of the expression 
+ the second part of the expression
 \begin_inset Formula $e^{\sum_{i=1}^{k}\beta_{i}X_{i}}$
 \end_inset
 
- only involves the 
+ only involves the
 \begin_inset Formula $X$
 \end_inset
 
 s, which means the predictor variables are time-independent.
- This assumption is called the 
+ This assumption is called the
 \emph on
 proportional hazards
 \emph default
  assumption.
  If time-dependent predictor variables were to be considered, a variation
- of the Cox model would be required called the 
+ of the Cox model would be required called the
 \emph on
 extended Cox model
 \emph default
 .
- 
+
 \end_layout
 
 \begin_layout Standard
 To measure the effect of a particular predictor variable on the overall
- hazard, a 
+ hazard, a
 \emph on
 hazard ratio
 \emph default
  is calculated without the need to know the baseline hazard function explicitly
- using only estimates of the 
+ using only estimates of the
 \begin_inset Formula $\beta$
 \end_inset
 
@@ -5761,25 +5761,25 @@ Partial Maximum Likelihood Estimation
 \end_layout
 
 \begin_layout Standard
-The estimates for the 
+The estimates for the
 \begin_inset Formula $\beta$
 \end_inset
 
- coefficients can be obtained using a 
+ coefficients can be obtained using a
 \emph on
 partial maximum likelihood
 \emph default
- 
+
 \emph on
 estimation
 \emph default
- method and are denoted as 
+ method and are denoted as
 \begin_inset Formula $\hat{\beta}$
 \end_inset
 
 .
- The estimated model would then be 
-\begin_inset Formula 
+ The estimated model would then be
+\begin_inset Formula
 \begin{equation}
 \hat{h}(t,\mathbf{X})=\hat{h_{0}}(t)\exp\left(\sum_{i=1}^{k}\hat{\beta_{i}}X_{i}\right)\label{eq:Hazard function estimate}
 \end{equation}
@@ -5790,33 +5790,33 @@ estimation
 \end_layout
 
 \begin_layout Standard
-Given that we have a random sample of 
+Given that we have a random sample of
 \begin_inset Formula $n$
 \end_inset
 
- entries 
+ entries
 \begin_inset Formula $Y_{1},Y_{2},\ldots,Y_{n}$
 \end_inset
 
- with each entry containing information about the 
+ with each entry containing information about the
 \begin_inset Formula $k$
 \end_inset
 
- predictor variables, survival time 
+ predictor variables, survival time
 \begin_inset Formula $T$
 \end_inset
 
- and censoring status 
+ and censoring status
 \begin_inset Formula $\delta$
 \end_inset
 
  and that the sample comes from an unknown joint probability distribution.
- Then the maximum likelihood estimation for 
+ Then the maximum likelihood estimation for
 \begin_inset Formula $\beta$
 \end_inset
 
- is given by 
-\begin_inset Formula 
+ is given by
+\begin_inset Formula
 \begin{equation}
 \hat{\beta}=\arg\max_{\beta\in\Theta}L\left(\beta\right)\label{eq:Max likelihood function}
 \end{equation}
@@ -5827,7 +5827,7 @@ Given that we have a random sample of
 \end_layout
 
 \begin_layout Standard
-where 
+where
 \begin_inset Formula $L$
 \end_inset
 
@@ -5835,30 +5835,30 @@ where
 \end_layout
 
 \begin_layout Standard
-The maximum likelihood function is conventionally defined as 
-\begin_inset Formula 
+The maximum likelihood function is conventionally defined as
+\begin_inset Formula
 \begin{equation}
 L\left(\beta\right)=\prod_{i=1}^{k}f_{Y_{i}}(y_{i},\beta)\label{eq:full maximum likelihood function}
 \end{equation}
 
 \end_inset
 
-where 
+where
 \begin_inset Formula $f_{Y_{i}}$
 \end_inset
 
-is the univariate probability density function associated with the 
+is the univariate probability density function associated with the
 \begin_inset Formula $i$
 \end_inset
 
 -th random variable from the random sample.
  However, one of the key features of the Cox model is that there is no assumed
  distribution for the survival time, therefore it is not possible to compute
- a 
+ a
 \emph on
-full 
+full
 \emph default
-maximum likelihood 
+maximum likelihood
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Survival Analysis self-learn"
@@ -5877,16 +5877,16 @@ noprefix "false"
 \end_inset
 
 ).
- Therefore, a 
+ Therefore, a
 \emph on
 partial likelihood
 \emph default
  is used, which
 \emph on
- 
+
 \emph default
 only considers probabilities of the subjects who fail, i.e.
- with censoring status 
+ with censoring status
 \begin_inset Formula $\delta=1.$
 \end_inset
 
@@ -5895,97 +5895,97 @@ only considers probabilities of the subjects who fail, i.e.
 
 \begin_layout Standard
 This means that the partial likelihood function can be written as
-\begin_inset Formula 
+\begin_inset Formula
 \begin{equation}
 L=\prod_{j=1}^{p}L_{j}
 \end{equation}
 
 \end_inset
 
-where 
+where
 \begin_inset Formula $p$
 \end_inset
 
- is the number of failures within the random sample and 
+ is the number of failures within the random sample and
 \begin_inset Formula $L_{j}$
 \end_inset
 
- is the likelihood of failing at the 
+ is the likelihood of failing at the
 \begin_inset Formula $j$
 \end_inset
 
 -th time.
- The set of individuals at risk of failing at time 
+ The set of individuals at risk of failing at time
 \begin_inset Formula $j$
 \end_inset
 
- is denoted by 
+ is denoted by
 \begin_inset Formula $R(t_{j})$
 \end_inset
 
 .
  It is important to note that while the partial likelihood focuses only
- on the subjects that fail, 
+ on the subjects that fail,
 \begin_inset Formula $R(t_{j})$
 \end_inset
 
  also includes the individuals that will be censored later, thus they are
- also needed for the computation of 
+ also needed for the computation of
 \begin_inset Formula $L_{j}$
 \end_inset
 
 .
- 
+
 \begin_inset Formula $L_{j}$
 \end_inset
 
  is defined as a ratio of the hazard function of the individual, who failed
- at time 
+ at time
 \begin_inset Formula $j$
 \end_inset
 
- over the sum of the hazards of individuals at risk at time 
+ over the sum of the hazards of individuals at risk at time
 \begin_inset Formula $j$
 \end_inset
 
 , i.e.
- 
-\begin_inset Formula 
+
+\begin_inset Formula
 \begin{equation}
 L_{j}\left(\beta\right)=\frac{h_{0}\left(t\right)\exp\left(\beta\cdot\mathbf{X}_{j}\right)}{\sum_{i\in R(t_{j})}h_{0}\left(t\right)\exp\left(\beta\cdot\mathbf{X}_{i}\right)}
 \end{equation}
 
 \end_inset
 
-where 
+where
 \begin_inset Formula $\mathbf{X}_{j}$
 \end_inset
 
  denotes the vector of predictor variables describing the individual who
- failed at time 
+ failed at time
 \begin_inset Formula $j$
 \end_inset
 
- and 
+ and
 \begin_inset Formula $\mathbf{X}_{i}$
 \end_inset
 
- for 
+ for
 \begin_inset Formula $i\in R(t_{j})$
 \end_inset
 
  denotes the vector of predictor variables describing the individuals at
- risk at time 
+ risk at time
 \begin_inset Formula $j$
 \end_inset
 
 .
- As 
+ As
 \begin_inset Formula $h_{0}\left(t\right)$
 \end_inset
 
- cancels out, the partial likelihood function can be written as 
-\begin_inset Formula 
+ cancels out, the partial likelihood function can be written as
+\begin_inset Formula
 \begin{equation}
 L\left(\beta\right)=\prod_{j=1}^{p}\frac{\exp\left(\beta\cdot\mathbf{X}_{j}\right)}{\sum_{i\in R(t_{j})}\exp\left(\beta\cdot\mathbf{X}_{i}\right)}
 \end{equation}
@@ -5996,7 +5996,7 @@ L\left(\beta\right)=\prod_{j=1}^{p}\frac{\exp\left(\beta\cdot\mathbf{X}_{j}\righ
 \end_layout
 
 \begin_layout Standard
-Once the partial likelihood function 
+Once the partial likelihood function
 \begin_inset Formula $L$
 \end_inset
 
@@ -6012,14 +6012,14 @@ noprefix "false"
 
 ) is generally solved by maximizing the natural log of L, i.e.
  finding the roots of
-\begin_inset Formula 
+\begin_inset Formula
 \begin{equation}
 \frac{\partial\ln L}{\partial\beta_{i}}=0\qquad\textrm{for \ensuremath{i=1,\ldots,k}}
 \end{equation}
 
 \end_inset
 
-This gives us a system of equations that can be solved numerically 
+This gives us a system of equations that can be solved numerically
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Survival Analysis self-learn"
@@ -6035,7 +6035,7 @@ Hazard Ratio Estimation
 \end_layout
 
 \begin_layout Standard
-As described in Section 
+As described in Section
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:Hazard-Ratio"
@@ -6048,25 +6048,25 @@ noprefix "false"
 , the hazard ratio is defined as the ratio of hazards of two different individua
 ls.
  The estimation of the hazard ratio is therefore given by
-\begin_inset Formula 
+\begin_inset Formula
 \begin{equation}
 \hat{HR}=\frac{\hat{h}(t,\mathbf{X}^{*})}{\hat{h}(t,\mathbf{X})}
 \end{equation}
 
 \end_inset
 
-where 
+where
 \begin_inset Formula $\mathbf{X}^{*}=\left(X_{1}^{*},X_{2}^{*},\ldots,X_{n}^{*}\right)$
 \end_inset
 
- and 
+ and
 \begin_inset Formula $\mathbf{X}=\left(X_{1},X_{2},\ldots X_{k}\right)$
 \end_inset
 
  denote the sets of predictors of two different individuals.
  The ratio is commonly written so that the higher-valued hazard is in the
  numerator.
- This ensures that the ratio is always greater than 
+ This ensures that the ratio is always greater than
 \begin_inset Formula $1$
 \end_inset
 
@@ -6081,8 +6081,8 @@ noprefix "false"
 
 \end_inset
 
-) we get that 
-\begin_inset Formula 
+) we get that
+\begin_inset Formula
 \begin{equation}
 \hat{HR}=\frac{\hat{h_{0}}(t)\exp\left(\sum_{i=1}^{k}\hat{\beta_{i}}X_{i}^{*}\right)}{\hat{h_{0}}(t)\exp\left(\sum_{i=1}^{k}\hat{\beta_{i}}X_{i}\right)}=\exp\left(\sum_{i=1}^{k}\hat{\beta_{i}}\left(X_{i}^{*}-X_{i}\right)\right)
 \end{equation}
@@ -6090,30 +6090,30 @@ noprefix "false"
 \end_inset
 
 meaning that the hazard ratio stays constant over time, i.e.
- the hazards are 
+ the hazards are
 \emph on
-proportional 
+proportional
 \emph default
 and the effect of the predictor variables on the hazard rate remains constant
  over time.
 \end_layout
 
 \begin_layout Standard
-Now, in order to compute the effect of a predictor variable 
+Now, in order to compute the effect of a predictor variable
 \begin_inset Formula $X_{j}$
 \end_inset
 
  on the overall hazard while adjusting for other variables, let vectors
- 
+
 \begin_inset Formula $\mathbf{X}^{*}$
 \end_inset
 
- and 
+ and
 \begin_inset Formula $\mathbf{X}$
 \end_inset
 
  be defined as
-\begin_inset Formula 
+\begin_inset Formula
 \begin{equation}
 \begin{cases}
 X_{i}^{*}=X_{i} & \textrm{for \ensuremath{i\neq j}}\\
@@ -6127,12 +6127,12 @@ X_{i}^{*}\neq X_{i} & \textrm{for \ensuremath{i=j}}
 \end_layout
 
 \begin_layout Standard
-The estimated hazard ratio for the predictor variable 
+The estimated hazard ratio for the predictor variable
 \begin_inset Formula $X_{j}$
 \end_inset
 
  is then given by
-\begin_inset Formula 
+\begin_inset Formula
 \begin{equation}
 \hat{HR}=\exp\left(\hat{\beta_{j}}\left(X_{j}^{*}-X_{j}\right)\right)
 \end{equation}
@@ -6144,7 +6144,7 @@ The estimated hazard ratio for the predictor variable
 
 \begin_layout Standard
 As hazard functions are always positive and the ratio is written in way
- as to ensure that it is always greater than 
+ as to ensure that it is always greater than
 \begin_inset Formula $1$
 \end_inset
 
@@ -6162,12 +6162,12 @@ Adjusted Survival Curves
 
 \begin_layout Plain Layout
 Upon fitting a Cox regression model onto survival data, survival curves
- that adjust for the predictor variables (also called 
+ that adjust for the predictor variables (also called
 \emph on
 adjusted survival curves
 \emph default
-) are defined in a similar fashion as 
-\begin_inset Formula 
+) are defined in a similar fashion as
+\begin_inset Formula
 \begin{equation}
 S(t,\mathbf{X})=S_{0}(t)\exp\left(\sum_{i=1}^{k}\beta_{i}X_{i}\right)
 \end{equation}
@@ -6178,32 +6178,32 @@ S(t,\mathbf{X})=S_{0}(t)\exp\left(\sum_{i=1}^{k}\beta_{i}X_{i}\right)
 \end_layout
 
 \begin_layout Plain Layout
-Using estimates 
+Using estimates
 \begin_inset Formula $\hat{S_{0}(t)}$
 \end_inset
 
- and 
+ and
 \begin_inset Formula $\hat{\beta_{i}}$
 \end_inset
 
- computed by the partial likelihood estimation method for 
+ computed by the partial likelihood estimation method for
 \begin_inset Formula $S_{0}(t)$
 \end_inset
 
- and 
+ and
 \begin_inset Formula $\beta_{i}$
 \end_inset
 
  respectively.
  We get an estimated survival function
-\begin_inset Formula 
+\begin_inset Formula
 \begin{equation}
 \hat{S}\left(t,\mathbf{X}\right)=\hat{S_{0}(t)}\exp\left(\sum_{i=1}^{k}\hat{\beta_{i}}X_{i}\right)
 \end{equation}
 
 \end_inset
 
-and by specifying the input vector of predictors 
+and by specifying the input vector of predictors
 \begin_inset Formula $\mathbf{X}$
 \end_inset
 
@@ -6233,13 +6233,13 @@ Random Survival Forests
 \emph default
  (RSF) is an ensemble machine learning method used for analyzing right-censored
  survival data.
- RSF combines the concepts of 
+ RSF combines the concepts of
 \emph on
 survival analysis
 \emph default
- and 
+ and
 \emph on
-random forests, 
+random forests,
 \emph default
 which allows it to handle issues commonly associated with conventional survival
  analysis methods, such as restrictive assumptions about the model's parameters
@@ -6248,7 +6248,7 @@ which allows it to handle issues commonly associated with conventional survival
  relations in the data and issues with missing data, as well as issues associate
 d with regular random forest models, such as being restricted to regression
  and classification tasks and the inability to handle right-censored survival
- data 
+ data
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Random Survival Forests"
@@ -6264,17 +6264,17 @@ Each tree in the forest outputs a either a cumulative hazard function
 \begin_inset Formula $H(t\mid\mathbf{x})$
 \end_inset
 
-, which takes a vector of predictive variables 
+, which takes a vector of predictive variables
 \begin_inset Formula $\mathbf{x}$
 \end_inset
 
- describing a given individual and time 
+ describing a given individual and time
 \begin_inset Formula $t$
 \end_inset
 
  as inputs.
  The forest's overall prediction, i.e.
- 
+
 \emph on
 the ensemble cumulative hazard,
 \emph default
@@ -6289,7 +6289,7 @@ Building a Random Survival Forests model
 \end_layout
 
 \begin_layout Standard
-The algorithm for building a RSF model works as follows 
+The algorithm for building a RSF model works as follows
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Random Survival Forests"
@@ -6302,7 +6302,7 @@ literal "false"
 
 \begin_layout Enumerate
 A set number of subsets is taken from the data using the bootstrap sampling
- method as described in Section 
+ method as described in Section
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "enu:Sampling-the-data:"
@@ -6313,21 +6313,21 @@ noprefix "false"
 \end_inset
 
 , with each sample excluding on average 37% of the original data.
- The excluded data is referred to as 
+ The excluded data is referred to as
 \emph on
-out-of-bag data 
+out-of-bag data
 \emph default
 (OOB) and is later used for computing the ensemble cumulative hazard.
 \end_layout
 
 \begin_layout Enumerate
-A 
+A
 \emph on
-binary survival tree 
+binary survival tree
 \emph default
 (BST) is built for each of the bootstrap samples.
  The algorithm for growing a BST generally follows the same principles as
- described in Section 
+ described in Section
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:Decision-Trees"
@@ -6341,7 +6341,7 @@ noprefix "false"
  at each node the algorithm iterates over all possible features and values
  for them and decides on the best split.
  The best split is decided by maximizing the log-rank statistic (described
- in Section 
+ in Section
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:Log-rank-Test"
@@ -6356,16 +6356,16 @@ noprefix "false"
  The algorithm is restricted by a criterion that each node should contain
  at least 1 unique event time, which leads to a point when no new splits
  can be made meaning the tree has been fully grown.
- 
+
 \end_layout
 
 \begin_layout Enumerate
 Once a tree is fully grown, each terminal node outputs either a survival
- function or a 
+ function or a
 \emph on
-cumulative hazard function 
+cumulative hazard function
 \emph default
-(CHF) denoted by 
+(CHF) denoted by
 \begin_inset Formula $\hat{H}(t)$
 \end_inset
 
@@ -6373,93 +6373,93 @@ cumulative hazard function
 \begin_inset Newline newline
 \end_inset
 
-Let 
+Let
 \begin_inset Formula $A$
 \end_inset
 
- denote the set of all terminal nodes, then each node 
+ denote the set of all terminal nodes, then each node
 \begin_inset Formula $j\in A$
 \end_inset
 
- contains a set of individuals 
+ contains a set of individuals
 \begin_inset Formula $\left(T_{1,j},\delta_{1,j}\right),\ldots,\left(T_{n(j),j},\delta_{n(j),j}\right)$
 \end_inset
 
-, where 
+, where
 \begin_inset Formula $n(j)$
 \end_inset
 
- is the number of cases belonging to the node 
+ is the number of cases belonging to the node
 \begin_inset Formula $j$
 \end_inset
 
-, 
+,
 \begin_inset Formula $T_{i,j}$
 \end_inset
 
- is the survival time of the 
+ is the survival time of the
 \begin_inset Formula $i$
 \end_inset
 
--th case belonging to the node 
+-th case belonging to the node
 \begin_inset Formula $j$
 \end_inset
 
- , 
+ ,
 \begin_inset Formula $\delta_{i,j}\in\left\{ 0,1\right\} $
 \end_inset
 
- is the censoring status of the 
+ is the censoring status of the
 \begin_inset Formula $i$
 \end_inset
 
--th case at time 
+-th case at time
 \begin_inset Formula $T_{i,j}$
 \end_inset
 
- , with 
+ , with
 \begin_inset Formula $\delta_{i,j}=0$
 \end_inset
 
  if the individual is right-censored (e.g.
- has a still functioning graft or has been lost to followup) and 
+ has a still functioning graft or has been lost to followup) and
 \begin_inset Formula $\delta_{i,j}=1$
 \end_inset
 
- if an event has been observed at a given at time 
+ if an event has been observed at a given at time
 \begin_inset Formula $T_{i,j}$
 \end_inset
 
  (e.g.
  graft failure).
- Let 
+ Let
 \begin_inset Formula $t_{1,j}<t_{2,j}<\ldots<t_{N(j),j}$
 \end_inset
 
- denote the unique event times observed in node 
+ denote the unique event times observed in node
 \begin_inset Formula $j$
 \end_inset
 
-, where 
+, where
 \begin_inset Formula $N(j)$
 \end_inset
 
- is the number of observed unique event times and let 
+ is the number of observed unique event times and let
 \begin_inset Formula $f_{k,j}$
 \end_inset
 
- and 
+ and
 \begin_inset Formula $r_{k,j}$
 \end_inset
 
  represent the number of indivudals who experienced an event (fail) or were
- at risk at time 
+ at risk at time
 \begin_inset Formula $t_{k,j}$
 \end_inset
 
  respectively.
  Then, either a survival function is estimated using the Kaplan-Meier estimator
- (described in Section 
+ (described in Section
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:Kaplan-Meier-Estimator"
@@ -6469,12 +6469,12 @@ noprefix "false"
 
 \end_inset
 
-), or a CHF for the node 
+), or a CHF for the node
 \begin_inset Formula $j$
 \end_inset
 
  is given by the Nelson-Maier estimator
-\begin_inset Formula 
+\begin_inset Formula
 \begin{equation}
 \hat{H}_{j}(t)=\sum_{t_{k,j}\leq t}\frac{r_{k,j}}{f_{k,j}}\label{eq:node CHF}
 \end{equation}
@@ -6485,18 +6485,18 @@ noprefix "false"
 \begin_inset Newline newline
 \end_inset
 
-When a new input vector 
+When a new input vector
 \begin_inset Formula $\mathbf{x}$
 \end_inset
 
  is introduced to the model, the tree is followed from the top down until
- a terminal node 
+ a terminal node
 \begin_inset Formula $j\in A$
 \end_inset
 
  is reached.
  The CHF of the whole tree is then given by
-\begin_inset Formula 
+\begin_inset Formula
 \begin{equation}
 H(t\mid\mathbf{x})=\hat{H}_{j}(t).\label{eq:tree CHF}
 \end{equation}
@@ -6508,39 +6508,39 @@ H(t\mid\mathbf{x})=\hat{H}_{j}(t).\label{eq:tree CHF}
 
 \begin_layout Enumerate
 Next, two ensemble cumulative hazards functions are calculated.
- The first, called the 
+ The first, called the
 \emph on
 bootstrap ensemble CHF
 \emph default
- (denoted by 
+ (denoted by
 \begin_inset Formula $H_{e}^{*}),$
 \end_inset
 
 simply averages over all grown survival trees.
- The second, called the 
+ The second, called the
 \emph on
 OOB ensemble CHF
 \emph default
- (denoted by 
+ (denoted by
 \begin_inset Formula $H_{e}^{**}$
 \end_inset
 
 ), averages over trees where a given input was not used in the training
  of the given tree i.e.
  is a case of the OOB data.
- Suppose an example 
+ Suppose an example
 \begin_inset Formula $\mathbf{x}_{i}$
 \end_inset
 
- is taken from the training dataset, let 
+ is taken from the training dataset, let
 \begin_inset Formula $B$
 \end_inset
 
- denote the total number of bootstrap samples, and let 
+ denote the total number of bootstrap samples, and let
 \begin_inset Formula $H_{b}^{*}(t|\mathbf{x})$
 \end_inset
 
- denote the CHF predicted by the tree grown from the 
+ denote the CHF predicted by the tree grown from the
 \family roman
 \series medium
 \shape up
@@ -6553,7 +6553,7 @@ OOB ensemble CHF
 \uwave off
 \noun off
 \color none
-bootstrap sample 
+bootstrap sample
 \begin_inset Formula $b\in\hat{B}$
 \end_inset
 
@@ -6571,7 +6571,7 @@ bootstrap sample
 \noun default
 \color inherit
 
-\begin_inset Formula 
+\begin_inset Formula
 \[
 I_{i,b}=\begin{cases}
 1 & \textrm{if \ensuremath{\mathbf{x}_{i}} belongs to the OOB subset of the dataset for bootstrap sample \ensuremath{b}}\\
@@ -6582,18 +6582,18 @@ I_{i,b}=\begin{cases}
 \end_inset
 
 The bootstrap ensemble CHF is then defined as
-\begin_inset Formula 
+\begin_inset Formula
 \begin{equation}
 H_{e}^{*}(t\mid\mathbf{x}_{i})=\frac{1}{B}\sum_{b=1}^{B}H_{b}(t\mid\mathbf{x}_{i})
 \end{equation}
 
 \end_inset
 
-where 
+where
 \begin_inset Formula $H_{b}(t\mid\mathbf{x}_{i})$
 \end_inset
 
- is the CHF of a tree grown from the bootstrap sample 
+ is the CHF of a tree grown from the bootstrap sample
 \begin_inset Formula $b$
 \end_inset
 
@@ -6611,8 +6611,8 @@ noprefix "false"
 \begin_inset Newline newline
 \end_inset
 
-In contrast, the OOB ensemble CHF is defined as 
-\begin_inset Formula 
+In contrast, the OOB ensemble CHF is defined as
+\begin_inset Formula
 \begin{equation}
 H_{e}^{**}(t\mid\mathbf{x}_{i})=\frac{\sum_{b=1}^{B}I_{i,b}H_{b}(t\mid\mathbf{x}_{i})}{\sum_{b=1}^{B}I_{i,b}}.\label{eq:OOB ensemble CHF}
 \end{equation}
@@ -6632,7 +6632,7 @@ s that define its behaviour.
  As RSF are dervied from conventional random forests, they also share many
  of the same hyperparameters.
  The most important hyperparameters that the scikit-survivals's (see Section
- 
+
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:scikit-survival"
@@ -6642,7 +6642,7 @@ noprefix "false"
 
 \end_inset
 
-) implementation of RSF allows to be set are 
+) implementation of RSF allows to be set are
 \begin_inset CommandInset citation
 LatexCommand cite
 key "scikit-survival"
@@ -6650,7 +6650,7 @@ literal "false"
 
 \end_inset
 
-: 
+:
 \end_layout
 
 \begin_layout Itemize
@@ -6668,7 +6668,7 @@ n_estimators
  training times.
  Moreover, the benefits gained by adding more trees becomes deminishing,
  meaning that there is a point, where the added computational complexity
- is not worth it 
+ is not worth it
 \begin_inset CommandInset citation
 LatexCommand cite
 key "scikit-learn"
@@ -6691,7 +6691,7 @@ max_depth
 
 : The maximum allowed depth of a tree.
  If none is set, then tree is allowed to grow until all leaves contain less
- than 
+ than
 \begin_inset Flex Code
 status open
 
@@ -6701,7 +6701,7 @@ min_samples_split
 
 \end_inset
 
- 
+
 \begin_inset CommandInset citation
 LatexCommand cite
 key "scikit-learn"
@@ -6742,7 +6742,7 @@ min_samples_leaf
 : The minimum number of samples required to be in a leaf node.
  This will ensure more samples are used for calculating the survival / cummulati
 ve hazard functions.
- Therefore, raising this number will smooth the predictions 
+ Therefore, raising this number will smooth the predictions
 \begin_inset CommandInset citation
 LatexCommand cite
 key "scikit-survival"
@@ -6788,15 +6788,15 @@ name "sec:Harell's-Concordance-Index"
 
 \begin_layout Standard
 The prediction error of a random survival forests model is estimated using
- the 
+ the
 \emph on
-Harell's concordance index 
+Harell's concordance index
 \emph default
-(also known as 
+(also known as
 \emph on
 C-index
 \emph default
-) 
+)
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Random Survival Forests"
@@ -6807,7 +6807,7 @@ literal "false"
 , which is a metric commonly used in medical research to evaluate survival
  models.
  The C-index is defined as the ratio of correctly ordered pairs to comparable
- pairs 
+ pairs
 \begin_inset CommandInset citation
 LatexCommand cite
 key "scikit-survival"
@@ -6815,7 +6815,7 @@ literal "false"
 
 \end_inset
 
- (explained in more detail in 
+ (explained in more detail in
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:Calculating-Harell's-Concordance"
@@ -6832,7 +6832,7 @@ noprefix "false"
 \emph default
  (short for Receiver Operating Characteristics curve) also known as AUC,
  which is a graphical plot that illustrates the performance of a binary
- classification model at different classification thresholds 
+ classification model at different classification thresholds
 \begin_inset CommandInset citation
 LatexCommand cite
 after "Classification - ROC Curve and AUC"
@@ -6845,82 +6845,82 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-Specifically, the ROC curve plots the 
+Specifically, the ROC curve plots the
 \emph on
-true positive rate 
+true positive rate
 \emph default
 (TPR)
 \emph on
- 
+
 \emph default
 defined as
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula 
+\begin_inset Formula
 \begin{equation}
 TPR=\frac{TP}{TP+FN}
 \end{equation}
 
 \end_inset
 
-where 
+where
 \begin_inset Formula $TP$
 \end_inset
 
- is the number of 
+ is the number of
 \emph on
 true positives
 \emph default
  (i.e.
  positive cases correctly classified
 \emph on
- 
+
 \emph default
 by the model
 \emph on
-) 
+)
 \emph default
-and 
+and
 \begin_inset Formula $FN$
 \end_inset
 
- is the number 
+ is the number
 \emph on
 false negatives
 \emph default
  (i.e.
- positive cases incorrectly classified as negative), against the 
+ positive cases incorrectly classified as negative), against the
 \emph on
-false positive rate 
+false positive rate
 \emph default
 (FPR) defined as
-\begin_inset Formula 
+\begin_inset Formula
 \begin{equation}
 FPR=\frac{FP}{FP+TN}
 \end{equation}
 
 \end_inset
 
-where 
+where
 \begin_inset Formula $FP$
 \end_inset
 
- is the number of 
+ is the number of
 \emph on
 false positives (i.e.
- 
+
 \emph default
-negative cases incorrectly classified as positive) and 
+negative cases incorrectly classified as positive) and
 \begin_inset Formula $TN$
 \end_inset
 
- is the number of 
+ is the number of
 \emph on
-true negatives 
+true negatives
 \emph default
 (i.e.
- negative cases correctly classified as negative) 
+ negative cases correctly classified as negative)
 \begin_inset CommandInset citation
 LatexCommand cite
 key "ML Crash Course"
@@ -6946,7 +6946,7 @@ n, will have an AUC of 0.5.
  Generally, models with an AUC above 0.7 are considered to be good predictors.
  An example of a machine learning models that use the AUC for evaluation
  of their performance are classification decision trees (described in Section
- 
+
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:Decision-Trees"
@@ -6978,7 +6978,7 @@ name "subsec:Calculating-Harell's-Concordance"
 
 \begin_layout Standard
 Not all individuals can be compared to each other as a result of censoring.
- The C-index is therefore calculated as follows 
+ The C-index is therefore calculated as follows
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Random Survival Forests"
@@ -6991,12 +6991,12 @@ literal "false"
 
 \begin_layout Enumerate
 Find all possible pairs of cases across the test dataset while excluding
- the following cases: 
+ the following cases:
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-pairs 
+pairs
 \begin_inset Formula $\left((T_{i},\delta_{i}),(T_{j},\delta_{j})\right)$
 \end_inset
 
@@ -7005,7 +7005,7 @@ pairs
 \end_inset
 
  i.e.
- 
+
 \begin_inset Formula $T_{i}<T_{j}\:\land\:\delta_{i}=0$
 \end_inset
 
@@ -7013,7 +7013,7 @@ pairs
 \end_layout
 
 \begin_layout Itemize
-pairs 
+pairs
 \begin_inset Formula $\left((T_{i},\delta_{i}),(T_{j},\delta_{j})\right)$
 \end_inset
 
@@ -7022,7 +7022,7 @@ pairs
 \end_inset
 
 i.e.
- 
+
 \begin_inset Formula $T_{i}=T_{j}\:\land\:\delta_{i}=\delta_{j}=0$
 \end_inset
 
@@ -7030,15 +7030,15 @@ i.e.
 \end_layout
 
 \begin_layout Standard
-The cases that are left are called 
+The cases that are left are called
 \emph on
-permissible 
+permissible
 \emph default
-(or 
+(or
 \emph on
 comparable
 \emph default
-) and we denote their set by 
+) and we denote their set by
 \begin_inset Formula $P.$
 \end_inset
 
@@ -7047,11 +7047,11 @@ comparable
 
 \end_deeper
 \begin_layout Enumerate
-For each permissible pair 
+For each permissible pair
 \begin_inset Formula $\left((T_{i},\delta_{i}),(T_{j},\delta_{j})\right)$
 \end_inset
 
- a value for 
+ a value for
 \begin_inset Formula $c_{i,j}$
 \end_inset
 
@@ -7060,12 +7060,12 @@ For each permissible pair
 
 \begin_deeper
 \begin_layout Enumerate
-if 
+if
 \begin_inset Formula $T_{i}\neq T_{j}$
 \end_inset
 
  then
-\begin_inset Formula 
+\begin_inset Formula
 \[
 c_{i,j}=\begin{cases}
 1 & \textrm{if \ensuremath{T_{i}<T_{j}\Longrightarrow i} has worse predicted outcome than \ensuremath{j} (\ref{eq:worse outcome def})}\\
@@ -7080,7 +7080,7 @@ c_{i,j}=\begin{cases}
 \end_layout
 
 \begin_layout Enumerate
-if 
+if
 \begin_inset Formula $T_{i}=T_{j}$
 \end_inset
 
@@ -7088,8 +7088,8 @@ if
 \begin_inset Formula $\:\land\:\delta_{i}=\delta_{j}=1$
 \end_inset
 
- 
-\begin_inset Formula 
+
+\begin_inset Formula
 \[
 c_{i,j}=\begin{cases}
 1 & \textrm{if predicted outcomes of \ensuremath{i} and \ensuremath{j} are tied}\\
@@ -7103,7 +7103,7 @@ c_{i,j}=\begin{cases}
 \end_layout
 
 \begin_layout Enumerate
-if 
+if
 \begin_inset Formula $T_{i}=T_{j}$
 \end_inset
 
@@ -7111,8 +7111,8 @@ if
 \begin_inset Formula $\:\land\:\delta_{i}\neq\delta_{j}$
 \end_inset
 
- 
-\begin_inset Formula 
+
+\begin_inset Formula
 \[
 c_{i,j}=\begin{cases}
 1 & \textrm{if }\delta_{i}=1\Longrightarrow\textrm{\ensuremath{i} has worse predicted outcome than \ensuremath{j} }\\
@@ -7128,7 +7128,7 @@ c_{i,j}=\begin{cases}
 \end_deeper
 \begin_layout Enumerate
 The C-index is then given by
-\begin_inset Formula 
+\begin_inset Formula
 \begin{equation}
 C=\frac{1}{\left|P\right|}\sum_{i,j\in P,i\neq j}c_{i,j}.
 \end{equation}
@@ -7141,35 +7141,35 @@ C=\frac{1}{\left|P\right|}\sum_{i,j\in P,i\neq j}c_{i,j}.
 \begin_layout Standard
 Whether a given case has a better or a worse predicted outcome is decided
  as follows.
- Let 
+ Let
 \begin_inset Formula $t_{1},\ldots t_{n}$
 \end_inset
 
- be a set of pre-chosen time points, then case 
+ be a set of pre-chosen time points, then case
 \begin_inset Formula $i$
 \end_inset
 
- has a worse predicted outcome than case 
+ has a worse predicted outcome than case
 \begin_inset Formula $j$
 \end_inset
 
  if
-\begin_inset Formula 
+\begin_inset Formula
 \begin{equation}
 \sum_{k=1}^{n}H_{e}^{**}(t_{k}\mid\mathbf{x}_{i})>\sum_{k=1}^{n}H_{e}^{**}(t_{k}\mid\mathbf{x}_{j})\label{eq:worse outcome def}
 \end{equation}
 
 \end_inset
 
-where 
+where
 \begin_inset Formula $\mathbf{x}_{l}$
 \end_inset
 
- is a feature vector of the case 
+ is a feature vector of the case
 \begin_inset Formula $l,$
 \end_inset
 
-and 
+and
 \begin_inset Formula $H_{e}^{**}$
 \end_inset
 
@@ -7197,7 +7197,7 @@ Handling Potential Bias
 \begin_layout Plain Layout
 The problem with the Harell's concordance index is that it is known to evaluate
  the performance of a given model too optimistically, if the ratio of censored
- individuals in the dataset is high 
+ individuals in the dataset is high
 \begin_inset CommandInset citation
 LatexCommand cite
 key "scikit-survival"
@@ -7212,7 +7212,7 @@ e the model's performance.
 \end_layout
 
 \begin_layout Plain Layout
-To adress this issue, the scikit-survival package 
+To adress this issue, the scikit-survival package
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:scikit-survival"
@@ -7222,7 +7222,7 @@ noprefix "false"
 
 \end_inset
 
- offers an alternative to the conventional C-index called 
+ offers an alternative to the conventional C-index called
 \begin_inset Flex Code
 status open
 
@@ -7234,7 +7234,7 @@ concordance_index_ipcw
 
 .
  Unlike the regular C-index, this alternative does not depend on the distributio
-n of the censoring in the test dataset 
+n of the censoring in the test dataset
 \begin_inset CommandInset citation
 LatexCommand cite
 key "scikit-survival"
@@ -7244,7 +7244,7 @@ literal "false"
 
 .
  Instead, it uses the inverse probability of censoring weights to handle
- a potential bias introduced by high amount of censoring 
+ a potential bias introduced by high amount of censoring
 \begin_inset CommandInset citation
 LatexCommand cite
 key "scikit-survival"
@@ -7257,7 +7257,7 @@ literal "false"
  and computing weights for the censored individuals based on their similarity
  to the uncensored ones.
  To be able to calculate the weights, Kaplan-Meier estimator is computed
- first using survival times and censoring status from the test dataset 
+ first using survival times and censoring status from the test dataset
 \begin_inset CommandInset citation
 LatexCommand cite
 key "scikit-survival"
@@ -7288,7 +7288,7 @@ name "sec:Permutation-Variable-Importance"
 Since survival trees use the log-rank statistic as a split criterion as
  opposed to impurity used in conventional decision trees, variable importance
  cannot be computed using the mean decrease in impurity method described
- in 
+ in
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:Feature-Selection"
@@ -7299,11 +7299,11 @@ noprefix "false"
 \end_inset
 
 .
- Consequently, the 
+ Consequently, the
 \emph on
 permutation feature importance,
 \emph default
- described in the original paper introducing random forests 
+ described in the original paper introducing random forests
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Random Forests"
@@ -7312,7 +7312,7 @@ literal "false"
 \end_inset
 
 , is used to compute variable importance.
- Fortunately also implemented within the scikit-learn 
+ Fortunately also implemented within the scikit-learn
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:scikit-learn"
@@ -7333,7 +7333,7 @@ Permutation importance is calculated by first calculating a baseline metric
 ce is evaluated again.
  The permutation importance of a given variable is then given by the the
  difference between the baseline metric and the model's performance after
- permuting said variable 
+ permuting said variable
 \begin_inset CommandInset citation
 LatexCommand cite
 key "scikit-learn"
@@ -7351,7 +7351,7 @@ Other Methods
 \begin_layout Standard
 Random Survival Forest is not the only model that combines conventional
  machine learning techniques with survival analysis.
- The scikit-survival library (see Section 
+ The scikit-survival library (see Section
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:scikit-survival"
@@ -7361,11 +7361,11 @@ noprefix "false"
 
 \end_inset
 
-) also provides implementations of 
+) also provides implementations of
 \emph on
-Survival Support Vector Machine 
+Survival Support Vector Machine
 \emph default
-and 
+and
 \emph on
 Survival Gradient Boosting.
 \end_layout
@@ -7376,19 +7376,19 @@ Survival Support Vector Machine
 
 \begin_layout Standard
 The survival support vector machine is an extension of the conventional
- 
+
 \emph on
 support vector machine (SVM)
 \emph default
 , which is a supervised machine learning model that works by mapping the
  feature vector of each sample into high-dimensional space and calculating
- a hyperplane that seperates them based on their labels, called a 
+ a hyperplane that seperates them based on their labels, called a
 \emph on
 decision boundary
 \emph default
 .
  When faced with a new input, the SVM makes a decision based on which side
- of the decision boundary the new case falls 
+ of the decision boundary the new case falls
 \begin_inset CommandInset citation
 LatexCommand cite
 key "100-page ML"
@@ -7408,7 +7408,7 @@ The survival SVM differs from the regular SVM in the sense that it uses
  individuals based on their survival time.
  This is however slightly disadvantageous as these types of predictions
  are not easily tranferrable to standard survival analysis outputs, namely
- the survival and hazard functions 
+ the survival and hazard functions
 \begin_inset CommandInset citation
 LatexCommand cite
 key "scikit-survival"
@@ -7424,12 +7424,12 @@ Survival Gradient Boosting
 \end_layout
 
 \begin_layout Standard
-Survival gradient boosting builds on the basis of regular 
+Survival gradient boosting builds on the basis of regular
 \emph on
 gradient boosting
 \emph default
 , which is an ensemble supervised machine learning technique that works
- by combining predictions of many 
+ by combining predictions of many
 \emph on
 weak learners
 \emph default
@@ -7437,7 +7437,7 @@ weak learners
  improving their performance by gradiually optimizing a loss function by
  using its gradient.
  Gradient boosting models generally achieve greater accracy than random
- forests, however take much longer to train 
+ forests, however take much longer to train
 \begin_inset CommandInset citation
 LatexCommand cite
 key "100-page ML,scikit-survival"
@@ -7453,7 +7453,7 @@ While in the case of conventional gradient boosting the loss function given
  by prediction error (e.q.
  mean squared error), in the case survival gradient boosting the loss function
  is the partial likelihood loss partial likelihood loss Cox regression described
- in Section 
+ in Section
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:Cox-Regression"
@@ -7476,7 +7476,7 @@ noprefix "false"
 \begin_layout Standard
 The reasons for why the RSF model was chosen include the above described
  disadvantages of the aformetioned alternatives and promising accuracy that
- the RSF model displayed in the related articles 
+ the RSF model displayed in the related articles
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Using ML methods to predict kidney transplant survival,Systematic review"
@@ -7516,7 +7516,7 @@ ations, an amount sufficient for training a machine learning model.
 \end_layout
 
 \begin_layout Standard
-The data can be obtained free of charge via 
+The data can be obtained free of charge via
 \emph on
 
 \begin_inset Flex URL
@@ -7535,7 +7535,7 @@ https://unos.org
  request form on the website and signing relevant documents regarding the
  use of the data that will be sent via email.
  The data was obtained in the form of a tab-delimited file that was transformed
- into a MongoDB database using the following GitHub repository 
+ into a MongoDB database using the following GitHub repository
 \begin_inset Flex URL
 status open
 
@@ -7549,7 +7549,7 @@ https://github.com/ceharvs/transplant2mongo
  .
  The database tables were then converted into a JSON format using the Database
  tools plugin in IntelliJ IDEA Ultimate.
- 
+
 \end_layout
 
 \begin_layout Standard
@@ -7557,7 +7557,7 @@ Alongside the data from the UNOS database, another dataset was provided
  by the Czech Institute for Clinical and Experimental Medicine (IKEM), however
  the dataset was limited in size and thus was not suitable for training
  a machine learning model.
- 
+
 \end_layout
 
 \begin_layout Standard
@@ -7574,25 +7574,25 @@ Software Architecture
 \begin_layout Standard
 A number of software tools and libraries were used for building the survival
  analysis machine learning model, with the backbone of the application being
- the Python based 
+ the Python based
 \emph on
-scikit-survival 
+scikit-survival
 \emph default
-package, which is itself built upon the 
+package, which is itself built upon the
 \emph on
 scikit-learn
 \emph default
  package.
- Additionally, the 
+ Additionally, the
 \emph on
 pandas
 \emph default
- and 
+ and
 \emph on
 numpy
 \emph default
  libraries were used for both preprocessing of the data and evaluating the
- models performance and finally, the 
+ models performance and finally, the
 \emph on
 matplotlib
 \emph default
@@ -7611,7 +7611,7 @@ Python
 \emph default
  is an interpreted, general-purpose, high-level, object-oriented programming
  language that consistently ranks among the most used programming languages
- in the world 
+ in the world
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Octoverse"
@@ -7626,7 +7626,7 @@ literal "false"
  and the fact that Python is cross platform, meaning that code written on
  one machine can easily be run on different machines, regardless of their
  operating system.
- 
+
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Python docs,Python wiki"
@@ -7644,21 +7644,21 @@ Jupyter Notebook
 \begin_layout Standard
 
 \emph on
-Jupyter Notebook 
+Jupyter Notebook
 \emph default
 is a notebook authoring web application that provides tools for interactive
- computing with 
+ computing with
 \emph on
-computational notebooks 
+computational notebooks
 \emph default
-(also knows as 
+(also knows as
 \emph on
 notebook interface
 \emph default
 ).
  Computational notebooks are documents that enable users to integrate executable
  computer code, plain text, visualization and other interactive tools in
- a structured manner 
+ a structured manner
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Jupyter Notebook"
@@ -7702,7 +7702,7 @@ scikit-learn
 \emph default
  is an open-source machine learning Python module.
  It is written in Python and C and it is the most frequently used library
- for machine learning 
+ for machine learning
 \begin_inset CommandInset citation
 LatexCommand cite
 key "100-page ML"
@@ -7713,7 +7713,7 @@ literal "false"
 .
  scikit-learn provides tools for every part of the process of building a
  machine learning model, namely data preprocessing, model selection, fitting,
- and evaluation, among others 
+ and evaluation, among others
 \begin_inset CommandInset citation
 LatexCommand cite
 key "scikit-learn"
@@ -7738,12 +7738,12 @@ name "subsec:scikit-survival"
 \begin_layout Standard
 
 \emph on
-scikit-survival 
+scikit-survival
 \emph default
 is a Python module built on top of scikit-learn.
  It utilizes the functionalities of scikit-learn for machine learning, while
  allowing the user to implement survival analysis methods in their models
- 
+
 \begin_inset CommandInset citation
 LatexCommand cite
 key "scikit-survival"
@@ -7753,7 +7753,7 @@ literal "false"
 
 .
  Included in the library are many of the standard data analysis methods
- including the Kaplan-Meier estimator 
+ including the Kaplan-Meier estimator
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:Kaplan-Meier-Estimator"
@@ -7763,7 +7763,7 @@ noprefix "false"
 
 \end_inset
 
- and Cox Regression 
+ and Cox Regression
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:Cox-Regression"
@@ -7774,7 +7774,7 @@ noprefix "false"
 \end_inset
 
  as well as methods combining survival analysis with machine learning methods
- such as the Random Survival Forests 
+ such as the Random Survival Forests
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Random-Survival-Forests"
@@ -7785,11 +7785,11 @@ noprefix "false"
 \end_inset
 
 .
- 
+
 \end_layout
 
 \begin_layout Subsection
-Other libraries 
+Other libraries
 \end_layout
 
 \begin_layout Subsubsection*
@@ -7799,19 +7799,19 @@ Pandas
 \begin_layout Standard
 
 \emph on
-Pandas 
+Pandas
 \emph default
 is an open-source library built on top of the Python programming language
  used for manipulation with data and data analysis in general.
- The core of the library is the 
+ The core of the library is the
 \emph on
-DataFrame 
+DataFrame
 \emph default
 object that is used to organize data in a tabular format.
  Pandas provides a multitude of tools for working with DataFrames including
  the ability to extract statistics about the data, handling of missing values,
  reshaping data sets, as well as the ability to import and export DataFrames
- in various formats such as .csv, .json and more 
+ in various formats such as .csv, .json and more
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Pandas"
@@ -7829,22 +7829,22 @@ NumPy
 \begin_layout Standard
 
 \emph on
-NumPy 
+NumPy
 \emph default
 is an open-source Python library used for working with numerical data.
  More specifically, it provides tools for working with multidimensional
  numerical arrays and is widely used in other data analysis oriented libraries
  such as Pandas, Matplotlib and scikit-learn.
- The centerpiece of the library is the 
+ The centerpiece of the library is the
 \emph on
 ndarray
 \emph default
- which is a homogenous 
+ which is a homogenous
 \begin_inset Formula $n$
 \end_inset
 
 -dimensional array object, that is equipped with methods to efficiently
- operate on it 
+ operate on it
 \begin_inset CommandInset citation
 LatexCommand cite
 key "NumPy"
@@ -7862,19 +7862,19 @@ Matplotlib
 \begin_layout Standard
 
 \emph on
-Matplotlib 
+Matplotlib
 \emph default
 is a Python library based on NumPy used for creating both static and animated
  visualizations of data.
  These visualizations mainly appear in various types of plots such as line
  plots, histograms, scatter plots, and 3D plots.
  It draws inspiration from the MATLAB programming language and Matplotlib
- itself provides an extension called 
+ itself provides an extension called
 \emph on
 Pyplot
 \emph default
 , which is a collection of functions that replicate the behavior of MATLAB
- for Python 
+ for Python
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Matplotlib"
@@ -7909,7 +7909,7 @@ e computing cluster hosted at the Department of Mathematics, Faculty of
  allowed working with Jupyter notebooks directly via a web browser on a
  local machine.
  More information about the cluster such as regarding the hardware specs
- can be found at 
+ can be found at
 \begin_inset CommandInset citation
 LatexCommand cite
 key "HELIOS"
@@ -7927,7 +7927,7 @@ Model Training
 \begin_layout Standard
 The code used for training the machine learning model including pipelines
  used for data preprocessing, training and evaluating the random survival
- forest model are publicly available at 
+ forest model are publicly available at
 \begin_inset Newline newline
 \end_inset
 
@@ -7942,7 +7942,7 @@ https://github.com/matejkloucek/bp_don_rec_compatibility
 
 \end_inset
 
- 
+
 \begin_inset Newline newline
 \end_inset
 
@@ -7961,7 +7961,7 @@ Separating Living and Deceased Donors
 
 \begin_layout Standard
 There are 6 tables to be extracted from the UNOS dataset using MongoDB as
- mentioned in Section 
+ mentioned in Section
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Data-Acquisition"
@@ -7972,7 +7972,7 @@ noprefix "false"
 \end_inset
 
 , though only 3 are relevant to this study.
- These 3 being: 
+ These 3 being:
 \end_layout
 
 \begin_layout Itemize
@@ -8000,7 +8000,7 @@ Living_Donor
 
 \end_inset
 
- and 
+ and
 \begin_inset Flex Code
 status open
 
@@ -8029,7 +8029,7 @@ The Kidney_Pancreas table also happens to be the largest in terms of file
 \end_layout
 
 \begin_layout Standard
-In its original form, the 
+In its original form, the
 \begin_inset Flex Code
 status open
 
@@ -8039,11 +8039,11 @@ Kidney_Pancreas
 
 \end_inset
 
- dataset contained 
+ dataset contained
 \begin_inset Formula $1108884$
 \end_inset
 
- entries and 
+ entries and
 \begin_inset Formula $470$
 \end_inset
 
@@ -8051,7 +8051,7 @@ Kidney_Pancreas
  It contains information about both living and deceased donors, but the
  details regarding the donors are limited in scope, particularly in the
  case of living donors.
- To address this limitation, a table join was performed with the 
+ To address this limitation, a table join was performed with the
 \begin_inset Flex Code
 status open
 
@@ -8061,7 +8061,7 @@ Living_Donor
 
 \end_inset
 
- and 
+ and
 \begin_inset Flex Code
 status open
 
@@ -8072,7 +8072,7 @@ Deceased_Donor
 \end_inset
 
  tables to provide more information about the donors.
- This merge was based on the 
+ This merge was based on the
 \begin_inset Flex Code
 status open
 
@@ -8082,11 +8082,11 @@ DONOR_ID
 
 \end_inset
 
- column, with 
+ column, with
 \begin_inset Formula $174381$
 \end_inset
 
- entries sharing a common 
+ entries sharing a common
 \begin_inset Flex Code
 status open
 
@@ -8096,7 +8096,7 @@ DONOR_ID
 
 \end_inset
 
- between the 
+ between the
 \begin_inset Flex Code
 status open
 
@@ -8106,7 +8106,7 @@ Kidney_Pancreas
 
 \end_inset
 
- and 
+ and
 \begin_inset Flex Code
 status open
 
@@ -8116,11 +8116,11 @@ Living_Donor
 
 \end_inset
 
- tables and 
+ tables and
 \begin_inset Formula $399822$
 \end_inset
 
- entries sharing it between the 
+ entries sharing it between the
 \begin_inset Flex Code
 status open
 
@@ -8130,7 +8130,7 @@ Kidney_Pancreas
 
 \end_inset
 
- and 
+ and
 \begin_inset Flex Code
 status open
 
@@ -8141,7 +8141,7 @@ Deceased_Donor
 \end_inset
 
 .
- 
+
 \end_layout
 
 \begin_layout Standard
@@ -8153,7 +8153,7 @@ Preliminary results gained by experimenting with the RSF models have revealed
  As a result, dataset has been split based on the type of transplantation
  performed, separating living and deceased donor transplantations.
  The subset resulting from this split containing information about the living
- donor transplantation will from now on be referred to as 
+ donor transplantation will from now on be referred to as
 \begin_inset Flex Code
 status open
 
@@ -8164,7 +8164,7 @@ Kidpan_Living
 \end_inset
 
 .
- The 
+ The
 \begin_inset Flex Code
 status open
 
@@ -8174,11 +8174,11 @@ Kidpan_Living
 
 \end_inset
 
- table had 
+ table had
 \begin_inset Formula $174381$
 \end_inset
 
- entries and 
+ entries and
 \begin_inset Formula $649$
 \end_inset
 
@@ -8192,12 +8192,12 @@ status open
 \begin_layout Plain Layout
 Subsequently, independent machine learning models were trained on each of
  the created subsets seperately.
- 
+
 \end_layout
 
 \begin_layout Plain Layout
 The two new datasets created by the merge and the subsequent split split
- will from now be referred to as too as 
+ will from now be referred to as too as
 \begin_inset Flex Code
 status open
 
@@ -8207,7 +8207,7 @@ Kidpan_Living
 
 \end_inset
 
- and 
+ and
 \begin_inset Flex Code
 status open
 
@@ -8218,7 +8218,7 @@ Kidpand_Deceased
 \end_inset
 
 .
- The 
+ The
 \begin_inset Flex Code
 status open
 
@@ -8228,15 +8228,15 @@ Kidpan_Living
 
 \end_inset
 
- table had 
+ table had
 \begin_inset Formula $174381$
 \end_inset
 
- entries and 
+ entries and
 \begin_inset Formula $649$
 \end_inset
 
- columns, while the 
+ columns, while the
 \begin_inset Flex Code
 status open
 
@@ -8246,11 +8246,11 @@ Kidpand_Deceased
 
 \end_inset
 
- table had 
+ table had
 \begin_inset Formula $399822$
 \end_inset
 
- entries and 
+ entries and
 \begin_inset Formula $893$
 \end_inset
 
@@ -8271,7 +8271,7 @@ Reducing Number of Features
 \end_layout
 
 \begin_layout Standard
-In addition to the dataset, UNOS provides a .xlsx file called 
+In addition to the dataset, UNOS provides a .xlsx file called
 \emph on
 STAR Files Data Dictionary
 \emph default
@@ -8288,11 +8288,11 @@ Simultaneous Transplantations
 \begin_layout Standard
 The dataset contains information about both kidney and pancreas transplantations
 , as they are sometimes performed together in a medical procedure known
- as the 
+ as the
 \emph on
-simultaneous kidney-pancreas transplant 
+simultaneous kidney-pancreas transplant
 \emph default
-(SKP) 
+(SKP)
 \begin_inset CommandInset citation
 LatexCommand cite
 key "National Kidney Foundation"
@@ -8302,7 +8302,7 @@ literal "false"
 
 .
  In fact, most (83%) of pancreas transplantation are performed in the context
- of SKP's 
+ of SKP's
 \begin_inset CommandInset citation
 LatexCommand cite
 key "SKP"
@@ -8331,7 +8331,7 @@ As the goal of this paper is to predict compatibility of patients prior
  the dataset.
  This was also done by manually selecting such columns based on their descriptio
 n in the STAR dictionary.
- The only follow-up features that were retained are the 
+ The only follow-up features that were retained are the
 \begin_inset Flex Code
 status open
 
@@ -8341,7 +8341,7 @@ GTIME_KI
 
 \end_inset
 
- and 
+ and
 \begin_inset Flex Code
 status open
 
@@ -8353,7 +8353,7 @@ GSTATUS_KI
 
  columns, which describe the graft's survival time and censoring status
  respectively.
- 
+
 \end_layout
 
 \begin_layout Standard
@@ -8361,7 +8361,7 @@ GSTATUS_KI
 \emph on
 Note for following chapters
 \emph default
-: Owing to the nature of the 
+: Owing to the nature of the
 \begin_inset Flex Code
 status open
 
@@ -8371,7 +8371,7 @@ GTIME_KI
 
 \end_inset
 
- and 
+ and
 \begin_inset Flex Code
 status open
 
@@ -8396,7 +8396,7 @@ Duplicate Columns
 \end_layout
 
 \begin_layout Standard
-As the original 
+As the original
 \begin_inset Flex Code
 status open
 
@@ -8407,7 +8407,7 @@ Kidney_Pancreas
 \end_inset
 
  table also contained some information about donors, duplicate columns were
- created upon merging with the 
+ created upon merging with the
 \begin_inset Flex Code
 status open
 
@@ -8417,7 +8417,7 @@ Living_Donor
 
 \end_inset
 
- and 
+ and
 \begin_inset Flex Code
 status open
 
@@ -8430,7 +8430,7 @@ Deceased_Donor
  tables.
  Some were easy to identify as they shared the same name, while others had
  to be identified manually.
- 
+
 \end_layout
 
 \begin_layout Subsubsection*
@@ -8449,7 +8449,7 @@ Deceased and Living Donor Columns
 \end_layout
 
 \begin_layout Standard
-As mentioned above, the 
+As mentioned above, the
 \begin_inset Flex Code
 status open
 
@@ -8481,7 +8481,7 @@ status open
 
 ) as the columns regarding deceased donors would be left unfilled in the
  case of grafts from living donors.
- 
+
 \begin_inset Note Note
 status open
 
@@ -8510,7 +8510,7 @@ HLA typing
 \end_layout
 
 \begin_layout Standard
-As illustrated in the table 
+As illustrated in the table
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "HLA mismatch table"
@@ -8522,7 +8522,7 @@ noprefix "false"
 
 , each locus of both the donor and the recipient has two columns.
  These columns are categorical and represent different alleles.
- The number of unique alleles exceeds 
+ The number of unique alleles exceeds
 \begin_inset Formula $100$
 \end_inset
 
@@ -8542,17 +8542,17 @@ noprefix "false"
 \end_layout
 
 \begin_layout Standard
-Overall, these measures reduced the number of features to 
+Overall, these measures reduced the number of features to
 \begin_inset Formula $137$
 \end_inset
 
 .
- 
+
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-in the case of 
+in the case of
 \begin_inset Flex Code
 status open
 
@@ -8562,7 +8562,7 @@ Kidpan_Living
 
 \end_inset
 
- and to <number> in the case of 
+ and to <number> in the case of
 \begin_inset Flex Code
 status open
 
@@ -8595,7 +8595,7 @@ Categorical variables that were described using digits were incorrectly
  classified as numerical.
  This would lead to misleading results and had to be dealt with by identifying
  these columns using the STAR dictionary and changing their data type to
- 
+
 \begin_inset Flex Code
 status open
 
@@ -8614,7 +8614,7 @@ Columns containing dates were formatted as strings and were thus identified
  This would lead to problems when encoding since there would be a new column
  created for every unique time.
  This was dealt with by only using the year and setting its datatype to
- 
+
 \begin_inset Flex Code
 status open
 
@@ -8632,7 +8632,7 @@ Imputing Missing Values
 \end_layout
 
 \begin_layout Standard
-Missing values were imputed using scikit-learn's 
+Missing values were imputed using scikit-learn's
 \begin_inset Flex Code
 status open
 
@@ -8642,7 +8642,7 @@ SimpleImputer()
 
 \end_inset
 
- with the 
+ with the
 \begin_inset Flex Code
 status open
 
@@ -8652,7 +8652,7 @@ mean
 
 \end_inset
 
- strategy for numerical features and 
+ strategy for numerical features and
 \begin_inset Flex Code
 status open
 
@@ -8674,7 +8674,7 @@ The RSF model requires all input variables to be numerical.
  However, many of the features in the dataset were categorical and therefore
  had to be encoded before they could be used for training the RSF model.
  Scikit-learn's OneHotEncoder was used to encode the categorical variables.
- Encoding the whole 
+ Encoding the whole
 \begin_inset Note Note
 status open
 
@@ -8693,17 +8693,17 @@ Kidpan_Living
 
 \end_inset
 
- dataset resulted in the training dataset having 
+ dataset resulted in the training dataset having
 \begin_inset Formula $810$
 \end_inset
 
  columns after merging with the categorical values.
- 
+
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-In the case of 
+In the case of
 \begin_inset Flex Code
 status open
 
@@ -8738,12 +8738,12 @@ status open
 
 \begin_layout Plain Layout
 After training the model on the whole dataset, the performance of the model
- described by the C-index was 
+ described by the C-index was
 \begin_inset Formula $0.634$
 \end_inset
 
  for the living donor model and <number> for the deceased donor model.
- The hyperparameters used for this training were set to: 
+ The hyperparameters used for this training were set to:
 \begin_inset Flex Code
 status open
 
@@ -8753,7 +8753,7 @@ n_estimators=100
 
 \end_inset
 
-, 
+,
 \begin_inset Flex Code
 status open
 
@@ -8763,7 +8763,7 @@ min_samples_split=10
 
 \end_inset
 
-, 
+,
 \begin_inset Flex Code
 status open
 
@@ -8773,7 +8773,7 @@ min_samples_leaf=10
 
 \end_inset
 
- and 
+ and
 \begin_inset Flex Code
 status open
 
@@ -8794,7 +8794,7 @@ max_depth=None
 \begin_layout Standard
 In order to simplify the model and improve its performance, the best features
  were selected by calculating their importance using permutation importance
- described in Section 
+ described in Section
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Permutation-Variable-Importance"
@@ -8806,7 +8806,7 @@ noprefix "false"
 
 .
  In comparison to variable importance calculated by the Gini importance
- (described in Section 
+ (described in Section
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:Feature-Selection"
@@ -8818,7 +8818,7 @@ noprefix "false"
 
 ), computing permutation importance is a highly time consuming, as well
  as resource demanding task.
- 
+
 \end_layout
 
 \begin_layout Standard
@@ -8832,7 +8832,7 @@ The scikit-learn's implementation of permutation importance allows computing
 \end_layout
 
 \begin_layout Standard
-The scikit-learn's implementation of permutation importance offers a 
+The scikit-learn's implementation of permutation importance offers a
 \begin_inset Flex Code
 status open
 
@@ -8847,7 +8847,7 @@ n_repeats
  reducing randomness.
  However, this also greatly increases the computational complexity.
  Thus, the variable importances were computed initially on a smaller dataset
- created by dropping all entries with missing features, with 
+ created by dropping all entries with missing features, with
 \begin_inset Flex Code
 status open
 
@@ -8859,7 +8859,7 @@ n_repeats=5
 
 .
  This was followed by a computation on a larger dataset with imputed missing
- values with 
+ values with
 \begin_inset Flex Code
 status open
 
@@ -8874,7 +8874,7 @@ n_repeats=2
  of the 27 most important features.
  The variable importance of those features was then validated by computing
  permutation importance on a dataset consisting only of these features with
- 
+
 \begin_inset Flex Code
 status open
 
@@ -8889,7 +8889,7 @@ n_repeats=15
 
 \begin_layout Standard
 The selected features along with their description and variable importance
- can be found in Table 
+ can be found in Table
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Variable-Importance"
@@ -10404,17 +10404,17 @@ status open
 
 \begin_layout Standard
 After one-hot encoding the categrocial features in this reduced dataset,
- the final number of columns before training was 
+ the final number of columns before training was
 \begin_inset Formula $111$
 \end_inset
 
 .
- 
+
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-in the case of 
+in the case of
 \begin_inset Flex Code
 status open
 
@@ -10424,7 +10424,7 @@ Kidpan_Living
 
 \end_inset
 
- and <number> in the case of 
+ and <number> in the case of
 \begin_inset Flex Code
 status open
 
@@ -10443,7 +10443,7 @@ Kidpan_Deceased
 \end_layout
 
 \begin_layout Section
-Hyperparameter Tuning 
+Hyperparameter Tuning
 \end_layout
 
 \begin_layout Standard
@@ -10453,7 +10453,7 @@ While for training of the initial models and feature selection, the dataset
  For hyperparameter tuning, the dataset has been split into three folds:
  the training, validation and test sets with the ratio being 70% for training
  and 15% for validation and testing each.
- See Section 
+ See Section
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:Splitting-Data-into"
@@ -10468,7 +10468,7 @@ noprefix "false"
 
 \begin_layout Standard
 After experimenting with different combinations of hyperparameters using
- grid search (described in Section 
+ grid search (described in Section
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:Hyperparameter-tuning"
@@ -10506,7 +10506,7 @@ min_samples_split=10
 
 \end_inset
 
- 
+
 \end_layout
 
 \begin_layout Labeling
@@ -10520,7 +10520,7 @@ min_samples_leaf=15
 
 \end_inset
 
- 
+
 \end_layout
 
 \begin_layout Labeling
@@ -10535,12 +10535,12 @@ max_depth=None
 \end_inset
 
 .
- 
+
 \end_layout
 
 \begin_layout Standard
 Using these hyperparameters and the reduced list of features, the RSF model
- achieved an accuracy given by the C-index of 
+ achieved an accuracy given by the C-index of
 \begin_inset Formula $0.638$
 \end_inset
 
@@ -10554,7 +10554,7 @@ Model's Capabilities
 \begin_layout Standard
 Once trained, the model can be used to predict allograft's survival as well
  as cumulative hazard functions based on information about the recipient
- and the donor as listed in Table 
+ and the donor as listed in Table
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Variable-Importance"
@@ -10565,39 +10565,39 @@ noprefix "false"
 \end_inset
 
 .
- In addition, the model can also be used to predict a risk score 
+ In addition, the model can also be used to predict a risk score
 \begin_inset Formula $R$
 \end_inset
 
-, which is given by 
-\begin_inset Formula 
+, which is given by
+\begin_inset Formula
 \begin{equation}
 R\left(\mathbf{x}\right)=\sum_{j=1}^{n\left(h\right)}H\left(T_{j}\mid\mathbf{x}\right)
 \end{equation}
 
 \end_inset
 
-where 
+where
 \begin_inset Formula $\mathbf{x}$
 \end_inset
 
- is an input feature vector, 
+ is an input feature vector,
 \begin_inset Formula $h$
 \end_inset
 
- is the terminal node that was reached when 
+ is the terminal node that was reached when
 \begin_inset Formula $\mathbf{x}$
 \end_inset
 
- was introduced, 
+ was introduced,
 \begin_inset Formula $n\left(h\right)$
 \end_inset
 
- is the number of unique event times in node 
+ is the number of unique event times in node
 \begin_inset Formula $h$
 \end_inset
 
- and 
+ and
 \begin_inset Formula $H\left(t\mid\mathbf{x}\right)$
 \end_inset
 
@@ -10611,7 +10611,7 @@ noprefix "false"
 
 \end_inset
 
-) 
+)
 \begin_inset CommandInset citation
 LatexCommand cite
 key "scikit-survival"
@@ -10625,7 +10625,7 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-Illustrated in Figure 
+Illustrated in Figure
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "surv_example"
@@ -10635,7 +10635,7 @@ noprefix "false"
 
 \end_inset
 
- and Figure 
+ and Figure
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "hazard_example"
@@ -10762,7 +10762,7 @@ The plateauing of both of the curves is caused by the fact that the limited
 \begin_inset Formula $55\%$
 \end_inset
 
- in the complete 
+ in the complete
 \begin_inset Flex Code
 status open
 
@@ -10772,11 +10772,11 @@ Kidney_Pancreas
 
 \end_inset
 
- dataset and 
+ dataset and
 \begin_inset Formula $61\%$
 \end_inset
 
- in the 
+ in the
 \begin_inset Flex Code
 status open
 
@@ -10804,7 +10804,7 @@ General evaluation
 
 \begin_layout Standard
 The accuracy of the model given by the C-index is lower than the one developed
- in 
+ in
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Using ML methods to predict kidney transplant survival"
@@ -10812,14 +10812,14 @@ literal "false"
 
 \end_inset
 
- which had a C-index of 
+ which had a C-index of
 \begin_inset Formula $0.724$
 \end_inset
 
 .
  This is because they used predictors that are unknown prior to the transplantat
 ion itself.
- One such example is the 
+ One such example is the
 \emph on
 cold ischemia time
 \emph default
@@ -10831,7 +10831,7 @@ cold ischemia time
  learning model that can be used for computing compatibility in order to
  match the suitable pairs of recipients and donors and therefore should
  only use information that is knows prior to the transplantation.
- Thus, the model developed in 
+ Thus, the model developed in
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Using ML methods to predict kidney transplant survival"
@@ -10855,7 +10855,7 @@ name "subsec:Important-Features"
 \end_layout
 
 \begin_layout Standard
-As can be seen in the Table 
+As can be seen in the Table
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Variable-Importance"
@@ -10869,7 +10869,7 @@ noprefix "false"
  graft's survival time.
  This is not surprising, as this is the case with most other medical conditions.
  The impact of the recipient's age on survival time can also be validated
- using the Kaplan-Meier estimator (described in Section 
+ using the Kaplan-Meier estimator (described in Section
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:Kaplan-Meier-Estimator"
@@ -10880,7 +10880,7 @@ noprefix "false"
 \end_inset
 
 ).
- In Figure 
+ In Figure
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig: KM_age"
@@ -10936,7 +10936,7 @@ From observation, age exhibits little influence on the graft's survival
  in the age groups 0-59 and only begins to have a significant impact in
  the 60+ age cohort.
  This trend can also be observed on the predictions made by the RSF model.
- Plotted in Figure 
+ Plotted in Figure
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig: RSF_age"
@@ -10947,7 +10947,7 @@ noprefix "false"
 \end_inset
 
  are averages of 1000 survival functions predicted for each of the age cohort
- using the same samples as for computing the survival curve in Figure 
+ using the same samples as for computing the survival curve in Figure
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig: KM_age"
@@ -11008,7 +11008,7 @@ name "fig: RSF_age"
 
 \begin_layout Standard
 Another feature with a significant variable importance is HLA mismatch (describe
-d in Section 
+d in Section
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "HLA mismatch"
@@ -11021,7 +11021,7 @@ noprefix "false"
 ).
  By grouping samples by the level of their HLA mismatch and computing their
  survival curves using the Kaplan-Meier estimator.
- It can be observed in Figure 
+ It can be observed in Figure
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig: KM_HLA"
@@ -11040,7 +11040,7 @@ noprefix "false"
  of patients with some HLA mismatches and the ones without, seems to grow
  larger with time suggesting that HLA mismatch level is important not only
  for prevetning acute rejections, but also for long term survival.
- 
+
 \end_layout
 
 \begin_layout Standard
@@ -11087,7 +11087,7 @@ name "fig: KM_HLA"
 
 \begin_layout Standard
 This also holds true for the predictions made by the RSF model (see Figure
- 
+
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Averaged-RSF-predictions_HLA"
@@ -11100,7 +11100,7 @@ noprefix "false"
 ), which were computed by grouping the entries from the test set by their
  HLA mismatch, and then averaging the predictions made for each of the subsets.
  Note that the model's predictions start to deviate from the observed survival
- curves in Figure 
+ curves in Figure
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig: KM_HLA"
@@ -11111,7 +11111,7 @@ noprefix "false"
 \end_inset
 
  around the 6000 days mark, which is a result of the plateuing effect described
- in Section 
+ in Section
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "The-plateauing"
@@ -11172,7 +11172,7 @@ Comparison to Conventional Models
 \end_layout
 
 \begin_layout Standard
-The Cox Regression model (described in Section 
+The Cox Regression model (described in Section
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:Cox-Regression"
@@ -11182,12 +11182,12 @@ noprefix "false"
 
 \end_inset
 
-) fitted onto the same dataset had a C-index of 
+) fitted onto the same dataset had a C-index of
 \begin_inset Formula $0.619$
 \end_inset
 
 , meaning that the random forests model clearly outperforms Cox regression
- when making predictions based on the features listed in Table 
+ when making predictions based on the features listed in Table
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Variable-Importance"
@@ -11211,7 +11211,7 @@ Performance on different population samples
 \begin_layout Standard
 In order to investigate the influence of ethnic background on the outcome
  of a kidney transplantation.
- The dataset has been grouped by the 
+ The dataset has been grouped by the
 \begin_inset Flex Code
 status open
 
@@ -11221,7 +11221,7 @@ ETHCAT
 
 \end_inset
 
- and 
+ and
 \begin_inset Flex Code
 status open
 
@@ -11238,7 +11238,7 @@ ETHCAT_DON
  Consequently, the dataset was divided into 49 subsets.
  To ensure adequate sample sizes were, only 10 subsets with the most entries
  were selected for further investigation.
- The selected subsets are listed in Table 
+ The selected subsets are listed in Table
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Ethnicities-of-recipients"
@@ -11628,7 +11628,7 @@ asian
 
 \begin_layout Standard
 Plotting the calculated Kaplan-Meier survival curves on a graph (see Figure
- 
+
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Kaplan-Meier-survival-curves-by-eth"
@@ -11643,7 +11643,7 @@ noprefix "false"
  Asian, had more favorable survival curve.
  On the other hand, pairings where either the donor or the recipient were
  Black, had a slightly less favorable survival curve than the others.
- 
+
 \begin_inset Float figure
 placement H
 wide false
@@ -11687,7 +11687,7 @@ name "fig:Kaplan-Meier-survival-curves-by-eth"
 \end_inset
 
 This is even more visible when focusing only on the pairings where the recipient
- was white (see Figure 
+ was white (see Figure
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Kaplan-Meier-survival-curves-white-recipients"
@@ -11698,7 +11698,7 @@ noprefix "false"
 \end_inset
 
 ).
- Also in Figure 
+ Also in Figure
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Kaplan-Meier-survival-curves-white-recipients"
@@ -11711,7 +11711,7 @@ noprefix "false"
 , it can be observed that transplantations between different ethnic categories
  in general perform no worse or better than transplantations between the
  same ethnic group.
- 
+
 \end_layout
 
 \begin_layout Standard
@@ -11736,7 +11736,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Kaplan-Meier survival curves: white recipients 
+Kaplan-Meier survival curves: white recipients
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Kaplan-Meier-survival-curves-white-recipients"
@@ -11758,7 +11758,7 @@ name "fig:Kaplan-Meier-survival-curves-white-recipients"
 
 \begin_layout Standard
 These trends can also be observed on the predictions made by the RSF model
- (see Figure 
+ (see Figure
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Averaged-RSF-predictions_ethcat"
@@ -11824,13 +11824,13 @@ The RSF model could be used in cases where there is one patient looking
  The model would then be ussed to asses their compatibility by calculating
  the risk score of each of the possible pairings and the the pairing with
  the lowest risk score would be chosen.
- 
+
 \end_layout
 
 \begin_layout Standard
 Following is an example of how the model could be used for computing compatibili
 ty and thus assist in the decision-making process of choosing the best donor-rec
-ipient paring: Table 
+ipient paring: Table
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Patient-Information"
@@ -11840,7 +11840,7 @@ noprefix "false"
 
 \end_inset
 
- contains information about the patient, Table 
+ contains information about the patient, Table
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Donor-information"
@@ -12601,7 +12601,7 @@ Risk Score
 \begin_layout Plain Layout
 
 \lang english
-23 
+23
 \end_layout
 
 \end_inset
@@ -12612,7 +12612,7 @@ Risk Score
 \begin_layout Plain Layout
 
 \lang english
-1 
+1
 \end_layout
 
 \end_inset
@@ -12623,7 +12623,7 @@ Risk Score
 \begin_layout Plain Layout
 
 \lang english
-0 
+0
 \end_layout
 
 \end_inset
@@ -12634,7 +12634,7 @@ Risk Score
 \begin_layout Plain Layout
 
 \lang english
-1 
+1
 \end_layout
 
 \end_inset
@@ -12645,7 +12645,7 @@ Risk Score
 \begin_layout Plain Layout
 
 \lang english
-3 
+3
 \end_layout
 
 \end_inset
@@ -12656,7 +12656,7 @@ Risk Score
 \begin_layout Plain Layout
 
 \lang english
-0.86 
+0.86
 \end_layout
 
 \end_inset
@@ -12667,7 +12667,7 @@ Risk Score
 \begin_layout Plain Layout
 
 \lang english
-2 
+2
 \end_layout
 
 \end_inset
@@ -12678,7 +12678,7 @@ Risk Score
 \begin_layout Plain Layout
 
 \lang english
-N 
+N
 \end_layout
 
 \end_inset
@@ -12709,7 +12709,7 @@ N
 \begin_layout Plain Layout
 
 \lang english
-30 
+30
 \end_layout
 
 \end_inset
@@ -12720,7 +12720,7 @@ N
 \begin_layout Plain Layout
 
 \lang english
-1 
+1
 \end_layout
 
 \end_inset
@@ -12731,7 +12731,7 @@ N
 \begin_layout Plain Layout
 
 \lang english
-1 
+1
 \end_layout
 
 \end_inset
@@ -12742,7 +12742,7 @@ N
 \begin_layout Plain Layout
 
 \lang english
-1 
+1
 \end_layout
 
 \end_inset
@@ -12753,7 +12753,7 @@ N
 \begin_layout Plain Layout
 
 \lang english
-3 
+3
 \end_layout
 
 \end_inset
@@ -12764,7 +12764,7 @@ N
 \begin_layout Plain Layout
 
 \lang english
-0.86 
+0.86
 \end_layout
 
 \end_inset
@@ -12775,7 +12775,7 @@ N
 \begin_layout Plain Layout
 
 \lang english
-1 
+1
 \end_layout
 
 \end_inset
@@ -12786,7 +12786,7 @@ N
 \begin_layout Plain Layout
 
 \lang english
-N 
+N
 \end_layout
 
 \end_inset
@@ -12817,7 +12817,7 @@ N
 \begin_layout Plain Layout
 
 \lang english
-45 
+45
 \end_layout
 
 \end_inset
@@ -12828,7 +12828,7 @@ N
 \begin_layout Plain Layout
 
 \lang english
-1 
+1
 \end_layout
 
 \end_inset
@@ -12839,7 +12839,7 @@ N
 \begin_layout Plain Layout
 
 \lang english
-1 
+1
 \end_layout
 
 \end_inset
@@ -12850,7 +12850,7 @@ N
 \begin_layout Plain Layout
 
 \lang english
-2 
+2
 \end_layout
 
 \end_inset
@@ -12861,7 +12861,7 @@ N
 \begin_layout Plain Layout
 
 \lang english
-4 
+4
 \end_layout
 
 \end_inset
@@ -12883,7 +12883,7 @@ N
 \begin_layout Plain Layout
 
 \lang english
-1 
+1
 \end_layout
 
 \end_inset
@@ -12894,7 +12894,7 @@ N
 \begin_layout Plain Layout
 
 \lang english
-N 
+N
 \end_layout
 
 \end_inset
@@ -12925,7 +12925,7 @@ N
 \begin_layout Plain Layout
 
 \lang english
-49 
+49
 \end_layout
 
 \end_inset
@@ -12936,7 +12936,7 @@ N
 \begin_layout Plain Layout
 
 \lang english
-0 
+0
 \end_layout
 
 \end_inset
@@ -12947,7 +12947,7 @@ N
 \begin_layout Plain Layout
 
 \lang english
-0 
+0
 \end_layout
 
 \end_inset
@@ -12958,7 +12958,7 @@ N
 \begin_layout Plain Layout
 
 \lang english
-0 
+0
 \end_layout
 
 \end_inset
@@ -12969,7 +12969,7 @@ N
 \begin_layout Plain Layout
 
 \lang english
-0 
+0
 \end_layout
 
 \end_inset
@@ -12991,7 +12991,7 @@ N
 \begin_layout Plain Layout
 
 \lang english
-1 
+1
 \end_layout
 
 \end_inset
@@ -13002,7 +13002,7 @@ N
 \begin_layout Plain Layout
 
 \lang english
-N 
+N
 \end_layout
 
 \end_inset
@@ -13033,7 +13033,7 @@ N
 \begin_layout Plain Layout
 
 \lang english
-41 
+41
 \end_layout
 
 \end_inset
@@ -13044,7 +13044,7 @@ N
 \begin_layout Plain Layout
 
 \lang english
-2 
+2
 \end_layout
 
 \end_inset
@@ -13055,7 +13055,7 @@ N
 \begin_layout Plain Layout
 
 \lang english
-2 
+2
 \end_layout
 
 \end_inset
@@ -13066,7 +13066,7 @@ N
 \begin_layout Plain Layout
 
 \lang english
-2 
+2
 \end_layout
 
 \end_inset
@@ -13077,7 +13077,7 @@ N
 \begin_layout Plain Layout
 
 \lang english
-6 
+6
 \end_layout
 
 \end_inset
@@ -13099,7 +13099,7 @@ N
 \begin_layout Plain Layout
 
 \lang english
-2 
+2
 \end_layout
 
 \end_inset
@@ -13110,7 +13110,7 @@ N
 \begin_layout Plain Layout
 
 \lang english
-N 
+N
 \end_layout
 
 \end_inset
@@ -13165,7 +13165,7 @@ On the other hand, a situation for which the model might not be suited for
  If the model were to be used to find the best match in this scenario, the
  model would tend to select the youngest patient and discriminate against
  older patients as the recipient's age is the most important feature influencing
- the graft's survival time as shown in Section 
+ the graft's survival time as shown in Section
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:Important-Features"
@@ -13189,51 +13189,51 @@ Taking age out of the equation would not be a good solution as that would
  There also might be important correlations between age and other features.
  Preferably, the resulting risk score could be weighted based on the recipients
  age, e.g.
- if 
+ if
 \begin_inset Formula $C$
 \end_inset
 
- were to denote the resulting compatibility, 
+ were to denote the resulting compatibility,
 \begin_inset Formula $R$
 \end_inset
 
- the risk score predicted by the RSF model, 
+ the risk score predicted by the RSF model,
 \begin_inset Formula $w$
 \end_inset
 
- the weight and 
+ the weight and
 \begin_inset Formula $\mathbf{x}$
 \end_inset
 
- the pairing's feature vector, then 
-\begin_inset Formula 
+ the pairing's feature vector, then
+\begin_inset Formula
 \begin{equation}
 C\left(\mathbf{x}\right)=w\left(\mathbf{x}\right)\cdot R\left(\mathbf{x}\right)\label{eq:age_weighted}
 \end{equation}
 
 \end_inset
 
-where 
+where
 \begin_inset Formula $w$
 \end_inset
 
  could, for example, be defined as
-\begin_inset Formula 
+\begin_inset Formula
 \begin{equation}
 w\left(\mathbf{x}\right)=\left(\frac{x^{(AGE)}}{c}\right)^{-1}\label{eq:weight}
 \end{equation}
 
 \end_inset
 
-where 
+where
 \begin_inset Formula $x^{(AGE)}$
 \end_inset
 
- is the recipient's age variable of the feature vector and 
+ is the recipient's age variable of the feature vector and
 \begin_inset Formula $c$
 \end_inset
 
- could be a constant such as the 
+ could be a constant such as the
 \emph on
 life expectancy
 \emph default
@@ -13241,7 +13241,7 @@ life expectancy
 \end_layout
 
 \begin_layout Standard
-However, as illustrated in Figure 
+However, as illustrated in Figure
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig: KM_age"
@@ -13251,7 +13251,7 @@ noprefix "false"
 
 \end_inset
 
-, the recipient's age only begins to play a factor in the 
+, the recipient's age only begins to play a factor in the
 \begin_inset Formula $60+$
 \end_inset
 
@@ -13269,14 +13269,14 @@ noprefix "false"
 ) may put younger patients at a disadvantage, when compared to middle-aged
  patients.
  Consequently, an alternative solution could be to subtract a certain amount
- from the risk score of patients belonging to the 
+ from the risk score of patients belonging to the
 \begin_inset Formula $60+$
 \end_inset
 
  age cohort.
  Using the same symbols as before, the the compatibility could be given
  by
-\begin_inset Formula 
+\begin_inset Formula
 \begin{equation}
 C\left(\mathbf{x}\right)=\begin{cases}
 R\left(\mathbf{x}\right) & \textrm{if }x^{(AGE)}<60\\
@@ -13286,15 +13286,15 @@ R\left(\mathbf{x}\right)-c & \textrm{else}
 
 \end_inset
 
-where 
+where
 \begin_inset Formula $c$
 \end_inset
 
- could be the difference between the average risk in the 
+ could be the difference between the average risk in the
 \begin_inset Formula $0-59$
 \end_inset
 
- and 
+ and
 \begin_inset Formula $60$
 \end_inset
 
@@ -13303,18 +13303,18 @@ where
  1000 samples from each of the cohort, calculating a risk score for each
  of the samples and finally taking their averages.
  The resulting difference in average risk scores was
-\begin_inset Formula 
+\begin_inset Formula
 \begin{equation}
 c=\hat{R}_{0-59}-\hat{R}_{60+}=2269
 \end{equation}
 
 \end_inset
 
-where 
+where
 \begin_inset Formula $\hat{R}_{n}$
 \end_inset
 
- represent the average risk score of the 
+ represent the average risk score of the
 \begin_inset Formula $n$
 \end_inset
 
@@ -13328,7 +13328,7 @@ Possibilities for Future Research
 \begin_layout Standard
 In spite of the RSF model's demonstrated superiority in accuracy in comparison
  to the Cox Regression method, which is commonly used for kidney transplant
- survival estimation, the c-index value of 
+ survival estimation, the c-index value of
 \begin_inset Formula $0.638$
 \end_inset
 
@@ -13353,7 +13353,7 @@ Furthermore, it can also be expected, that future models will naturally
 \begin_layout Standard
 Additionaly, it may prove worthwhile to adapt the model for scenarios involving
  multiple donors and recipients, extending beyond the suggestions outlined
- in Section 
+ in Section
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:Age-Bias"
@@ -13406,7 +13406,7 @@ The increasing prevalence of the end-stage kidney renal disease imposes
  This however, is no easy task as there are complex factors affecting the
  compatibility of donors and patients, many of which may be currently unaccounte
 d for.
- 
+
 \end_layout
 
 \begin_layout Standard
@@ -13446,7 +13446,7 @@ S.
  J.
  Morris,
 \emph on
- Kidney Transplantation: Principles and Practice, 
+ Kidney Transplantation: Principles and Practice,
 \emph default
 Elsevier, 2020.
 \end_layout
@@ -13464,9 +13464,9 @@ B.
  Nankivell, D.
  R.
  Kuypers.
- 
+
 \emph on
-Diagnosis and prevention of chronic kidney allograft loss, 
+Diagnosis and prevention of chronic kidney allograft loss,
 \emph default
 The Lancet, Vol.
  378, Issue 9800, 2011, 1428-1437.
@@ -13487,13 +13487,13 @@ S.
  Healy, K.
  Baboolal, S.
  Kularatna.
- 
+
 \emph on
 Machine learning in predicting graft failure following kidney transplantation:
  A systematic review of published predictive models
 \emph default
 , International Journal of Medical Informatics, Vol.
- 130, 2019, 103957, 
+ 130, 2019, 103957,
 \begin_inset Flex URL
 status open
 
@@ -13517,7 +13517,7 @@ literal "false"
 
 D.D.
  Aufhauser Jr., et al.
- 
+
 \emph on
 Impact of prolonged dialysis prior to renal transplantation.
 
@@ -13539,13 +13539,13 @@ E.
  Gurbaxani, P.
  Keskinocak, J.
  Sokol.
- 
+
 \emph on
 Using machine learning and an ensemble of methods to predict kidney transplant
  survival
 \emph default
 .
- PLoS ONE 14(1), 2019, e0209068, 
+ PLoS ONE 14(1), 2019, e0209068,
 \begin_inset Flex URL
 status open
 
@@ -13568,7 +13568,7 @@ literal "true"
 \end_inset
 
 A.
- Burkov: 
+ Burkov:
 \emph on
 The Hundred-Page Machine Learning Book
 \emph default
@@ -13585,7 +13585,7 @@ literal "true"
 \end_inset
 
 A.
- Géron: 
+ Géron:
 \emph on
 Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow 2nd Edition
 \emph default
@@ -13604,7 +13604,7 @@ literal "true"
 M.
  Mohri, A.
  Rostamizadeh, A.
- Talwalkar: 
+ Talwalkar:
 \emph on
 Foundations of Machine Learning
 \emph default
@@ -13624,7 +13624,7 @@ C.
  Strobl, A.
  Boulesteix, A.
  Zeileis, T.
- Hothorn, 
+ Hothorn,
 \emph on
 Bias in random forest variable importance measures: illustrations, sources
  and a solution
@@ -13632,7 +13632,7 @@ Bias in random forest variable importance measures: illustrations, sources
 .
  BMC Bioinformatics.
  2007 Jan 25;8:25.
- 
+
 \end_layout
 
 \begin_layout Bibliography
@@ -13644,7 +13644,7 @@ literal "false"
 \end_inset
 
 L.
- Breiman, 
+ Breiman,
 \emph on
 Random Forests
 \emph default
@@ -13673,10 +13673,10 @@ literal "false"
 D.
  R.
  Cox, D.
- Oakes: 
+ Oakes:
 \emph on
 Analysis of Survival Data.
- 
+
 \emph default
 Chapman & Hall, 1984.
 \end_layout
@@ -13697,10 +13697,10 @@ H.
  Blackstone.
  M.
  S.
- Lauer: 
+ Lauer:
 \emph on
 Random survival forests.
- 
+
 \emph default
 Ann.
  Appl.
@@ -13716,9 +13716,9 @@ literal "false"
 
 \end_inset
 
-Google Developers, 
+Google Developers,
 \emph on
-Machine Learning Crash Course, 
+Machine Learning Crash Course,
 \begin_inset Flex URL
 status open
 
@@ -13743,10 +13743,10 @@ literal "false"
 D.
  G.
  Kleinbaum, M.
- Klein, 
+ Klein,
 \emph on
 Survival Analysis: A Self-Learning Text 3rd Edition.
- 
+
 \emph default
 Springer, 2012.
 \end_layout
@@ -13760,11 +13760,11 @@ literal "false"
 \end_inset
 
 S.
- Pölsterl, 
+ Pölsterl,
 \emph on
 scikit-survival:
 \emph default
- 
+
 \emph on
 A Library for Time-to-Event Analysis Built on Top of scikit-learn
 \emph default
@@ -13783,7 +13783,7 @@ literal "false"
 
 \end_inset
 
-Pedregosa et al., 
+Pedregosa et al.,
 \emph on
 Scikit-learn: Machine Learning in Python
 \emph default
@@ -13799,10 +13799,10 @@ literal "false"
 
 \end_inset
 
-Github, 
+Github,
 \emph on
 The state of open source software.
- 
+
 \begin_inset Flex URL
 status open
 
@@ -13824,9 +13824,9 @@ literal "false"
 
 \end_inset
 
-Python Software Foundation, 
+Python Software Foundation,
 \emph on
-Python Documentation, 
+Python Documentation,
 \begin_inset Flex URL
 status open
 
@@ -13848,7 +13848,7 @@ literal "false"
 
 \end_inset
 
-The Python Wiki, 
+The Python Wiki,
 \begin_inset Flex URL
 status open
 
@@ -13870,9 +13870,9 @@ literal "false"
 
 \end_inset
 
-Pavel Strachota, 
+Pavel Strachota,
 \emph on
-HELIOS cluster documentation, 
+HELIOS cluster documentation,
 \begin_inset Flex URL
 status open
 
@@ -13894,9 +13894,9 @@ literal "false"
 
 \end_inset
 
-Project Jupyter, 
+Project Jupyter,
 \emph on
-Jupyter Notebook Documentation, 
+Jupyter Notebook Documentation,
 \begin_inset Flex URL
 status open
 
@@ -13918,9 +13918,9 @@ literal "false"
 
 \end_inset
 
-The pandas development team, 
+The pandas development team,
 \emph on
-Pandas, 
+Pandas,
 \begin_inset Flex URL
 status open
 
@@ -13942,9 +13942,9 @@ literal "false"
 
 \end_inset
 
-NumPy Developers, 
+NumPy Developers,
 \emph on
-NumPy, 
+NumPy,
 \begin_inset Flex URL
 status open
 
@@ -13966,9 +13966,9 @@ literal "false"
 
 \end_inset
 
-Matplotlib Development Team, 
+Matplotlib Development Team,
 \emph on
-Matplotlib, 
+Matplotlib,
 \emph default
 
 \begin_inset Flex URL
@@ -13994,7 +13994,7 @@ literal "false"
 
 S.
  Krikov et.
- al., 
+ al.,
 \emph on
 Predicting Kidney Transplant Survival Using Tree-Based Modeling
 \emph default
@@ -14013,7 +14013,7 @@ literal "false"
 
 S.
  J.W.
- Willems, 
+ Willems,
 \emph on
 Inverse Probability Censoring Weights for Routine Outcome Monitoring Data
 \end_layout
@@ -14026,11 +14026,11 @@ literal "false"
 
 \end_inset
 
-National Kidney Foundation, 
+National Kidney Foundation,
 \emph on
 A to Z Health Guide
 \emph default
-, 
+,
 \begin_inset Flex URL
 status open
 
@@ -14053,7 +14053,7 @@ literal "false"
 \end_inset
 
 Jiang AT, BHSc, Rowe N, Sener A, Luke P.
- 
+
 \emph on
 Simultaneous pancreas-kidney transplantation: The role in the treatment
  of type 1 diabetes and end-stage renal disease.
