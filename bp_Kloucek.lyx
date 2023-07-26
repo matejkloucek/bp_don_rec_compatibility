@@ -11306,7 +11306,7 @@ noprefix "false"
 
 \end_inset
 
- that recipients with zero HLA mismatches have more optimistic survival
+ that recipients with zero HLA mismatches have more optimistic survival //to jsou realne jenom sourozenci, ne a to jeste s prsti 1 ku 4^3 nebo jednovajecna dvojcata, je to tak?
  curves than others.
  It can also be observed that survival curves of recipients with few (but
  more than one) mismatches do not differ significantly from the survival
@@ -13472,7 +13472,7 @@ Taking age out of the equation would not be a good solution as that would
 \begin_inset Formula $R$
 \end_inset
 
- the risk score predicted by the RSF model,
+ the risk score predicted by the RSF model, // pockej, tady mas compatibility a risk score v prime umere, tedy cim vyssi risk score, tim vyssi compatibily. To minimalne jazykove nedava smysl
 \begin_inset Formula $w$
 \end_inset
 
@@ -13672,7 +13672,7 @@ addcontentsline{toc}{chapter}{Conclusion}
 The increasing prevalence of the end-stage kidney renal disease imposes
  a great strain on the healthcare system.
  With the demand for kidneys greatly exceeding the supply, patients have
- to undergo months, sometimes even years of dialysis waiting list.
+ to undergo months, sometimes even years of dialysis waiting list. // celou tu praci si poradne precti, preklepu je tam mraky. A zvlast na uvod, zaver, abstrakt si dej fakt pozor, at je to aspon gramaticky spravne
  Consequently, effective matchmaking of recipient parings is of the utmost
  importance, not only to ensure that people don't return to the waiting
  list but, even more importantly, to prevent premature deaths.
@@ -13845,8 +13845,7 @@ literal "true"
 A.
  Burkov:
 \emph on
-The Hundred-Page Machine Learning Book
-\emph default
+The Hundred-Page Machine Learning Book // to mi neprijde jako nejlepsi zdroj \emph default
 .
  Andriy Burkov, 2019.
 \end_layout
@@ -13934,7 +13933,7 @@ literal "false"
 
 \end_inset
 
-Chronic kidney disease: global dimension and perspectives
+Chronic kidney disease: global dimension and perspectives //co to je za zdroj?
 \end_layout
 
 \begin_layout Bibliography
@@ -13993,7 +13992,7 @@ literal "false"
 
 Google Developers,
 \emph on
-Machine Learning Crash Course,
+Machine Learning Crash Course, // tohle bych hodne zvazil jestli uvadet
 \begin_inset Flex URL
 status open
 
@@ -14290,7 +14289,7 @@ S.
  J.W.
  Willems,
 \emph on
-Inverse Probability Censoring Weights for Routine Outcome Monitoring Data
+Inverse Probability Censoring Weights for Routine Outcome Monitoring Data // a vyslo to nekde?
 \end_layout
 
 \begin_layout Bibliography
