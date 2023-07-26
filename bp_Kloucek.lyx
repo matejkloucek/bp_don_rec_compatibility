@@ -1949,8 +1949,8 @@ hyperparameters
  (specifics of a given machine learning model that are set before the training
  process begins).
  This is done by training the model multiple times on the training set with
- different hyperparameters and then comparing their perfomance on the validation
- set.
+ different hyperparameters and then comparing their performance on the validatio
+n set.
  Once the best model has been selected, it is then trained using both the
  training and the validation set and its performance is then measured using
  the test set 
@@ -2111,7 +2111,7 @@ Gini importance.
  be calculated during the training process.
  However this method can be biased towards overestimating importance of
  variables with bigger scaled values.
- To adress this issue, numerical features are often scaled to the 
+ To address this issue, numerical features are often scaled to the 
 \begin_inset Formula $0-1$
 \end_inset
 
@@ -3021,7 +3021,7 @@ random forests
  The key idea behind random forests is that every decision tree is trained
  using different input features and different subsets of the of the training
  samples, which helps reduce overfitting and improves the generalization
- capabilites of the model.
+ capabilities of the model.
 \end_layout
 
 \begin_layout Subsubsection
@@ -3234,6 +3234,13 @@ The most important hyperparameters to be set before the beginning of the
 
 \begin_layout Subsubsection
 Weak and Strong Learners
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Weak-and-Strong"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3296,7 +3303,7 @@ noprefix "false"
 \begin_inset Formula $1000$
 \end_inset
 
- trees are combined, the probability that the correct class will recieve
+ trees are combined, the probability that the correct class will receive
  the highest number of votes is 
 \begin_inset Formula $74.68\%$
 \end_inset
@@ -3307,7 +3314,7 @@ noprefix "false"
 \begin_inset Formula $74.68\%$
 \end_inset
 
- sucess rate making it a fairly strong learner.
+ success rate making it a fairly strong learner.
 \end_layout
 
 \begin_layout Chapter
@@ -5042,8 +5049,8 @@ meaning that if the survival time were to be plotted along a horizontal
 \emph on
 Left censored 
 \emph default
-data are also possible, but they are uncommon in the case of post-tranplantation
- data as the the date of transplantation is naturally almost always known.
+data are also possible, but they are uncommon in the case of post-transplantatio
+n data as the the date of transplantation is naturally almost always known.
  Left censoring can happen, for example, in the case of predicting the survival
  time after exposure to a virus, as the exact date of this occurrence is
  often unknown.
@@ -5924,17 +5931,31 @@ where
 \end_inset
 
 .
- It is important to note that while the partial likelihood focuses only
- on the subjects that fail, 
-\begin_inset Formula $R(t_{j})$
+ Note that 
+\begin_inset Formula $R\left(t_{j}\right)$
 \end_inset
 
- also includes the individuals that will be censored later, thus they are
- also needed for the computation of 
-\begin_inset Formula $L_{j}$
+ represents a 
+\emph on
+set
+\emph default
+ of individuals at risk compared to 
+\begin_inset Formula $r_{j}$
 \end_inset
 
-.
+ used before, which only represents the number of individuals at risk.
+ This distinction in notation is made because it simplifies the equation
+ (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:likelihood of failing"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
  
 \begin_inset Formula $L_{j}$
 \end_inset
@@ -5952,7 +5973,7 @@ where
  
 \begin_inset Formula 
 \begin{equation}
-L_{j}\left(\beta\right)=\frac{h_{0}\left(t\right)\exp\left(\beta\cdot\mathbf{X}_{j}\right)}{\sum_{i\in R(t_{j})}h_{0}\left(t\right)\exp\left(\beta\cdot\mathbf{X}_{i}\right)}
+L_{j}\left(\beta\right)=\frac{h_{0}\left(t\right)\exp\left(\beta\cdot\mathbf{X}_{j}\right)}{\sum_{i\in R(t_{j})}h_{0}\left(t\right)\exp\left(\beta\cdot\mathbf{X}_{i}\right)}\label{eq:likelihood of failing}
 \end{equation}
 
 \end_inset
@@ -5980,7 +6001,33 @@ where
 \end_inset
 
 .
- As 
+ It is also important to note that in contrast to the notation used for
+ the Kaplan-Meier estimator, 
+\begin_inset Formula $p$
+\end_inset
+
+ represents the number of 
+\emph on
+all
+\emph default
+ events, not just the number of unique event times.
+ This ensures that there is only one hazard function in the numerator of
+ the (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:likelihood of failing"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+) equation.
+ 
+\end_layout
+
+\begin_layout Standard
+As 
 \begin_inset Formula $h_{0}\left(t\right)$
 \end_inset
 
@@ -6229,7 +6276,7 @@ name "sec:Random-Survival-Forests"
 \begin_layout Standard
 
 \emph on
-Random Survival Forests
+Random survival forests
 \emph default
  (RSF) is an ensemble machine learning method used for analyzing right-censored
  survival data.
@@ -6260,28 +6307,65 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-Each tree in the forest outputs a either a cumulative hazard function 
-\begin_inset Formula $H(t\mid\mathbf{x})$
+The building blocks of RSF are 
+\emph on
+survival trees
+\emph default
+, which are a modification of decision trees (described in Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Decision-Trees"
+plural "false"
+caps "false"
+noprefix "false"
+
 \end_inset
 
-, which takes a vector of predictive variables 
+) designed to handle survival data.
+ Each tree in the forest outputs a either a 
+\emph on
+cumulative hazard function
+\emph default
+ 
+\begin_inset Formula $H\left(t\mid\mathbf{x}\right)$
+\end_inset
+
+ or a 
+\emph on
+survival function
+\emph default
+ 
+\begin_inset Formula $S\left(t\mid\mathbf{x}\right)$
+\end_inset
+
+.
+ Both take a vector of predictive variables 
 \begin_inset Formula $\mathbf{x}$
 \end_inset
 
- describing a given individual and time 
+, describing a given individual, and time 
 \begin_inset Formula $t$
 \end_inset
 
  as inputs.
  The forest's overall prediction, i.e.
- 
+ the
 \emph on
-the ensemble cumulative hazard,
+ ensemble cumulative hazard function
+\begin_inset Formula $H_{e}\left(t\mid\mathbf{x}\right)$
+\end_inset
+
+ 
 \emph default
- is then computed as the average of the individual tree predictions.
- The individual survival trees can also be used to output survival functions,
- from which an ensemble survival function is computed in the same manner
- as demonstrated below.
+or the
+\emph on
+ ensemble survival function 
+\begin_inset Formula $S_{e}\left(t\mid\mathbf{x}\right)$
+\end_inset
+
+,
+\emph default
+ are then computed as the average of the individual tree's predictions.
 \end_layout
 
 \begin_layout Section
@@ -6289,10 +6373,11 @@ Building a Random Survival Forests model
 \end_layout
 
 \begin_layout Standard
-The algorithm for building a RSF model works as follows 
+The algorithm for building a RSF model as implemented in the works as follows
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Random Survival Forests"
+key "Random Survival Forests,scikit-survival"
 literal "false"
 
 \end_inset
@@ -6301,8 +6386,8 @@ literal "false"
 \end_layout
 
 \begin_layout Enumerate
-A set number of subsets is taken from the data using the bootstrap sampling
- method as described in Section 
+A set number of subsets is taken from the training dataset using the bootstrap
+ sampling method as described in Section 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "enu:Sampling-the-data:"
@@ -6313,11 +6398,21 @@ noprefix "false"
 \end_inset
 
 , with each sample excluding on average 37% of the original data.
- The excluded data is referred to as 
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+The excluded data is referred to as 
 \emph on
 out-of-bag data 
 \emph default
 (OOB) and is later used for computing the ensemble cumulative hazard.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Enumerate
@@ -6338,8 +6433,8 @@ noprefix "false"
 \end_inset
 
  , i.e.
- at each node the algorithm iterates over all possible features and values
- for them and decides on the best split.
+ at each node the algorithm iterates over all possible features (the number
+ of which can be limited) and values for them, and decides on the best split.
  The best split is decided by maximizing the log-rank statistic (described
  in Section 
 \begin_inset CommandInset ref
@@ -6354,30 +6449,76 @@ noprefix "false"
 ), which compares the survival curves of the two groups created by the potential
  split.
  The algorithm is restricted by a criterion that each node should contain
- at least 1 unique event time, which leads to a point when no new splits
- can be made meaning the tree has been fully grown.
+ at least 1 unique event time.
+ This leads to a point where no new splits can be made, meaning that the
+ tree has been fully grown.
+ Other hyperparameters limiting the growth of the tree can also be set,
+ which are described in Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Hyperparameters"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Once a tree is fully grown, it outputs either a survival function or a cumulativ
+e hazard function (CHF), which are calculated as follows.
+ Let 
+\begin_inset Formula $A$
+\end_inset
+
+ denote the set of all terminal nodes.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+If the preferred output is a survival function, for every terminal node,
+ that is 
+\begin_inset Formula $\forall j\in A$
+\end_inset
+
+, a survival curve 
+\begin_inset Formula $\hat{S}_{j}\left(t\right)$
+\end_inset
+
+ is computed using the Kaplan-Meier estimator in the same manner as described
+ in Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Kaplan-Meier-Estimator"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, with the individuals from the given bootstrap sample belonging to the
+ given terminal node 
+\begin_inset Formula $j$
+\end_inset
+
+ being used as the group on which the Kaplan-Meier survival curve is calculated
+ on.
  
 \end_layout
 
 \begin_layout Enumerate
-Once a tree is fully grown, each terminal node outputs either a survival
- function or a 
-\emph on
-cumulative hazard function 
-\emph default
-(CHF) denoted by 
-\begin_inset Formula $\hat{H}(t)$
+Otherwise, for every terminal node 
+\begin_inset Formula $j\in A$
 \end_inset
 
- which is calculated as follows:
-\begin_inset Newline newline
+, a CHF denoted by 
+\begin_inset Formula $\hat{H}_{j}(t)$
 \end_inset
 
-Let 
-\begin_inset Formula $A$
-\end_inset
-
- denote the set of all terminal nodes, then each node 
+ is calculated as follows.
+ Suppose that each node 
 \begin_inset Formula $j\in A$
 \end_inset
 
@@ -6444,7 +6585,7 @@ Let
 \begin_inset Formula $N(j)$
 \end_inset
 
- is the number of observed unique event times and let 
+ is the total number of observed unique event times, and let 
 \begin_inset Formula $f_{k,j}$
 \end_inset
 
@@ -6452,53 +6593,49 @@ Let
 \begin_inset Formula $r_{k,j}$
 \end_inset
 
- represent the number of indivudals who experienced an event (fail) or were
- at risk at time 
+ represent the number of individuals who either experienced an event (failed)
+ or were at risk at time 
 \begin_inset Formula $t_{k,j}$
 \end_inset
 
  respectively.
- Then, either a survival function is estimated using the Kaplan-Meier estimator
- (described in Section 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "subsec:Kaplan-Meier-Estimator"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
-), or a CHF for the node 
+ The CHF for the node 
 \begin_inset Formula $j$
 \end_inset
 
- is given by the Nelson-Maier estimator
+ is then given by the Nelson-Maier estimator
 \begin_inset Formula 
 \begin{equation}
-\hat{H}_{j}(t)=\sum_{t_{k,j}\leq t}\frac{r_{k,j}}{f_{k,j}}\label{eq:node CHF}
+\hat{H}_{j}(t)=\sum_{t_{k,j}\leq t}\frac{r_{k,j}}{f_{k,j}}.\label{eq:node CHF}
 \end{equation}
 
 \end_inset
 
 
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
-When a new input vector 
+\end_deeper
+\begin_layout Enumerate
+When the RSF model is asked to make predictions for a feature vector 
 \begin_inset Formula $\mathbf{x}$
 \end_inset
 
- is introduced to the model, the tree is followed from the top down until
- a terminal node 
-\begin_inset Formula $j\in A$
+, each survival tree is followed from the root node down in accordance with
+ the rules it learned during the training process, until a terminal node
+ 
+\begin_inset Formula $i\in A$
 \end_inset
 
  is reached.
- The CHF of the whole tree is then given by
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+The survival function of the whole tree is then given by
 \begin_inset Formula 
 \begin{equation}
-H(t\mid\mathbf{x})=\hat{H}_{j}(t).\label{eq:tree CHF}
+S(t\mid\mathbf{x})=\hat{S}_{i}(t),\label{eq:tree surv function}
 \end{equation}
 
 \end_inset
@@ -6507,8 +6644,109 @@ H(t\mid\mathbf{x})=\hat{H}_{j}(t).\label{eq:tree CHF}
 \end_layout
 
 \begin_layout Enumerate
-Next, two ensemble cumulative hazards functions are calculated.
- The first, called the 
+Alternatively, the CHF of the tree is given by 
+\begin_inset Formula 
+\begin{equation}
+H(t\mid\mathbf{x})=\hat{H}_{i}(t).\label{eq:tree CHF}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Next, both the ensemble survival function 
+\emph on
+
+\begin_inset Formula $S_{e}\left(t\mid\mathbf{x}\right)$
+\end_inset
+
+
+\emph default
+ and the ensemble cumulative hazard function 
+\begin_inset Formula $H_{e}\left(t\mid\mathbf{x}\right)$
+\end_inset
+
+ are computed in a similar manner by averaging over the predictions made
+ by all grown tress.
+ More specifically, let 
+\begin_inset Formula $N$
+\end_inset
+
+ denote the number of survival trees in the ensemble.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+The survival function is then given by
+\begin_inset Formula 
+\begin{equation}
+S_{e}\left(t\mid\mathbf{x}\right)=\frac{1}{N}\sum_{n=1}^{N}S_{n}(t\mid\mathbf{x})
+\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $S_{n}$
+\end_inset
+
+ is a survival function predicted by the 
+\begin_inset Formula $n$
+\end_inset
+
+-th tree in the ensemble (defined in (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:tree surv function"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+)).
+ 
+\end_layout
+
+\begin_layout Enumerate
+Analogously, the ensemble cumulative hazard function is given by
+\begin_inset Formula 
+\begin{equation}
+H_{e}(t\mid\mathbf{x})=\frac{1}{N}\sum_{n=1}^{N}H_{n}(t\mid\mathbf{x})\label{eq:ensemble CHF}
+\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $H_{n}$
+\end_inset
+
+ is a cumulative hazard function predicted by the 
+\begin_inset Formula $n$
+\end_inset
+
+-th tree in the ensemble (defined in (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:tree CHF"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+)).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+The first, called the 
 \emph on
 bootstrap ensemble CHF
 \emph default
@@ -6528,7 +6766,7 @@ OOB ensemble CHF
 ), averages over trees where a given input was not used in the training
  of the given tree i.e.
  is a case of the OOB data.
- Suppose an example 
+ Suppose an feature vector 
 \begin_inset Formula $\mathbf{x}_{i}$
 \end_inset
 
@@ -6622,16 +6860,29 @@ H_{e}^{**}(t\mid\mathbf{x}_{i})=\frac{\sum_{b=1}^{B}I_{i,b}H_{b}(t\mid\mathbf{x}
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \begin_layout Section
 Hyperparameters
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Hyperparameters"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 Like any other machine learning model, the RSF model has multiple hyperparameter
-s that define its behaviour.
- As RSF are dervied from conventional random forests, they also share many
+s that define its behavior.
+ As RSF are derived from conventional random forests, they also share many
  of the same hyperparameters.
- The most important hyperparameters that the scikit-survivals's (see Section
+ The most important hyperparameters that the scikit-survival's (see Section
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -6664,11 +6915,10 @@ n_estimators
 \end_inset
 
 : The number of survival trees in the forest.
- Usually, the more larger the better, however, more trees also means longer
- training times.
- Moreover, the benefits gained by adding more trees becomes deminishing,
- meaning that there is a point, where the added computational complexity
- is not worth it 
+ More trees generally result in better predictions, however, they also lead
+ to longer training times, and the benefits gained by adding more trees
+ diminish, reaching a point where the added computational complexity is
+ not worth it 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "scikit-learn"
@@ -6723,10 +6973,10 @@ min_samples_split
 \end_inset
 
 : The minimum number of samples required to split a node.
- As mentioned beforem this parameter can limit the growth of the survival
- trees and therefore speed up the training process.
+ As mentioned before, this parameter can limit the growth of survival trees
+ and therefore speed up the training process.
  However, setting this parameter too high can result in underfitting as
- the model may fail to capture more complex realations in the data.
+ the model may fail to capture more complex relations in the data.
 \end_layout
 
 \begin_layout Itemize
@@ -6740,8 +6990,8 @@ min_samples_leaf
 \end_inset
 
 : The minimum number of samples required to be in a leaf node.
- This will ensure more samples are used for calculating the survival / cummulati
-ve hazard functions.
+ This will ensure more samples are used for calculating the survival / cumulativ
+e hazard functions.
  Therefore, raising this number will smooth the predictions 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -6935,12 +7185,13 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-The area under the ROC curve can be interpreted as the probability that
- a given model will rank a random positive example more highly (e.g.
+The area under the ROC curve (AUC) can be interpreted as the probability
+ that a given model will rank a random positive example more highly (e.g.
  it will assign a higher probability of being positive) than a random negative
  example.
- The C-index can attain values from 0 to 1, where 1 means a perfect model
- whose predictions are always correct and 0 being the opposite.
+ The AUC, as well as the C-index, can attain values from 0 to 1, where 1
+ means a perfect model whose predictions are always correct and 0 being
+ the opposite.
  A random classifier that assigns the predicted value with a uniform distributio
 n, will have an AUC of 0.5.
  Generally, models with an AUC above 0.7 are considered to be good predictors.
@@ -6960,9 +7211,67 @@ noprefix "false"
 \end_layout
 
 \begin_layout Standard
-The C-index works in similiar fashion to the AUC in the sense that it compares
- two random individuals, and checks whether the model assigns a more favorable
- hazard function to the patient with longer survival time.
+The C-index works in similar fashion to the AUC in the sense that it compares
+ two individuals, and checks whether the model assigns a more favorable
+ hazard function to the patient with longer observed survival time.
+ More specifically, let 
+\begin_inset Formula $t_{1},\ldots t_{n}$
+\end_inset
+
+ be a set of pre-chosen time points, then, we say that individual 
+\begin_inset Formula $i$
+\end_inset
+
+ has a 
+\emph on
+worse predicted outcome
+\emph default
+ than individual 
+\begin_inset Formula $j$
+\end_inset
+
+ if
+\begin_inset Formula 
+\begin{equation}
+\sum_{k=1}^{n}H_{e}(t_{k}\mid\mathbf{x}_{i})>\sum_{k=1}^{n}H_{e}(t_{k}\mid\mathbf{x}_{j})\label{eq:worse outcome def-1}
+\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $\mathbf{x}_{i}$
+\end_inset
+
+ and 
+\begin_inset Formula $\mathbf{x}_{j}$
+\end_inset
+
+ are feature vectors describing the individuals 
+\begin_inset Formula $i$
+\end_inset
+
+ and 
+\begin_inset Formula $j$
+\end_inset
+
+ respectively, and 
+\begin_inset Formula $H_{e}$
+\end_inset
+
+ is the ensemble CHF defined in (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:ensemble CHF"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
+ However, not all individuals can be compared to each other due to censoring.
+ Therefore, there is specific set of rules that define comparable pairs,
+ which are explained in the next section.
 \end_layout
 
 \begin_layout Subsection
@@ -6977,8 +7286,7 @@ name "subsec:Calculating-Harell's-Concordance"
 \end_layout
 
 \begin_layout Standard
-Not all individuals can be compared to each other as a result of censoring.
- The C-index is therefore calculated as follows 
+The C-index is calculated as follows 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Random Survival Forests"
@@ -6990,8 +7298,8 @@ literal "false"
 \end_layout
 
 \begin_layout Enumerate
-Find all possible pairs of cases across the test dataset while excluding
- the following cases: 
+Find all possible pairs of cases across the test (or validation) dataset
+ while excluding the following cases: 
 \end_layout
 
 \begin_deeper
@@ -7051,7 +7359,7 @@ For each permissible pair
 \begin_inset Formula $\left((T_{i},\delta_{i}),(T_{j},\delta_{j})\right)$
 \end_inset
 
- a value for 
+, a value for 
 \begin_inset Formula $c_{i,j}$
 \end_inset
 
@@ -7064,13 +7372,17 @@ if
 \begin_inset Formula $T_{i}\neq T_{j}$
 \end_inset
 
- then
+ and, without the loss of generality, suppose that 
+\begin_inset Formula $T_{i}<T_{j}$
+\end_inset
+
+
 \begin_inset Formula 
 \[
 c_{i,j}=\begin{cases}
-1 & \textrm{if \ensuremath{T_{i}<T_{j}\Longrightarrow i} has worse predicted outcome than \ensuremath{j} (\ref{eq:worse outcome def})}\\
-0.5 & \textrm{if }\ensuremath{T_{i}<T_{j}\Longrightarrow}\textrm{predicted outcomes of \ensuremath{i} and \ensuremath{j} are tied}\\
-0 & \textrm{else}
+1 & \textrm{if \ensuremath{i} has worse predicted outcome than \ensuremath{j} (defined in (\ref{eq:worse outcome def}))}\\
+0.5 & \textrm{if }\textrm{the predicted outcomes of \ensuremath{i} and \ensuremath{j} are tied (equality instead of inequality in (\ref{eq:worse outcome def-1}))}\\
+0 & \textrm{if \ensuremath{j} has worse predicted outcome than \ensuremath{i} }
 \end{cases}
 \]
 
@@ -7111,7 +7423,11 @@ if
 \begin_inset Formula $\:\land\:\delta_{i}\neq\delta_{j}$
 \end_inset
 
- 
+ and, without the loss of generality, suppose that 
+\begin_inset Formula $\delta_{i}=1$
+\end_inset
+
+
 \begin_inset Formula 
 \[
 c_{i,j}=\begin{cases}
@@ -7130,60 +7446,16 @@ c_{i,j}=\begin{cases}
 The C-index is then given by
 \begin_inset Formula 
 \begin{equation}
-C=\frac{1}{\left|P\right|}\sum_{i,j\in P,i\neq j}c_{i,j}.
-\end{equation}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Whether a given case has a better or a worse predicted outcome is decided
- as follows.
- Let 
-\begin_inset Formula $t_{1},\ldots t_{n}$
-\end_inset
-
- be a set of pre-chosen time points, then case 
-\begin_inset Formula $i$
-\end_inset
-
- has a worse predicted outcome than case 
-\begin_inset Formula $j$
-\end_inset
-
- if
-\begin_inset Formula 
-\begin{equation}
-\sum_{k=1}^{n}H_{e}^{**}(t_{k}\mid\mathbf{x}_{i})>\sum_{k=1}^{n}H_{e}^{**}(t_{k}\mid\mathbf{x}_{j})\label{eq:worse outcome def}
+C=\frac{1}{\left|P\right|}\sum_{i,j\in P,i\neq j}c_{i,j}
 \end{equation}
 
 \end_inset
 
 where 
-\begin_inset Formula $\mathbf{x}_{l}$
+\begin_inset Formula $\left|P\right|$
 \end_inset
 
- is a feature vector of the case 
-\begin_inset Formula $l,$
-\end_inset
-
-and 
-\begin_inset Formula $H_{e}^{**}$
-\end_inset
-
- is the OOB ensemble CHF defined in (
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:OOB ensemble CHF"
-plural "false"
-caps "false"
-noprefix "false"
-
-\end_inset
-
-).
+ denotes the number of permissible pairs.
 \end_layout
 
 \begin_layout Standard
@@ -7212,7 +7484,7 @@ e the model's performance.
 \end_layout
 
 \begin_layout Plain Layout
-To adress this issue, the scikit-survival package 
+To address this issue, the scikit-survival package 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:scikit-survival"
@@ -7312,7 +7584,7 @@ literal "false"
 \end_inset
 
 , is used to compute variable importance.
- Fortunately also implemented within the scikit-learn 
+ Fortunately, it also implemented within the scikit-learn 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:scikit-learn"
@@ -7326,7 +7598,7 @@ noprefix "false"
 \end_layout
 
 \begin_layout Standard
-Permutation importance is calculated by first calculating a baseline metric
+Permutation importance is computed by first calculating a baseline metric
  by evaluating the model's performance when trained on the complete set
  of features.
  Next, a feature is permutated from the validation set and the model's performan
@@ -7349,7 +7621,7 @@ Other Methods
 \end_layout
 
 \begin_layout Standard
-Random Survival Forest is not the only model that combines conventional
+Random survival forest is not the only model that combines conventional
  machine learning techniques with survival analysis.
  The scikit-survival library (see Section 
 \begin_inset CommandInset ref
@@ -7363,11 +7635,11 @@ noprefix "false"
 
 ) also provides implementations of 
 \emph on
-Survival Support Vector Machine 
+survival support vector machine 
 \emph default
 and 
 \emph on
-Survival Gradient Boosting.
+survival gradient boosting.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -7382,13 +7654,13 @@ support vector machine (SVM)
 \emph default
 , which is a supervised machine learning model that works by mapping the
  feature vector of each sample into high-dimensional space and calculating
- a hyperplane that seperates them based on their labels, called a 
+ a hyperplane that separates them based on their labels, called a 
 \emph on
 decision boundary
 \emph default
 .
- When faced with a new input, the SVM makes a decision based on which side
- of the decision boundary the new case falls 
+ When making predictions on a new input, the SVM makes a decision based
+ on which side of the decision boundary the new case falls 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "100-page ML"
@@ -7404,10 +7676,10 @@ The survival SVM differs from the regular SVM in the sense that it uses
  survival time as well as censoring status as labels and uses both of these
  to calculate the hyperplane.
  The survival SVM can work with two types of problems: a regression problem
- which outputs predicted survival time and a ranking problem which ranks
+ which outputs predicted survival time, and a ranking problem which ranks
  individuals based on their survival time.
  This is however slightly disadvantageous as these types of predictions
- are not easily tranferrable to standard survival analysis outputs, namely
+ are not easily transferable to standard survival analysis outputs, namely
  the survival and hazard functions 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -7429,15 +7701,20 @@ Survival gradient boosting builds on the basis of regular
 gradient boosting
 \emph default
 , which is an ensemble supervised machine learning technique that works
- by combining predictions of many 
-\emph on
-weak learners
-\emph default
-, models that are only slightly better than random guessing, and sequentially
- improving their performance by gradiually optimizing a loss function by
- using its gradient.
- Gradient boosting models generally achieve greater accracy than random
- forests, however take much longer to train 
+ by combining predictions of many weak learners (described in Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Weak-and-Strong"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+), and sequentially improving their performance by gradually optimizing
+ a loss function by using its gradient.
+ Gradient boosting models generally achieve greater accuracy than random
+ survival forests, however take much longer to train 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "100-page ML,scikit-survival"
@@ -7449,10 +7726,10 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-While in the case of conventional gradient boosting the loss function given
- by prediction error (e.q.
+While in the case of conventional gradient boosting, the loss function is
+ given by prediction error (e.q.
  mean squared error), in the case survival gradient boosting the loss function
- is the partial likelihood loss partial likelihood loss Cox regression described
+ is the partial likelihood loss of the Cox proportional hazards model described
  in Section 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -7475,8 +7752,8 @@ noprefix "false"
 
 \begin_layout Standard
 The reasons for why the RSF model was chosen include the above described
- disadvantages of the aformetioned alternatives and promising accuracy that
- the RSF model displayed in the related articles 
+ disadvantages of the aforementioned alternatives and promising accuracy
+ that the RSF model displayed in the related articles 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Using ML methods to predict kidney transplant survival,Systematic review"
@@ -8191,7 +8468,7 @@ status open
 
 \begin_layout Plain Layout
 Subsequently, independent machine learning models were trained on each of
- the created subsets seperately.
+ the created subsets separately.
  
 \end_layout
 
@@ -8870,8 +9147,8 @@ n_repeats=2
 \end_inset
 
  .
- The two resulting tables of variable imortances were used to create a list
- of the 27 most important features.
+ The two resulting tables of variable importances were used to create a
+ list of the 27 most important features.
  The variable importance of those features was then validated by computing
  permutation importance on a dataset consisting only of these features with
  
@@ -10749,7 +11026,7 @@ name "The-plateauing"
 
 \begin_layout Standard
 With increasing time, the predicted survival curves eventually flatten,
- which is an inacuracy of the model as survival curves cannot stay constant
+ which is an inaccuracy of the model as survival curves cannot stay constant
  forever and must eventually decline to zero.
 \end_layout
 
@@ -10790,7 +11067,7 @@ Kipan_Living
  belonging to a terminal node, whose time of censoring is greater than the
  last unique event time.
  Consequently, the survival functions, computed using the Kaplan-Meier estimator
- in each survival tree, have a constant non-zero value past the last unique
+ in each survival tree, have a constant nonzero value past the last unique
  event time.
 \end_layout
 
@@ -11039,7 +11316,7 @@ noprefix "false"
  It is also important to note that the distance between the survival curves
  of patients with some HLA mismatches and the ones without, seems to grow
  larger with time suggesting that HLA mismatch level is important not only
- for prevetning acute rejections, but also for long term survival.
+ for preventing acute rejections, but also for long term survival.
  
 \end_layout
 
@@ -11110,7 +11387,7 @@ noprefix "false"
 
 \end_inset
 
- around the 6000 days mark, which is a result of the plateuing effect described
+ around the 6000 days mark, which is a result of the plateauing effect described
  in Section 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -11821,7 +12098,7 @@ Usage for Computing Compatibility
 \begin_layout Standard
 The RSF model could be used in cases where there is one patient looking
  for a donor and multiple donors are available.
- The model would then be ussed to asses their compatibility by calculating
+ The model would then be used to asses their compatibility by calculating
  the risk score of each of the possible pairings and the the pairing with
  the lowest risk score would be chosen.
  
@@ -13179,8 +13456,8 @@ noprefix "false"
  This however, could result in cases where a donor could be the best possible
  match for an older recipient by all other measures but the age, while for
  the younger patients, even better suited match might be found in the near
- future, however the model would still rank the younger patinent as the
- best match solely because of his age.
+ future, however the model would still rank the younger patient as the best
+ match solely because of his age.
 \end_layout
 
 \begin_layout Standard
@@ -13328,7 +13605,7 @@ Possibilities for Future Research
 \begin_layout Standard
 In spite of the RSF model's demonstrated superiority in accuracy in comparison
  to the Cox Regression method, which is commonly used for kidney transplant
- survival estimation, the c-index value of 
+ survival estimation, the C-index value of 
 \begin_inset Formula $0.638$
 \end_inset
 
@@ -13336,7 +13613,7 @@ In spite of the RSF model's demonstrated superiority in accuracy in comparison
  Therefore, a future research could focus on enhancing the model's accuracy
  by altering the model's algorithm or by working with higher quality data.
  For example, the UNOS dataset contains detailed medical information obtained
- at the time of transplantation aalong with abundant follow-up data.
+ at the time of transplantation along with abundant follow-up data.
  However, for the purposes of this study, a more expansive dataset regarding
  the pre-transplantation state of both the donor and the recipient would
  be advantageous.
@@ -13351,7 +13628,7 @@ Furthermore, it can also be expected, that future models will naturally
 \end_layout
 
 \begin_layout Standard
-Additionaly, it may prove worthwhile to adapt the model for scenarios involving
+Additionally, it may prove worthwhile to adapt the model for scenarios involving
  multiple donors and recipients, extending beyond the suggestions outlined
  in Section 
 \begin_inset CommandInset ref
@@ -13398,8 +13675,8 @@ The increasing prevalence of the end-stage kidney renal disease imposes
  a great strain on the healthcare system.
  With the demand for kidneys greatly exceeding the supply, patients have
  to undergo months, sometimes even years of dialysis waiting list.
- Consequently, effective matchmaking of donor-recipeint parings is of the
- utmost importance, not only to ensure that people don't return to the waiting
+ Consequently, effective matchmaking of recipient parings is of the utmost
+ importance, not only to ensure that people don't return to the waiting
  list but, even more importantly, to prevent premature deaths.
  Finding pairings that will ensure the longest possible survival time is
  crucial for achieving this goal.
