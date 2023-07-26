@@ -7510,7 +7510,7 @@ The data used for training was obtained from the United Network for Organ
  ensuring fair graft allocation) for multiple organs such as kidneys, heart,
  lungs, liver, pancreas and intestines.
  As a result, UNOS maintains a large database of organ transplantations
- carried between 1984 and today.
+ carried between 1984 and today. // to neni anglicky :)
  Specifically, there are more than a million entries regarding kidney transplant
 ations, an amount sufficient for training a machine learning model.
 \end_layout
@@ -7597,7 +7597,7 @@ numpy
 matplotlib
 \emph default
  library was used to provide graphical output in order visually validate
- models performance.
+ models performance. // jeste bys mohl nejak uvest, ze ted jdes popisovat nastroje co budes pouzivat
 \end_layout
 
 \begin_layout Subsection
@@ -7609,7 +7609,7 @@ Python
 \emph on
 Python
 \emph default
- is an interpreted, general-purpose, high-level, object-oriented programming
+ is an interpreted, general-purpose, high-level, object-oriented programming //non-typed
  language that consistently ranks among the most used programming languages
  in the world
 \begin_inset CommandInset citation
@@ -7625,7 +7625,7 @@ literal "false"
  libraries that provide additional functionality, automatic memory management
  and the fact that Python is cross platform, meaning that code written on
  one machine can easily be run on different machines, regardless of their
- operating system.
+ operating system. // no to je dost odvazne tvrzeni...
 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -7885,7 +7885,7 @@ literal "false"
 .
  In the field of machine learning, matplotlib is often used to validate
  and evaluate the training process of a machine learning model in order
- to prevent overfitting or underfitting.
+ to prevent overfitting or underfitting. // fakt?
 \end_layout
 
 \begin_layout Subsection
