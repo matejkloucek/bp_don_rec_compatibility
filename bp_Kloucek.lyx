@@ -8285,7 +8285,7 @@ Deceased_Donor
 
 \end_inset
 
-, which contain more detailed information about living and deceased donors
+, which contain more detailed information about living and deceased donors // no trochu mi trvalo, nez jsem prisel na to ktere 3 tabulky to jsou. mozna kdyz to mas takhle v listu, tak by stalo za to mit 3 odrazky
  respectively.
 \end_layout
 
@@ -8660,7 +8660,7 @@ GSTATUS_KI
  and chapters describe the survival time of the graft itself, not necessarily
  the survival time of the patient, as the graft may fail but the patient
  may continue to live on either by returning to dialysis or by getting another
- transplant.
+ transplant. // or vice versa, patient dying but graft surviving
  Nevertheless, for the sake of simplicity, the survival time of the graft
  will sometimes be referred to as the patient's or recipient's survival
  time.
@@ -8749,7 +8749,7 @@ status open
 \end_inset
 
 .
- This was done excluding columns with high percentage of missing values
+ This was done excluding columns with high percentage of missing values  // no to je odvazne
  (
 \begin_inset Formula $>50\%$
 \end_inset
@@ -8785,7 +8785,7 @@ HLA typing
 \end_layout
 
 \begin_layout Standard
-As illustrated in the table
+As illustrated in the table  // nefunkcni odkaz
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "HLA mismatch table"
@@ -8805,7 +8805,7 @@ noprefix "false"
  This would create a problem when encoding categorical columns as it would
  create an enormous amount of new columns.
  Fortunately, these columns can be dropped from the dataset as they are
- already used for calculating HLA mismatch and therefore dropping them does
+ already used for calculating HLA mismatch and therefore dropping them does  // no ok, ale HLA mismatch je sice technicky numerical, ale realne categorical - to je prave tema vyzkumu (mimo jine), prijit s novym indexem incompatibility. To je za me spatne, no... A tedy v tabulce 6.1 vidim, ze pouzivas nejen HLA mismatch, ale pak jeste mismatch na DR, B i A. Neni to tak, ze HLA mismatch plyne z tech 3? Takze pouzivas nejake featury a pak i jejich linearni kombinaci?
  not result in a significant loss of information.
 \end_layout
 
@@ -8888,7 +8888,7 @@ Columns containing dates were formatted as strings and were thus identified
  as categorical.
  This would lead to problems when encoding since there would be a new column
  created for every unique time.
- This was dealt with by only using the year and setting its datatype to
+ This was dealt with by only using the year and setting its datatype to  //no to je dost poor man's solution teda
 
 \begin_inset Flex Code
 status open
@@ -10073,7 +10073,7 @@ PRI_PAYMENT_TCR_KI
 \begin_layout Plain Layout
 
 \lang english
-Recipient's primary payment source
+Recipient's primary payment source // to je zvlastni, ne? nestalo by za to se k tomu nejak vyjadrit?
 \end_layout
 
 \end_inset
@@ -10472,7 +10472,7 @@ WORK_INCOME_TCR
 \begin_layout Plain Layout
 
 \lang english
-Is recipient working for income
+Is recipient working for income // to je zvlastni, ne? nestalo by za to se k tomu nejak vyjadrit?
 \end_layout
 
 \end_inset
@@ -10816,7 +10816,7 @@ max_depth=None
 \begin_layout Standard
 Using these hyperparameters and the reduced list of features, the RSF model
  achieved an accuracy given by the C-index of
-\begin_inset Formula $0.638$
+\begin_inset Formula $0.638$ // no to nic moc, ne? kdyz nekde pises, ze dobry model ma 0.7+. Nic lepsiho z toho nedostanes?
 \end_inset
 
 .
@@ -11031,7 +11031,7 @@ With increasing time, the predicted survival curves eventually flatten,
 \begin_layout Standard
 The plateauing of both of the curves is caused by the fact that the limited
  amount of samples belonging to the individual terminal nodes of the survival
- trees.
+ trees. // tady ti chybi pulka vety
  More specifically, this is caused by the high amount of censoring in the
  dataset (
 \begin_inset Formula $55\%$
