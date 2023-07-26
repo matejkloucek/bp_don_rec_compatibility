@@ -8325,8 +8325,8 @@ Kidney_Pancreas
  columns.
  It contains information about both living and deceased donors, but the
  details regarding the donors are limited in scope, particularly in the
- case of living donors.
- To address this limitation, a table join was performed with the 
+ case of living donors. // coz je zvlastni, v IKEMu maji urcite lepe vysetrene zijici darce
+ To address this limitation, a table join was performed with the
 \begin_inset Flex Code
 status open
 
