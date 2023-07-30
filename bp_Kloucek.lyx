@@ -8853,14 +8853,19 @@ noprefix "false"
 , the value of the HLA mismatch column is a sum of the mismatches at the
  A, B, and DR loci.
  Including both the overall HLA mismatch and the mismatch at the individual
- loci introduces collinearity to the model, which can hamper the accuracy
- of the model.
- Therefore, the model was first trained using only the individual mismatches
- at the locus level.
- Subsequently, variable importances were calculated which revealed no significan
-t difference of importances of the individual locus-level mismatches.
- Therefore, these features were dropped from the dataset, and only the overall
- HLA mismatch was used for training the final model.
+ loci introduces multicollinearity to the model, thereby potentially compromisin
+g its accuracy.
+ Therefore, the model was first trained using only the mismatches at the
+ locus level, with the aim of discovering whether any of the locus-level
+ mismatches had a larger impact on survival time than others.
+ The results revealed that the mismatch at the HLA-DR locus had the biggest
+ impact on survival, while the mismatch at the HLA-B locus had the smallest
+ impact.
+ Nevertheless, the accuracy of the model did not significantly differ between
+ the case where only the overall HLA mismatch was used, and the case where
+ only the individual locus-level mismatches were used.
+ Subsequently, only the overall HLA mismatch was used for the training of
+ the final model in order to simplify it.
 \end_layout
 
 \begin_layout Standard
@@ -8872,21 +8877,10 @@ t difference of importances of the individual locus-level mismatches.
 
 \begin_layout Standard
 Overall, these measures reduced the number of features to 
-\begin_inset Formula $137$
+\begin_inset Formula $136$
 \end_inset
 
 .
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Check this number
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Subsection
