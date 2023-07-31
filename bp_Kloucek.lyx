@@ -1001,13 +1001,17 @@ United Network for Organ Sharing (UNOS)
  and their post-transplant outcome.
  This data will be used to train and test a machine learning model that
  will evaluate the compatibility between a donor and a recipient by computing
- a risk score based on the patient's predicted survival and hazard functions,
- given that they receive a graft from that particular donor.
- This score can then be compared in order to select the most compatible
- donor-recipient pairing.
- In particular, this paper will be focused on the Random Survival Forests
- model, which has demonstrated a promising performance in related scientific
- papers 
+ a risk score based on the metrics describing the given donor-recipient
+ pairing.
+ Such a score can then be used to compare the quality of multiple possible
+ matches in order to select the most compatible donor-recipient pairing.
+ 
+\end_layout
+
+\begin_layout Standard
+In particular, this project will be focused on the Random Survival Forests
+ model, which is a machine learning model that has demonstrated a promising
+ performance in related scientific papers 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Using ML methods to predict kidney transplant survival"
@@ -1017,7 +1021,7 @@ literal "false"
 
 .
  Additionally, the research will also examine the performance of the developed
- models on different population samples within the UNOS dataset.
+ model on different population samples within the UNOS dataset.
 \end_layout
 
 \begin_layout Standard
@@ -1249,11 +1253,19 @@ learning algorithms develop a mathematical function whose parameters are
  data as an input to the function.
  Model-based learning algorithms include 
 \emph on
-linear regression
+linear regression,
 \emph default
- and 
+ 
 \emph on
 neural networks
+\emph default
+, 
+\emph on
+decision trees, 
+\emph default
+and 
+\emph on
+random forests
 \emph default
 .
 \end_layout
@@ -1264,7 +1276,7 @@ Building a Machine Learning Model
 
 \begin_layout Standard
 The process of building a machine learning model generally consists of the
- following steps:
+ following steps.
 \end_layout
 
 \begin_layout Subsection
@@ -1921,7 +1933,7 @@ e of the data to training.
 \begin_layout Standard
 Once the model has been trained using the training set, the performance
  of the model is tested using the test set, i.e.
- data that it hasn't seen before.
+ data that it has not seen before.
  A good metric for measuring the quality of the model is the 
 \emph on
 generalization error, 
@@ -2231,7 +2243,7 @@ name "subsec:Decision-Trees"
 \end_layout
 
 \begin_layout Standard
-Decision Trees are a supervised, model-based machine learning method used
+Decision trees are a supervised, model-based machine learning method used
  for both regression and classification, whose main benefit is that it can
  handle complex and nonlinear relations in data.
  There are two types of decision trees based on the type of target variable:
@@ -2254,7 +2266,7 @@ decision node
 ) a set of attributes of a feature vector is examined in order to make a
  split based on a given criteria.
  The specifics of this criteria are learned during the training process.
- For example, if a value of the given feature is below a specific threshold,
+ For example, if a value of some given feature is below a specific threshold,
  the left branch is followed, otherwise the right branch is followed.
  The threshold is set to either maximize or minimize a certain performance
  metric of the model.
@@ -2290,7 +2302,7 @@ or
 Gini Impurity
 \emph default
  of the subsets created by the split made on each feature.
- In the case of Regression Trees, the criterion used is often based on the
+ In the case of regression trees, the criterion used is often based on the
  reduction of 
 \emph on
 variance
@@ -2300,8 +2312,18 @@ variance
 standard deviation
 \emph default
  between labels and their mean values.
- Another type of criterion is used by the decision trees in Random Survival
- Forests, described in greater detail in Section 
+ Another type of criterion is used by 
+\emph on
+survival trees
+\emph default
+, building blocks of 
+\emph on
+random survival forests
+\emph default
+, which use the log-rank test statistic in order to maximize the difference
+ between the predicted survival in the child nodes.
+ Both survival trees and random survival forests are described in greater
+ detail in Section 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Random-Survival-Forests"
@@ -2311,8 +2333,7 @@ noprefix "false"
 
 \end_inset
 
-, which use the log-rank test statistic in order to maximize the difference
- between the predicted survival in the child nodes.
+.
 \end_layout
 
 \begin_layout Subsubsection
@@ -2351,15 +2372,16 @@ Let
 \begin_inset Formula $\left\{ \left(\mathbf{x}^{(i)},y^{(i)}\right)\right\} _{i=1}^{N}$
 \end_inset
 
-is a collection of labeled examples with numerical features, where 
+is a collection of labeled examples from the training dataset with numerical
+ features, where 
 \begin_inset Formula $N$
 \end_inset
 
  is the size of the collection, 
-\begin_inset Formula $\mathbf{x}^{(i)}=(x_{1}^{(i)},\ldots,x_{k}^{(i)})$
+\begin_inset Formula $\mathbf{x}^{(i)}=(x_{1}^{(i)},\ldots,x_{n}^{(i)})$
 \end_inset
 
- is a 
+ is an 
 \begin_inset Formula $n$
 \end_inset
 
@@ -2372,12 +2394,15 @@ is a collection of labeled examples with numerical features, where
 \end_inset
 
  is its label.
- The decision tree model is denoted by 
-\begin_inset Formula $f(\mathbf{x})$
+ The decision tree model is represented by a function 
+\begin_inset Formula $f(\mathbf{x},a)$
 \end_inset
 
-, which is a function that estimates the probability of a given example
- to be of class 
+, which estimates the probability that a given example 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ belongs to class 
 \begin_inset Formula $a\in C$
 \end_inset
 
@@ -2413,11 +2438,11 @@ Let
 \begin_inset Formula $k$
 \end_inset
 
-, let 
-\begin_inset Formula $p^{S_{i}}(a)$
+ of the decision tree, let 
+\begin_inset Formula $p^{S_{k}}(a)$
 \end_inset
 
- denote the proportion of the examples in 
+ denote the proportion of examples in 
 \begin_inset Formula $S_{k}$
 \end_inset
 
@@ -2425,16 +2450,23 @@ Let
 \begin_inset Formula $a$
 \end_inset
 
- and let 
-\begin_inset Formula $F_{i}$
+, i.e.,
+\begin_inset Formula 
+\begin{equation}
+p^{S_{k}}\left(a\right)=\frac{\left|\left\{ \left(\mathbf{x}^{(i)},y^{(i)}\right)\in S_{k}\mid y^{(i)}=a\right\} \right|}{\left|S_{k}\right|},\label{eq:class tree proportion}
+\end{equation}
+
 \end_inset
 
- denote the set of all possible features in a given node 
-\begin_inset Formula $i$
+and let 
+\begin_inset Formula $F_{k}$
 \end_inset
 
- (i.e.
- features that have not been used to make a split before).
+ denote the set of all features available for splitting the node 
+\begin_inset Formula $k$
+\end_inset
+
+, i.e., features that have not been used to split previous nodes.
  
 \end_layout
 
@@ -2449,39 +2481,24 @@ In the first step of the algorithm, the decision tree consists only of its
 \begin_inset Formula $\left\{ \left(x^{(i)},y^{(i)}\right)\right\} _{i=1}^{N}$
 \end_inset
 
-), all features are available for splitting (i.e.
- 
+), and all features are available for splitting, i.e., 
 \begin_inset Formula $F_{0}=\hat{n}$
 \end_inset
 
-).
+.
 \end_layout
 
 \begin_layout Standard
-The proportion of the examples in 
-\begin_inset Formula $S_{k}$
+Next, the decision tree is grown by splitting each node as follows.
+ For node 
+\begin_inset Formula $k$
 \end_inset
 
- that belong to class 
-\begin_inset Formula $a$
+ (starting with the root node, i.e., 
+\begin_inset Formula $k=0$
 \end_inset
 
- is given by
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula 
-\begin{equation}
-p^{S_{k}}\left(a\right)=\frac{\left|\left\{ \left(\mathbf{x}^{(i)},y^{(i)}\right)\in S_{k}\mid y^{(i)}=a\right\} \right|}{\left|S_{k}\right|}.\label{eq:class tree proportion}
-\end{equation}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Next, the algorithm iterates over all possible features 
+), the algorithm iterates over all possible features 
 \begin_inset Formula $j\in F_{k}$
 \end_inset
 
@@ -2527,7 +2544,7 @@ Next, the algorithm iterates over all possible features
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-S_{k-}\stackrel{\mathrm{def}}{=}\left\{ \left(\mathbf{x}^{(i)},y^{(i)}\right)\in S_{k}\mid x_{j}^{(i)}<t_{j}\right\} \quad\mathrm{and}\quad S_{0+}\stackrel{\mathrm{def}}{=}\left\{ \left(\mathbf{x}^{(i)},y^{(i)}\right)\in S_{k}\mid x_{j}^{(i)}\geq t_{j}\right\} .\label{eq:class tree split}
+S_{k-}\stackrel{\mathrm{def}}{=}\left\{ \left(\mathbf{x}^{(i)},y^{(i)}\right)\in S_{k}\mid x_{j}^{(i)}<t_{j}\right\} \quad\mathrm{and}\quad S_{k+}\stackrel{\mathrm{def}}{=}\left\{ \left(\mathbf{x}^{(i)},y^{(i)}\right)\in S_{k}\mid x_{j}^{(i)}\geq t_{j}\right\} .\label{eq:class tree split}
 \end{equation}
 
 \end_inset
@@ -2537,8 +2554,8 @@ S_{k-}\stackrel{\mathrm{def}}{=}\left\{ \left(\mathbf{x}^{(i)},y^{(i)}\right)\in
 
 \begin_layout Standard
 The quality of the split is then evaluated using the algorithm's criterion.
- Assuming that the tree's criterion is entropy, the entropy of a set of
- examples 
+ Assuming, for example, that the tree's criterion is entropy, the entropy
+ of a set of examples 
 \begin_inset Formula $S_{k}$
 \end_inset
 
@@ -2552,12 +2569,34 @@ The quality of the split is then evaluated using the algorithm's criterion.
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-H(S_{k})=-\sum_{a\in S_{k}}p^{S_{k}}\left(a\right)\log_{2}p^{S_{k}}\left(a\right).\label{eq:entropy}
+H(S_{k})=-\sum_{a\in C_{k}}p^{S_{k}}\left(a\right)\log_{2}p^{S_{k}}\left(a\right)\label{eq:entropy}
 \end{equation}
 
 \end_inset
 
+where 
+\begin_inset Formula $C_{k}$
+\end_inset
 
+ is a set of all categorical labels appearing in node 
+\begin_inset Formula $k$
+\end_inset
+
+, and 
+\begin_inset Formula $p^{S_{k}}\left(a\right)$
+\end_inset
+
+ is the proprotion function defined in (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:class tree proportion"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Standard
@@ -2613,16 +2652,21 @@ The best split (ordered pair
 Once the best split has been found, each of the created subsets then acts
  as a new decision node.
  The branching then continues with the exception that only the attributes
- that were not previously used are considered for splitting.
+ that were not previously identified as a best split are considered for
+ splitting.
  In another words, given that 
-\begin_inset Formula $j_{k}\in F_{k}$
+\begin_inset Formula $\tilde{j}\in F_{k}$
 \end_inset
 
  was chosen as the optimal feature to split upon, then only 
-\begin_inset Formula $F_{k}\setminus\left\{ j_{k}\right\} $
+\begin_inset Formula $F_{k}\setminus\left\{ \tilde{j}\right\} $
 \end_inset
 
- are considered for splitting in the child nodes.
+ are considered for splitting in the child nodes of 
+\begin_inset Formula $k$
+\end_inset
+
+.
  The same logic applies to any subsequent splits.
 \end_layout
 
@@ -2706,65 +2750,53 @@ Building a Regression Tree
 \end_layout
 
 \begin_layout Standard
-This time suppose the opposite case, i.e., that the dataset consists of examples
- with categorical valued features and labels with continuous numerical values.
- The Standard Deviation Reduction algorithm would be a good choice for building
- such a regression tree.
+The algorithm for building a regression tree works in much the same fashion
+ as the one used for classification trees.
+ However, instead of entropy, the algorithm minimizes the 
+\emph on
+mean squared error
+\emph default
+ (MSE).
+ More specifically, the algorithm works as follows 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Hands-On ML,scikit-learn"
+literal "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
 Let 
-\begin_inset Formula $X_{j}$
-\end_inset
-
- be the set of all possible categorical values for the feature 
-\begin_inset Formula $j\in\hat{n},$
-\end_inset
-
-where 
-\begin_inset Formula $n$
-\end_inset
-
- is the total number of features in the dataset.
- Again, let 
 \begin_inset Formula $\left\{ \left(\mathbf{x}^{(i)},y^{(i)}\right)\right\} _{i=1}^{N}$
 \end_inset
 
- denote a collection of labeled examples, where 
+ again denote a collection of labeled examples with numerical features from
+ the training dataset, where 
 \begin_inset Formula $N$
 \end_inset
 
  is the size of the collection, 
-\begin_inset Formula $\mathbf{x}^{(i)}=(x_{1}^{(i)},\ldots,x_{k}^{(i)})$
+\begin_inset Formula $\mathbf{x}^{(i)}=(x_{1}^{(i)},\ldots,x_{n}^{(i)})$
 \end_inset
 
- is a 
-\begin_inset Formula $k$
+ is an 
+\begin_inset Formula $n$
 \end_inset
 
 -dimensional feature vector of the example 
 \begin_inset Formula $i\in\hat{N}$
 \end_inset
 
-, where 
-\begin_inset Formula $x_{j}^{(i)}\in X_{j}$
+ and 
+\begin_inset Formula $y^{(i)}\in\mathbb{R}$
 \end_inset
 
-, 
-\begin_inset Formula $\forall j\in\hat{k}$
-\end_inset
-
-, and 
-\begin_inset Formula $y^{(i)}\in\mathbb{R}^{+}$
-\end_inset
-
- is the target value.
- 
-\end_layout
-
-\begin_layout Standard
-In this case, the decision tree will be represented a function 
-\begin_inset Formula $f(\mathbf{x})\in\mathbb{R}^{+}$
+ is a real-valued label.
+ The model is this time represented by a function 
+\begin_inset Formula $f(\mathbf{x})\in\mathbb{R}$
 \end_inset
 
  that takes a 
@@ -2775,310 +2807,154 @@ In this case, the decision tree will be represented a function
 \begin_inset Formula $\mathbf{x}^{(i)}$
 \end_inset
 
-, as input.
-\end_layout
-
-\begin_layout Standard
-Let 
+, as input, and outputs a real-valued prediction.
+ Let 
 \begin_inset Formula $S_{k}$
 \end_inset
 
- denote the set of labeled examples included in node 
-\begin_inset Formula $k$
-\end_inset
-
-, let 
-\begin_inset Formula $F_{k}$
-\end_inset
-
- be the set of all possible features in the node 
-\begin_inset Formula $k$
-\end_inset
-
-, let 
-\begin_inset Formula $\sigma(S_{k})$
-\end_inset
-
- represent the standard deviation of labels in node 
+ also again denote the set of labeled examples included in node 
 \begin_inset Formula $k$
 \end_inset
 
  and let 
-\begin_inset Formula $\sigma'\left(S_{k},j\right)$
+\begin_inset Formula $F_{k}$
 \end_inset
 
- be the standard deviation of labels in the node 
+ be the set of all features available for splitting the node 
 \begin_inset Formula $k$
 \end_inset
 
- for feature 
-\begin_inset Formula $j\in F_{k}$
-\end_inset
-
 .
 \end_layout
 
 \begin_layout Standard
-In the first step of the algorithm, the decision tree consists only of its
- root node that contains all of the labeled samples i.e.
- 
-\begin_inset Formula $S_{0}=$
+The MSE of examples 
+\begin_inset Formula $S_{k}$
 \end_inset
 
- 
-\begin_inset Formula $\left\{ \left(x^{(i)},y^{(i)}\right)\right\} _{i=1}^{N}$
+ belonging to node 
+\begin_inset Formula $k$
 \end_inset
 
-, 
-\begin_inset Formula $F_{0}=\hat{n}$
-\end_inset
-
-.
- The standard deviation of the labels in 
-\begin_inset Formula $S_{0}$
-\end_inset
-
- is given by
-\end_layout
-
-\begin_layout Standard
+ is given by 
 \begin_inset Formula 
 \begin{equation}
-\sigma\left(S_{0}\right)=\sqrt{\frac{1}{N}\sum_{i=1}^{\left|S_{0}\right|}\left(y^{(i)}-\overline{y}\right)^{2}},
+H\left(S_{k}\right)=\frac{1}{\left|S_{k}\right|}\sum_{i\in I_{k}}\left(y^{(i)}-\overline{y}_{k}\right)^{2}
 \end{equation}
 
 \end_inset
 
 where 
-\begin_inset Formula $\overline{y}$
+\begin_inset Formula $I_{k}$
 \end_inset
 
- is the mean value of labels in 
-\begin_inset Formula $S_{0}$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-For 
-\begin_inset Formula $\forall j\in F_{0}$
-\end_inset
-
-, the standard deviation for the feature 
-\begin_inset Formula $j$
-\end_inset
-
- is then calculated by
-\begin_inset Formula 
-\begin{equation}
-\sigma'\left(S_{0},j\right)=\sum_{c_{j}\in X_{j}}p\left(c_{j}\right)\sigma''\left(c_{j}\right)
-\end{equation}
-
-\end_inset
-
-where 
-\begin_inset Formula $p\left(c_{j}\right)$
-\end_inset
-
- is the proportion of examples in 
-\begin_inset Formula $S_{0}$
-\end_inset
-
- whose feature 
-\begin_inset Formula $j$
-\end_inset
-
- belongs to the class 
-\begin_inset Formula $c_{j}\in X_{j}$
-\end_inset
-
-, and 
-\begin_inset Formula $\sigma''\left(c_{j}\right)$
-\end_inset
-
- is the standard deviation of labels in 
-\begin_inset Formula $S_{0}$
-\end_inset
-
- whose feature 
-\begin_inset Formula $j$
-\end_inset
-
- belongs to the class 
-\begin_inset Formula $c_{j}\in X_{j}$
-\end_inset
-
-.
- 
-\begin_inset Formula $p\left(c\right)$
+ is a set of indices of examples belonging to node 
+\begin_inset Formula $k$
 \end_inset
 
  and 
-\begin_inset Formula $\sigma\left(c\right)$
+\begin_inset Formula $\overline{y}_{k}$
 \end_inset
 
- are defined as follows.
-\end_layout
-
-\begin_layout Standard
-Let 
-\begin_inset Formula $N_{c_{j}}$
-\end_inset
-
- denote the number of samples in 
-\begin_inset Formula $S_{0}$
-\end_inset
-
- whose feature 
-\begin_inset Formula $j$
-\end_inset
-
- belongs to the class 
-\begin_inset Formula $c_{j}$
-\end_inset
-
-, i.e., 
-\begin_inset Formula $N_{c_{j}}=|\left\{ \left(\mathbf{x}^{(i)},y^{(i)}\right)\in S_{0}\mid x_{j}^{(i)}=c_{j}\right\} |$
-\end_inset
-
-, then 
-\begin_inset Formula $p\left(c_{j}\right)$
-\end_inset
-
- is given by
-\begin_inset Formula 
-\begin{equation}
-p\left(c\right)=\frac{N_{c_{j}}}{\left|S_{0}\right|}.
-\end{equation}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Using the same notation for 
-\begin_inset Formula $N_{c_{j}},$
-\end_inset
-
-
-\begin_inset Formula $\sigma''\left(c\right)$
-\end_inset
-
- is given by
-\begin_inset Formula 
-\begin{equation}
-\sigma''\left(c\right)=\sqrt{\frac{1}{N_{c_{j}}}\sum_{i=1}^{N_{c_{j}}}\left(y_{c_{j}}^{(i)}-\overline{y}_{c_{j}}\right)^{2}}
-\end{equation}
-
-\end_inset
-
-where 
-\begin_inset Formula $y_{c_{j}}^{(i)}$
-\end_inset
-
- are the labels of samples whose feature 
-\begin_inset Formula $j$
-\end_inset
-
- belongs to the class 
-\begin_inset Formula $c_{j}$
-\end_inset
-
- and 
-\begin_inset Formula $\overline{y}_{c_{j}}$
-\end_inset
-
- is their mean value.
-\end_layout
-
-\begin_layout Standard
-The best split is then given by maximizing the highest 
-\emph on
-standard deviation reduction
-\emph default
- given by
-\begin_inset Formula 
-\begin{equation}
-\varDelta\sigma\left(S_{0},j\right)=\sigma\left(S_{0}\right)-\sigma'\left(S_{0},j\right).
-\end{equation}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-In another words, the node is split using feature 
-\begin_inset Formula $\tilde{j}$
-\end_inset
-
- given by
-\begin_inset Formula 
-\begin{equation}
-\tilde{j}=\underset{j\in F_{0}}{\arg\max}\varDelta\sigma\left(S_{0},j\right)
-\end{equation}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Formula $S_{0}$
-\end_inset
-
- is then split into subsets based on the chosen feature 
-\begin_inset Formula $\tilde{j}$
-\end_inset
-
- (the split is not necessarily binary), i.e.,
-\begin_inset Formula 
-\begin{equation}
-S_{c_{j}}=\left\{ \left(x^{(i)},y^{(i)}\right)\in S_{0}\mid x_{j}^{(i)}=c_{j}\right\} \qquad\forall c_{j}\in X_{j}
-\end{equation}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-where each 
-\begin_inset Formula $S_{c_{j}}$
-\end_inset
-
- then acts as a new decision node and the process repeats.
-\end_layout
-
-\begin_layout Standard
-The algorithm is stopped if either the selected reduction in variation is
- below a set threshold, there are no more features to split upon or if the
- tree reaches set maximum depth.
- 
-\end_layout
-
-\begin_layout Standard
-When the model is presented with a new input 
-\begin_inset Formula $\mathbf{x}$
-\end_inset
-
-, it follows the tree from the root down until a leaf node is reached.
- Let 
-\begin_inset Formula $S_{n}$
-\end_inset
-
- be the set of examples belonging to such a leaf node.
- The tree's prediction is then given by the average value of the labels
- in 
-\begin_inset Formula $S_{n}$
+ is the mean value of labels of examples belonging to node 
+\begin_inset Formula $k$
 \end_inset
 
 , i.e.
+ 
 \begin_inset Formula 
 \begin{equation}
-f\left(\mathbf{x}\right)=\frac{1}{\left|S_{n}\right|}\sum_{(\mathbf{x}^{(i)},y^{(i)})\in S_{n}}y^{(i)}.
+\overline{y}_{k}=\frac{1}{\left|S_{k}\right|}\sum_{i\in I_{k}}y^{(i)}.
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Using the same notation as in Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Building-a-Classification"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, the quality of a split of node 
+\begin_inset Formula $k$
+\end_inset
+
+ made on feature 
+\begin_inset Formula $j\in F_{k}$
+\end_inset
+
+ with threshold value 
+\begin_inset Formula $t_{j}\in T_{j}$
+\end_inset
+
+ is again measured by
+\begin_inset Formula 
+\begin{equation}
+H(S_{k-},S_{k+})=\frac{\left|S_{k-}\right|}{\left|S_{k}\right|}H(S_{k-})+\frac{\left|S_{k+}\right|}{\left|S_{k}\right|}H(S_{k+})
+\end{equation}
+
+\end_inset
+
+where 
+\begin_inset Formula $S_{k-}\stackrel{\mathrm{}}{=}\left\{ \left(\mathbf{x}^{(i)},y^{(i)}\right)\in S_{k}\mid x_{j}^{(i)}<t_{j}\right\} \quad\mathrm{and}\quad S_{k+}\stackrel{\mathrm{}}{=}\left\{ \left(\mathbf{x}^{(i)},y^{(i)}\right)\in S_{k}\mid x_{j}^{(i)}\geq t_{j}\right\} .$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Analogously, the best split is then given by 
+\begin_inset Formula 
+\begin{equation}
+\left(\tilde{j},\tilde{t_{j}}\right)=\underset{j\in F,t_{j}\in T_{j}}{\arg\min}H(S_{k-},S_{k+}).
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The regression tree is then grown using the same principles as described
+ in Section 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Building-a-Classification"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, with the exception that the algorithm is stopped once all possible splits
+ would reduce the MSE (not entropy) less than a set amount.
+\end_layout
+
+\begin_layout Standard
+Once fully grown, the model's predictions are calculated by taking the mean
+ value of labels of examples belonging to a terminal node that is reached
+ when an input 
+\begin_inset Formula $\mathbf{x}$
+\end_inset
+
+ is introduced to the model.
+ Let 
+\begin_inset Formula $n$
+\end_inset
+
+ denote such a terminal node.
+ The prediction is then given by
+\begin_inset Formula 
+\begin{equation}
+f\left(\mathbf{x}\right)=\frac{1}{\left|S_{n}\right|}\sum_{i\in I_{n}}y^{(i)}.
 \end{equation}
 
 \end_inset
@@ -3253,9 +3129,8 @@ with replacement
 \begin_inset Quotes srd
 \end_inset
 
- or not i.e.
- whether instances of the data can be used in the training of multiple trees
- (
+ or not, i.e., whether instances of the data can be used in the training of
+ multiple trees (
 \emph on
 bagging
 \emph default
@@ -3382,9 +3257,8 @@ noprefix "false"
 \begin_inset Formula $51\%$
 \end_inset
 
- of the time (weak learners), i.e.
- the probability that they will give their vote to the correct class is
- 
+ of the time (weak learners), i.e., the probability that they will give their
+ vote to the correct class is 
 \begin_inset Formula $51\%$
 \end_inset
 
@@ -3554,11 +3428,15 @@ ssive drugs that suppress the activity of the immune system.
  This is often the case when other donors are not easily available.
 \end_layout
 
+\begin_layout Subsubsection
+HLA Mismatch
+\end_layout
+
 \begin_layout Standard
 The decision on which pairings to discard and which ones to to perform a
  cross-match on is done by calculating a 
 \emph on
-HLA mismatch 
+HLA mismatch
 \begin_inset CommandInset label
 LatexCommand label
 name "HLA mismatch"
@@ -5097,7 +4975,7 @@ Cox proportional hazards model,
  just to name a few.
  These will be explained in detail further in this chapter, with the former
  two also being a vital part of the algorithm behind random survival forests
- described in Section 
+ described in Chapter 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Random-Survival-Forests"
@@ -5271,12 +5149,12 @@ h(t)=\lim_{\Delta t\to0}\frac{\Pr\left(t\leq T<t+\Delta t\mid T\geq t\right)}{\D
 \end_layout
 
 \begin_layout Standard
-While the survival functions may seem to be obvious option for describing
+While the survival function may seem to be the obvious choice for describing
  models aimed at predicting survival time, it is usually the hazard function
  with which survival models are described, since it provides a more direct
  measure of risk over time.
  Importantly, either of the functions can be derived from the other one
- using one of the following formulae 
+ using one of the following formulae: 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Survival Analysis self-learn"
@@ -5401,7 +5279,7 @@ literal "false"
 \begin_inset Formula $i$
 \end_inset
 
- containing information about the individual's survival time 
+ containing information about an individual's survival time 
 \begin_inset Formula $T_{i}$
 \end_inset
 
@@ -5430,11 +5308,7 @@ literal "false"
 \begin_inset Formula $\tau$
 \end_inset
 
- denote the set of all unique event times, i.e 
-\begin_inset Formula $\tau\coloneqq\left\{ T_{i}\mid\delta_{i}=1,\:i=0,\ldots,n\right\} ,$
-\end_inset
-
- let 
+ denote the set of all unique event times, let 
 \begin_inset Formula $f_{j}$
 \end_inset
 
@@ -5442,15 +5316,25 @@ literal "false"
 \begin_inset Formula $t_{j}$
 \end_inset
 
- and let 
+
+\begin_inset Formula $\in\tau$
+\end_inset
+
+, and let 
 \begin_inset Formula $r_{j}$
 \end_inset
 
  denote the number of individuals at risk at time 
-\begin_inset Formula $t_{j}$
+\begin_inset Formula $t_{j}\in\tau$
 \end_inset
 
  (i.e., patients who have yet to experience an event or are yet to be censored).
+ Note that multiple individuals in the dataset can have the same survival
+ time, however, 
+\begin_inset Formula $\tau$
+\end_inset
+
+ includes each survival time only once.
  The probability of an individual surviving past 
 \begin_inset Formula $t_{j}\in\tau$
 \end_inset
@@ -5471,8 +5355,8 @@ literal "false"
 
 \end_inset
 
-Note that the number of individuals at risk does not take in account the
- individuals that were previously censored, that is 
+Also note that the number of individuals at risk does not take in account
+ the individuals that were previously censored, that is 
 \begin_inset Formula $r_{j}=r_{j-1}-f_{j-1}-c_{j-1}$
 \end_inset
 
@@ -5480,7 +5364,7 @@ Note that the number of individuals at risk does not take in account the
 \begin_inset Formula $c_{j-1}$
 \end_inset
 
-is the number of individuals that were censored during 
+ is the number of individuals that were censored during 
 \begin_inset Formula $[t_{j-1},t_{j})$
 \end_inset
 
@@ -5507,7 +5391,7 @@ Kaplan-Meier curve
 \end_inset
 
  estimates the survival function at times 
-\begin_inset Formula $t_{1},\ldots,t_{|\tau|}$
+\begin_inset Formula $t_{j}\in\tau$
 \end_inset
 
  as follows 
@@ -5564,8 +5448,8 @@ name "subsec:Log-rank-Test"
 \end_layout
 
 \begin_layout Standard
-The log-rank test is a statistical test used to compare the survival distributio
-n of two or more groups and decide whether their survival curves are statistical
+The log-rank test is a statistical test used for comparing survival distribution
+s of two or more groups and decide whether their survival curves are statistical
 ly equivalent or not 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -5586,9 +5470,9 @@ noprefix "false"
 
 \end_inset
 
-, where it is used to compare the difference in survival times observed
- between the two groups that are created by a possible split in a given
- node of a survival tree.
+, where it is used to compare the difference in observed survival times
+ between two groups created by a possible split in a given node of a survival
+ tree.
  Therefore, the following explanation of the log-rank statistic is only
  concerned with comparing two groups.
 \end_layout
@@ -5600,15 +5484,15 @@ Assume a dataset contains information about two groups of individuals along
 \end_inset
 
  again denote the set of all unique event times regardless of the group.
- Then, 
-\begin_inset Formula $\forall t_{j}\in\tau$
-\end_inset
-
- an expected count of failures 
+ Then, an expected count of failures 
 \begin_inset Formula $e_{j}^{(i)}$
 \end_inset
 
- is computed for each group
+ at time 
+\begin_inset Formula $t_{j}\in\tau$
+\end_inset
+
+ is computed for each group as
 \begin_inset Formula 
 \begin{equation}
 e_{j}^{(1)}=\frac{r_{j}^{(1)}}{r_{j}^{(1)}+r_{j}^{(2)}}\cdot(f_{j}^{(1)}+f_{j}^{(2)}),\qquad e_{j}^{(2)}=\frac{r_{j}^{(2)}}{r_{j}^{(1)}+r_{j}^{(2)}}\cdot(f_{j}^{(1)}+f_{j}^{(2)})
@@ -5654,7 +5538,7 @@ Let
 \end_inset
 
 .
- The log-rank statistic for the group 
+ The log-rank statistic for group 
 \begin_inset Formula $i$
 \end_inset
 
@@ -5693,7 +5577,7 @@ Cox regression
 \emph on
 Cox proportional hazards model
 \emph default
-, is a mathematical model used for analysis of time-to-event data.
+, is a statistical model used for analysis of time-to-event data.
  Specifically, it is used to model an individual's hazard function based
  on a set of given predictor variables 
 \begin_inset CommandInset citation
@@ -5748,7 +5632,7 @@ baseline hazard function,
 \begin_inset Formula $\beta=\left(\beta_{1},\beta_{2},\ldots,\beta_{n}\right)$
 \end_inset
 
- represents constant coefficients associated with corresponding features.
+ represent constant coefficients associated with the corresponding features.
  The fact that 
 \begin_inset Formula $h_{0}$
 \end_inset
@@ -5912,7 +5796,11 @@ where
 \begin_inset Formula $L$
 \end_inset
 
- is the maximum likelihood function.
+ is the maximum likelihood function and 
+\begin_inset Formula $\Theta$
+\end_inset
+
+ is a parameter space.
  The maximum likelihood function is conventionally defined as 
 \begin_inset Formula 
 \begin{equation}
@@ -5925,7 +5813,7 @@ where
 \begin_inset Formula $f_{Y_{i}}$
 \end_inset
 
-is the univariate probability density function associated with the 
+ is the univariate probability density function associated with the 
 \begin_inset Formula $i$
 \end_inset
 
@@ -5967,8 +5855,8 @@ partial likelihood
 \emph on
  
 \emph default
-only considers probabilities of the subjects who fail, i.e.
- with censoring status 
+only considers probabilities of the subjects who fail, i.e., with censoring
+ status 
 \begin_inset Formula $\delta^{(i)}=1.$
 \end_inset
 
@@ -6031,8 +5919,17 @@ noprefix "false"
 \begin_inset Formula $L_{j}$
 \end_inset
 
- is defined as a ratio of the hazard function of the individual, who failed
- at time 
+ is defined as a ratio of a hazard function (given by (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq: Cox regression"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+)) of the individual, who failed at time 
 \begin_inset Formula $j$
 \end_inset
 
@@ -6278,69 +6175,6 @@ As hazard functions are always positive and the ratio is written in way
  the overall hazard.
 \end_layout
 
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Subsubsection
-Adjusted Survival Curves
-\end_layout
-
-\begin_layout Plain Layout
-Upon fitting a Cox regression model onto survival data, survival curves
- that adjust for the predictor variables (also called 
-\emph on
-adjusted survival curves
-\emph default
-) are defined in a similar fashion as 
-\begin_inset Formula 
-\begin{equation}
-S(t,\mathbf{X})=S_{0}(t)\exp\left(\sum_{i=1}^{k}\beta_{i}X_{i}\right)
-\end{equation}
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-Using estimates 
-\begin_inset Formula $\hat{S_{0}(t)}$
-\end_inset
-
- and 
-\begin_inset Formula $\hat{\beta_{i}}$
-\end_inset
-
- computed by the partial likelihood estimation method for 
-\begin_inset Formula $S_{0}(t)$
-\end_inset
-
- and 
-\begin_inset Formula $\beta_{i}$
-\end_inset
-
- respectively.
- We get an estimated survival function
-\begin_inset Formula 
-\begin{equation}
-\hat{S}\left(t,\mathbf{X}\right)=\hat{S_{0}(t)}\exp\left(\sum_{i=1}^{k}\hat{\beta_{i}}X_{i}\right)
-\end{equation}
-
-\end_inset
-
-and by specifying the input vector of predictors 
-\begin_inset Formula $\mathbf{X}$
-\end_inset
-
- we get a survival curve adjusted for the given predictors.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Chapter
 Random Survival Forests
 \begin_inset CommandInset label
@@ -6371,9 +6205,9 @@ which allows it to handle issues commonly associated with conventional survival
  analysis methods, such as restrictive assumptions about the model's parameters
  (e.g., proportionality in the Cox regression model), the inability to handle
  nonlinear relations in the data, and issues with missing data.
- It also adresses issues associated with regular random forest models, such
- as being restricted to regression and classification tasks and the inability
- to handle right-censored survival data 
+ It also addresses issues associated with regular random forest models,
+ such as being restricted to regression and classification tasks and the
+ inability to handle right-censored survival data 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Random Survival Forests"
@@ -6495,8 +6329,8 @@ noprefix "false"
 \end_inset
 
  , i.e., at each node the algorithm iterates over all possible features (the
- number of which can be limited) and values for them, and decides on the
- best split.
+ number of which can be limited) and threshold values for them, and decides
+ on the best split.
  The best split is decided by maximizing the log-rank statistic (described
  in Section 
 \begin_inset CommandInset ref
@@ -7641,7 +7475,7 @@ literal "false"
 
 , is used to compute variable importance.
  Fortunately, permutation importance is also implemented within the scikit-learn
- 
+ package (see Section 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:scikit-learn"
@@ -7651,7 +7485,7 @@ noprefix "false"
 
 \end_inset
 
- package.
+).
 \end_layout
 
 \begin_layout Standard
@@ -7908,7 +7742,7 @@ Software Architecture
 
 \begin_layout Standard
 A number of software tools and libraries were used for building the survival
- analysis machine learning model, with the backbone of the application being
+ analysis machine learning model, with the backbone of the project being
  the Python-based 
 \emph on
 scikit-survival 
@@ -8110,7 +7944,7 @@ noprefix "false"
 \end_inset
 
  as well as methods combining survival analysis with machine learning methods
- such as the random survival forests 
+ such as the random survival forests model described in Chapter 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Random-Survival-Forests"
@@ -8422,7 +8256,11 @@ DONOR_ID
 
 \end_inset
 
- column, which is a foreign key in the 
+ column, which is a foreign key in the
+\begin_inset Newline newline
+\end_inset
+
+
 \begin_inset Flex Code
 status open
 
@@ -8520,9 +8358,11 @@ Deceased_Donor
 Preliminary results gained by experimenting with the RSF models have revealed
  that the features impacting graft survival vary between living donor and
  deceased donor transplantations.
+ For example, the cause of death of the donor appears to significantly influence
+ the graft's survival time after transplantation.
  Consequently, this paper will focus solely on transplantations from a living
  donor.
- As a result, dataset has been split based on the type of transplantation
+ As a result, the dataset has been split based on the type of transplantation
  performed, separating living and deceased donor transplantations.
  The subset resulting from this split containing information about the living
  donor transplantation will from now on be referred to as 
@@ -8815,7 +8655,7 @@ HLA typing
 \end_layout
 
 \begin_layout Standard
-As illustrated in the table 
+As illustrated in the Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:HLA-Mismatch"
@@ -8861,7 +8701,19 @@ g its accuracy.
  The results revealed that the mismatch at the HLA-DR locus had the biggest
  impact on survival, while the mismatch at the HLA-B locus had the smallest
  impact.
- Nevertheless, the accuracy of the model did not significantly differ between
+ This is in line with the findings of related studies, such as 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "locus_mismatch"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Nevertheless, the accuracy of the model did not significantly differ between
  the case where only the overall HLA mismatch was used, and the case where
  only the individual locus-level mismatches were used.
  Subsequently, only the overall HLA mismatch was used for the training of
@@ -9086,7 +8938,7 @@ n_repeats=2
 
  .
  The two resulting tables of variable importances were used to create a
- list of the 27 most important features.
+ list of the 24 most important features.
  The variable importance of those features was then validated by computing
  permutation importance on a dataset consisting only of these features with
  
@@ -9171,7 +9023,7 @@ textwidth}{!}{
 
 
 \begin_inset Tabular
-<lyxtabular version="3" rows="26" columns="5">
+<lyxtabular version="3" rows="25" columns="5">
 <features booktabs="true" tabularvalignment="middle">
 <column alignment="left" valignment="top">
 <column alignment="right" valignment="top">
@@ -9253,7 +9105,7 @@ AGE
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.025524
+0.030864
 \end_layout
 
 \end_inset
@@ -9262,9 +9114,7 @@ AGE
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang english
-0.005794
+0.005634
 \end_layout
 
 \end_inset
@@ -9293,33 +9143,78 @@ Numerical
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+HLAMIS
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.026286
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.002670
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Overall HLA mismatch
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
 \lang english
-AGEDON
+Numerical
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang english
-0.015870
+AGE_DON
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.002372
+0.022465
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.002294
 \end_layout
 
 \end_inset
@@ -9352,159 +9247,6 @@ Numerical
 \begin_inset Text
 
 \begin_layout Plain Layout
-HLAMIS
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.014202
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.001809
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-overall HLA mismatch
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-Numerical
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-END_BMI_CALC
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.012784
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.001401
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-Recipient's BMI
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-Numerical
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-DRMIS
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.010725
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.001533
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-Mismatch at the HLA-DR locus
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-Numerical
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
 
 \lang english
 ON_DIALYSIS
@@ -9516,7 +9258,7 @@ ON_DIALYSIS
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.010116
+0.016960
 \end_layout
 
 \end_inset
@@ -9525,7 +9267,7 @@ ON_DIALYSIS
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.001832
+0.001749
 \end_layout
 
 \end_inset
@@ -9558,159 +9300,6 @@ Categorical
 \begin_inset Text
 
 \begin_layout Plain Layout
-BMIS
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.009605
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.001134
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-Mismatch at the HLA-B locus
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-Numerical
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-DIAB
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.009528
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.002777
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-Recipient's diabetes status
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-Categorical
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-AMIS
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.009310
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.000711
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-Mismatch at the HLA-A locus
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-Numerical
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
 ETHCAT
 \end_layout
 
@@ -9720,7 +9309,7 @@ ETHCAT
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.008813
+0.015550
 \end_layout
 
 \end_inset
@@ -9729,7 +9318,7 @@ ETHCAT
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.003179
+0.002744
 \end_layout
 
 \end_inset
@@ -9764,7 +9353,7 @@ Categorical
 \begin_layout Plain Layout
 
 \lang english
-PRE_TX_TXFUS
+END_BMI_CALC
 \end_layout
 
 \end_inset
@@ -9773,7 +9362,7 @@ PRE_TX_TXFUS
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.008088
+0.015532
 \end_layout
 
 \end_inset
@@ -9782,18 +9371,7 @@ PRE_TX_TXFUS
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.001182
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-Did recipient receive transfusion
+0.001566
 \end_layout
 
 \end_inset
@@ -9804,102 +9382,7 @@ Did recipient receive transfusion
 \begin_layout Plain Layout
 
 \lang english
-Categorical
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-PERIP_VASC
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.007778
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-0.000708
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-Recipient's peripheral vascular disease status
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-Categorical
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-DAYSWAIT_CHRON_KI
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.007472
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.000778
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-Days recipient spent on waiting list
+Recipient's BMI
 \end_layout
 
 \end_inset
@@ -9911,6 +9394,57 @@ Days recipient spent on waiting list
 
 \lang english
 Numerical
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DIAB
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.015258
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.003513
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Recipient's diabetes status
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Categorical
 \end_layout
 
 \end_inset
@@ -9934,7 +9468,7 @@ ETHCAT_DON
 \begin_layout Plain Layout
 
 \lang english
-0.006864
+0.014193
 \end_layout
 
 \end_inset
@@ -9943,9 +9477,7 @@ ETHCAT_DON
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang english
-0.000557
+0.002354
 \end_layout
 
 \end_inset
@@ -9980,6 +9512,61 @@ Categorical
 \begin_layout Plain Layout
 
 \lang english
+PERIP_VASC
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.014067
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.000949
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Recipient's peripheral vascular disease status
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Categorical
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
 PRI_PAYMENT_TCR_KI
 \end_layout
 
@@ -9991,7 +9578,7 @@ PRI_PAYMENT_TCR_KI
 \begin_layout Plain Layout
 
 \lang english
-0.006821
+0.014045
 \end_layout
 
 \end_inset
@@ -10002,7 +9589,7 @@ PRI_PAYMENT_TCR_KI
 \begin_layout Plain Layout
 
 \lang english
-0.000796
+0.002648
 \end_layout
 
 \end_inset
@@ -10035,9 +9622,7 @@ Categorical
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang english
-FUNC_STAT_TCR
+CREAT_TRR
 \end_layout
 
 \end_inset
@@ -10046,9 +9631,7 @@ FUNC_STAT_TCR
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang english
-0.006570
+0.013607
 \end_layout
 
 \end_inset
@@ -10057,9 +9640,7 @@ FUNC_STAT_TCR
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang english
-0.000299
+0.002267
 \end_layout
 
 \end_inset
@@ -10068,9 +9649,7 @@ FUNC_STAT_TCR
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang english
-Recipient's functional status
+Recipient's creatinine level
 \end_layout
 
 \end_inset
@@ -10079,9 +9658,105 @@ Recipient's functional status
 \begin_inset Text
 
 \begin_layout Plain Layout
+Numerical
+\end_layout
 
-\lang english
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DIAG_KI
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.013226
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.000166
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Recipient's primary kidney diagnosis
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 Categorical
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DAYSWAIT_CHRON_KI
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.013136
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.000824
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Days recipient spent on waiting list
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Numerical
 \end_layout
 
 \end_inset
@@ -10105,7 +9780,7 @@ TOT_SERUM_ALBUM
 \begin_layout Plain Layout
 
 \lang english
-0.006915
+0.013066
 \end_layout
 
 \end_inset
@@ -10116,7 +9791,7 @@ TOT_SERUM_ALBUM
 \begin_layout Plain Layout
 
 \lang english
-0.001306
+0.003109
 \end_layout
 
 \end_inset
@@ -10151,6 +9826,118 @@ Numerical
 \begin_layout Plain Layout
 
 \lang english
+FUNC_STAT_TCR
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.012986
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.000505
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Recipient's functional status
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Categorical
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+KI_CREAT_PREOP
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.012894
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.001581
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Donor's creatinine level
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Numerical
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
 HIST_CIG
 \end_layout
 
@@ -10162,7 +9949,7 @@ HIST_CIG
 \begin_layout Plain Layout
 
 \lang english
-0.006426
+0.012423
 \end_layout
 
 \end_inset
@@ -10173,7 +9960,7 @@ HIST_CIG
 \begin_layout Plain Layout
 
 \lang english
-0.000307
+0.000489
 \end_layout
 
 \end_inset
@@ -10206,9 +9993,25 @@ Categorical
 \begin_inset Text
 
 \begin_layout Plain Layout
+DAYSWAIT_ALLOC
+\end_layout
 
-\lang english
-HCV_SEROSTATUS
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.012381
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.001300
 \end_layout
 
 \end_inset
@@ -10219,7 +10022,7 @@ HCV_SEROSTATUS
 \begin_layout Plain Layout
 
 \lang english
-0.006025
+Days recipient was prioritised for allocation
 \end_layout
 
 \end_inset
@@ -10230,86 +10033,7 @@ HCV_SEROSTATUS
 \begin_layout Plain Layout
 
 \lang english
-0.000423
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-Recipient's hepatitis C status
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-Categorical
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-EBV_SEROSTATUS
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-0.006014
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-0.000245
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-Recipient's status of Epstein-Barr virus
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-Categorical
+Numerical
 \end_layout
 
 \end_inset
@@ -10333,7 +10057,7 @@ DIABETES_DON
 \begin_layout Plain Layout
 
 \lang english
-0.005850
+0.012289
 \end_layout
 
 \end_inset
@@ -10373,7 +10097,119 @@ Categorical
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+HCV_SEROSTATUS
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.012270
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.000064
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Recipient's hepatitis C status
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Categorical
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+PREV_TX_ANY
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.012248
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+0.000710
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Recipient's past transplantations
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\lang english
+Categorical
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -10384,24 +10220,24 @@ WORK_INCOME_TCR
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
 \lang english
-0.005793
+0.012242
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
 \lang english
-0.000187
+0.000132
 \end_layout
 
 \end_inset
@@ -10434,25 +10270,9 @@ Categorical
 \begin_inset Text
 
 \begin_layout Plain Layout
-DAYSWAIT_ALLOC
-\end_layout
 
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.005418
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.000838
+\lang english
+EBV_SEROSTATUS
 \end_layout
 
 \end_inset
@@ -10463,7 +10283,7 @@ DAYSWAIT_ALLOC
 \begin_layout Plain Layout
 
 \lang english
-Days recipient was prioritised for allocation
+0.012180
 \end_layout
 
 \end_inset
@@ -10474,42 +10294,7 @@ Days recipient was prioritised for allocation
 \begin_layout Plain Layout
 
 \lang english
-Numerical
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-PREV_TX_ANY
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-0.005222
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-0.001113
+0.000122
 \end_layout
 
 \end_inset
@@ -10520,7 +10305,7 @@ PREV_TX_ANY
 \begin_layout Plain Layout
 
 \lang english
-Recipient's past transplantations
+Recipient's status of Epstein-Barr virus
 \end_layout
 
 \end_inset
@@ -10538,35 +10323,31 @@ Categorical
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
 \lang english
-KI_CREAT_PREOP
+PRE_TX_TXFUS
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang english
-0.004947
+0.012018
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" bottomline="true" usebox="none">
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\lang english
-0.000517
+0.001369
 \end_layout
 
 \end_inset
@@ -10577,7 +10358,7 @@ KI_CREAT_PREOP
 \begin_layout Plain Layout
 
 \lang english
-Donor's creatinine level
+Did recipient receive transfusion
 \end_layout
 
 \end_inset
@@ -10588,7 +10369,7 @@ Donor's creatinine level
 \begin_layout Plain Layout
 
 \lang english
-Numerical
+Categorical
 \end_layout
 
 \end_inset
@@ -10620,7 +10401,7 @@ status open
 \begin_layout Standard
 After one-hot encoding the categrocial features in this reduced dataset,
  the final number of columns before training was 
-\begin_inset Formula $111$
+\begin_inset Formula $171$
 \end_inset
 
 .
@@ -10648,8 +10429,8 @@ noprefix "false"
 
 \end_inset
 
-, the graft's survival time is significantly influenced by recipient age,
- followed by the donor's age.
+, the graft's survival time is significantly influenced by the recipient's
+ age.
  This finding aligns with expectations, as age often plays a pivotal role
  in various medical conditions.
  Similarly, HLA mismatch (described in Section 
@@ -11013,9 +10794,9 @@ name "The-plateauing"
 \end_layout
 
 \begin_layout Standard
-With increasing time, the predicted survival curves eventually flatten,
- which is an inaccuracy of the model as survival curves cannot stay constant
- forever and must eventually decline to zero.
+With increasing time, both the predicted survival and hazard functions eventuall
+y flatten, which is an inaccuracy of the model as survival curves cannot
+ stay constant forever and must eventually decline to zero.
 \end_layout
 
 \begin_layout Standard
@@ -11082,8 +10863,8 @@ literal "false"
 \end_inset
 
 .
- This is because they used predictors that are unknown prior to the transplantat
-ion itself.
+ The reasons for include the fact that they used predictors that are unknown
+ until the transplantation itself.
  One such example is the 
 \emph on
 cold ischemia time
@@ -11155,9 +10936,9 @@ noprefix "false"
 \end_inset
 
 , survival curves were computed by selecting 1000 random samples from the
- test for each age group 0-14, 15-29, 30-44, 45-59, 60+.
+ test set for each age group: 0-14, 15-29, 30-44, 45-59, 60+.
  Next, survival curves of these cohorts were computed with the Kaplan-Meier
- estimator using observed survival time and censoring status.
+ estimator using observed survival times and censoring status.
 \begin_inset Float figure
 placement H
 wide false
@@ -11410,7 +11191,7 @@ noprefix "false"
 
 .
 \begin_inset Float figure
-placement h
+placement H
 wide false
 sideways false
 status open
@@ -12104,7 +11885,7 @@ Usage for Computing Compatibility
 \begin_layout Standard
 The RSF model could be used in cases where there is one patient looking
  for a donor and multiple donors are available.
- The model would asses their compatibility by calculating the risk score
+ The model would assess their compatibility by calculating the risk score
  of each of the possible pairings.
  The pairing with the lowest risk score could be subsequently chosen for
  transplantation.
@@ -12132,7 +11913,7 @@ noprefix "false"
 
 \end_inset
 
- contains information about the patient, Table 
+ contains information about a random patient, Table 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Donor-information"
@@ -12757,11 +12538,8 @@ textwidth}{!}{
 
 
 \begin_inset Tabular
-<lyxtabular version="3" rows="6" columns="10">
+<lyxtabular version="3" rows="6" columns="7">
 <features tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top">
@@ -12786,39 +12564,6 @@ textwidth}{!}{
 
 \lang english
 AGE_DON
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-DRMIS
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-AMIS
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-BMIS
 \end_layout
 
 \end_inset
@@ -12904,39 +12649,6 @@ Risk Score
 \begin_layout Plain Layout
 
 \lang english
-1 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-0 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-1 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
 3 
 \end_layout
 
@@ -13012,39 +12724,6 @@ N
 \begin_layout Plain Layout
 
 \lang english
-1 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-1 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-1 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
 3 
 \end_layout
 
@@ -13110,39 +12789,6 @@ N
 
 \lang english
 45 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-1 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-1 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-2 
 \end_layout
 
 \end_inset
@@ -13239,39 +12885,6 @@ N
 \begin_layout Plain Layout
 
 \lang english
-0 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-0 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-0 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
 0.90
 \end_layout
 
@@ -13326,39 +12939,6 @@ N
 
 \lang english
 41 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-2 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-2 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" bottomline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\lang english
-2 
 \end_layout
 
 \end_inset
@@ -14342,6 +13922,26 @@ Simultaneous pancreas-kidney transplantation: The role in the treatment
 \emph default
  Can Urol Assoc J.
  2014 Mar;8(3-4)
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "locus_mismatch"
+literal "false"
+
+\end_inset
+
+Shi X, Lv J, Han W, Zhong X, Xie X, Su B, Ding J.
+ 
+\emph on
+What is the impact of human leukocyte antigen mismatching on graft survival
+ and mortality in renal transplantation? A meta-analysis of 23 cohort studies
+ involving 486,608 recipients.
+
+\emph default
+ BMC Nephrol.
+ 2018 May 18;19(1):116.
 \end_layout
 
 \end_body
