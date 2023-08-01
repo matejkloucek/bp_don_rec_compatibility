@@ -1090,7 +1090,15 @@ Classification of Machine Learning Models
 \begin_layout Standard
 Machine learning models can be classified based on several parameters including
  the type of data used in training the models and the way they handle new
- data.
+ data 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Hands-On ML"
+literal "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -1140,6 +1148,14 @@ supporting vector machines.
 \emph on
 neural networks
 \emph default
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Hands-On ML"
+literal "false"
+
+\end_inset
+
 .
 \end_layout
 
@@ -1164,7 +1180,15 @@ association,
 dimensional reduction,
 \emph default
  which is used to simplify data in order to more easily extract information
- from it.
+ from it 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Hands-On ML"
+literal "false"
+
+\end_inset
+
+.
  
 \end_layout
 
@@ -1183,7 +1207,15 @@ semi-supervised learning
  Using semi-supervised learning is advantageous to using a simple supervised
  machine learning model as it allows working with larger amounts of data
  that would otherwise be unusable because of the lack of labeling, thus
- potentially resulting in higher accuracy of the model.
+ potentially resulting in higher accuracy of the model 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Hands-On ML"
+literal "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -1276,7 +1308,15 @@ Building a Machine Learning Model
 
 \begin_layout Standard
 The process of building a machine learning model generally consists of the
- following steps.
+ following steps 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "100-page ML"
+literal "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsection
@@ -1354,7 +1394,15 @@ noprefix "false"
  In the case of categorical features, it replaces missing values with the
  most common category in the particular column.
  Also in the case of both categorical and numerical values, it can simply
- replace the missing values with a given constant value.
+ replace the missing values with a given constant value 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "scikit-learn"
+literal "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -2103,8 +2151,8 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-In the case of classification decision trees and random forests described
- in Section 
+For example, in the case of classification decision trees and random forests
+ described in Section 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Decision-Trees-and"
@@ -2164,7 +2212,7 @@ noprefix "false"
 \end_layout
 
 \begin_layout Subsection
-Hyperparameter tuning
+Hyperparameter Tuning
 \begin_inset CommandInset label
 LatexCommand label
 name "subsec:Hyperparameter-tuning"
@@ -2305,11 +2353,7 @@ Gini Impurity
  In the case of regression trees, the criterion used is often based on the
  reduction of 
 \emph on
-variance
-\emph default
- or 
-\emph on
-standard deviation
+mean squared error
 \emph default
  between labels and their mean values.
  Another type of criterion is used by 
@@ -2323,7 +2367,7 @@ random survival forests
 , which use the log-rank test statistic in order to maximize the difference
  between the predicted survival in the child nodes.
  Both survival trees and random survival forests are described in greater
- detail in Section 
+ detail in Chapter 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Random-Survival-Forests"
@@ -2481,8 +2525,8 @@ In the first step of the algorithm, the decision tree consists only of its
 \begin_inset Formula $\left\{ \left(x^{(i)},y^{(i)}\right)\right\} _{i=1}^{N}$
 \end_inset
 
-), and all features are available for splitting, i.e., 
-\begin_inset Formula $F_{0}=\hat{n}$
+), and all features are available for splitting (i.e., 
+\begin_inset Formula $F_{0}=\hat{n})$
 \end_inset
 
 .
@@ -3034,8 +3078,7 @@ literal "false"
 \begin_inset Formula $c$
 \end_inset
 
-, i.e.
- class 
+, i.e., class 
 \begin_inset Formula $c\in C$
 \end_inset
 
@@ -5198,7 +5241,7 @@ One of the most common goals of survival analysis is to describe a correlation
 \emph on
 exposure variable
 \emph default
- ( i.e., a feature of an instance in the data) and the 
+ (i.e., a feature of an instance in the data) and the 
 \emph on
 outcome variable
 \emph default
@@ -7959,7 +8002,7 @@ noprefix "false"
 \end_layout
 
 \begin_layout Subsection
-Other libraries 
+Other Libraries 
 \end_layout
 
 \begin_layout Subsubsection*
@@ -10830,11 +10873,11 @@ Kipan_Living
 \end_layout
 
 \begin_layout Chapter
-Model evaluation
+Model Evaluation
 \end_layout
 
 \begin_layout Section
-General evaluation
+General Evaluation
 \end_layout
 
 \begin_layout Standard
@@ -11263,7 +11306,7 @@ tly less amount of time to fit and had considerably lesser memory requirements
 \end_layout
 
 \begin_layout Section
-Performance on different population samples
+Performance on Different Population Samples
 \end_layout
 
 \begin_layout Standard
@@ -11821,7 +11864,7 @@ noprefix "false"
 
 \end_inset
 
-)
+).
 \begin_inset Float figure
 placement H
 wide false
@@ -11888,7 +11931,7 @@ ipient paring.
 \end_layout
 
 \begin_layout Subsection
-Example of Compatibility Computation
+Practical Application
 \end_layout
 
 \begin_layout Standard
