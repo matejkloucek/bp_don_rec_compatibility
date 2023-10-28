@@ -747,7 +747,7 @@ Abstrakt:
  Se zvyšující se prevalencí onemocnění spojených s ledvinami je vylepšení
  procesu hledání vhodných párů dárců a příjemců zásadní pro zmírnění zátěže,
  kterou pro zdravotnický systém představují pacienti se selhávajícími ledvinami.
- Předchozí studie ukázaly, jak mohou metody strojového učení být použity
+ Předchozí studie ukázaly jak mohou být metody strojového učení použity
  pro predikování času přežití po transplantaci ledvin.
  V této studii je pro ohodnocení kompatibility mezi dárci a příjemci použit
  model náhodného přežívacího lesa, který predikuje dobu přežití na základě
@@ -954,7 +954,7 @@ literal "false"
  However, demand for transplants (allografts) greatly exceeds supply 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Kidney transplantation,Systematic review"
+key "Systematic review,Kidney transplantation"
 literal "false"
 
 \end_inset
@@ -1141,7 +1141,7 @@ random forests
 \emph default
 , 
 \emph on
-supporting vector machines.
+supporting vector machine.
 
 \emph default
  and 
@@ -1240,7 +1240,7 @@ policy
 ) 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "100-page ML,Hands-On ML"
+key "Hands-On ML,100-page ML"
 literal "false"
 
 \end_inset
@@ -1922,6 +1922,26 @@ organ_R_Kidney
 
 \end_layout
 
+\begin_layout Standard
+Note that one-hot encoding can also be done by creating only 
+\begin_inset Formula $n-1$
+\end_inset
+
+ new columns, as that is a sufficient emount to encode information about
+ 
+\begin_inset Formula $n$
+\end_inset
+
+ possible categorical values in the original column.
+ However, sci-kit learn's one-hot encoder, which is used in this project,
+ creates 
+\begin_inset Formula $n$
+\end_inset
+
+ columns by default.
+ 
+\end_layout
+
 \begin_layout Subsubsection*
 Splitting Data into Training, Validation and Test Sets
 \begin_inset CommandInset label
@@ -1980,9 +2000,9 @@ e of the data to training.
 
 \begin_layout Standard
 Once the model has been trained using the training set, the performance
- of the model is tested using the test set, i.e.
+ of the model is evaluated using the test set, i.e.
  data that it has not seen before.
- A good metric for measuring the quality of the model is the 
+ A good metric for measuring the performance of the model is the 
 \emph on
 generalization error, 
 \emph default
@@ -2422,11 +2442,11 @@ is a collection of labeled examples from the training dataset with numerical
 \end_inset
 
  is the size of the collection, 
-\begin_inset Formula $\mathbf{x}^{(i)}=(x_{1}^{(i)},\ldots,x_{n}^{(i)})$
+\begin_inset Formula $\mathbf{x}^{(i)}=(x_{1}^{(i)},\ldots,x_{d}^{(i)})$
 \end_inset
 
  is an 
-\begin_inset Formula $n$
+\begin_inset Formula $d$
 \end_inset
 
 -dimensional feature vector of the example 
@@ -2463,7 +2483,7 @@ where
 \end_inset
 
  is a 
-\begin_inset Formula $n$
+\begin_inset Formula $d$
 \end_inset
 
 -dimensional feature vector and 
@@ -2526,7 +2546,7 @@ In the first step of the algorithm, the decision tree consists only of its
 \end_inset
 
 ), and all features are available for splitting (i.e., 
-\begin_inset Formula $F_{0}=\hat{n})$
+\begin_inset Formula $F_{0}=\hat{d})$
 \end_inset
 
 .
@@ -2749,9 +2769,13 @@ When a new input
 \end_inset
 
 , the left branch is followed, else, the right branch is followed.
- This process repeats until a leaf node is reached.
+ This process repeats until a leaf node 
+\begin_inset Formula $m$
+\end_inset
+
+ is reached.
  Let 
-\begin_inset Formula $S_{n}$
+\begin_inset Formula $S_{m}$
 \end_inset
 
  denote the set of labeled examples belonging to this leaf node, then 
@@ -2761,7 +2785,7 @@ When a new input
 
 \begin_inset Formula 
 \begin{equation}
-f(\mathbf{x},a)=p^{S_{n}}\left(a\right)=\frac{\left|\left\{ \left(\mathbf{x}^{(i)},y^{(i)}\right)\in S_{n}\mid y^{(i)}=a\right\} \right|}{\left|S_{n}\right|}.\label{eq:class tree final}
+f(\mathbf{x},a)=p^{S_{m}}\left(a\right)=\frac{\left|\left\{ \left(\mathbf{x}^{(i)},y^{(i)}\right)\in S_{m}\mid y^{(i)}=a\right\} \right|}{\left|S_{m}\right|}.\label{eq:class tree final}
 \end{equation}
 
 \end_inset
@@ -2823,11 +2847,11 @@ Let
 \end_inset
 
  is the size of the collection, 
-\begin_inset Formula $\mathbf{x}^{(i)}=(x_{1}^{(i)},\ldots,x_{n}^{(i)})$
+\begin_inset Formula $\mathbf{x}^{(i)}=(x_{1}^{(i)},\ldots,x_{d}^{(i)})$
 \end_inset
 
  is an 
-\begin_inset Formula $n$
+\begin_inset Formula $d$
 \end_inset
 
 -dimensional feature vector of the example 
@@ -2844,7 +2868,7 @@ Let
 \end_inset
 
  that takes a 
-\begin_inset Formula $n$
+\begin_inset Formula $d$
 \end_inset
 
 -dimensional feature vector, with the same type of attributes as 
@@ -2991,14 +3015,14 @@ Once fully grown, the model's predictions are calculated by taking the mean
 
  is introduced to the model.
  Let 
-\begin_inset Formula $n$
+\begin_inset Formula $m$
 \end_inset
 
  denote such a terminal node.
  The prediction is then given by
 \begin_inset Formula 
 \begin{equation}
-f\left(\mathbf{x}\right)=\frac{1}{\left|S_{n}\right|}\sum_{i\in I_{n}}y^{(i)}.
+f\left(\mathbf{x}\right)=\frac{1}{\left|S_{m}\right|}\sum_{i\in I_{m}}y^{(i)}.
 \end{equation}
 
 \end_inset
@@ -3017,9 +3041,9 @@ Ensemble learning
 \emph default
 is a machine learning technique that combines the predictions of multiple
  simpler models in order to boost its overall performance on a given task.
- An example of an ensemble learning method is 
+ An example of an ensemble learning method is a 
 \emph on
-random forests
+random forest
 \emph default
 , which build on the foundation of decision trees by aggregating the predictions
  made by a set amount of decision trees, allowing the model to make more
@@ -3083,11 +3107,7 @@ literal "false"
 \end_inset
 
  gets the vote 
-\begin_inset Formula $\Longleftrightarrow c=\underset{a\in C}{\arg\max}$
-\end_inset
-
-
-\begin_inset Formula $\Pr\left(y=a\mid\mathbf{x}\right)$
+\begin_inset Formula $\Longleftrightarrow c=\underset{a\in C}{\arg\max}\Pr\left(y=a\mid\mathbf{x}\right)$
 \end_inset
 
  , where 
@@ -3138,7 +3158,7 @@ The process of building a random forest model can be divided into four steps
  
 \begin_inset CommandInset citation
 LatexCommand cite
-key "100-page ML,Hands-On ML"
+key "Hands-On ML,100-page ML"
 literal "false"
 
 \end_inset
@@ -3397,8 +3417,18 @@ Firstly, their overall health is checked in order to evaluate whether they
  to check for any underlying health conditions that could affect the success
  of the transplantation, such as history of diseases related to the functionalit
 y of kidneys.
- It is also necessary for the donor and the recipients to have compatible
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+It is also necessary for the donor and the recipients to have compatible
  blood types.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3476,8 +3506,8 @@ HLA Mismatch
 \end_layout
 
 \begin_layout Standard
-The decision on which pairings to discard and which ones to to perform a
- cross-match on is done by calculating a 
+The decision on which pairings to discard and which ones to perform a cross-matc
+h on is done by calculating a 
 \emph on
 HLA mismatch
 \begin_inset CommandInset label
@@ -5351,7 +5381,8 @@ literal "false"
 \begin_inset Formula $\tau$
 \end_inset
 
- denote the set of all unique event times, let 
+ denote the set of all unique event times (not times of censoring), let
+ 
 \begin_inset Formula $f_{j}$
 \end_inset
 
@@ -5453,7 +5484,7 @@ literal "false"
 
 \end_inset
 
-Due this notation, the Kaplan-Meier formula is often referred to as the
+Due to this notation, the Kaplan-Meier formula is often referred to as the
  
 \emph on
 product-limit formula, 
@@ -5802,7 +5833,7 @@ Given that we have a random sample of
 \end_inset
 
  are 
-\begin_inset Formula $n$
+\begin_inset Formula $d$
 \end_inset
 
 -dimensional feature vectors describing the given individuals, and 
@@ -5836,18 +5867,34 @@ Given that we have a random sample of
 
 \begin_layout Standard
 where 
-\begin_inset Formula $L$
-\end_inset
-
- is the maximum likelihood function and 
 \begin_inset Formula $\Theta$
 \end_inset
 
- is a parameter space.
- The maximum likelihood function is conventionally defined as 
+ is a parameter space and 
+\begin_inset Formula $L$
+\end_inset
+
+ can either represent a conventional likelihood function 
+\begin_inset Formula $L_{full}$
+\end_inset
+
+ (also known as 
+\emph on
+full
+\emph default
+ likelihood function), or a 
+\emph on
+partial 
+\emph default
+likelihood function 
+\begin_inset Formula $L_{part}$
+\end_inset
+
+ (explained later).
+ The (full) likelihood function is conventionally defined as 
 \begin_inset Formula 
 \begin{equation}
-L\left(\beta\right)=\prod_{i=1}^{k}f_{Y_{i}}(y_{i},\beta)\label{eq:full maximum likelihood function}
+L_{full}\left(\beta\right)=\prod_{i=1}^{k}f_{Y_{i}}(y_{i},\beta)\label{eq:full maximum likelihood function}
 \end{equation}
 
 \end_inset
@@ -5906,7 +5953,7 @@ only considers probabilities of the subjects who fail, i.e., with censoring
  This means that the partial likelihood function can be written as
 \begin_inset Formula 
 \begin{equation}
-L=\prod_{j=1}^{p}L_{j}
+L_{part}=\prod_{j=1}^{p}L_{j}
 \end{equation}
 
 \end_inset
@@ -6050,7 +6097,7 @@ As
  cancels out, the partial likelihood function can be written as 
 \begin_inset Formula 
 \begin{equation}
-L\left(\beta\right)=\prod_{j=1}^{p}\frac{\exp\left(\beta\cdot\mathbf{X}_{j}\right)}{\sum_{i\in R(t_{j})}\exp\left(\beta\cdot\mathbf{X}_{i}\right)}
+L_{part}\left(\beta\right)=\prod_{j=1}^{p}\frac{\exp\left(\beta\cdot\mathbf{X}_{j}\right)}{\sum_{i\in R(t_{j})}\exp\left(\beta\cdot\mathbf{X}_{i}\right)}
 \end{equation}
 
 \end_inset
@@ -6060,7 +6107,7 @@ L\left(\beta\right)=\prod_{j=1}^{p}\frac{\exp\left(\beta\cdot\mathbf{X}_{j}\righ
 
 \begin_layout Standard
 Once the partial likelihood function 
-\begin_inset Formula $L$
+\begin_inset Formula $L_{part}$
 \end_inset
 
  is formed, the equation (
@@ -6080,7 +6127,7 @@ noprefix "false"
 , i.e., finding the roots of
 \begin_inset Formula 
 \begin{equation}
-\frac{\partial\ln L}{\partial\beta_{i}}=0\qquad\textrm{for \ensuremath{i=1,\ldots,k}}
+\frac{\partial\ln L_{part}}{\partial\beta_{i}}=0\qquad\textrm{for \ensuremath{i=1,\ldots,k}}
 \end{equation}
 
 \end_inset
@@ -6209,7 +6256,7 @@ The estimated hazard ratio for the predictor variable
 \end_layout
 
 \begin_layout Standard
-As hazard functions are always positive and the ratio is written in way
+As hazard functions are always positive and the ratio is written in a way
  as to ensure that it is always greater than 
 \begin_inset Formula $1$
 \end_inset
@@ -6327,16 +6374,23 @@ Building a Random Survival Forests Model
 \end_layout
 
 \begin_layout Standard
-The algorithm for building a RSF model as implemented in the works as follows
- 
+The algorithm for building a RSF model as described in 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Random Survival Forests,scikit-survival"
+key "Random Survival Forests"
 literal "false"
 
 \end_inset
 
-.
+ and implemented in 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "scikit-survival"
+literal "false"
+
+\end_inset
+
+, works as follows.
 \end_layout
 
 \begin_layout Enumerate
@@ -6351,7 +6405,16 @@ noprefix "false"
 
 \end_inset
 
-, with each sample excluding, on average, 37% of the original data.
+, with each sample excluding a portion of the original data (37% is suggested
+ in 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Random Survival Forests"
+literal "false"
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Enumerate
@@ -6392,7 +6455,7 @@ noprefix "false"
  This leads to a point where no new splits can be made, meaning that the
  tree has been fully grown.
  Other hyperparameters limiting the growth of the tree can also be set,
- which are described in Section 
+ which is described in Section 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Hyperparameters"
@@ -6462,11 +6525,11 @@ Otherwise, for every terminal node
 \end_inset
 
  contains a set of individuals 
-\begin_inset Formula $\left(T_{1,j},\delta_{1,j}\right),\ldots,\left(T_{n(j),j},\delta_{n(j),j}\right)$
+\begin_inset Formula $\left(T_{1,j},\delta_{1,j}\right),\ldots,\left(T_{n_{j},j},\delta_{n_{j},j}\right)$
 \end_inset
 
 , where 
-\begin_inset Formula $n(j)$
+\begin_inset Formula $n_{j}$
 \end_inset
 
  is the number of cases belonging to the node 
@@ -6499,15 +6562,16 @@ Otherwise, for every terminal node
 
 .
  Let 
-\begin_inset Formula $t_{1,j}<t_{2,j}<\ldots<t_{N(j),j}$
+\begin_inset Formula $t_{1,j}<t_{2,j}<\ldots<t_{u_{j},j}$
 \end_inset
 
- denote the unique event times observed in node 
+ denote the unique event times (not times of censoring) observed in node
+ 
 \begin_inset Formula $j$
 \end_inset
 
 , where 
-\begin_inset Formula $N(j)$
+\begin_inset Formula $u_{j}$
 \end_inset
 
  is the total number of observed unique event times, and let 
@@ -6528,10 +6592,10 @@ Otherwise, for every terminal node
 \begin_inset Formula $j$
 \end_inset
 
- is then given by the Nelson-Maier estimator
+ is then given by the Nelson-Aalen estimator
 \begin_inset Formula 
 \begin{equation}
-\hat{H}_{j}(t)=\sum_{t_{k,j}\leq t}\frac{r_{k,j}}{f_{k,j}}.\label{eq:node CHF}
+\hat{H}_{j}(t)=\sum_{t_{k,j}\leq t}\frac{f_{k,j}}{r_{k,j}}.\label{eq:node CHF}
 \end{equation}
 
 \end_inset
@@ -6862,6 +6926,7 @@ literal "false"
 \end_inset
 
 .
+ The default value is 100.
 \end_layout
 
 \begin_layout Itemize
@@ -6912,6 +6977,7 @@ min_samples_split
  and therefore speed up the training process.
  However, setting this parameter too high can result in underfitting as
  the model may fail to capture more complex relations in the data.
+ The default value is 6.
 \end_layout
 
 \begin_layout Itemize
@@ -6938,7 +7004,7 @@ literal "false"
 .
  However, setting this parameter too high may worsen the model's ability
  to make accurate predictions.
- If none is set, the default value is 1.
+ If none is set, the default value is 3.
 \end_layout
 
 \begin_layout Itemize
@@ -7364,7 +7430,7 @@ if
 \begin_inset Formula 
 \[
 c_{i,j}=\begin{cases}
-1 & \textrm{if }\delta_{i}=1\Longrightarrow\textrm{\ensuremath{i} has worse predicted outcome than \ensuremath{j} }\\
+1 & \textrm{if }\textrm{\ensuremath{i} has worse predicted outcome than \ensuremath{j} }\\
 0.5 & \textrm{else}
 \end{cases}
 \]
@@ -7690,7 +7756,7 @@ The reasons for why the RSF model was chosen include the above-described
  that the RSF model displayed in the related articles 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Using ML methods to predict kidney transplant survival,Systematic review"
+key "Systematic review,Using ML methods to predict kidney transplant survival"
 literal "false"
 
 \end_inset
@@ -8115,7 +8181,7 @@ e computing cluster hosted at the Department of Mathematics, Faculty of
  The cluster can provide up to 384GB of main memory on a single node, which
  was a sufficient for the needs of this project.
  The connection to the cluster was established using SSH in the Linux shell.
- To enhance practicality, remote nodes were forwarded onto localhost, which
+ To enhance practicality, remote ports were forwarded onto localhost, which
  allowed working with Jupyter notebooks directly via a web browser on a
  local machine.
  More information about the cluster such as regarding the hardware specs
@@ -8257,14 +8323,14 @@ Kidney_Pancreas
 \end_inset
 
  dataset contained 
-\begin_inset Formula $1108884$
+\begin_inset Formula $1\,108\,884$
 \end_inset
 
  entries and 
 \begin_inset Formula $470$
 \end_inset
 
- columns.
+ features.
  It contains information about both living and deceased donors, but the
  details regarding the donors are limited in scope, particularly in the
  case of living donors.
@@ -8299,8 +8365,8 @@ DONOR_ID
 
 \end_inset
 
- column, which is a foreign key in the
-\begin_inset Newline newline
+ feature, which is a foreign key in the 
+\begin_inset Newline linebreak
 \end_inset
 
 
@@ -8336,7 +8402,7 @@ Deceased_Donor
 
  table.
  There were 
-\begin_inset Formula $174381$
+\begin_inset Formula $174\,381$
 \end_inset
 
  entries sharing a common 
@@ -8370,7 +8436,7 @@ Living_Donor
 \end_inset
 
  tables and 
-\begin_inset Formula $399822$
+\begin_inset Formula $399\,822$
 \end_inset
 
  entries sharing it between the 
@@ -8430,15 +8496,15 @@ Kidpan_Living
 \end_inset
 
  table had 
-\begin_inset Formula $174381$
+\begin_inset Formula $174\,381$
 \end_inset
 
  entries and 
 \begin_inset Formula $649$
 \end_inset
 
- columns.
- This number of columns is usually considered to be too high for an effective
+ features.
+ This number of features is usually considered to be too high for an effective
  machine learning model as it could lead to overfitting and poor explainability.
  Therefore, the number of features had to be reduced significantly.
 \end_layout
@@ -8453,7 +8519,7 @@ In addition to the dataset, UNOS provides a .xlsx file called
 STAR Files Data Dictionary
 \emph default
  (STAR = Standard Transplant Analysis and Research), which contains information
- about what each of the columns represents.
+ about what each of the features represents.
  This dictionary was used in the following sections to provide context for
  the dataset's features.
 \end_layout
@@ -8492,8 +8558,8 @@ literal "false"
  the number of SKPs is relatively low compared to the number of standalone
  kidney transplantation.
  Therefore, individuals who had undergone a SKP were dropped from the dataset.
- All columns regarding pancreas transplantation were dropped as well.
- These columns were selected manually based on their description in the
+ All features regarding pancreas transplantation were dropped as well.
+ These features were selected manually based on their description in the
  STAR dictionary.
 \end_layout
 
@@ -8503,11 +8569,11 @@ Follow-up Data
 
 \begin_layout Standard
 As the goal of this paper is to predict compatibility of patients prior
- to transplantation, any column that contains information about the patient's
+ to transplantation, any feature that contains information about the patient's
  status after or at the time of the transplantation had to be removed from
  the dataset.
- This was also done by manually selecting such columns based on their descriptio
-n in the STAR dictionary.
+ This was also done by manually selecting such features based on their descripti
+on in the STAR dictionary.
  The only follow-up features that were retained are the 
 \begin_inset Flex Code
 status open
@@ -8528,7 +8594,7 @@ GSTATUS_KI
 
 \end_inset
 
- columns, which describe the graft's survival time and censoring status
+ features, which describe the graft's survival time and censoring status
  respectively.
  
 \end_layout
@@ -8558,14 +8624,14 @@ GSTATUS_KI
 
 \end_inset
 
- columns, the survival times computed and predicted in the following sections
+ features, the survival times computed and predicted in the following sections
  and chapters describe the survival time of the graft itself, not necessarily
  the survival time of the patient, as the graft may fail but the patient
  may continue to live on either by returning to dialysis or by getting another
  transplant.
  The opposite may also happen, i.e., patient dies with a functioning kidney.
  Out of the total 
-\begin_inset Formula $174381$
+\begin_inset Formula $174\,381$
 \end_inset
 
  entries in the 
@@ -8579,15 +8645,15 @@ Kidpan_Living
 \end_inset
 
  table, 
-\begin_inset Formula $106910$
+\begin_inset Formula $106\,910$
 \end_inset
 
  were censored while still alive, 
-\begin_inset Formula $40714$
+\begin_inset Formula $40\,714$
 \end_inset
 
  experienced graft failure, and 
-\begin_inset Formula $26732$
+\begin_inset Formula $26\,732$
 \end_inset
 
  patients died with a functioning graft.
@@ -8600,7 +8666,7 @@ Kidpan_Living
 \end_layout
 
 \begin_layout Subsubsection*
-Duplicate Columns
+Duplicate Features
 \end_layout
 
 \begin_layout Standard
@@ -8614,8 +8680,8 @@ Kidney_Pancreas
 
 \end_inset
 
- table also contained some information about donors, duplicate columns were
- created upon merging with the 
+ table also contained some information about donors, duplicate features
+ were created upon merging with the 
 \begin_inset Flex Code
 status open
 
@@ -8642,7 +8708,7 @@ Deceased_Donor
 \end_layout
 
 \begin_layout Subsubsection*
-Irrelevant Columns
+Irrelevant Features
 \end_layout
 
 \begin_layout Standard
@@ -8653,7 +8719,7 @@ The STAR dictionary was also used to identify obviously irrelevant features
 \end_layout
 
 \begin_layout Subsubsection*
-Deceased and Living Donor Columns
+Deceased and Living Donor Features
 \end_layout
 
 \begin_layout Standard
@@ -8669,16 +8735,16 @@ Kidney_Pancreas
 
  table itself contains limited information about both deceased and living
  donors.
- Therefore, columns regarding deceased donors had to be dropped from the
+ Therefore, features regarding deceased donors had to be dropped from the
  dataset used for training of the model for living donors.
- This was done by excluding columns with high percentage of missing values
+ This was done by excluding features with high percentage of missing values
  (
 \begin_inset Formula $>50\%$
 \end_inset
 
-) as the columns regarding deceased donors would be left unfilled in the
+) as the features regarding deceased donors would be left unfilled in the
  case of grafts from living donors.
- The STAR dictionary was also used to check that no obviously relevant columns
+ The STAR dictionary was also used to check that no obviously relevant features
  were lost in the process.
 \end_layout
 
@@ -8687,10 +8753,10 @@ Low Quality Data
 \end_layout
 
 \begin_layout Standard
-Dropping columns with high percentage of missing values was also done to
+Dropping features with high percentage of missing values was also done to
  prevent a significant loss of information by having to either impute large
  amounts of missing values or discarding entries with missing features.
- Columns with only one unique value were dropped as well.
+ Features with only one unique value were dropped as well.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -8708,18 +8774,31 @@ noprefix "false"
 
 \end_inset
 
-, each locus of both the donor and the recipient has two columns.
- These columns are categorical and represent different alleles.
+, each locus of both the donor and the recipient has two features.
+ These features are categorical and represent different alleles.
  The number of unique alleles exceeds 
 \begin_inset Formula $100$
 \end_inset
 
  in some cases.
- This would create a problem when encoding categorical columns as it would
+ This would create a problem when encoding categorical features as it would
  create an enormous amount of new columns.
- Fortunately, these columns can be dropped from the dataset as they are
+ An ongoing scientific discord revolves around whether the specific information
+ related to individual alleles significantly influences the patient's prospects.
+ However, for the sake of practicality of this project, these features were
+ dropped from this dataset.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Fortunately, these features can be dropped from the dataset as they are
  already used for calculating HLA mismatch, and therefore dropping them
  does not result in a significant loss of information.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -10732,7 +10811,7 @@ noprefix "false"
 
 \begin_layout Standard
 \begin_inset Float figure
-placement h
+placement H
 wide false
 sideways false
 status open
@@ -10908,7 +10987,7 @@ cold ischemia time
  However, as mentioned before, the goal of this study is to develop a machine
  learning model that can be used for computing compatibility in order to
  match the suitable pairs of recipients and donors and therefore should
- only use information that is knows prior to the transplantation.
+ only use information that is known prior to the transplantation.
  Thus, the model developed in 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -13209,7 +13288,7 @@ where
  The resulting difference in average risk scores is
 \begin_inset Formula 
 \begin{equation}
-c=\hat{R}_{0-59}-\hat{R}_{60+}=2269
+c=\hat{R}_{60+}-\hat{R}_{0-59}=2269
 \end{equation}
 
 \end_inset
@@ -13341,27 +13420,6 @@ Although further research is required to improve the model's reliability
 \begin_layout Bibliography
 \begin_inset CommandInset bibitem
 LatexCommand bibitem
-key "Kidney transplantation"
-literal "false"
-
-\end_inset
-
-S.
- J.
- Knechtle, L.
- P.
- Marson, P.
- J.
- Morris,
-\emph on
- Kidney Transplantation: Principles and Practice, 
-\emph default
-Elsevier, 2020.
-\end_layout
-
-\begin_layout Bibliography
-\begin_inset CommandInset bibitem
-LatexCommand bibitem
 key "Chronic kidney allograft loss"
 literal "false"
 
@@ -13416,18 +13474,22 @@ https://www.sciencedirect.com/science/article/pii/S1386505619302977
 \begin_layout Bibliography
 \begin_inset CommandInset bibitem
 LatexCommand bibitem
-key "Dialysis"
+key "Kidney transplantation"
 literal "false"
 
 \end_inset
 
-D.D.
- Aufhauser Jr., et al., 
+S.
+ J.
+ Knechtle, L.
+ P.
+ Marson, P.
+ J.
+ Morris,
 \emph on
-Impact of prolonged dialysis prior to renal transplantation.
-
+ Kidney Transplantation: Principles and Practice, 
 \emph default
- Clin Transplant, 2018 Jun, 32(6):e13260.
+Elsevier, 2020.
 \end_layout
 
 \begin_layout Bibliography
@@ -13466,23 +13528,6 @@ https://doi.org/10.1371/journal.pone.0209068
 \begin_layout Bibliography
 \begin_inset CommandInset bibitem
 LatexCommand bibitem
-key "100-page ML"
-literal "true"
-
-\end_inset
-
-A.
- Burkov, 
-\emph on
-The Hundred-Page Machine Learning Book
-\emph default
-.
- Andriy Burkov, 2019.
-\end_layout
-
-\begin_layout Bibliography
-\begin_inset CommandInset bibitem
-LatexCommand bibitem
 key "Hands-On ML"
 literal "true"
 
@@ -13500,43 +13545,34 @@ Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow 2nd Edition
 \begin_layout Bibliography
 \begin_inset CommandInset bibitem
 LatexCommand bibitem
-key "Foundations of ML"
+key "100-page ML"
 literal "true"
 
 \end_inset
 
-M.
- Mohri, A.
- Rostamizadeh, A.
- Talwalkar, 
+A.
+ Burkov, 
 \emph on
-Foundations of Machine Learning
+The Hundred-Page Machine Learning Book
 \emph default
 .
- MIT Press, 2018.
+ Andriy Burkov, 2019.
 \end_layout
 
 \begin_layout Bibliography
 \begin_inset CommandInset bibitem
 LatexCommand bibitem
-key "Gini importance"
+key "scikit-learn"
 literal "false"
 
 \end_inset
 
-C.
- Strobl, A.
- Boulesteix, A.
- Zeileis, T.
- Hothorn, 
+Pedregosa et al., 
 \emph on
-Bias in random forest variable importance measures: illustrations, sources
- and a solution
+Scikit-learn: Machine Learning in Python
 \emph default
-.
- BMC Bioinformatics.
- 2007 Jan 25;8:25.
- 
+, JMLR 12, pp.
+ 2825-2830, 2011.
 \end_layout
 
 \begin_layout Bibliography
@@ -13574,20 +13610,20 @@ Chronic kidney disease: global dimension and perspectives
 \begin_layout Bibliography
 \begin_inset CommandInset bibitem
 LatexCommand bibitem
-key "Analysis of Survival Data"
+key "Survival Analysis self-learn"
 literal "false"
 
 \end_inset
 
 D.
- R.
- Cox, D.
- Oakes, 
+ G.
+ Kleinbaum, M.
+ Klein, 
 \emph on
-Analysis of Survival Data.
+Survival Analysis: A Self-Learning Text 3rd Edition.
  
 \emph default
-Chapman & Hall, 1984.
+Springer, 2012.
 \end_layout
 
 \begin_layout Bibliography
@@ -13620,49 +13656,6 @@ Ann.
 \begin_layout Bibliography
 \begin_inset CommandInset bibitem
 LatexCommand bibitem
-key "ML Crash Course"
-literal "false"
-
-\end_inset
-
-Google Developers, 
-\emph on
-Machine Learning Crash Course, 
-\begin_inset Flex URL
-status open
-
-\begin_layout Plain Layout
-
-https://developers.google.com/machine-learning/crash-course
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Bibliography
-\begin_inset CommandInset bibitem
-LatexCommand bibitem
-key "Survival Analysis self-learn"
-literal "false"
-
-\end_inset
-
-D.
- G.
- Kleinbaum, M.
- Klein, 
-\emph on
-Survival Analysis: A Self-Learning Text 3rd Edition.
- 
-\emph default
-Springer, 2012.
-\end_layout
-
-\begin_layout Bibliography
-\begin_inset CommandInset bibitem
-LatexCommand bibitem
 key "scikit-survival"
 literal "false"
 
@@ -13687,17 +13680,25 @@ A Library for Time-to-Event Analysis Built on Top of scikit-learn
 \begin_layout Bibliography
 \begin_inset CommandInset bibitem
 LatexCommand bibitem
-key "scikit-learn"
+key "ML Crash Course"
 literal "false"
 
 \end_inset
 
-Pedregosa et al., 
+Google Developers, 
 \emph on
-Scikit-learn: Machine Learning in Python
-\emph default
-, JMLR 12, pp.
- 2825-2830, 2011.
+Machine Learning Crash Course, 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://developers.google.com/machine-learning/crash-course
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Bibliography
@@ -13764,30 +13765,6 @@ status open
 \begin_layout Plain Layout
 
 https://wiki.python.org/moin/
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Bibliography
-\begin_inset CommandInset bibitem
-LatexCommand bibitem
-key "HELIOS"
-literal "false"
-
-\end_inset
-
-Pavel Strachota, 
-\emph on
-HELIOS cluster documentation, 
-\begin_inset Flex URL
-status open
-
-\begin_layout Plain Layout
-
-http://helios.fjfi.cvut.cz/
 \end_layout
 
 \end_inset
@@ -13896,19 +13873,25 @@ https://matplotlib.org/
 \begin_layout Bibliography
 \begin_inset CommandInset bibitem
 LatexCommand bibitem
-key "Predicting survival using tree-based modeling"
+key "HELIOS"
 literal "false"
 
 \end_inset
 
-S.
- Krikov et.
- al., 
+Pavel Strachota, 
 \emph on
-Predicting Kidney Transplant Survival Using Tree-Based Modeling
-\emph default
-.
- ASAIO Journal 53(5):p 592-600, September 2007.
+HELIOS cluster documentation, 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+http://helios.fjfi.cvut.cz/
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Bibliography
